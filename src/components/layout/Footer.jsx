@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
+import { footerNavigation } from '@/data/navigation';
+import logo from '@assets/logo.png';
 import {
   Facebook,
   Instagram,
   Linkedin,
-  MessageCircle,
   Mail,
-  Phone,
   MapPin,
+  MessageCircle,
+  Phone,
 } from 'lucide-react';
-import { footerNavigation } from '@/data/navigation';
-import logo from '@assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const iconMap = {
   Facebook,
@@ -22,12 +22,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="shrink-0 bg-navy text-white pt-16 pb-8 mt-auto">
+    <footer className="shrink-0 bg-navy-900 text-white pt-16 pb-8 mt-auto">
       <div className="container-alpha">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Alpha Center" className="h-10 w-auto" />
+              <img src={logo} alt="Alpha Center" className="h-12 w-auto" />
             </Link>
             <p className="text-white/70 text-sm mb-6 leading-relaxed">
               Le centre de référence pour la préparation aux concours des
