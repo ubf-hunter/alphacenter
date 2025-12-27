@@ -88,7 +88,18 @@
 /* ══════════════════════════════════════
    UTILITAIRES CUSTOM
    ══════════════════════════════════════ */
+/* Texture dots */
+@utility bg-texture-dots {
+  background-image: radial-gradient(#001a51 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
 
+/* Texture grid */
+@utility bg-texture-grid {
+  background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px;
+}
 @layer utilities {
   .container-alpha {
     max-width: 1280px;
