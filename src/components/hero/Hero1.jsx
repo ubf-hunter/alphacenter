@@ -3,8 +3,8 @@
 // Style : Sunrock, Green Power
 // ============================================
 
-import { Link } from 'react-router-dom';
 import { Trophy } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import csao291 from '../../assets/images/misc/csao4.jpg';
 
 export default function Hero1() {
@@ -18,14 +18,14 @@ export default function Hero1() {
   return (
     <div className="relative min-h-screen flex flex-col pt-24">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 blur-[1.5px] mask-alpha mask-b-from-black mask-b-from-80% mask-b-to-transparent">
+      <div className="absolute inset-0 z-0 mask-alpha mask-b-from-off-white mask-b-from-0% mask-b-to-navy/0">
         <img
           src={csao291}
           alt="Étudiants"
           className="w-full h-full object-cover"
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-linear-to-b from-off-white/30 via-off-white/60 to-off-white" />
+        <div className="absolute inset-0 bg-linear-to-t from-off-white/80 via-off-white/10 to-off-white/80" />
       </div>
 
       {/* Hero Content */}

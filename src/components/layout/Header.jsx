@@ -302,7 +302,10 @@ export default function Header() {
                   ) : (
                     <div>
                       <button
-                        onClick={() => handleDropdownToggle(item.label)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDropdownToggle(item.label);
+                        }}
                         className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors"
                       >
                         {item.label}

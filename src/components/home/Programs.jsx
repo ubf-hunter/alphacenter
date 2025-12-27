@@ -58,7 +58,7 @@ const colorClasses = {
 
 export default function Programs() {
   return (
-    <section className="py-20 bg-off-white">
+    <section className="py-20 bg-off-white/0">
       <Container>
         <SectionTitle
           badge="Nos formations"
