@@ -11,7 +11,9 @@ import { ArrowRight } from 'lucide-react';
 
 // ===== IMPORTS DES LOGOS =====
 // Option 1: Import direct des fichiers
-// import logoENSP from '@assets/logos/ensp-logo.png';
+import logoENSPY from '@assets/logoEcoles/enspy.webp';
+import logoENSTP from '@assets/logoEcoles/enstp.png';
+import logosupptic from '@assets/logoEcoles/supptic.png';
 // import logoENSTP from '@assets/logos/enstp-logo.png';
 // import logoENS from '@assets/logos/ens-logo.png';
 
@@ -20,9 +22,9 @@ import { ArrowRight } from 'lucide-react';
 
 const programs = [
   {
-    logo: '/images/logos/ensp-logo.png', // Remplace par le vrai chemin
-    logoAlt: 'Logo ENSP Yaoundé',
-    title: 'Prépa ENSP',
+    logo: logoENSPY, // Remplace par le vrai chemin
+    logoAlt: 'Logo ENSPY',
+    title: 'Prépa ENSPY',
     subtitle: 'Polytechnique Yaoundé',
     description:
       'Notre programme phare te prépare intensivement au concours le plus sélectif du Cameroun.',
@@ -32,7 +34,7 @@ const programs = [
     accentColor: 'text-orange',
   },
   {
-    logo: '/images/logos/enstp-logo.png',
+    logo: logoENSTP,
     logoAlt: 'Logo ENSTP Yaoundé',
     title: 'Prépa ENSTP',
     subtitle: 'Travaux Publics',
@@ -44,12 +46,13 @@ const programs = [
     accentColor: 'text-navy',
   },
   {
-    logo: '/images/logos/ens-logo.png',
+    logo: logosupptic,
     logoAlt: 'Logo ENS Yaoundé',
-    title: 'Prépa ENS',
-    subtitle: 'École Normale Sup.',
+    title: "Prépa SUP'PTIC",
+    subtitle:
+      'École Nationale suopérieure des Postes, Télécommunications et des TIC',
     description:
-      'Deviens enseignant ou chercheur avec une préparation académique rigoureuse.',
+      "Deviens ingenieur des TIC en intégrant SUP'PTIC grâce à notre préparation dédiée.",
     cta: 'Programme ENS',
     href: '/services#ens',
     gradient: 'from-[#FFDAB9] via-[#FFE4C4] to-[#FFECD2]',
@@ -63,11 +66,11 @@ function SchoolLogo({ src, alt, darkText = false }) {
   return (
     <div className="relative">
       {/* Container du logo avec effet glass */}
-      <div className="relative z-10 w-28 h-28 bg-white/90 backdrop-blur-md rounded-2xl border border-white/50 flex items-center justify-center shadow-2xl p-4 group-hover:scale-105 transition-transform duration-500">
+      <div className="relative object-cover z-10 w-24 h-24 bg-white/90 backdrop-blur-md rounded-2xl border border-white/50 flex items-center justify-center shadow-2xl p-2 group-hover:scale-105 transition-transform duration-500">
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover  rounded-2xl"
           onError={(e) => {
             // Fallback si l'image ne charge pas
             e.target.style.display = 'none';
