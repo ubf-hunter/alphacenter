@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Mail, Rocket } from 'lucide-react';
-import Container from '@components/common/Container';
 import Button from '@components/common/Button';
+import Container from '@components/common/Container';
+import { motion } from 'framer-motion';
+import { ArrowRight, Mail, Phone, Rocket } from 'lucide-react';
 
 export default function CTAFinal() {
   return (
@@ -32,8 +32,8 @@ export default function CTAFinal() {
 
             {/* Subtitle */}
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Inscris-toi maintenant pour la prochaine session et commence ton parcours vers l'excellence.
-              Les places sont limitées !
+              Inscris-toi maintenant pour la prochaine session et commence ton
+              parcours vers l'excellence. Les places sont limitées !
             </p>
 
             {/* Stats */}
