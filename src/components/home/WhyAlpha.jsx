@@ -108,17 +108,17 @@ export default function WhyAlpha() {
           >
             <SectionTitle
               badge="Pourquoi nous choisir"
-              title="Ce qui nous rend *différents*"
-              subtitle="Depuis 15 ans, Alpha Center accompagne les futurs ingénieurs camerounais vers la réussite avec une méthode qui a fait ses preuves."
+              title="Ce qui nous rend *differents*"
+              subtitle="Depuis 15 ans, Alpha Center accompagne les futurs professionnels camerounais vers la reussite avec une methode qui a fait ses preuves."
               align="left"
             />
 
             {/* Stats rapides */}
             <div className="mt-10 grid grid-cols-3 gap-6">
               {[
-                { value: '15+', label: 'Années' },
-                { value: '95%', label: 'Réussite' },
-                { value: '500+', label: 'Admis' },
+                { value: '15+', label: 'Annees' },
+                { value: '85%', label: 'Reussite' },
+                { value: '700+', label: 'Admis' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

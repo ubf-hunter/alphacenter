@@ -1,29 +1,70 @@
 // ============================================
 // HERO 1 : Image de fond full + Overlay gradient
-// Style : Sunrock, Green Power
+// Background et texte rotatifs synchronises
 // ============================================
 
+import RotatingText from '@components/common/RotatingText';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import csao291 from '../../assets/images/misc/csao4.jpg';
+
+// ===== IMPORTS DES IMAGES DE FOND =====
+// Ajouter vos images ici (une par categorie)
+import imgMedecine from '../../assets/images/misc/csao1b6.jpg';
+import imgInfirmieres from '../../assets/images/misc/csao3.jpg';
+import imgIngenieurs from '../../assets/images/misc/csao4.jpg';
+import imgEnseignants from '../../assets/images/misc/csao5.jpg';
+
+// Configuration des slides (texte + image synchronises)
+const heroSlides = [
+  { text: "d'ingenieurs", image: imgIngenieurs },
+  { text: 'de medecine', image: imgMedecine },
+  { text: "d'infirmieres", image: imgInfirmieres }, // Remplacer par imgInfirmieres
+  { text: "d'enseignants", image: imgEnseignants }, // Remplacer par imgEnseignants
+];
+
+// Duree entre chaque slide (ms)
+const SLIDE_DURATION = 3000;
 
 export default function Hero1() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Cycle automatique des slides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
+    }, SLIDE_DURATION);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
-    { number: '500+', label: 'Étudiants admis' },
-    { number: '95%', label: 'Taux de réussite' },
-    { number: '15+', label: "Années d'expérience" },
-    { number: '50+', label: 'Enseignants experts' },
+    { number: '700+', label: 'Etudiants admis' },
+    { number: '85%', label: 'Taux de reussite' },
+    { number: '15+', label: "Annees d'experience" },
+    { number: '6', label: 'Programmes' },
   ];
+
+  // Extraire les textes pour RotatingText
+  const rotatingWords = heroSlides.map((slide) => slide.text);
 
   return (
     <div className="relative min-h-screen flex flex-col pt-24">
-      {/* Background Image */}
+      {/* Background Images avec transition */}
       <div className="absolute inset-0 z-0 mask-alpha mask-b-from-off-white mask-b-from-0% mask-b-to-navy/0">
-        <img
-          src={csao291}
-          alt="Étudiants"
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentIndex}
+            src={heroSlides[currentIndex].image}
+            alt="Etudiants"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+          />
+        </AnimatePresence>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-linear-to-t from-off-white/80 via-off-white/10 to-off-white/80" />
       </div>
@@ -36,26 +77,27 @@ export default function Hero1() {
             <Trophy size={14} className="text-orange" />
           </span>
           <span className="text-sm font-medium text-gray-700">
-            +500 admis depuis 2009
+            +700 admis depuis 2009
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6 max-w-4xl leading-tight">
-          Intègre l'école d'
-          <span
-            className="italic text-orange"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          >
-            ingénieurs
-          </span>{' '}
-          de tes rêves.
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 max-w-4xl leading-tight">
+          Integre l'ecole{' '}
+          <RotatingText
+            texts={rotatingWords}
+            controlledIndex={currentIndex}
+            className="italic text-orange font-cursive font-black"
+            containerClassName="min-w-[280px] sm:min-w-[320px] md:min-w-[380px]"
+          />
+          <br className="hidden sm:block" />
+          de tes reves.
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10">
-          Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles
-          d'ingénieurs au Cameroun et à l'étranger.
+          Preparation intensive aux concours des grandes ecoles : Ingenierie,
+          Medecine, Sciences Infirmieres au Cameroun.
         </p>
 
         {/* CTAs */}

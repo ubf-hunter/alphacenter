@@ -27,7 +27,7 @@ export default function CTAFinal() {
 
             {/* Title */}
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Prêt à rejoindre les futurs ingénieurs ?
+              Pret a realiser ton reve professionnel ?
             </h2>
 
             {/* Subtitle */}
@@ -49,8 +49,8 @@ export default function CTAFinal() {
               </div>
               <div className="hidden sm:block w-px h-16 bg-gray-200" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange">95%</div>
-                <div className="text-sm text-gray-500">Taux de réussite</div>
+                <div className="text-3xl font-bold text-orange">85%</div>
+                <div className="text-sm text-gray-500">Taux de reussite</div>
               </div>
             </div>
 
