@@ -7,7 +7,6 @@ import {
   Atom,
   FlaskConical,
   Monitor,
-  Ruler,
   Cog,
   PenTool,
   Brain,
@@ -21,23 +20,56 @@ import {
   FileText,
   Video,
   MessageSquare,
+  Stethoscope,
+  HeartPulse,
+  Syringe,
+  Microscope,
+  Pill,
+  Activity,
 } from 'lucide-react';
+
+// Catégories de programmes
+export const programCategories = [
+  {
+    id: 'engineering',
+    name: 'Ecoles d\'Ingenieurs',
+    description: 'Preparation aux grandes ecoles polytechniques et travaux publics',
+    icon: Building2,
+    color: 'orange',
+  },
+  {
+    id: 'health',
+    name: 'Sante & Medecine',
+    description: 'Preparation aux concours de medecine et sciences infirmieres',
+    icon: Stethoscope,
+    color: 'emerald',
+  },
+  {
+    id: 'education',
+    name: 'Education & Enseignement',
+    description: 'Preparation aux concours de l\'Ecole Normale Superieure',
+    icon: GraduationCap,
+    color: 'navy',
+  },
+];
 
 // Programmes principaux
 export const programmes = [
+  // ============== ÉCOLES D'INGÉNIEURS ==============
   {
     id: 'ensp',
+    category: 'engineering',
     name: 'Programme ENSP',
-    school: 'École Nationale Supérieure Polytechnique',
+    school: 'Ecole Nationale Superieure Polytechnique',
     shortName: 'ENSP',
-    tagline: 'Deviens ingénieur polytechnicien',
+    tagline: 'Deviens ingenieur polytechnicien',
     description:
-      "Préparation intensive aux concours d'entrée à l'ENSP, la plus prestigieuse école d'ingénieurs du Cameroun. Formation complète couvrant toutes les filières : Génie Civil, Informatique, Électrique et Mécanique.",
+      "Preparation intensive aux concours d'entree a l'ENSP, la plus prestigieuse ecole d'ingenieurs du Cameroun. Formation complete couvrant toutes les filieres : Genie Civil, Informatique, Electrique et Mecanique.",
     duration: '6 mois intensifs',
-    sessions: ['Janvier', 'Août'],
+    sessions: ['Janvier', 'Aout'],
     nextSession: 'Janvier 2025',
     placesAvailable: 25,
-    format: 'Présentiel + modules en ligne',
+    format: 'Presentiel + modules en ligne',
     price: 150000,
     priceLabel: '150 000 FCFA/mois',
     successRate: 92,
@@ -46,27 +78,27 @@ export const programmes = [
     color: 'orange',
     gradient: 'from-orange to-orange-600',
     subjects: [
-      { name: 'Mathématiques avancées', icon: Calculator, hours: 120 },
+      { name: 'Mathematiques avancees', icon: Calculator, hours: 120 },
       { name: 'Physique', icon: Atom, hours: 100 },
       { name: 'Chimie', icon: FlaskConical, hours: 60 },
       { name: 'Informatique', icon: Monitor, hours: 40 },
     ],
     features: [
-      'Cours structurés par des experts ENSP',
+      'Cours structures par des experts ENSP',
       'Examens blancs hebdomadaires',
-      'Corrections détaillées personnalisées',
-      'Accès à la plateforme e-learning',
+      'Corrections detaillees personnalisees',
+      'Acces a la plateforme e-learning',
       'Support WhatsApp 7j/7',
       'Simulateurs de concours',
     ],
     testimonial: {
       quote:
-        "Grâce à Alpha Center, j'ai intégré l'ENSP du premier coup. La méthode est vraiment efficace !",
+        "Grace a Alpha Center, j'ai integre l'ENSP du premier coup. La methode est vraiment efficace !",
       author: 'Jean-Marc T.',
       year: 'Promo 2024',
     },
     requirements: [
-      'Baccalauréat C, D, E, F ou équivalent',
+      'Baccalaureat C, D, E, F ou equivalent',
       'Niveau minimum de 12/20 en Maths et Physique',
       'Motivation et engagement',
     ],
@@ -75,17 +107,18 @@ export const programmes = [
   },
   {
     id: 'enstp',
+    category: 'engineering',
     name: 'Programme ENSTP',
-    school: 'École Nationale Supérieure des Travaux Publics',
+    school: 'Ecole Nationale Superieure des Travaux Publics',
     shortName: 'ENSTP',
-    tagline: 'Bâtis les infrastructures de demain',
+    tagline: 'Batis les infrastructures de demain',
     description:
-      "Formation spécialisée pour réussir le concours de l'ENSTP. Focus sur le génie civil, les travaux publics et les infrastructures. Idéal pour les passionnés de construction.",
+      "Formation specialisee pour reussir le concours de l'ENSTP. Focus sur le genie civil, les travaux publics et les infrastructures. Ideal pour les passionnes de construction.",
     duration: '5 mois intensifs',
-    sessions: ['Février', 'Septembre'],
-    nextSession: 'Février 2025',
+    sessions: ['Fevrier', 'Septembre'],
+    nextSession: 'Fevrier 2025',
     placesAvailable: 30,
-    format: 'Présentiel + travaux dirigés',
+    format: 'Presentiel + travaux diriges',
     price: 140000,
     priceLabel: '140 000 FCFA/mois',
     successRate: 88,
@@ -94,46 +127,149 @@ export const programmes = [
     color: 'navy',
     gradient: 'from-navy to-blue-800',
     subjects: [
-      { name: 'Mathématiques', icon: Calculator, hours: 100 },
+      { name: 'Mathematiques', icon: Calculator, hours: 100 },
       { name: 'Physique', icon: Atom, hours: 80 },
       { name: 'Dessin technique', icon: PenTool, hours: 60 },
-      { name: 'Mécanique', icon: Cog, hours: 50 },
+      { name: 'Mecanique', icon: Cog, hours: 50 },
     ],
     features: [
-      'Cours axés sur les spécificités ENSTP',
+      'Cours axes sur les specificites ENSTP',
       'Travaux pratiques en dessin technique',
       'Visites de chantiers (optionnel)',
       'Examens blancs bi-mensuels',
-      'Correction personnalisée',
-      'Groupe WhatsApp dédié',
+      'Correction personnalisee',
+      'Groupe WhatsApp dedie',
     ],
     testimonial: {
       quote:
-        "La préparation m'a donné toutes les clés pour réussir. Les profs connaissent parfaitement le concours.",
+        "La preparation m'a donne toutes les cles pour reussir. Les profs connaissent parfaitement le concours.",
       author: 'Sylvie M.',
       year: 'Promo 2023',
     },
     requirements: [
-      'Baccalauréat C, D, E, F ou équivalent',
-      'Aptitude en dessin technique appréciée',
+      'Baccalaureat C, D, E, F ou equivalent',
+      'Aptitude en dessin technique appreciee',
       'Passion pour la construction',
     ],
-    badge: 'Recommandé',
-    badgeColor: 'bg-navy text-white',
+    badge: null,
+    badgeColor: '',
+  },
+
+  // ============== SANTÉ & MÉDECINE ==============
+  {
+    id: 'medecine',
+    category: 'health',
+    name: 'Programme Medecine',
+    school: 'FMSB / FMS Douala / Facultes de Medecine',
+    shortName: 'FMSB',
+    tagline: 'Deviens medecin, sauve des vies',
+    description:
+      "Preparation complete et intensive aux concours d'entree dans les facultes de medecine du Cameroun (FMSB Yaounde, FMS Douala, etc.). Programme couvrant toutes les matieres scientifiques avec un focus sur la biologie et la chimie.",
+    duration: '8 mois intensifs',
+    sessions: ['Septembre', 'Janvier'],
+    nextSession: 'Janvier 2025',
+    placesAvailable: 40,
+    format: 'Presentiel + laboratoires + e-learning',
+    price: 175000,
+    priceLabel: '175 000 FCFA/mois',
+    successRate: 78,
+    studentsPerClass: 30,
+    icon: Stethoscope,
+    color: 'emerald',
+    gradient: 'from-emerald-500 to-emerald-700',
+    subjects: [
+      { name: 'Biologie cellulaire', icon: Microscope, hours: 120 },
+      { name: 'Chimie organique', icon: FlaskConical, hours: 100 },
+      { name: 'Physique medicale', icon: Atom, hours: 80 },
+      { name: 'Mathematiques', icon: Calculator, hours: 60 },
+    ],
+    features: [
+      'Cours dispenses par des medecins et enseignants universitaires',
+      'Travaux pratiques en laboratoire',
+      'QCM intensifs type concours',
+      'Preparation aux entretiens de motivation',
+      'Acces aux annales des 10 dernieres annees',
+      'Coaching mental et gestion du stress',
+    ],
+    testimonial: {
+      quote:
+        "Alpha Center m'a permis d'integrer la FMSB. Leur methode de QCM intensifs est exactement ce qu'il faut pour ce concours.",
+      author: 'Christelle A.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat C ou D obligatoire',
+      'Excellente moyenne en SVT et Chimie',
+      'Forte motivation pour la medecine',
+    ],
+    badge: 'Nouveau',
+    badgeColor: 'bg-emerald-500 text-white',
   },
   {
+    id: 'infirmier',
+    category: 'health',
+    name: 'Programme Sciences Infirmieres',
+    school: 'CESSI / Ecoles d\'Infirmiers d\'Etat',
+    shortName: 'IDE',
+    tagline: 'Soigne avec passion et competence',
+    description:
+      "Preparation aux concours d'entree dans les ecoles d'infirmiers d'Etat et le CESSI. Formation complete incluant les sciences biologiques, les soins de base et la culture generale medicale.",
+    duration: '5 mois intensifs',
+    sessions: ['Octobre', 'Mars'],
+    nextSession: 'Mars 2025',
+    placesAvailable: 35,
+    format: 'Presentiel + stages pratiques',
+    price: 120000,
+    priceLabel: '120 000 FCFA/mois',
+    successRate: 85,
+    studentsPerClass: 25,
+    icon: HeartPulse,
+    color: 'rose',
+    gradient: 'from-rose-500 to-rose-600',
+    subjects: [
+      { name: 'Biologie humaine', icon: Microscope, hours: 80 },
+      { name: 'Anatomie-Physiologie', icon: HeartPulse, hours: 70 },
+      { name: 'Hygiene et soins', icon: Syringe, hours: 50 },
+      { name: 'Culture generale medicale', icon: BookOpen, hours: 40 },
+    ],
+    features: [
+      'Cours theoriques et pratiques',
+      'Simulations de soins infirmiers',
+      'Preparation aux QCM et redactions',
+      'Visites en milieu hospitalier',
+      'Coaching pour les entretiens',
+      'Supports de cours complets',
+    ],
+    testimonial: {
+      quote:
+        "J'ai reussi le concours CESSI grace a cette preparation. Les stages pratiques m'ont vraiment aide.",
+      author: 'Marie-Claire N.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat A, C, D ou equivalent',
+      'Age entre 17 et 28 ans',
+      'Aptitude physique et mentale',
+    ],
+    badge: 'Demande',
+    badgeColor: 'bg-rose-500 text-white',
+  },
+
+  // ============== ÉDUCATION ==============
+  {
     id: 'ens',
+    category: 'education',
     name: 'Programme ENS',
-    school: 'École Normale Supérieure',
+    school: 'Ecole Normale Superieure',
     shortName: 'ENS',
     tagline: 'Forme les formateurs de demain',
     description:
-      "Préparation complète aux concours de l'ENS, toutes spécialités confondues. Idéal pour ceux qui souhaitent devenir enseignants ou poursuivre en recherche académique.",
+      "Preparation complete aux concours de l'ENS, toutes specialites confondues. Ideal pour ceux qui souhaitent devenir enseignants ou poursuivre en recherche academique.",
     duration: '4 mois intensifs',
     sessions: ['Mars', 'Octobre'],
     nextSession: 'Mars 2025',
     placesAvailable: 35,
-    format: 'Présentiel + coaching personnalisé',
+    format: 'Presentiel + coaching personnalise',
     price: 130000,
     priceLabel: '130 000 FCFA/mois',
     successRate: 85,
@@ -142,43 +278,46 @@ export const programmes = [
     color: 'apricot',
     gradient: 'from-apricot to-orange-300',
     subjects: [
-      { name: 'Spécialité au choix', icon: BookOpen, hours: 100 },
-      { name: 'Culture générale', icon: Brain, hours: 40 },
-      { name: 'Méthodologie', icon: Target, hours: 30 },
-      { name: 'Expression écrite', icon: FileText, hours: 30 },
+      { name: 'Specialite au choix', icon: BookOpen, hours: 100 },
+      { name: 'Culture generale', icon: Brain, hours: 40 },
+      { name: 'Methodologie', icon: Target, hours: 30 },
+      { name: 'Expression ecrite', icon: FileText, hours: 30 },
     ],
     features: [
-      'Cours adaptés à chaque spécialité',
+      'Cours adaptes a chaque specialite',
       'Coaching individuel inclus',
-      "Préparation à l'oral",
-      'Examens blancs réguliers',
-      'Bibliothèque de ressources',
-      'Suivi personnalisé',
+      "Preparation a l'oral",
+      'Examens blancs reguliers',
+      'Bibliotheque de ressources',
+      'Suivi personnalise',
     ],
     testimonial: {
       quote:
-        "Le coaching personnalisé fait vraiment la différence. J'ai progressé de manière incroyable.",
+        "Le coaching personnalise fait vraiment la difference. J'ai progresse de maniere incroyable.",
       author: 'Paul K.',
       year: 'Promo 2024',
     },
     requirements: [
-      'Baccalauréat toutes séries',
-      'Bon niveau dans la spécialité choisie',
-      "Intérêt pour l'enseignement",
+      'Baccalaureat toutes series',
+      'Bon niveau dans la specialite choisie',
+      "Interet pour l'enseignement",
     ],
     badge: null,
     badgeColor: '',
   },
+
+  // ============== PROGRAMME PRÉPARATOIRE ==============
   {
     id: 'preparatoire',
-    name: 'Programme Préparatoire',
-    school: 'Pour élèves de Terminale',
-    shortName: 'PRÉPA',
+    category: 'all',
+    name: 'Programme Preparatoire',
+    school: 'Pour eleves de Terminale',
+    shortName: 'PREPA',
     tagline: "Prends de l'avance sur les concours",
     description:
-      "Programme de préparation anticipée pour les élèves en classe de Terminale. Permet de renforcer les bases et d'acquérir la méthodologie des concours avant même le Baccalauréat.",
+      "Programme de preparation anticipee pour les eleves en classe de Terminale. Permet de renforcer les bases et d'acquerir la methodologie des concours (Ingenieurs, Medecine, Infirmiers) avant meme le Baccalaureat.",
     duration: '3 mois',
-    sessions: ["Continue toute l'année"],
+    sessions: ["Continue toute l'annee"],
     nextSession: 'Inscription ouverte',
     placesAvailable: 50,
     format: 'Weekends + vacances scolaires',
@@ -190,31 +329,32 @@ export const programmes = [
     color: 'gray',
     gradient: 'from-gray-600 to-gray-700',
     subjects: [
-      { name: 'Mathématiques renforcées', icon: Calculator, hours: 60 },
+      { name: 'Mathematiques renforcees', icon: Calculator, hours: 60 },
       { name: 'Physique-Chimie', icon: Atom, hours: 50 },
-      { name: 'Méthodologie', icon: Target, hours: 20 },
+      { name: 'Biologie (option sante)', icon: Microscope, hours: 40 },
+      { name: 'Methodologie', icon: Target, hours: 20 },
     ],
     features: [
       'Compatible avec les cours de Terminale',
       'Renforcement des fondamentaux',
-      'Introduction à la méthodologie concours',
-      'Évaluations régulières',
-      'Orientation personnalisée',
-      'Préparation mentale',
+      'Introduction a la methodologie concours',
+      'Evaluations regulieres',
+      'Orientation personnalisee (Ingenieur ou Sante)',
+      'Preparation mentale',
     ],
     testimonial: {
       quote:
-        "J'ai commencé en Terminale et j'étais prêt dès la fin du Bac. Ça m'a fait gagner une année !",
+        "J'ai commence en Terminale et j'etais pret des la fin du Bac. Ca m'a fait gagner une annee !",
       author: 'Esther N.',
       year: 'Promo 2024',
     },
     requirements: [
-      'Être en classe de Terminale C, D, E ou F',
-      "Viser une grande école d'ingénieurs",
-      'Disponibilité les weekends',
+      'Etre en classe de Terminale C, D, E ou F',
+      'Viser une grande ecole (Ingenieur, Medecine, Infirmier)',
+      'Disponibilite les weekends',
     ],
-    badge: 'Nouveau',
-    badgeColor: 'bg-green-500 text-white',
+    badge: 'Anticipe',
+    badgeColor: 'bg-gray-600 text-white',
   },
 ];
 
@@ -224,23 +364,23 @@ export const methodology = [
     step: 1,
     title: 'Diagnostic initial',
     description:
-      "Évaluation complète de ton niveau pour identifier tes forces et axes d'amélioration.",
+      "Evaluation complete de ton niveau pour identifier tes forces et axes d'amelioration.",
     icon: Target,
     color: 'orange',
   },
   {
     step: 2,
-    title: 'Plan personnalisé',
+    title: 'Plan personnalise',
     description:
-      "Programme d'études adapté à ton profil et tes objectifs spécifiques.",
+      "Programme d'etudes adapte a ton profil et tes objectifs specifiques.",
     icon: FileText,
     color: 'navy',
   },
   {
     step: 3,
-    title: 'Cours structurés',
+    title: 'Cours structures',
     description:
-      'Enseignement progressif par des experts ayant réussi les concours.',
+      'Enseignement progressif par des experts ayant reussi les concours.',
     icon: BookOpen,
     color: 'orange',
   },
@@ -248,15 +388,15 @@ export const methodology = [
     step: 4,
     title: 'Examens blancs',
     description:
-      'Tests réguliers en conditions réelles pour mesurer ta progression.',
+      'Tests reguliers en conditions reelles pour mesurer ta progression.',
     icon: FileText,
     color: 'navy',
   },
   {
     step: 5,
-    title: 'Corrections détaillées',
+    title: 'Corrections detaillees',
     description:
-      'Analyse approfondie de chaque copie avec conseils personnalisés.',
+      'Analyse approfondie de chaque copie avec conseils personnalises.',
     icon: CheckCircle,
     color: 'orange',
   },
@@ -274,15 +414,15 @@ export const methodology = [
 export const advantages = [
   {
     title: 'Petits groupes',
-    description: 'Maximum 25 étudiants par classe pour un suivi optimal',
+    description: 'Maximum 30 etudiants par classe pour un suivi optimal',
     icon: Users,
-    value: '25 max',
+    value: '30 max',
   },
   {
     title: 'Taux de reussite',
     description: "Moyenne sur l'ensemble de nos programmes",
     icon: Award,
-    value: '90%+',
+    value: '85%+',
   },
   {
     title: 'Heures de cours',
@@ -292,7 +432,7 @@ export const advantages = [
   },
   {
     title: 'Examens blancs',
-    description: 'Tests en conditions réelles par mois',
+    description: 'Tests en conditions reelles par mois',
     icon: FileText,
     value: '4/mois',
   },
@@ -302,6 +442,7 @@ export const advantages = [
 export const calendar = [
   {
     programme: 'ENSP',
+    category: 'engineering',
     sessions: [
       {
         name: 'Session Janvier 2025',
@@ -312,9 +453,9 @@ export const calendar = [
         placesLeft: 12,
       },
       {
-        name: 'Session Août 2025',
-        startDate: '4 Août 2025',
-        endDate: 'Décembre 2025',
+        name: 'Session Aout 2025',
+        startDate: '4 Aout 2025',
+        endDate: 'Decembre 2025',
         status: 'upcoming',
         places: 25,
         placesLeft: 25,
@@ -323,10 +464,11 @@ export const calendar = [
   },
   {
     programme: 'ENSTP',
+    category: 'engineering',
     sessions: [
       {
-        name: 'Session Février 2025',
-        startDate: '3 Février 2025',
+        name: 'Session Fevrier 2025',
+        startDate: '3 Fevrier 2025',
         endDate: 'Juin 2025',
         status: 'open',
         places: 30,
@@ -343,7 +485,52 @@ export const calendar = [
     ],
   },
   {
+    programme: 'Medecine (FMSB)',
+    category: 'health',
+    sessions: [
+      {
+        name: 'Session Janvier 2025',
+        startDate: '6 Janvier 2025',
+        endDate: 'Aout 2025',
+        status: 'open',
+        places: 40,
+        placesLeft: 22,
+      },
+      {
+        name: 'Session Septembre 2025',
+        startDate: '8 Septembre 2025',
+        endDate: 'Avril 2026',
+        status: 'upcoming',
+        places: 40,
+        placesLeft: 40,
+      },
+    ],
+  },
+  {
+    programme: 'Sciences Infirmieres',
+    category: 'health',
+    sessions: [
+      {
+        name: 'Session Mars 2025',
+        startDate: '3 Mars 2025',
+        endDate: 'Juillet 2025',
+        status: 'open',
+        places: 35,
+        placesLeft: 20,
+      },
+      {
+        name: 'Session Octobre 2025',
+        startDate: '6 Octobre 2025',
+        endDate: 'Fevrier 2026',
+        status: 'upcoming',
+        places: 35,
+        placesLeft: 35,
+      },
+    ],
+  },
+  {
     programme: 'ENS',
+    category: 'education',
     sessions: [
       {
         name: 'Session Mars 2025',
@@ -364,7 +551,8 @@ export const calendar = [
     ],
   },
   {
-    programme: 'Préparatoire',
+    programme: 'Preparatoire',
+    category: 'all',
     sessions: [
       {
         name: 'Session Continue',
@@ -380,28 +568,28 @@ export const calendar = [
 
 // Critères de comparaison
 export const comparisonCriteria = [
-  { key: 'duration', label: 'Durée' },
+  { key: 'duration', label: 'Duree' },
   { key: 'price', label: 'Prix mensuel' },
-  { key: 'successRate', label: 'Taux de réussite' },
-  { key: 'studentsPerClass', label: 'Étudiants/classe' },
+  { key: 'successRate', label: 'Taux de reussite' },
+  { key: 'studentsPerClass', label: 'Etudiants/classe' },
   { key: 'format', label: 'Format' },
-  { key: 'subjects', label: 'Matières principales' },
+  { key: 'subjects', label: 'Matieres principales' },
 ];
 
 // Ressources incluses
 export const includedResources = [
   {
-    title: 'Cours en présentiel',
+    title: 'Cours en presentiel',
     description: 'Enseignement direct avec nos experts',
     icon: Users,
   },
   {
     title: 'Plateforme e-learning',
-    description: 'Accès 24/7 aux cours et exercices',
+    description: 'Acces 24/7 aux cours et exercices',
     icon: Monitor,
   },
   {
-    title: 'Vidéos de révision',
+    title: 'Videos de revision',
     description: 'Replay des cours et tutoriels',
     icon: Video,
   },
@@ -412,12 +600,20 @@ export const includedResources = [
   },
   {
     title: 'Examens blancs',
-    description: 'Tests corrigés en conditions réelles',
+    description: 'Tests corriges en conditions reelles',
     icon: FileText,
   },
   {
-    title: 'Fiches de révision',
-    description: 'Synthèses et mémos à télécharger',
+    title: 'Fiches de revision',
+    description: 'Syntheses et memos a telecharger',
     icon: BookOpen,
   },
 ];
+
+// Stats globales pour la page d'accueil
+export const globalStats = {
+  students: '700+',
+  successRate: '85%',
+  programs: 6,
+  experience: '15+',
+};
