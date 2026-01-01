@@ -82,7 +82,10 @@ export default function Hero1() {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 max-w-4xl leading-tight">
+        <h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 max-w-4xl leading-tight"
+     
+        >
           Integre l'ecole{' '}
           <RotatingText
             texts={rotatingWords}

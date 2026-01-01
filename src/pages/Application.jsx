@@ -3,6 +3,7 @@
 // Presentation de l'app mobile Alpha
 // ============================================
 
+import SEO from '@components/common/SEO';
 import {
   AppHero,
   WhyAlphaApp,
@@ -17,6 +18,12 @@ import {
 export default function Application() {
   return (
     <main>
+      <SEO
+        title="Application Mobile Alpha"
+        description="Telecharge l'app Alpha pour reviser partout, meme hors-ligne. 1000+ exercices corriges, planning IA, communaute d'entraide. Disponible sur iOS et Android."
+        url="/application"
+      />
+
       {/* Hero avec mockups et CTAs download */}
       <AppHero />
 

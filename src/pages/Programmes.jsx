@@ -7,6 +7,7 @@ import {
   BookOpen,
   Star,
 } from 'lucide-react';
+import SEO from '@components/common/SEO';
 import Container from '@components/common/Container';
 import Button from '@components/common/Button';
 import {
@@ -225,6 +226,11 @@ function ResourcesSection() {
 export default function Programmes() {
   return (
     <>
+      <SEO
+        title="Nos Programmes"
+        description="Decouvre nos programmes de preparation aux concours: Polytechnique ENSPY, ENSTP, Medecine FMSB, ENS. Cours intensifs, methodologie eprouvee et suivi personnalise."
+        url="/programmes"
+      />
       <HeroSection />
       <ProgramsSection />
       <ResourcesSection />

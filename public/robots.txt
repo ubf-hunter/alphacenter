@@ -1,0 +1,25 @@
+# Robots.txt for Alpha Center
+# https://alphacenter.cm
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alphacenter.cm/sitemap.xml
+
+# Bloquer les ressources de build
+Disallow: /assets/*.js.map
+Disallow: /assets/*.css.map
+
+# Autoriser les crawlers principaux
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
