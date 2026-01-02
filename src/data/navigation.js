@@ -37,6 +37,9 @@ export const mainNavigation = [
           { label: 'ENSPY (Polytechnique)', href: '/orientation/ecoles/enspy' },
           { label: 'ENSTP', href: '/orientation/ecoles/enstp' },
           { label: 'SUP\'PTIC', href: '/orientation/ecoles/supptic' },
+          { label: 'ESSEC Douala', href: '/orientation/ecoles/essec' },
+          { label: 'UCCAC', href: '/orientation/ecoles/uccac' },
+          { label: 'IUC', href: '/orientation/ecoles/iuc' },
         ],
         etranger: [
           { label: 'Polytechnique Paris', href: '/orientation/ecoles/polytechnique-paris' },

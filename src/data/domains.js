@@ -3,7 +3,7 @@
 // Categories principales pour l'orientation
 // ============================================
 
-import { Cog, Stethoscope, Heart } from 'lucide-react';
+import { Cog, Stethoscope, Heart, Briefcase } from 'lucide-react';
 
 export const domains = [
   {
@@ -18,8 +18,8 @@ export const domains = [
     description: 'Concois, innove et construis le monde de demain. Les ingenieurs sont les architectes du progres technologique.',
     longDescription: 'Le domaine de l\'ingenierie offre des carrieres passionnantes dans la conception, la construction et l\'innovation. Que tu sois attire par les ponts et batiments, les systemes informatiques ou les reseaux de communication, ce domaine te permettra de transformer des idees en realite.',
     stats: {
-      careers: 3,
-      schools: 4,
+      careers: 8,
+      schools: 9,
       avgSalary: '400-800k FCFA/mois',
     },
     highlights: [
@@ -73,6 +73,29 @@ export const domains = [
       'Relation humaine privilegiee',
       'Possibilites d\'evolution',
       'Travail en equipe',
+    ],
+  },
+  {
+    id: 'business',
+    name: 'Economie & Gestion',
+    shortName: 'Business',
+    icon: Briefcase,
+    color: 'blue',
+    gradient: 'from-blue-500 via-blue-600 to-indigo-600',
+    bgColor: 'bg-blue-500/10',
+    textColor: 'text-blue-600',
+    description: 'Gere, entreprends et dirige. Le business c\'est l\'art de creer de la valeur et de piloter le succes.',
+    longDescription: 'Le domaine de l\'economie et de la gestion prepare aux metiers de la finance, du management, du marketing et de l\'entrepreneuriat. Tu apprendras a prendre des decisions strategiques, gerer des equipes et developper des projets d\'envergure.',
+    stats: {
+      careers: 5,
+      schools: 5,
+      avgSalary: '300-1000k FCFA/mois',
+    },
+    highlights: [
+      'Carrieres diversifiees',
+      'Opportunites d\'entrepreneuriat',
+      'Mobilite internationale',
+      'Evolution rapide',
     ],
   },
 ];
