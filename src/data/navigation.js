@@ -20,33 +20,33 @@ export const mainNavigation = [
     type: 'megamenu',
     megamenu: {
       metiers: {
-        title: 'Explore les métiers',
+        title: 'Explore les metiers',
         titleIcon: 'Target',
         items: [
-          { label: 'Génie Civil', href: '/orientation/metiers/genie-civil', icon: 'Building2' },
-          { label: 'Génie Informatique', href: '/orientation/metiers/genie-informatique', icon: 'Monitor' },
-          { label: 'Génie Électrique', href: '/orientation/metiers/genie-electrique', icon: 'Zap' },
-          { label: 'Génie Mécanique', href: '/orientation/metiers/genie-mecanique', icon: 'Wrench' },
+          { label: 'Ingenieur Genie Civil', href: '/orientation/metiers/ingenieur-genie-civil', icon: 'Building2' },
+          { label: 'Ingenieur Informatique', href: '/orientation/metiers/ingenieur-informatique', icon: 'Monitor' },
+          { label: 'Ingenieur Telecom', href: '/orientation/metiers/ingenieur-telecom', icon: 'Zap' },
+          { label: 'Medecin', href: '/orientation/metiers/medecin', icon: 'Users' },
         ],
-        viewAll: { label: 'Voir tous les métiers', href: '/orientation/metiers' }
+        viewAll: { label: 'Voir tous les metiers', href: '/orientation/metiers' }
       },
       ecoles: {
-        title: 'Découvre les écoles',
+        title: 'Decouvre les ecoles',
         titleIcon: 'GraduationCap',
         cameroun: [
-          { label: 'ENSP Yaoundé', href: '/orientation/ecoles/ensp-yaounde' },
+          { label: 'ENSPY (Polytechnique)', href: '/orientation/ecoles/enspy' },
           { label: 'ENSTP', href: '/orientation/ecoles/enstp' },
-          { label: 'ENS Yaoundé', href: '/orientation/ecoles/ens-yaounde' },
+          { label: 'SUP\'PTIC', href: '/orientation/ecoles/supptic' },
         ],
         etranger: [
           { label: 'Polytechnique Paris', href: '/orientation/ecoles/polytechnique-paris' },
           { label: 'EPFL Suisse', href: '/orientation/ecoles/epfl' },
         ],
-        viewAll: { label: 'Voir toutes les écoles', href: '/orientation/ecoles' }
+        viewAll: { label: 'Voir toutes les ecoles', href: '/orientation/ecoles' }
       },
       cta: {
         icon: 'Lightbulb',
-        text: "Tu ne sais pas quel ingénieur devenir ?",
+        text: "Tu ne sais pas quel metier choisir ?",
         subtext: "Explore notre guide d'orientation complet",
         href: '/orientation'
       }
