@@ -7,8 +7,8 @@ import Application from '@pages/Application';
 import NotFound from '@pages/NotFound';
 import { initGA, logPageView } from '@utils/analytics';
 
-// Composant pour tracker les changements de page
-function AnalyticsTracker() {
+// Composant pour tracker les changements de page et scroll to top
+function RouteHandler() {
   const location = useLocation();
 
   useEffect(() => {
@@ -16,8 +16,11 @@ function AnalyticsTracker() {
   }, []);
 
   useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Track page view
     logPageView(location.pathname);
-  }, [location]);
+  }, [location.pathname]);
 
   return null;
 }
@@ -25,7 +28,7 @@ function AnalyticsTracker() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AnalyticsTracker />
+      <RouteHandler />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
