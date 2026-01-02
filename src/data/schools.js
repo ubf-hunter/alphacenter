@@ -3,20 +3,12 @@
 // Donnees completes des etablissements
 // ============================================
 
-import {
-  MapPin,
-  Globe,
-  GraduationCap,
-  Calendar,
-  Users,
-  Trophy,
-  BookOpen,
-  Building2,
-  Cpu,
-  Radio,
-  Stethoscope,
-  Heart,
-} from 'lucide-react';
+import { Building2, Cpu, Heart, Radio, Stethoscope } from 'lucide-react';
+
+// Import des logos disponibles
+import logoENSPY from '@assets/logoEcoles/enspy.webp';
+import logoENSTP from '@assets/logoEcoles/enstp.png';
+import logoSUPPTIC from '@assets/logoEcoles/supptic.png';
 
 // ===== ECOLES AU CAMEROUN =====
 export const cameroonSchools = [
@@ -32,12 +24,18 @@ export const cameroonSchools = [
     icon: Building2,
     color: 'orange',
     gradient: 'from-[#FF6B35] via-[#FF8C42] to-[#FFB347]',
-    logo: '/assets/logos/enspy.webp',
-    tagline: 'L\'excellence en ingenierie au Cameroun',
-    description: 'L\'ENSPY est la premiere ecole d\'ingenieurs du Cameroun. Elle forme des ingenieurs de haut niveau dans plusieurs specialites depuis 1971.',
-    longDescription: 'Fondee en 1971, l\'Ecole Nationale Superieure Polytechnique de Yaounde (ENSPY) est l\'institution de reference pour la formation d\'ingenieurs au Cameroun. Rattachee a l\'Universite de Yaounde I, elle propose des formations de 5 ans dans diverses specialites d\'ingenierie. Ses diplomes sont reconnus internationalement et ses anciens eleves occupent des postes cles dans l\'economie camerounaise et africaine.',
+    logo: logoENSPY,
+    tagline: "L'excellence en ingenierie au Cameroun",
+    description:
+      "L'ENSPY est la premiere ecole d'ingenieurs du Cameroun. Elle forme des ingenieurs de haut niveau dans plusieurs specialites depuis 1971.",
+    longDescription:
+      "Fondee en 1971, l'Ecole Nationale Superieure Polytechnique de Yaounde (ENSPY) est l'institution de reference pour la formation d'ingenieurs au Cameroun. Rattachee a l'Universite de Yaounde I, elle propose des formations de 5 ans dans diverses specialites d'ingenierie. Ses diplomes sont reconnus internationalement et ses anciens eleves occupent des postes cles dans l'economie camerounaise et africaine.",
     domains: ['engineering'],
-    careers: ['ingenieur-genie-civil', 'ingenieur-informatique', 'ingenieur-telecom'],
+    careers: [
+      'ingenieur-genie-civil',
+      'ingenieur-informatique',
+      'ingenieur-telecom',
+    ],
     stats: {
       founded: 1971,
       students: 1500,
@@ -49,7 +47,7 @@ export const cameroonSchools = [
       requirements: [
         'Baccalaureat scientifique (C, D, E, TI)',
         'Age limite: 23 ans au 1er janvier',
-        'Concours d\'entree tres selectif',
+        "Concours d'entree tres selectif",
       ],
       process: 'Concours national sur dossier et epreuves ecrites',
       dates: {
@@ -102,10 +100,12 @@ export const cameroonSchools = [
     icon: Building2,
     color: 'navy',
     gradient: 'from-[#001A51] via-[#0D47A1] to-[#1565C0]',
-    logo: '/assets/logos/enstp.png',
+    logo: logoENSTP,
     tagline: 'Former les batisseurs du Cameroun',
-    description: 'L\'ENSTP forme des ingenieurs et techniciens superieurs specialises dans les travaux publics et le batiment.',
-    longDescription: 'L\'Ecole Nationale Superieure des Travaux Publics est un etablissement de reference pour la formation aux metiers du BTP au Cameroun. Elle forme des ingenieurs de conception et des techniciens superieurs capables de mener a bien les grands projets d\'infrastructure du pays.',
+    description:
+      "L'ENSTP forme des ingenieurs et techniciens superieurs specialises dans les travaux publics et le batiment.",
+    longDescription:
+      "L'Ecole Nationale Superieure des Travaux Publics est un etablissement de reference pour la formation aux metiers du BTP au Cameroun. Elle forme des ingenieurs de conception et des techniciens superieurs capables de mener a bien les grands projets d'infrastructure du pays.",
     domains: ['engineering'],
     careers: ['ingenieur-genie-civil'],
     stats: {
@@ -119,7 +119,7 @@ export const cameroonSchools = [
       requirements: [
         'Baccalaureat scientifique ou technique',
         'Age limite: 25 ans',
-        'Concours d\'entree',
+        "Concours d'entree",
       ],
       process: 'Concours sur epreuves ecrites',
       dates: {
@@ -133,7 +133,7 @@ export const cameroonSchools = [
     programs: [
       { name: 'Genie Civil (Conception)', duration: '5 ans', places: 50 },
       { name: 'Batiment', duration: '3 ans (TS)', places: 40 },
-      { name: 'Routes et Ouvrages d\'Art', duration: '3 ans (TS)', places: 40 },
+      { name: "Routes et Ouvrages d'Art", duration: '3 ans (TS)', places: 40 },
       { name: 'Topographie', duration: '3 ans (TS)', places: 30 },
     ],
     tuition: {
@@ -159,21 +159,23 @@ export const cameroonSchools = [
     },
   },
   {
-    id: 'supptic',
+    id: "sup'ptic",
     slug: 'supptic',
     name: 'Ecole Nationale Superieure des Postes, Telecommunications et TIC',
-    shortName: 'SUP\'PTIC',
-    acronym: 'SUP\'PTIC',
+    shortName: "SUP'PTIC",
+    acronym: "SUP'PTIC",
     type: 'local',
     country: 'Cameroun',
     city: 'Yaounde',
     icon: Radio,
     color: 'purple',
     gradient: 'from-purple-500 via-purple-600 to-violet-600',
-    logo: '/assets/logos/supptic.png',
-    tagline: 'L\'excellence numerique',
-    description: 'SUP\'PTIC forme les ingenieurs et techniciens qui construisent l\'infrastructure numerique du Cameroun.',
-    longDescription: 'L\'Ecole Nationale Superieure des Postes, des Telecommunications et des Technologies de l\'Information et de la Communication est l\'institution de reference pour les formations dans le domaine du numerique au Cameroun. Elle forme des ingenieurs et techniciens de haut niveau pour repondre aux besoins de la transformation digitale.',
+    logo: logoSUPPTIC,
+    tagline: "L'excellence numerique",
+    description:
+      "SUP'PTIC forme les ingenieurs et techniciens qui construisent l'infrastructure numerique du Cameroun.",
+    longDescription:
+      "L'Ecole Nationale Superieure des Postes, des Telecommunications et des Technologies de l'Information et de la Communication est l'institution de reference pour les formations dans le domaine du numerique au Cameroun. Elle forme des ingenieurs et techniciens de haut niveau pour repondre aux besoins de la transformation digitale.",
     domains: ['engineering'],
     careers: ['ingenieur-informatique', 'ingenieur-telecom'],
     stats: {
@@ -238,10 +240,12 @@ export const cameroonSchools = [
     icon: Stethoscope,
     color: 'emerald',
     gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
-    logo: '/assets/logos/fmsb.png',
+    logo: null,
     tagline: 'Former les medecins de demain',
-    description: 'La FMSB est la premiere faculte de medecine du Cameroun, formant des medecins et specialistes depuis 1969.',
-    longDescription: 'La Faculte de Medecine et des Sciences Biomedicales de l\'Universite de Yaounde I est l\'institution phare de formation medicale au Cameroun. Elle a forme des generations de medecins qui servent le pays et l\'Afrique. Son cursus rigoureux et ses hopitaux d\'application garantissent une formation de qualite.',
+    description:
+      'La FMSB est la premiere faculte de medecine du Cameroun, formant des medecins et specialistes depuis 1969.',
+    longDescription:
+      "La Faculte de Medecine et des Sciences Biomedicales de l'Universite de Yaounde I est l'institution phare de formation medicale au Cameroun. Elle a forme des generations de medecins qui servent le pays et l'Afrique. Son cursus rigoureux et ses hopitaux d'application garantissent une formation de qualite.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -258,7 +262,7 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours tres selectif',
       ],
-      process: 'Concours d\'entree sur epreuves',
+      process: "Concours d'entree sur epreuves",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -297,7 +301,7 @@ export const cameroonSchools = [
   {
     id: 'cessi',
     slug: 'cessi',
-    name: 'Centre d\'Enseignement Specialise des Sciences Infirmieres',
+    name: "Centre d'Enseignement Specialise des Sciences Infirmieres",
     shortName: 'CESSI',
     acronym: 'CESSI',
     type: 'local',
@@ -306,10 +310,12 @@ export const cameroonSchools = [
     icon: Heart,
     color: 'rose',
     gradient: 'from-rose-400 via-rose-500 to-pink-600',
-    logo: '/assets/logos/cessi.png',
+    logo: null,
     tagline: 'Former les soignants de qualite',
-    description: 'Le CESSI forme des infirmiers diplomes d\'Etat competents et devoues au service de la sante publique.',
-    longDescription: 'Le Centre d\'Enseignement Specialise des Sciences Infirmieres est une institution de reference pour la formation des professionnels infirmiers au Cameroun. Il forme des infirmiers diplomes d\'Etat capables d\'exercer dans tous les etablissements de sante.',
+    description:
+      "Le CESSI forme des infirmiers diplomes d'Etat competents et devoues au service de la sante publique.",
+    longDescription:
+      "Le Centre d'Enseignement Specialise des Sciences Infirmieres est une institution de reference pour la formation des professionnels infirmiers au Cameroun. Il forme des infirmiers diplomes d'Etat capables d'exercer dans tous les etablissements de sante.",
     domains: ['nursing'],
     careers: ['infirmier'],
     stats: {
@@ -323,7 +329,7 @@ export const cameroonSchools = [
       requirements: [
         'Baccalaureat toutes series',
         'Aptitude physique',
-        'Concours d\'entree',
+        "Concours d'entree",
       ],
       process: 'Concours sur dossier et entretien',
       dates: {
@@ -335,18 +341,14 @@ export const cameroonSchools = [
       acceptance: '15%',
     },
     programs: [
-      { name: 'Infirmier Diplome d\'Etat', duration: '3 ans', places: 80 },
+      { name: "Infirmier Diplome d'Etat", duration: '3 ans', places: 80 },
       { name: 'Sage-femme', duration: '3 ans', places: 20 },
     ],
     tuition: {
       annual: '200 000 - 500 000 FCFA',
       note: 'Selon etablissement public/prive',
     },
-    facilities: [
-      'Salles de pratique',
-      'Stages hospitaliers',
-      'Bibliotheque',
-    ],
+    facilities: ['Salles de pratique', 'Stages hospitaliers', 'Bibliotheque'],
     contact: {
       website: 'https://cessi.cm',
       email: 'info@cessi.cm',
@@ -375,12 +377,18 @@ export const foreignSchools = [
     icon: Building2,
     color: 'red',
     gradient: 'from-red-600 via-red-700 to-red-800',
-    logo: '/assets/logos/polytechnique.png',
-    tagline: 'L\'excellence francaise en sciences',
-    description: 'L\'Ecole Polytechnique est l\'une des plus prestigieuses ecoles d\'ingenieurs au monde, formant l\'elite scientifique depuis 1794.',
-    longDescription: 'L\'Ecole polytechnique, surnommee l\'X, est une grande ecole d\'ingenieurs francaise fondee en 1794. Elle est membre de l\'Institut Polytechnique de Paris et forme des ingenieurs de tres haut niveau. De nombreux Camerounais brillants y ont etudie et continuent de postuler chaque annee.',
+    logo: null,
+    tagline: "L'excellence francaise en sciences",
+    description:
+      "L'Ecole Polytechnique est l'une des plus prestigieuses ecoles d'ingenieurs au monde, formant l'elite scientifique depuis 1794.",
+    longDescription:
+      "L'Ecole polytechnique, surnommee l'X, est une grande ecole d'ingenieurs francaise fondee en 1794. Elle est membre de l'Institut Polytechnique de Paris et forme des ingenieurs de tres haut niveau. De nombreux Camerounais brillants y ont etudie et continuent de postuler chaque annee.",
     domains: ['engineering'],
-    careers: ['ingenieur-genie-civil', 'ingenieur-informatique', 'ingenieur-telecom'],
+    careers: [
+      'ingenieur-genie-civil',
+      'ingenieur-informatique',
+      'ingenieur-telecom',
+    ],
     stats: {
       founded: 1794,
       students: 3000,
@@ -441,12 +449,18 @@ export const foreignSchools = [
     icon: Cpu,
     color: 'blue',
     gradient: 'from-blue-600 via-blue-700 to-blue-800',
-    logo: '/assets/logos/centralesupelec.png',
-    tagline: 'Former les leaders de l\'industrie',
-    description: 'CentraleSupelec est nee de la fusion de deux grandes ecoles, formant des ingenieurs generalistes de haut niveau.',
-    longDescription: 'CentraleSupelec, issue de la fusion de l\'Ecole Centrale Paris et Supelec, est une grande ecole d\'ingenieurs francaise de premier plan. Elle forme des ingenieurs generalistes capables d\'aborder des problematiques complexes et de diriger des projets d\'envergure.',
+    logo: null,
+    tagline: "Former les leaders de l'industrie",
+    description:
+      'CentraleSupelec est nee de la fusion de deux grandes ecoles, formant des ingenieurs generalistes de haut niveau.',
+    longDescription:
+      "CentraleSupelec, issue de la fusion de l'Ecole Centrale Paris et Supelec, est une grande ecole d'ingenieurs francaise de premier plan. Elle forme des ingenieurs generalistes capables d'aborder des problematiques complexes et de diriger des projets d'envergure.",
     domains: ['engineering'],
-    careers: ['ingenieur-informatique', 'ingenieur-telecom', 'ingenieur-genie-civil'],
+    careers: [
+      'ingenieur-informatique',
+      'ingenieur-telecom',
+      'ingenieur-genie-civil',
+    ],
     stats: {
       founded: 2015,
       students: 4000,
@@ -505,12 +519,18 @@ export const foreignSchools = [
     icon: Building2,
     color: 'red',
     gradient: 'from-red-500 via-red-600 to-red-700',
-    logo: '/assets/logos/epfl.png',
-    tagline: 'L\'innovation au coeur de l\'Europe',
-    description: 'L\'EPFL est l\'une des meilleures ecoles techniques au monde, situee au bord du lac Leman en Suisse.',
-    longDescription: 'L\'Ecole polytechnique federale de Lausanne est une universite de recherche de renommee mondiale. Elle attire des etudiants et chercheurs du monde entier et se distingue par l\'excellence de sa recherche et la qualite de son enseignement.',
+    logo: null,
+    tagline: "L'innovation au coeur de l'Europe",
+    description:
+      "L'EPFL est l'une des meilleures ecoles techniques au monde, situee au bord du lac Leman en Suisse.",
+    longDescription:
+      "L'Ecole polytechnique federale de Lausanne est une universite de recherche de renommee mondiale. Elle attire des etudiants et chercheurs du monde entier et se distingue par l'excellence de sa recherche et la qualite de son enseignement.",
     domains: ['engineering'],
-    careers: ['ingenieur-informatique', 'ingenieur-genie-civil', 'ingenieur-telecom'],
+    careers: [
+      'ingenieur-informatique',
+      'ingenieur-genie-civil',
+      'ingenieur-telecom',
+    ],
     stats: {
       founded: 1969,
       students: 11000,
@@ -521,10 +541,11 @@ export const foreignSchools = [
     admission: {
       requirements: [
         'Baccalaureat avec excellents resultats',
-        'Examen d\'admission ou CMS',
+        "Examen d'admission ou CMS",
         'Niveau B2 en francais',
       ],
-      process: 'Admission sur dossier + examen ou CMS (Cours de Mathematiques Speciales)',
+      process:
+        'Admission sur dossier + examen ou CMS (Cours de Mathematiques Speciales)',
       dates: {
         inscription: 'Novembre - Avril',
         examen: 'Juillet',
@@ -562,29 +583,26 @@ export const foreignSchools = [
 ];
 
 // ===== EXPORT COMBINE =====
-export const allSchools = [
-  ...cameroonSchools,
-  ...foreignSchools,
-];
+export const allSchools = [...cameroonSchools, ...foreignSchools];
 
 // Helper pour trouver une ecole par slug
 export const getSchoolBySlug = (slug) => {
-  return allSchools.find(school => school.slug === slug);
+  return allSchools.find((school) => school.slug === slug);
 };
 
 // Helper pour filtrer les ecoles par type
 export const getSchoolsByType = (type) => {
-  return allSchools.filter(school => school.type === type);
+  return allSchools.filter((school) => school.type === type);
 };
 
 // Helper pour filtrer les ecoles par domaine
 export const getSchoolsByDomain = (domainId) => {
-  return allSchools.filter(school => school.domains.includes(domainId));
+  return allSchools.filter((school) => school.domains.includes(domainId));
 };
 
 // Helper pour trouver les ecoles liees a une carriere
 export const getSchoolsByCareerId = (careerId) => {
-  return allSchools.filter(school => school.careers.includes(careerId));
+  return allSchools.filter((school) => school.careers.includes(careerId));
 };
 
 export default allSchools;

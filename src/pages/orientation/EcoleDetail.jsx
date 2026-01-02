@@ -3,33 +3,31 @@
 // Page detail d'une ecole
 // ============================================
 
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { allCareers } from '@/data/careers';
+import { domains } from '@/data/domains';
+import { getSchoolBySlug } from '@/data/schools';
+import Button from '@components/common/Button';
+import Container from '@components/common/Container';
+import SEO from '@components/common/SEO';
+import { CareerCard } from '@components/orientation';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
-  ArrowRight,
-  MapPin,
-  Globe,
+  BookOpen,
   Calendar,
-  Users,
-  Trophy,
-  GraduationCap,
-  DollarSign,
   CheckCircle,
   Clock,
-  Mail,
-  Phone,
+  DollarSign,
   ExternalLink,
-  BookOpen,
+  Globe,
+  GraduationCap,
+  Mail,
+  MapPin,
   Target,
+  Trophy,
+  Users,
 } from 'lucide-react';
-import Container from '@components/common/Container';
-import Button from '@components/common/Button';
-import SEO from '@components/common/SEO';
-import { CareerCard } from '@components/orientation';
-import { getSchoolBySlug, allSchools } from '@/data/schools';
-import { allCareers } from '@/data/careers';
-import { domains } from '@/data/domains';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
 export default function EcoleDetail() {
   const { slug } = useParams();
@@ -42,12 +40,14 @@ export default function EcoleDetail() {
 
   const Icon = school.icon;
   const isLocal = school.type === 'local';
-  const relatedCareers = school.careers
-    ?.map(id => allCareers.find(c => c.id === id))
-    .filter(Boolean) || [];
-  const schoolDomains = school.domains
-    ?.map(id => domains.find(d => d.id === id))
-    .filter(Boolean) || [];
+  const relatedCareers =
+    school.careers
+      ?.map((id) => allCareers.find((c) => c.id === id))
+      .filter(Boolean) || [];
+  const schoolDomains =
+    school.domains
+      ?.map((id) => domains.find((d) => d.id === id))
+      .filter(Boolean) || [];
 
   return (
     <>
@@ -57,7 +57,9 @@ export default function EcoleDetail() {
       />
 
       {/* Hero */}
-      <section className={`relative py-20 lg:py-28 bg-linear-to-br ${school.gradient} overflow-hidden`}>
+      <section
+        className={`relative py-20 lg:py-28 bg-linear-to-br ${school.gradient} overflow-hidden`}
+      >
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
@@ -82,7 +84,15 @@ export default function EcoleDetail() {
               transition={{ duration: 0.5 }}
               className="w-24 h-24 bg-white/90 backdrop-blur-sm rounded-3xl flex items-center justify-center shrink-0 p-3"
             >
-              <Icon size={48} className="text-gray-700" />
+              {school.logo ? (
+                <img
+                  src={school.logo}
+                  alt={school.shortName}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <Icon size={48} className="text-gray-700" />
+              )}
             </motion.div>
 
             {/* Content */}
@@ -106,7 +116,7 @@ export default function EcoleDetail() {
                       Prep Alpha
                     </span>
                   )}
-                  {schoolDomains.map(domain => (
+                  {schoolDomains.map((domain) => (
                     <span
                       key={domain.id}
                       className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm"
@@ -120,14 +130,14 @@ export default function EcoleDetail() {
                 <h1 className="text-2xl lg:text-4xl font-bold text-white mb-2">
                   {school.shortName}
                 </h1>
-                <p className="text-lg text-white/80 mb-4">
-                  {school.name}
-                </p>
+                <p className="text-lg text-white/80 mb-4">{school.name}</p>
 
                 {/* Location */}
                 <div className="flex items-center gap-2 text-white/70 mb-6">
                   <MapPin size={18} />
-                  <span>{school.city}, {school.country}</span>
+                  <span>
+                    {school.city}, {school.country}
+                  </span>
                 </div>
 
                 {/* Quick stats */}
@@ -135,19 +145,25 @@ export default function EcoleDetail() {
                   {school.stats.founded && (
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
                       <Calendar size={18} className="text-white/70" />
-                      <span className="text-white text-sm">Fondee en {school.stats.founded}</span>
+                      <span className="text-white text-sm">
+                        Fondee en {school.stats.founded}
+                      </span>
                     </div>
                   )}
                   {school.stats.students && (
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
                       <Users size={18} className="text-white/70" />
-                      <span className="text-white text-sm">{school.stats.students.toLocaleString()} etudiants</span>
+                      <span className="text-white text-sm">
+                        {school.stats.students.toLocaleString()} etudiants
+                      </span>
                     </div>
                   )}
                   {school.stats.ranking && (
                     <div className="flex items-center gap-2 px-4 py-2 bg-amber-500/20 backdrop-blur-sm rounded-xl">
                       <Trophy size={18} className="text-amber-300" />
-                      <span className="text-white text-sm">{school.stats.ranking}</span>
+                      <span className="text-white text-sm">
+                        {school.stats.ranking}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -200,8 +216,12 @@ export default function EcoleDetail() {
                             <GraduationCap size={20} className="text-navy" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-navy">{program.name}</h4>
-                            <p className="text-sm text-gray-500">Duree: {program.duration}</p>
+                            <h4 className="font-semibold text-navy">
+                              {program.name}
+                            </h4>
+                            <p className="text-sm text-gray-500">
+                              Duree: {program.duration}
+                            </p>
                           </div>
                         </div>
                         {program.places && (
@@ -229,11 +249,16 @@ export default function EcoleDetail() {
 
                   {/* Requirements */}
                   <div className="mb-6">
-                    <h3 className="font-semibold text-navy mb-3">Conditions requises</h3>
+                    <h3 className="font-semibold text-navy mb-3">
+                      Conditions requises
+                    </h3>
                     <div className="space-y-2">
                       {school.admission.requirements.map((req, index) => (
                         <div key={index} className="flex items-start gap-3">
-                          <CheckCircle size={18} className="text-orange shrink-0 mt-0.5" />
+                          <CheckCircle
+                            size={18}
+                            className="text-orange shrink-0 mt-0.5"
+                          />
                           <span className="text-gray-600">{req}</span>
                         </div>
                       ))}
@@ -251,23 +276,38 @@ export default function EcoleDetail() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                       {school.admission.dates.inscription && (
                         <div className="p-4 bg-gray-50 rounded-xl text-center">
-                          <Clock size={20} className="text-orange mx-auto mb-2" />
+                          <Clock
+                            size={20}
+                            className="text-orange mx-auto mb-2"
+                          />
                           <p className="text-sm text-gray-500">Inscriptions</p>
-                          <p className="font-semibold text-navy">{school.admission.dates.inscription}</p>
+                          <p className="font-semibold text-navy">
+                            {school.admission.dates.inscription}
+                          </p>
                         </div>
                       )}
                       {school.admission.dates.concours && (
                         <div className="p-4 bg-gray-50 rounded-xl text-center">
-                          <BookOpen size={20} className="text-orange mx-auto mb-2" />
+                          <BookOpen
+                            size={20}
+                            className="text-orange mx-auto mb-2"
+                          />
                           <p className="text-sm text-gray-500">Concours</p>
-                          <p className="font-semibold text-navy">{school.admission.dates.concours}</p>
+                          <p className="font-semibold text-navy">
+                            {school.admission.dates.concours}
+                          </p>
                         </div>
                       )}
                       {school.admission.dates.resultats && (
                         <div className="p-4 bg-gray-50 rounded-xl text-center">
-                          <Trophy size={20} className="text-orange mx-auto mb-2" />
+                          <Trophy
+                            size={20}
+                            className="text-orange mx-auto mb-2"
+                          />
                           <p className="text-sm text-gray-500">Resultats</p>
-                          <p className="font-semibold text-navy">{school.admission.dates.resultats}</p>
+                          <p className="font-semibold text-navy">
+                            {school.admission.dates.resultats}
+                          </p>
                         </div>
                       )}
                     </div>
@@ -277,14 +317,22 @@ export default function EcoleDetail() {
                   <div className="flex flex-wrap gap-4">
                     {school.admission.places && (
                       <div className="px-4 py-2 bg-emerald-50 rounded-lg">
-                        <span className="text-emerald-700 font-semibold">{school.admission.places}</span>
-                        <span className="text-emerald-600 text-sm ml-1">places/an</span>
+                        <span className="text-emerald-700 font-semibold">
+                          {school.admission.places}
+                        </span>
+                        <span className="text-emerald-600 text-sm ml-1">
+                          places/an
+                        </span>
                       </div>
                     )}
                     {school.admission.acceptance && (
                       <div className="px-4 py-2 bg-orange/10 rounded-lg">
-                        <span className="text-orange font-semibold">{school.admission.acceptance}</span>
-                        <span className="text-orange/80 text-sm ml-1">taux d'admission</span>
+                        <span className="text-orange font-semibold">
+                          {school.admission.acceptance}
+                        </span>
+                        <span className="text-orange/80 text-sm ml-1">
+                          taux d'admission
+                        </span>
                       </div>
                     )}
                   </div>
@@ -326,24 +374,32 @@ export default function EcoleDetail() {
                 viewport={{ once: true }}
                 className="bg-gray-50 rounded-2xl p-6"
               >
-                <h3 className="text-lg font-bold text-navy mb-4">Chiffres cles</h3>
+                <h3 className="text-lg font-bold text-navy mb-4">
+                  Chiffres cles
+                </h3>
                 <div className="space-y-4">
                   {school.stats.successRate && (
                     <div className="flex justify-between items-center">
                       <span className="text-gray-500">Taux de reussite</span>
-                      <span className="font-semibold text-emerald-600">{school.stats.successRate}%</span>
+                      <span className="font-semibold text-emerald-600">
+                        {school.stats.successRate}%
+                      </span>
                     </div>
                   )}
                   {school.stats.employmentRate && (
                     <div className="flex justify-between items-center">
                       <span className="text-gray-500">Insertion pro</span>
-                      <span className="font-semibold text-navy">{school.stats.employmentRate}%</span>
+                      <span className="font-semibold text-navy">
+                        {school.stats.employmentRate}%
+                      </span>
                     </div>
                   )}
                   {school.stats.students && (
                     <div className="flex justify-between items-center">
                       <span className="text-gray-500">Etudiants</span>
-                      <span className="font-semibold text-navy">{school.stats.students.toLocaleString()}</span>
+                      <span className="font-semibold text-navy">
+                        {school.stats.students.toLocaleString()}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -360,13 +416,17 @@ export default function EcoleDetail() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <DollarSign size={24} className="text-navy" />
-                    <h3 className="text-lg font-bold text-navy">Frais de scolarite</h3>
+                    <h3 className="text-lg font-bold text-navy">
+                      Frais de scolarite
+                    </h3>
                   </div>
                   <p className="text-2xl font-bold text-orange mb-2">
                     {school.tuition.annual}
                   </p>
                   {school.tuition.note && (
-                    <p className="text-sm text-gray-500">{school.tuition.note}</p>
+                    <p className="text-sm text-gray-500">
+                      {school.tuition.note}
+                    </p>
                   )}
                 </motion.div>
               )}
@@ -399,13 +459,17 @@ export default function EcoleDetail() {
                         className="flex items-center gap-3 text-gray-600 hover:text-orange transition-colors"
                       >
                         <Mail size={18} />
-                        <span className="text-sm truncate">{school.contact.email}</span>
+                        <span className="text-sm truncate">
+                          {school.contact.email}
+                        </span>
                       </a>
                     )}
                     {school.contact.address && (
                       <div className="flex items-center gap-3 text-gray-600">
                         <MapPin size={18} />
-                        <span className="text-sm">{school.contact.address}</span>
+                        <span className="text-sm">
+                          {school.contact.address}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -463,7 +527,12 @@ export default function EcoleDetail() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedCareers.map((career, index) => (
-                <CareerCard key={career.id} career={career} index={index} variant="compact" />
+                <CareerCard
+                  key={career.id}
+                  career={career}
+                  index={index}
+                  variant="compact"
+                />
               ))}
             </div>
           </Container>

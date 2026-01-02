@@ -23,8 +23,16 @@ export default function SchoolCard({ school, index = 0, variant = 'default' }) {
           to={`/orientation/ecoles/${school.slug}`}
           className="group flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300"
         >
-          <div className={`w-12 h-12 bg-linear-to-br ${school.gradient} rounded-xl flex items-center justify-center shrink-0`}>
-            <Icon size={24} className="text-white" />
+          <div className={`w-12 h-12 ${school.logo ? 'bg-white' : `bg-linear-to-br ${school.gradient}`} rounded-xl flex items-center justify-center shrink-0 p-1.5`}>
+            {school.logo ? (
+              <img
+                src={school.logo}
+                alt={school.shortName}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <Icon size={24} className="text-white" />
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
@@ -78,7 +86,15 @@ export default function SchoolCard({ school, index = 0, variant = 'default' }) {
             {/* Icon/Logo */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 p-2">
-                <Icon size={40} className="text-gray-700" />
+                {school.logo ? (
+                  <img
+                    src={school.logo}
+                    alt={school.shortName}
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <Icon size={40} className="text-gray-700" />
+                )}
               </div>
             </div>
           </div>
