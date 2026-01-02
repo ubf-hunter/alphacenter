@@ -217,8 +217,8 @@ export const cameroonSchools = [
       'Partenariats operateurs',
     ],
     contact: {
-      website: 'https://supptic.cm',
-      email: 'contact@supptic.cm',
+      website: 'https://e-supptic.cm',
+      email: 'contact@e-supptic.cm',
       phone: '+237 222 XX XX XX',
       address: 'Yaounde, Cameroun',
     },

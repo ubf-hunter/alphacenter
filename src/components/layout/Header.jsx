@@ -225,6 +225,15 @@ export default function Header() {
                             ))}
                           </div>
                         </div>
+                        {item.megamenu.ecoles.viewAll && (
+                          <Link
+                            to={item.megamenu.ecoles.viewAll.href}
+                            className="block p-2 text-sm font-semibold text-orange hover:text-orange-600 transition-colors"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {item.megamenu.ecoles.viewAll.label} →
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
