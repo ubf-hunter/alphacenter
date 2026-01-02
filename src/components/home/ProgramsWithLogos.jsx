@@ -40,6 +40,11 @@ const categoryColors = {
     inactive: 'bg-white text-gray-600 hover:bg-emerald-50 hover:text-emerald-600',
     accent: 'text-emerald-600',
   },
+  business: {
+    active: 'bg-blue-600 text-white',
+    inactive: 'bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-600',
+    accent: 'text-blue-600',
+  },
   education: {
     active: 'bg-navy text-white',
     inactive: 'bg-white text-gray-600 hover:bg-navy/10 hover:text-navy',
@@ -53,6 +58,8 @@ const programGradients = {
   enstp: 'from-[#001A51] via-[#0D47A1] to-[#1565C0]',
   medecine: 'from-emerald-500 via-emerald-600 to-emerald-700',
   infirmier: 'from-rose-400 via-rose-500 to-rose-600',
+  essec: 'from-blue-500 via-blue-600 to-blue-700',
+  uccac: 'from-indigo-500 via-indigo-600 to-indigo-700',
   ens: 'from-[#FFDAB9] via-[#FFE4C4] to-[#FFECD2]',
   preparatoire: 'from-gray-500 via-gray-600 to-gray-700',
 };
@@ -212,7 +219,7 @@ export default function ProgramsWithLogos() {
         <SectionTitle
           badge="Nos formations"
           title="Des *programmes* adaptes a chaque *ambition*"
-          subtitle="De l'ingenierie a la medecine, trouve la preparation qui te correspond."
+          subtitle="Ingenierie, medecine, gestion ou enseignement - trouve la preparation qui te correspond."
         />
 
         {/* Onglets de categories */}

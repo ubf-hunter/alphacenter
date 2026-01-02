@@ -26,6 +26,11 @@ import {
   Microscope,
   Pill,
   Activity,
+  Briefcase,
+  BarChart3,
+  Banknote,
+  Scale,
+  PieChart,
 } from 'lucide-react';
 
 // Catégories de programmes
@@ -43,6 +48,13 @@ export const programCategories = [
     description: 'Preparation aux concours de medecine et sciences infirmieres',
     icon: Stethoscope,
     color: 'emerald',
+  },
+  {
+    id: 'business',
+    name: 'Economie & Gestion',
+    description: 'Preparation aux ecoles de commerce, gestion et administration',
+    icon: Briefcase,
+    color: 'blue',
   },
   {
     id: 'education',
@@ -253,6 +265,106 @@ export const programmes = [
     ],
     badge: 'Demande',
     badgeColor: 'bg-rose-500 text-white',
+  },
+
+  // ============== ÉCONOMIE & GESTION ==============
+  {
+    id: 'essec',
+    category: 'business',
+    name: 'Programme ESSEC',
+    school: 'Ecole Superieure des Sciences Economiques et Commerciales',
+    shortName: 'ESSEC',
+    tagline: 'Deviens un leader en gestion et commerce',
+    description:
+      "Preparation intensive aux concours d'entree a l'ESSEC de Douala, l'une des meilleures ecoles de commerce et gestion du Cameroun. Formation complete en economie, gestion, comptabilite et techniques commerciales.",
+    duration: '5 mois intensifs',
+    sessions: ['Janvier', 'Septembre'],
+    nextSession: 'Janvier 2025',
+    placesAvailable: 30,
+    format: 'Presentiel + etudes de cas',
+    price: 135000,
+    priceLabel: '135 000 FCFA/mois',
+    successRate: 82,
+    studentsPerClass: 25,
+    icon: BarChart3,
+    color: 'blue',
+    gradient: 'from-blue-500 to-blue-700',
+    subjects: [
+      { name: 'Economie generale', icon: PieChart, hours: 80 },
+      { name: 'Comptabilite & Gestion', icon: Calculator, hours: 100 },
+      { name: 'Mathematiques financieres', icon: BarChart3, hours: 60 },
+      { name: 'Culture generale economique', icon: BookOpen, hours: 40 },
+    ],
+    features: [
+      'Cours dispenses par des professionnels du secteur',
+      'Etudes de cas pratiques',
+      'Simulations de gestion d\'entreprise',
+      'Preparation aux QCM et dissertations',
+      'Coaching pour les entretiens',
+      'Acces aux annales des concours',
+    ],
+    testimonial: {
+      quote:
+        "La methode Alpha m'a permis de maitriser les techniques de dissertation economique. J'ai integre l'ESSEC avec mention.",
+      author: 'Kevin M.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat A, B, C, D, G ou equivalent',
+      'Bon niveau en mathematiques et francais',
+      'Interet pour le monde des affaires',
+    ],
+    badge: 'Nouveau',
+    badgeColor: 'bg-blue-500 text-white',
+  },
+  {
+    id: 'uccac',
+    category: 'business',
+    name: 'Programme UCCAC',
+    school: 'Universite Catholique d\'Afrique Centrale',
+    shortName: 'UCCAC',
+    tagline: 'Excellence en sciences economiques et administration',
+    description:
+      "Preparation aux concours d'entree a l'UCCAC (FSSG, FSGA). Formation rigoureuse en economie, droit, gestion et administration des entreprises dans un cadre d'excellence.",
+    duration: '4 mois intensifs',
+    sessions: ['Fevrier', 'Octobre'],
+    nextSession: 'Fevrier 2025',
+    placesAvailable: 25,
+    format: 'Presentiel + travaux diriges',
+    price: 140000,
+    priceLabel: '140 000 FCFA/mois',
+    successRate: 80,
+    studentsPerClass: 20,
+    icon: Scale,
+    color: 'indigo',
+    gradient: 'from-indigo-500 to-indigo-700',
+    subjects: [
+      { name: 'Economie politique', icon: PieChart, hours: 70 },
+      { name: 'Introduction au droit', icon: Scale, hours: 60 },
+      { name: 'Gestion des organisations', icon: Briefcase, hours: 50 },
+      { name: 'Methodologie universitaire', icon: BookOpen, hours: 40 },
+    ],
+    features: [
+      'Preparation adaptee aux exigences de l\'UCCAC',
+      'Cours de methodologie universitaire',
+      'Travaux diriges en groupe',
+      'Examens blancs reguliers',
+      'Preparation aux tests psychotechniques',
+      'Suivi personnalise',
+    ],
+    testimonial: {
+      quote:
+        "Grace a Alpha Center, j'ai reussi le concours de la FSSG. La preparation en droit et economie etait excellente.",
+      author: 'Aurelia T.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat toutes series',
+      'Bon dossier scolaire',
+      'Motivation pour les etudes superieures',
+    ],
+    badge: 'Demande',
+    badgeColor: 'bg-indigo-500 text-white',
   },
 
   // ============== ÉDUCATION ==============
@@ -551,6 +663,50 @@ export const calendar = [
     ],
   },
   {
+    programme: 'ESSEC',
+    category: 'business',
+    sessions: [
+      {
+        name: 'Session Janvier 2025',
+        startDate: '13 Janvier 2025',
+        endDate: 'Mai 2025',
+        status: 'open',
+        places: 30,
+        placesLeft: 15,
+      },
+      {
+        name: 'Session Septembre 2025',
+        startDate: '8 Septembre 2025',
+        endDate: 'Janvier 2026',
+        status: 'upcoming',
+        places: 30,
+        placesLeft: 30,
+      },
+    ],
+  },
+  {
+    programme: 'UCCAC',
+    category: 'business',
+    sessions: [
+      {
+        name: 'Session Fevrier 2025',
+        startDate: '3 Fevrier 2025',
+        endDate: 'Mai 2025',
+        status: 'open',
+        places: 25,
+        placesLeft: 12,
+      },
+      {
+        name: 'Session Octobre 2025',
+        startDate: '6 Octobre 2025',
+        endDate: 'Janvier 2026',
+        status: 'upcoming',
+        places: 25,
+        placesLeft: 25,
+      },
+    ],
+  },
+  {
     programme: 'Preparatoire',
     category: 'all',
     sessions: [
@@ -614,6 +770,6 @@ export const includedResources = [
 export const globalStats = {
   students: '700+',
   successRate: '85%',
-  programs: 6,
+  programs: 8,
   experience: '15+',
 };
