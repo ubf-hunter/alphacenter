@@ -82,19 +82,18 @@ export default function Hero1() {
         </div>
 
         {/* Title */}
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 max-w-4xl leading-tight"
-     
-        >
-          Integre l'ecole{' '}
-          <RotatingText
-            texts={rotatingWords}
-            controlledIndex={currentIndex}
-            className="italic text-orange font-cursive font-black"
-            containerClassName="min-w-[280px] sm:min-w-[320px] md:min-w-[380px]"
-          />
-          <br className="hidden sm:block" />
-          de tes reves.
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 max-w-4xl leading-tight">
+          <span className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <span className="whitespace-nowrap">Integre l'ecole</span>
+            <RotatingText
+              texts={rotatingWords}
+              controlledIndex={currentIndex}
+              className="italic text-orange font-cursive font-black"
+              containerClassName="min-w-[220px] sm:min-w-[280px] md:min-w-[320px] lg:min-w-[380px]"
+            />
+          </span>
+          <br />
+          <span>de tes reves.</span>
         </h1>
 
         {/* Subtitle */}
