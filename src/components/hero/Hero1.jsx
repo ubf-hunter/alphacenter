@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 // ===== IMPORTS DES IMAGES DE FOND =====
 // Ajouter vos images ici (une par categorie)
 import imgMedecine from '../../assets/images/misc/csao1b6.jpg';
-import imgInfirmieres from '../../assets/images/misc/csao3.jpg';
-import imgIngenieurs from '../../assets/images/misc/csao4.jpg';
-import imgEnseignants from '../../assets/images/misc/csao5.jpg';
+import imgInfirmieres from '../../assets/images/misc/ges1.jpg';
+import imgEnseignants from '../../assets/images/misc/med1.jpg';
+import imgIngenieurs from '../../assets/images/misc/prep1.jpg';
 
 // Configuration des slides (texte + image synchronises)
 const heroSlides = [
