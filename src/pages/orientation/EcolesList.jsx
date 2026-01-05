@@ -3,15 +3,19 @@
 // Page liste de toutes les ecoles
 // ============================================
 
-import { useState, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Building2, Globe, MapPin } from 'lucide-react';
+import { domains } from '@/data/domains';
+import { allSchools, cameroonSchools, foreignSchools } from '@/data/schools';
 import Container from '@components/common/Container';
 import SEO from '@components/common/SEO';
-import { OrientationHero, SchoolCard, FilterBar } from '@components/orientation';
-import { allSchools, cameroonSchools, foreignSchools } from '@/data/schools';
-import { domains } from '@/data/domains';
+import {
+  FilterBar,
+  OrientationHero,
+  SchoolCard,
+} from '@components/orientation';
+import { motion } from 'framer-motion';
+import { Building2, Globe, MapPin } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 // Filtres par type
 const typeFilters = [
@@ -30,7 +34,7 @@ const typeFilters = [
 ];
 
 // Filtres par domaine
-const domainFilters = domains.map(domain => ({
+const domainFilters = domains.map((domain) => ({
   id: domain.id,
   label: domain.shortName,
   icon: domain.icon,
@@ -43,8 +47,12 @@ export default function EcolesList() {
   const initialDomain = searchParams.get('domaine');
 
   const [searchValue, setSearchValue] = useState('');
-  const [typeFilter, setTypeFilter] = useState(initialType ? [initialType] : []);
-  const [domainFilter, setDomainFilter] = useState(initialDomain ? [initialDomain] : []);
+  const [typeFilter, setTypeFilter] = useState(
+    initialType ? [initialType] : []
+  );
+  const [domainFilter, setDomainFilter] = useState(
+    initialDomain ? [initialDomain] : []
+  );
 
   // Filtrer les ecoles
   const filteredSchools = useMemo(() => {
@@ -52,24 +60,25 @@ export default function EcolesList() {
 
     // Filtre par type
     if (typeFilter.length > 0) {
-      result = result.filter(school => typeFilter.includes(school.type));
+      result = result.filter((school) => typeFilter.includes(school.type));
     }
 
     // Filtre par domaine
     if (domainFilter.length > 0) {
-      result = result.filter(school =>
-        school.domains.some(d => domainFilter.includes(d))
+      result = result.filter((school) =>
+        school.domains.some((d) => domainFilter.includes(d))
       );
     }
 
     // Filtre par recherche
     if (searchValue.trim()) {
       const search = searchValue.toLowerCase();
-      result = result.filter(school =>
-        school.name.toLowerCase().includes(search) ||
-        school.shortName.toLowerCase().includes(search) ||
-        school.city.toLowerCase().includes(search) ||
-        school.country.toLowerCase().includes(search)
+      result = result.filter(
+        (school) =>
+          school.name.toLowerCase().includes(search) ||
+          school.shortName.toLowerCase().includes(search) ||
+          school.city.toLowerCase().includes(search) ||
+          school.country.toLowerCase().includes(search)
       );
     }
 
@@ -77,8 +86,10 @@ export default function EcolesList() {
   }, [typeFilter, domainFilter, searchValue]);
 
   // Stats
-  const localCount = filteredSchools.filter(s => s.type === 'local').length;
-  const foreignCount = filteredSchools.filter(s => s.type === 'foreign').length;
+  const localCount = filteredSchools.filter((s) => s.type === 'local').length;
+  const foreignCount = filteredSchools.filter(
+    (s) => s.type === 'foreign'
+  ).length;
 
   return (
     <>
@@ -90,7 +101,8 @@ export default function EcolesList() {
       {/* Hero */}
       <OrientationHero
         badge="Ecoles"
-        title="Trouve ton ecole"
+        title="Trouve  "
+        highlightText="ton école"
         subtitle="Decouvre les meilleures ecoles et universites au Cameroun et a l'etranger. Admission, programmes, frais - tout ce qu'il faut savoir."
         icon={Building2}
         gradient="from-navy via-navy/95 to-blue-900"
@@ -99,12 +111,16 @@ export default function EcolesList() {
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-xl">
             <MapPin size={18} className="text-orange" />
-            <span className="text-white font-semibold">{cameroonSchools.length}</span>
+            <span className="text-white font-semibold">
+              {cameroonSchools.length}
+            </span>
             <span className="text-white/70 text-sm">au Cameroun</span>
           </div>
           <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-xl">
             <Globe size={18} className="text-blue-400" />
-            <span className="text-white font-semibold">{foreignSchools.length}</span>
+            <span className="text-white font-semibold">
+              {foreignSchools.length}
+            </span>
             <span className="text-white/70 text-sm">a l'etranger</span>
           </div>
         </div>
@@ -136,7 +152,9 @@ export default function EcolesList() {
                     key={filter.id}
                     onClick={() => {
                       if (isActive) {
-                        setDomainFilter(domainFilter.filter(f => f !== filter.id));
+                        setDomainFilter(
+                          domainFilter.filter((f) => f !== filter.id)
+                        );
                       } else {
                         setDomainFilter([...domainFilter, filter.id]);
                       }
@@ -144,9 +162,10 @@ export default function EcolesList() {
                     className={`
                       flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
                       transition-all duration-300 border
-                      ${isActive
-                        ? filter.activeClass
-                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                      ${
+                        isActive
+                          ? filter.activeClass
+                          : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
                       }
                     `}
                   >
@@ -165,7 +184,11 @@ export default function EcolesList() {
             className="mb-8 flex flex-wrap items-center justify-between gap-4"
           >
             <p className="text-gray-600">
-              <span className="font-semibold text-navy">{filteredSchools.length}</span> ecole{filteredSchools.length > 1 ? 's' : ''} trouvee{filteredSchools.length > 1 ? 's' : ''}
+              <span className="font-semibold text-navy">
+                {filteredSchools.length}
+              </span>{' '}
+              ecole{filteredSchools.length > 1 ? 's' : ''} trouvee
+              {filteredSchools.length > 1 ? 's' : ''}
               {localCount > 0 && foreignCount > 0 && (
                 <span className="text-gray-400 ml-2">
                   ({localCount} Cameroun, {foreignCount} etranger)
@@ -190,7 +213,9 @@ export default function EcolesList() {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Building2 size={40} className="text-gray-400" />
               </div>
-              <h3 className="text-xl font-bold text-navy mb-2">Aucune ecole trouvee</h3>
+              <h3 className="text-xl font-bold text-navy mb-2">
+                Aucune ecole trouvee
+              </h3>
               <p className="text-gray-600 mb-6">
                 Essaie de modifier tes filtres ou ta recherche
               </p>

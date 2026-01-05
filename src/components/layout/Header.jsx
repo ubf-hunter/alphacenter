@@ -72,8 +72,8 @@ export default function Header() {
           px-4 md:px-6 py-3 rounded-full transition-all duration-300
           ${
             isScrolled
-              ? 'bg-white/65 backdrop-blur-xl shadow-lg shadow-navy/5 border border-gray-200/50'
-              : 'bg-white/85 backdrop-blur-xl shadow-md shadow-navy/5 border border-white/60'
+              ? 'bg-white/50 backdrop-blur-xl shadow-lg shadow-navy/5 border border-gray-200/50'
+              : 'bg-white/85  backdrop-blur-xl shadow-md shadow-navy/5 border border-white/60'
           }
         `}
       >

@@ -207,11 +207,14 @@ body {
   overflow-x: hidden;
 }
 
-h1,
 h4,
 h5,
 h6 {
   font-family: var(--font-display);
   color: var(--color-navy);
+  line-height: 1.2;
+}
+h1 {
+  font-family: var(--font-display);
   line-height: 1.2;
 }

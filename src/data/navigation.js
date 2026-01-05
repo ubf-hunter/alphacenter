@@ -37,6 +37,8 @@ export const mainNavigation = [
           { label: 'ENSPY (Polytechnique)', href: '/orientation/ecoles/enspy' },
           { label: 'ENSTP', href: '/orientation/ecoles/enstp' },
           { label: 'SUP\'PTIC', href: '/orientation/ecoles/supptic' },
+          { label: 'FMSB Yaounde', href: '/orientation/ecoles/fmsb' },
+          { label: 'FHS Buea', href: '/orientation/ecoles/fhs-buea' },
           { label: 'ESSEC Douala', href: '/orientation/ecoles/essec' },
           { label: 'UCCAC', href: '/orientation/ecoles/uccac' },
           { label: 'IUC', href: '/orientation/ecoles/iuc' },

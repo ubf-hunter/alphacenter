@@ -42,7 +42,7 @@ export const domains = [
     longDescription: 'La medecine est une vocation noble qui demande dedication et compassion. En tant que medecin, tu auras le pouvoir de diagnostiquer, traiter et prevenir les maladies, tout en accompagnant les patients dans les moments les plus difficiles de leur vie.',
     stats: {
       careers: 1,
-      schools: 3,
+      schools: 10,
       avgSalary: '500-1500k FCFA/mois',
     },
     highlights: [

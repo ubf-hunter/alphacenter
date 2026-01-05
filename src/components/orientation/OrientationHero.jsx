@@ -3,20 +3,23 @@
 // Hero section pour les pages d'orientation
 // ============================================
 
-import { motion } from 'framer-motion';
 import Container from '@components/common/Container';
+import { motion } from 'framer-motion';
 import { Compass } from 'lucide-react';
 
 export default function OrientationHero({
   badge = 'Orientation',
   title,
+  highlightText,
   subtitle,
   icon: Icon = Compass,
   gradient = 'from-navy via-navy/95 to-navy/90',
   children,
 }) {
   return (
-    <section className={`relative py-20 lg:py-28 bg-linear-to-br ${gradient} overflow-hidden`}>
+    <section
+      className={`relative py-20 lg:py-28 bg-linear-to-br ${gradient} overflow-hidden`}
+    >
       {/* Background decoratif */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
@@ -55,9 +58,17 @@ export default function OrientationHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-off-white mb-6 leading-tight"
           >
             {title}
+            {highlightText && (
+              <>
+                {' '}
+                <span className="italic text-orange font-cursive">
+                  {highlightText}
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subtitle */}
