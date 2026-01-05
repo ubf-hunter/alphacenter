@@ -15,6 +15,7 @@ import {
   MethodologySection,
   CalendarSection,
   ComparisonTable,
+  PreparatoireHero,
 } from '@components/programmes';
 import Testimonials from '@components/home/Testimonials';
 import CTAFinal from '@components/home/CTAFinal';
@@ -121,6 +122,25 @@ function HeroSection() {
   );
 }
 
+// Preparatoire Hero Section
+function PreparatoireHeroSection() {
+  const preparatoire = programmes.find((p) => p.id === 'preparatoire');
+
+  if (!preparatoire) return null;
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-apricot-light to-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-10 right-10 w-72 h-72 bg-orange/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 left-10 w-64 h-64 bg-navy/5 rounded-full blur-3xl" />
+
+      <Container>
+        <PreparatoireHero program={preparatoire} />
+      </Container>
+    </section>
+  );
+}
+
 // Programs Grid Section
 function ProgramsSection() {
   return (
@@ -163,11 +183,13 @@ function ProgramsSection() {
           </motion.p>
         </div>
 
-        {/* Programs grid */}
+        {/* Programs grid - filtered to exclude preparatoire */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {programmes.map((program, index) => (
-            <ProgramCard key={program.id} program={program} index={index} />
-          ))}
+          {programmes
+            .filter((p) => p.id !== 'preparatoire')
+            .map((program, index) => (
+              <ProgramCard key={program.id} program={program} index={index} />
+            ))}
         </div>
       </Container>
     </section>
@@ -232,6 +254,7 @@ export default function Programmes() {
         url="/programmes"
       />
       <HeroSection />
+      <PreparatoireHeroSection />
       <ProgramsSection />
       <ResourcesSection />
       <MethodologySection />
