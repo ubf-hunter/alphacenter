@@ -61,8 +61,9 @@ export const mainNavigation = [
     label: 'À propos',
     type: 'dropdown',
     items: [
-      { label: 'Nos résultats', href: '/resultats', icon: 'BarChart3', description: 'Découvre nos taux de réussite' },
-      { label: 'Notre équipe', href: '/equipe', icon: 'Users', description: '50+ enseignants passionnés' },
+      { label: 'Qui sommes-nous', href: '/a-propos/qui-sommes-nous', icon: 'Building2', description: 'Notre histoire et nos valeurs' },
+      { label: 'Notre équipe', href: '/a-propos/equipe', icon: 'Users', description: '12 enseignants passionnés' },
+      { label: 'Nos résultats', href: '/a-propos/resultats', icon: 'BarChart3', description: '85% de taux de réussite' },
     ]
   }
 ];
@@ -76,8 +77,9 @@ export const footerNavigation = {
   navigation: [
     { label: 'Accueil', href: '/' },
     { label: 'Programmes', href: '/services' },
-    { label: 'Résultats', href: '/resultats' },
-    { label: 'Notre équipe', href: '/equipe' },
+    { label: 'Qui sommes-nous', href: '/a-propos/qui-sommes-nous' },
+    { label: 'Notre équipe', href: '/a-propos/equipe' },
+    { label: 'Nos résultats', href: '/a-propos/resultats' },
     { label: "L'application", href: '/application' },
   ],
   orientation: [
@@ -87,8 +89,8 @@ export const footerNavigation = {
   ],
   contact: {
     address: 'Yaoundé, Cameroun',
-    phone: '+237 6XX XXX XXX',
-    email: 'contact@alpha-center.cm'
+    phone: '+237  670102293',
+    email: 'contact@alpha-center.cm',
   },
   legal: [
     { label: 'Mentions légales', href: '/mentions-legales' },
@@ -100,5 +102,5 @@ export const footerNavigation = {
     { label: 'Instagram', href: '#', icon: 'Instagram' },
     { label: 'LinkedIn', href: '#', icon: 'Linkedin' },
     { label: 'WhatsApp', href: '#', icon: 'MessageCircle' },
-  ]
+  ],
 };

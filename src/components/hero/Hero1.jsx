@@ -20,8 +20,8 @@ import imgIngenieurs from '../../assets/images/misc/prep1.jpg';
 const heroSlides = [
   { text: "d'ingenieurs", image: imgIngenieurs },
   { text: 'de medecine', image: imgMedecine },
-  { text: "d'infirmieres", image: imgInfirmieres }, // Remplacer par imgInfirmieres
-  { text: "d'enseignants", image: imgEnseignants }, // Remplacer par imgEnseignants
+  { text: "d'infirmieres", image: imgInfirmieres },
+  { text: "d'enseignants", image: imgEnseignants },
 ];
 
 // Duree entre chaque slide (ms)

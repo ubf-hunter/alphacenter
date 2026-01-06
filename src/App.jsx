@@ -12,6 +12,11 @@ import {
   EcolesList,
   EcoleDetail,
 } from '@pages/orientation';
+import AboutIndex, {
+  QuiSommesNous,
+  Equipe,
+  Resultats,
+} from '@pages/about';
 import { initGA, logPageView } from '@utils/analytics';
 
 // Composant pour tracker les changements de page et scroll to top
@@ -48,6 +53,11 @@ export default function App() {
           <Route path="orientation/metiers/:slug" element={<MetierDetail />} />
           <Route path="orientation/ecoles" element={<EcolesList />} />
           <Route path="orientation/ecoles/:slug" element={<EcoleDetail />} />
+          {/* A propos */}
+          <Route path="a-propos" element={<AboutIndex />} />
+          <Route path="a-propos/qui-sommes-nous" element={<QuiSommesNous />} />
+          <Route path="a-propos/equipe" element={<Equipe />} />
+          <Route path="a-propos/resultats" element={<Resultats />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
