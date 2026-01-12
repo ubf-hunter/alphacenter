@@ -16,6 +16,7 @@ import {
   Users,
   Wallet,
 } from 'lucide-react';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 const features = [
   {
@@ -74,6 +75,8 @@ const colorStyles = {
 const crossPatternSvg = `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 8V4M10 16v-4M8 10H4M16 10h-4' stroke='%23001A51' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`;
 
 export default function WhyAlpha() {
+  const { openModal } = useInscriptionModal();
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* ===== BACKGROUND AVEC TEXTURE CROSS ===== */}
@@ -179,7 +182,7 @@ export default function WhyAlpha() {
               viewport={{ once: true }}
               className="mt-10"
             >
-              <Button variant="primary" to="/inscription">
+              <Button variant="primary" onClick={() => openModal()}>
                 Rejoindre Alpha Center
                 <ArrowRight size={18} />
               </Button>

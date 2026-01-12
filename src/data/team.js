@@ -1,47 +1,51 @@
 // ============================================
 // TEAM DATA - Direction, Enseignants, Staff
 // ============================================
-
+//import
+import ggPro from '../assets/images/team/ggTrone.jpeg';
+import ubfPro from '../assets/images/team/ubfPro3.jpeg';
 // Direction
 export const leadership = [
   {
-    id: 'founder',
-    name: 'Ing. Jean-Pierre NKOULOU',
-    role: 'Fondateur & Directeur',
+    id: 'academic-director',
+    name: 'Ing. Agabus Gaimatakone',
+    role: 'Co-Fondateur & Directeur Pedagogique',
     title: 'Ingenieur ENSP - Genie Civil',
-    photo: '/images/team/founder.jpg',
-    initials: 'JPN',
-    bio: "Diplome de l'ENSP en 2010, major de sa promotion en Genie Civil. Apres 5 ans dans le BTP, il fonde Alpha Center avec la conviction que chaque etudiant meritant peut reussir avec le bon accompagnement. Il supervise la strategie pedagogique et le developpement du centre.",
+    photo: ggPro,
+    initials: 'GG',
+    bio: "Diplome de l'ENSPY, major de sa promotion en Genie Civil. Apres 5 ans dans le BTP, il fonde Alpha Center avec la conviction que chaque etudiant meritant peut reussir avec le bon accompagnement. Il supervise la strategie pedagogique et le developpement du centre.",
     education: [
-      'ENSP Yaounde - Genie Civil (2010)',
-      'Master Management - IAE Paris (2015)',
+      'ENSP Yaounde - Genie Civil',
+      'Enseignant de Physique, Evidence 2023-2026',
+      'CSAO - BACC C, premier du sous centre',
     ],
-    experience: "8 ans d'experience dans l'enseignement",
+    experience: "4 ans d'experience dans l'enseignement",
     quote:
       "La reussite n'est pas un accident. C'est le fruit d'une methode et d'un travail acharne.",
     social: {
-      linkedin: '#',
+      linkedin:
+        'https://www.linkedin.com/in/agabus-gaimatakone-ingenieur-ensp/',
       email: 'direction@alphacenter.cm',
     },
   },
   {
-    id: 'academic-director',
-    name: 'Dr. Marie ATANGANA',
-    role: 'Directrice Pedagogique',
-    title: 'Docteur en Mathematiques',
-    photo: '/images/team/academic-director.jpg',
-    initials: 'MA',
+    id: 'SI-director',
+    name: 'Ing. Uwayo Beni',
+    role: 'Co-Fondateur & Directeur SI',
+    title: 'Ingenieur IT',
+    photo: ubfPro,
+    initials: 'UBF',
     bio: "Docteur en Mathematiques Appliquees de l'Universite de Yaounde I. Ancienne enseignante a l'ENSP, elle apporte 15 ans d'experience dans l'enseignement superieur. Elle coordonne l'equipe pedagogique et veille a la qualite des programmes.",
     education: [
-      'Doctorat Mathematiques - UY1 (2008)',
+      "Ingenieur des telecoms - SUP'PTIC",
       'Agregation de Mathematiques',
     ],
-    experience: "15 ans d'experience",
+    experience: "4 ans d'experience",
     quote:
       "Un bon professeur n'enseigne pas seulement une matiere, il transmet une passion.",
     social: {
-      linkedin: '#',
-      email: 'pedagogie@alphacenter.cm',
+      linkedin: 'https://www.linkedin.com/in/beni-fidele-uwayo-2b1bb6336/',
+      email: 'sidirector@alphacenter.cm',
     },
   },
 ];
@@ -147,7 +151,7 @@ export const teachers = [
     color: 'purple',
     shortBio: 'Agregee de Lettres, coach en expression',
     fullBio:
-      "Agregee de Lettres Modernes, Mme Fotso aide les etudiants a ameliorer leur expression ecrite et orale, competences souvent negligees mais determinantes pour les concours.",
+      'Agregee de Lettres Modernes, Mme Fotso aide les etudiants a ameliorer leur expression ecrite et orale, competences souvent negligees mais determinantes pour les concours.',
     education: ['Agregation Lettres Modernes', 'Master Sciences du Langage'],
     achievements: ['Coach preparation oraux', 'Formatrice communication'],
   },

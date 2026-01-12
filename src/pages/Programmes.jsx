@@ -20,9 +20,12 @@ import {
 import Testimonials from '@components/home/Testimonials';
 import CTAFinal from '@components/home/CTAFinal';
 import { programmes, includedResources } from '@/data/programmes';
+import { useInscriptionModal } from '../hooks/useInscriptionModal';
 
 // Hero Section
 function HeroSection() {
+  const { openModal } = useInscriptionModal();
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background */}
@@ -84,7 +87,7 @@ function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="primary" size="lg" to="/inscription">
+            <Button variant="primary" size="lg" onClick={() => openModal()}>
               Je m'inscris maintenant
               <ArrowRight size={20} />
             </Button>

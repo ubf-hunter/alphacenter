@@ -4,8 +4,11 @@
 // ============================================
 
 import { Link } from 'react-router-dom';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function Hero2() {
+  const { openModal } = useInscriptionModal();
+
   const navLinks = [
     { label: 'Accueil', href: '/' },
     { label: 'Programmes', href: '/services' },
@@ -50,12 +53,8 @@ export default function Hero2() {
             >
               Contact
             </Link>
-            <Link
-              to="/inscription"
-              className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all"
-            >
-              S'inscrire
-            </Link>
+            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">S'inscrire
+            </button>
           </div>
         </div>
       </nav>
@@ -87,12 +86,8 @@ export default function Hero2() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-10">
-              <Link
-                to="/inscription"
-                className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
-              >
-                Je m'inscris →
-              </Link>
+              <button onClick={() => openModal()} className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">Je m'inscris →
+              </button>
               <Link
                 to="/services"
                 className="px-8 py-4 text-lg font-semibold text-[#001A51] border-2 border-gray-200 rounded-full hover:border-[#001A51] transition-all"

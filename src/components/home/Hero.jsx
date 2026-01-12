@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, GraduationCap, Trophy, Users, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 const stats = [
   { icon: Trophy, value: '95%', label: 'Taux de réussite' },
@@ -10,6 +11,8 @@ const stats = [
 ];
 
 export default function Hero() {
+  const { openModal } = useInscriptionModal();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden flex-1">
       {/* Background Gradient */}
@@ -77,13 +80,13 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 mb-16"
         >
-          <Link
-            to="/inscription"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange)] text-white font-semibold rounded-full shadow-lg shadow-[var(--color-orange)]/25 hover:bg-[var(--color-orange-600)] hover:shadow-xl hover:shadow-[var(--color-orange)]/30 hover:-translate-y-0.5 transition-all duration-200"
+          <button
+            onClick={() => openModal()}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange)] text-white font-semibold rounded-full shadow-lg shadow-[var(--color-orange)]/25 hover:bg-[var(--color-orange-600)] hover:shadow-xl hover:shadow-[var(--color-orange)]/30 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
           >
             Je m'inscris
             <ArrowRight size={20} />
-          </Link>
+          </button>
           <Link
             to="/services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 backdrop-blur-xl text-[var(--color-navy)] font-semibold rounded-full border border-[var(--color-gray-200)] hover:bg-white hover:border-[var(--color-navy)]/20 hover:-translate-y-0.5 transition-all duration-200"

@@ -2,8 +2,11 @@ import Button from '@components/common/Button';
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Phone, Rocket } from 'lucide-react';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function CTAFinal() {
+  const { openModal } = useInscriptionModal();
+
   return (
     <section className="py-20 bg-off-white relative overflow-hidden">
       {/* Background decorations */}
@@ -55,7 +58,7 @@ export default function CTAFinal() {
             </div>
 
             {/* CTA Button */}
-            <Button variant="primary" size="lg" to="/inscription">
+            <Button variant="primary" size="lg" onClick={() => openModal()}>
               Je m'inscris maintenant
               <ArrowRight size={20} />
             </Button>
@@ -67,11 +70,11 @@ export default function CTAFinal() {
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 <a
-                  href="tel:+2376XXXXXXXX"
+                  href="tel:+237670102293"
                   className="inline-flex items-center gap-2 text-navy hover:text-orange transition-colors"
                 >
                   <Phone size={18} />
-                  <span className="font-medium">+237 6XX XXX XXX</span>
+                  <span className="font-medium">+237 670102293</span>
                 </a>
                 <a
                   href="mailto:contact@alpha-center.cm"

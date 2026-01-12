@@ -4,8 +4,11 @@
 // ============================================
 
 import { Link } from 'react-router-dom';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function Hero4() {
+  const { openModal } = useInscriptionModal();
+
   const navLinks = [
     { label: 'Accueil', href: '/' },
     { label: 'Programmes', href: '/services' },
@@ -94,12 +97,8 @@ export default function Hero4() {
             >
               Contact
             </Link>
-            <Link
-              to="/inscription"
-              className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all"
-            >
-              S'inscrire
-            </Link>
+            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">S'inscrire
+            </button>
           </div>
         </div>
       </nav>
@@ -154,15 +153,7 @@ export default function Hero4() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <Link
-            to="/inscription"
-            className="group flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-[#001A51] rounded-full hover:bg-[#001A51]/90 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
-          >
-            Je m'inscris maintenant
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </Link>
+          <button onClick={() => openModal()} className="group flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-[#001A51] rounded-full hover:bg-[#001A51]/90 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer">Je m'inscris maintenant <span className="group-hover:translate-x-1 transition-transform">→</span></button>
           <Link
             to="/services"
             className="px-8 py-4 text-lg font-semibold text-[#001A51] bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full hover:bg-white hover:border-gray-300 transition-all text-center"
