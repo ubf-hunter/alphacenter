@@ -113,7 +113,7 @@ function ProgrammeCard({ programme, index }) {
       transition={{ duration: 0.3, delay: 0.1 + index * 0.08 }}
       onClick={handleClick}
       className={`
-        group w-full p-5 rounded-2xl
+        group w-full p-3 sm:p-4 md:p-5 rounded-xl sm:rounded-2xl
         ${colors.bg} ${colors.border} ${colors.hoverBorder}
         border-2 text-left
         transition-all duration-300
@@ -121,29 +121,31 @@ function ProgrammeCard({ programme, index }) {
         focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2
       `}
     >
-      <div className="flex items-start gap-4">
+      <div className="flex items-start gap-3 sm:gap-4">
         {/* Icon */}
         <div
           className={`
-          w-12 h-12 rounded-xl ${colors.iconBg}
-          flex items-center justify-center
+          w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl ${colors.iconBg}
+          flex items-center justify-center shrink-0
           group-hover:scale-110 transition-transform duration-300
         `}
         >
-          <Icon size={24} className={colors.icon} />
+          <Icon size={20} className={`${colors.icon} sm:hidden`} />
+          <Icon size={24} className={`${colors.icon} hidden sm:block`} />
         </div>
 
         {/* Content */}
-        <div className="flex-1">
-          <h3 className="text-lg font-bold text-navy mb-1">{programme.title}</h3>
-          <p className="text-sm text-gray-500">{programme.description}</p>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg font-bold text-navy mb-0.5 sm:mb-1">{programme.title}</h3>
+          <p className="text-xs sm:text-sm text-gray-500 truncate sm:whitespace-normal">{programme.description}</p>
         </div>
 
-        {/* Arrow */}
+        {/* Arrow - hidden on mobile */}
         <div
           className={`
+          hidden sm:flex
           w-10 h-10 rounded-full ${colors.iconBg}
-          flex items-center justify-center
+          items-center justify-center shrink-0
           opacity-0 group-hover:opacity-100
           translate-x-2 group-hover:translate-x-0
           transition-all duration-300
@@ -209,7 +211,7 @@ export default function InscriptionModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="relative w-full max-w-lg bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl"
           >
             {/* Decorative gradient */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-orange to-apricot" />
@@ -218,29 +220,29 @@ export default function InscriptionModal() {
             <button
               ref={firstFocusableRef}
               onClick={closeModal}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-orange"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-orange"
               aria-label="Fermer"
             >
               <X size={20} className="text-gray-600" />
             </button>
 
             {/* Content */}
-            <div className="p-8">
+            <div className="p-4 sm:p-6 md:p-8">
               {/* Header */}
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="text-center mb-8"
+                className="text-center mb-4 sm:mb-6 md:mb-8"
               >
                 {/* WhatsApp icon */}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-success/10 mb-3 sm:mb-4">
                   <MessageCircle size={32} className="text-success" />
                 </div>
 
                 <h2
                   id="inscription-modal-title"
-                  className="text-2xl font-bold text-navy mb-2"
+                  className="text-xl sm:text-2xl font-bold text-navy mb-2"
                 >
                   Contactez-nous sur WhatsApp
                 </h2>
@@ -250,7 +252,7 @@ export default function InscriptionModal() {
               </motion.div>
 
               {/* Programme cards */}
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {programmes.map((programme, index) => (
                   <ProgrammeCard
                     key={programme.id}
@@ -265,7 +267,7 @@ export default function InscriptionModal() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
-                className="text-center text-xs text-gray-400 mt-6"
+                className="text-center text-xs text-gray-400 mt-4 sm:mt-6"
               >
                 Reponse garantie sous 24h ouvrables
               </motion.p>
