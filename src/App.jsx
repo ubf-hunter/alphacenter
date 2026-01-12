@@ -5,6 +5,7 @@ import { InscriptionModal } from '@components/modals';
 import Home from '@pages/Home';
 import Programmes from '@pages/Programmes';
 import Application from '@pages/Application';
+import Contact from '@pages/Contact';
 import NotFound from '@pages/NotFound';
 import {
   OrientationHub,
@@ -50,6 +51,7 @@ export default function App() {
             <Route path="programmes" element={<Programmes />} />
             <Route path="services" element={<Programmes />} />
             <Route path="application" element={<Application />} />
+            <Route path="contact" element={<Contact />} />
             {/* Orientation */}
             <Route path="orientation" element={<OrientationHub />} />
             <Route path="orientation/metiers" element={<MetiersList />} />
