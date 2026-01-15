@@ -70,7 +70,7 @@ export const mainNavigation = [
 
 export const ctaButtons = [
   { label: 'Contact', href: '/contact', variant: 'ghost' },
-  { label: "S'inscrire", href: '/inscription', variant: 'primary' }
+  { label: "S'inscrire", href: '#', variant: 'primary', isModal: true }
 ];
 
 export const footerNavigation = {

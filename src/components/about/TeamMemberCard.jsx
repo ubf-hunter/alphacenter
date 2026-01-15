@@ -59,7 +59,7 @@ export function LeadershipCard({ member, index }) {
     >
       <div
         className={`
-          relative w-full h-[480px] cursor-pointer
+          relative w-full h-120 cursor-pointer
           transition-transform duration-700
           transform-style-3d
           ${isFlipped ? 'rotate-y-180' : ''}
@@ -80,7 +80,7 @@ export function LeadershipCard({ member, index }) {
             photo={member.photo}
             initials={member.initials}
             name={member.name}
-            className="absolute inset-0"
+            className="absolute inset-0 object-center object-cover "
           />
 
           {/* Gradient overlay */}
@@ -335,7 +335,7 @@ export function StaffCard({ member, index }) {
         shadow-sm
       "
       >
-        <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+        <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-100 shrink-0">
           <Avatar
             photo={member.photo}
             initials={member.initials}

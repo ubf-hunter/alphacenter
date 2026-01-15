@@ -176,7 +176,7 @@ export default function Resultats() {
       <AboutCTA
         title="La prochaine success story, c'est vous"
         subtitle="Rejoignez Alpha Center et ecrivez votre propre histoire de reussite"
-        primaryButton={{ label: "S'inscrire maintenant", href: '/inscription' }}
+        primaryButton={{ label: "S'inscrire maintenant", isModal: true }}
         secondaryButton={{ label: 'Parler a un conseiller', href: '/contact' }}
         variant="gradient"
       />

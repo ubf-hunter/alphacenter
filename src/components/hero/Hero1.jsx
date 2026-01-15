@@ -13,6 +13,7 @@ import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 // ===== IMPORTS DES IMAGES DE FOND =====
 // Ajouter vos images ici (une par categorie)
 import imgEnseignants from '../../assets/images/misc/ges1.jpg';
+
 import imgInfirmieres from '../../assets/images/misc/med1.jpg';
 import imgMedecine from '../../assets/images/misc/med2.jpg';
 import imgIngenieurs from '../../assets/images/misc/prep1.jpg';
@@ -21,8 +22,10 @@ import imgIngenieurs from '../../assets/images/misc/prep1.jpg';
 const heroSlides = [
   { text: "d'ingenieurs", image: imgIngenieurs },
   { text: 'de medecine', image: imgMedecine },
-  { text: "d'infirmieres", image: imgInfirmieres },
+  { text: 'de management', image: imgEnseignants },
   { text: 'de comptables', image: imgEnseignants },
+
+  { text: "d'infirmieres", image: imgInfirmieres },
 ];
 
 // Duree entre chaque slide (ms)
@@ -96,7 +99,7 @@ export default function Hero1() {
             key={currentIndex}
             src={heroSlides[currentIndex].image}
             alt="Etudiants"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover contrast-150 sepia-150 saturate-150 "
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
@@ -172,7 +175,11 @@ export default function Hero1() {
               }`}
             >
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy">
-                <AnimatedCounter end={stat.number} suffix={stat.suffix} duration={2.5} />
+                <AnimatedCounter
+                  end={stat.number}
+                  suffix={stat.suffix}
+                  duration={2.5}
+                />
               </div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1">
                 {stat.label}

@@ -10,8 +10,10 @@ import {
   BookOpen,
 } from 'lucide-react';
 import Button from '@components/common/Button';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function PreparatoireHero({ program }) {
+  const { openModal } = useInscriptionModal();
   const benefits = [
     {
       icon: Calendar,
@@ -122,7 +124,7 @@ export default function PreparatoireHero({ program }) {
           <Button
             variant="primary"
             size="lg"
-            to="/inscription?programme=preparatoire"
+            onClick={() => openModal('preparatoire')}
           >
             Je commence maintenant
             <ArrowRight size={20} />

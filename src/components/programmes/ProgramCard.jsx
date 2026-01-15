@@ -10,6 +10,7 @@ import {
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@components/common/Button';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 const colorStyles = {
   orange: {
@@ -44,6 +45,7 @@ const colorStyles = {
 
 export default function ProgramCard({ program, index, featured = false }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { openModal } = useInscriptionModal();
   const styles = colorStyles[program.color] || colorStyles.orange;
   const Icon = program.icon;
 
@@ -189,7 +191,7 @@ export default function ProgramCard({ program, index, featured = false }) {
             <div className="flex gap-3">
               <Button
                 variant="primary"
-                to={`/inscription?programme=${program.id}`}
+                onClick={() => openModal(program.id)}
                 className="flex-1 justify-center"
               >
                 S'inscrire

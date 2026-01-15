@@ -4,6 +4,7 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import Button from '@components/common/Button';
 import { programmes } from '@/data/programmes';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 const comparisonData = [
   {
@@ -56,6 +57,8 @@ const programColors = {
 };
 
 export default function ComparisonTable() {
+  const { openModal } = useInscriptionModal();
+
   const getValue = (program, item) => {
     if (item.type === 'boolean') {
       if (item.value !== undefined) return item.value;
@@ -188,7 +191,7 @@ export default function ComparisonTable() {
                       <Button
                         variant="primary"
                         size="sm"
-                        to={`/inscription?programme=${program.id}`}
+                        onClick={() => openModal(program.id)}
                       >
                         Choisir {program.shortName}
                       </Button>
@@ -256,7 +259,7 @@ export default function ComparisonTable() {
 
                     <Button
                       variant="primary"
-                      to={`/inscription?programme=${program.id}`}
+                      onClick={() => openModal(program.id)}
                       className="w-full justify-center mt-4"
                     >
                       S'inscrire au {program.shortName}

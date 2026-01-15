@@ -4,6 +4,7 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import Button from '@components/common/Button';
 import { calendar } from '@/data/programmes';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 const statusStyles = {
   open: {
@@ -37,6 +38,8 @@ const programColors = {
 };
 
 export default function CalendarSection() {
+  const { openModal } = useInscriptionModal();
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -159,7 +162,7 @@ export default function CalendarSection() {
                         <Button
                           variant="primary"
                           size="sm"
-                          to={`/inscription?programme=${programGroup.programme.toLowerCase()}`}
+                          onClick={() => openModal(programGroup.programme.toLowerCase())}
                           className="w-full justify-center"
                         >
                           S'inscrire maintenant

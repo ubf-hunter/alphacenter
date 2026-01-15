@@ -6,14 +6,16 @@ import Button from '@components/common/Button';
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function AboutCTA({
   title = 'Rejoignez la famille Alpha Center',
   subtitle = 'La prochaine success story, c\'est vous',
-  primaryButton = { label: "S'inscrire maintenant", href: '/inscription' },
+  primaryButton = { label: "S'inscrire maintenant", isModal: true },
   secondaryButton = { label: 'Parler a un conseiller', href: '/contact' },
   variant = 'gradient', // 'gradient' | 'navy' | 'light'
 }) {
+  const { openModal } = useInscriptionModal();
   const variants = {
     gradient: {
       bg: 'bg-linear-to-br from-orange via-orange-600 to-orange-700',
@@ -104,7 +106,9 @@ export default function AboutCTA({
             <Button
               variant={variant === 'light' ? 'primary' : 'white'}
               size="lg"
-              to={primaryButton.href}
+              {...(primaryButton.isModal
+                ? { onClick: () => openModal() }
+                : { to: primaryButton.href })}
             >
               {primaryButton.label}
               <ArrowRight size={18} />

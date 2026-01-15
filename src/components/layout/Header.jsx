@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 // Icon map for dynamic rendering
 const iconMap = {
@@ -34,6 +35,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { openModal } = useInscriptionModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -262,22 +264,39 @@ export default function Header() {
         </div>
 
         <div className="hidden xl:flex items-center gap-2">
-          {ctaButtons.map((btn) => (
-            <Link
-              key={btn.label}
-              to={btn.href}
-              className={`
-                px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
-                ${
-                  btn.variant === 'primary'
-                    ? 'bg-orange text-white hover:bg-orange-600 hover:shadow-lg hover:shadow-orange/25 hover:-translate-y-0.5'
-                    : 'text-navy border border-gray-200 hover:border-navy hover:bg-navy/5'
-                }
-              `}
-            >
-              {btn.label}
-            </Link>
-          ))}
+          {ctaButtons.map((btn) =>
+            btn.isModal ? (
+              <button
+                key={btn.label}
+                onClick={() => openModal()}
+                className={`
+                  px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
+                  ${
+                    btn.variant === 'primary'
+                      ? 'bg-orange text-white hover:bg-orange-600 hover:shadow-lg hover:shadow-orange/25 hover:-translate-y-0.5'
+                      : 'text-navy border border-gray-200 hover:border-navy hover:bg-navy/5'
+                  }
+                `}
+              >
+                {btn.label}
+              </button>
+            ) : (
+              <Link
+                key={btn.label}
+                to={btn.href}
+                className={`
+                  px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
+                  ${
+                    btn.variant === 'primary'
+                      ? 'bg-orange text-white hover:bg-orange-600 hover:shadow-lg hover:shadow-orange/25 hover:-translate-y-0.5'
+                      : 'text-navy border border-gray-200 hover:border-navy hover:bg-navy/5'
+                  }
+                `}
+              >
+                {btn.label}
+              </Link>
+            )
+          )}
         </div>
 
         <button
@@ -331,32 +350,106 @@ export default function Header() {
                             <Link
                               key={subItem.label}
                               to={subItem.href}
-                              className="flex items-center gap-2 py-2 text-sm text-gray-500 hover:text-navy transition-colors"
+                              className="flex items-start gap-3 py-3 px-2 rounded-lg hover:bg-navy/5 transition-colors"
                               onClick={toggleMobileMenu}
                             >
-                              <span className="text-orange">
+                              <span className="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center text-orange shrink-0">
                                 {getIcon(subItem.icon, 16)}
                               </span>
-                              {subItem.label}
+                              <div>
+                                <p className="text-sm font-medium text-navy">{subItem.label}</p>
+                                {subItem.description && (
+                                  <p className="text-xs text-gray-500 mt-0.5">{subItem.description}</p>
+                                )}
+                              </div>
                             </Link>
                           ))}
                         </div>
                       )}
                       {activeDropdown === item.label && item.megamenu && (
-                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
-                          {item.megamenu.metiers.items.map((metier) => (
-                            <Link
-                              key={metier.label}
-                              to={metier.href}
-                              className="flex items-center gap-2 py-2 text-sm text-gray-500 hover:text-navy transition-colors"
-                              onClick={toggleMobileMenu}
-                            >
-                              <span className="text-navy">
-                                {getIcon(metier.icon, 16)}
+                        <div className="ml-4 mt-2 space-y-4 border-l-2 border-gray-200 pl-4">
+                          {/* Section Métiers */}
+                          <div>
+                            <p className="text-xs font-bold text-navy mb-2 flex items-center gap-2">
+                              <span className="w-5 h-5 rounded bg-orange/10 flex items-center justify-center text-orange">
+                                {getIcon(item.megamenu.metiers.titleIcon, 12)}
                               </span>
-                              {metier.label}
-                            </Link>
-                          ))}
+                              {item.megamenu.metiers.title}
+                            </p>
+                            <div className="space-y-1">
+                              {item.megamenu.metiers.items.map((metier) => (
+                                <Link
+                                  key={metier.label}
+                                  to={metier.href}
+                                  className="flex items-center gap-2 py-2 px-2 rounded-lg text-sm text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors"
+                                  onClick={toggleMobileMenu}
+                                >
+                                  <span className="w-6 h-6 rounded bg-navy/5 flex items-center justify-center text-navy">
+                                    {getIcon(metier.icon, 14)}
+                                  </span>
+                                  {metier.label}
+                                </Link>
+                              ))}
+                              <Link
+                                to={item.megamenu.metiers.viewAll.href}
+                                className="block py-2 px-2 text-sm font-semibold text-orange"
+                                onClick={toggleMobileMenu}
+                              >
+                                {item.megamenu.metiers.viewAll.label} →
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Section Écoles */}
+                          <div>
+                            <p className="text-xs font-bold text-navy mb-2 flex items-center gap-2">
+                              <span className="w-5 h-5 rounded bg-orange/10 flex items-center justify-center text-orange">
+                                {getIcon(item.megamenu.ecoles.titleIcon, 12)}
+                              </span>
+                              {item.megamenu.ecoles.title}
+                            </p>
+                            <div className="space-y-2">
+                              <div>
+                                <p className="text-xs text-gray-400 font-medium mb-1 px-2">Cameroun</p>
+                                <div className="grid grid-cols-2 gap-1">
+                                  {item.megamenu.ecoles.cameroun.slice(0, 4).map((ecole) => (
+                                    <Link
+                                      key={ecole.label}
+                                      to={ecole.href}
+                                      className="py-1.5 px-2 rounded text-xs text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors truncate"
+                                      onClick={toggleMobileMenu}
+                                    >
+                                      {ecole.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                              {item.megamenu.ecoles.viewAll && (
+                                <Link
+                                  to={item.megamenu.ecoles.viewAll.href}
+                                  className="block py-2 px-2 text-sm font-semibold text-orange"
+                                  onClick={toggleMobileMenu}
+                                >
+                                  {item.megamenu.ecoles.viewAll.label} →
+                                </Link>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* CTA */}
+                          <Link
+                            to={item.megamenu.cta.href}
+                            className="flex items-center gap-3 p-3 bg-apricot/30 rounded-xl"
+                            onClick={toggleMobileMenu}
+                          >
+                            <span className="w-8 h-8 rounded-lg bg-orange/20 flex items-center justify-center text-orange">
+                              {getIcon(item.megamenu.cta.icon, 16)}
+                            </span>
+                            <div>
+                              <p className="text-sm font-semibold text-navy">{item.megamenu.cta.text}</p>
+                              <p className="text-xs text-gray-600">{item.megamenu.cta.subtext}</p>
+                            </div>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -366,23 +459,43 @@ export default function Header() {
             </nav>
 
             <div className="mt-4 pt-4 border-t border-gray-200 flex flex-col gap-2">
-              {ctaButtons.map((btn) => (
-                <Link
-                  key={btn.label}
-                  to={btn.href}
-                  onClick={toggleMobileMenu}
-                  className={`
-                    w-full px-4 py-3 text-sm font-semibold rounded-full text-center transition-all
-                    ${
-                      btn.variant === 'primary'
-                        ? 'bg-orange text-white hover:bg-orange-600'
-                        : 'text-navy border border-gray-200 hover:border-navy'
-                    }
-                  `}
-                >
-                  {btn.label}
-                </Link>
-              ))}
+              {ctaButtons.map((btn) =>
+                btn.isModal ? (
+                  <button
+                    key={btn.label}
+                    onClick={() => {
+                      toggleMobileMenu();
+                      openModal();
+                    }}
+                    className={`
+                      w-full px-4 py-3 text-sm font-semibold rounded-full text-center transition-all
+                      ${
+                        btn.variant === 'primary'
+                          ? 'bg-orange text-white hover:bg-orange-600'
+                          : 'text-navy border border-gray-200 hover:border-navy'
+                      }
+                    `}
+                  >
+                    {btn.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={btn.label}
+                    to={btn.href}
+                    onClick={toggleMobileMenu}
+                    className={`
+                      w-full px-4 py-3 text-sm font-semibold rounded-full text-center transition-all
+                      ${
+                        btn.variant === 'primary'
+                          ? 'bg-orange text-white hover:bg-orange-600'
+                          : 'text-navy border border-gray-200 hover:border-navy'
+                      }
+                    `}
+                  >
+                    {btn.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>
