@@ -4,6 +4,7 @@
 // ============================================
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '@components/common/Button';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
@@ -182,8 +183,8 @@ function ProgramCard({ program, index }) {
           </div>
 
           {/* CTA */}
-          <a
-            href={`/programmes#${program.id}`}
+          <Link
+            to={`/programmes#${program.id}`}
             className="inline-flex items-center justify-between w-full group/link"
           >
             <span className="text-sm font-semibold text-orange border-b-2 border-current pb-0.5">
@@ -195,7 +196,7 @@ function ProgramCard({ program, index }) {
                 className="text-gray-600 group-hover/link:text-white transition-colors"
               />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </motion.div>

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -249,6 +251,22 @@ function ResourcesSection() {
 
 // Main Page Component
 export default function Programmes() {
+  const location = useLocation();
+
+  // Scroll to program anchor if hash is present in URL
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1); // Remove the '#'
+      // Small delay to ensure the page is rendered
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <>
       <SEO
