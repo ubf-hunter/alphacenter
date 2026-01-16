@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from '@components/layout/Layout';
-import { InscriptionModal } from '@components/modals';
+import { InscriptionModal, ProgramDetailModal } from '@components/modals';
 import Home from '@pages/Home';
 import Programmes from '@pages/Programmes';
 import Application from '@pages/Application';
@@ -20,6 +20,7 @@ import AboutIndex, {
   Resultats,
 } from '@pages/about';
 import { InscriptionModalProvider } from './hooks/useInscriptionModal';
+import { ProgramDetailModalProvider } from './hooks/useProgramDetailModal';
 import { initGA, logPageView } from '@utils/analytics';
 
 // Composant pour tracker les changements de page et scroll to top
@@ -43,31 +44,34 @@ function RouteHandler() {
 export default function App() {
   return (
     <InscriptionModalProvider>
-      <BrowserRouter>
-        <RouteHandler />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="programmes" element={<Programmes />} />
-            <Route path="services" element={<Programmes />} />
-            <Route path="application" element={<Application />} />
-            <Route path="contact" element={<Contact />} />
-            {/* Orientation */}
-            <Route path="orientation" element={<OrientationHub />} />
-            <Route path="orientation/metiers" element={<MetiersList />} />
-            <Route path="orientation/metiers/:slug" element={<MetierDetail />} />
-            <Route path="orientation/ecoles" element={<EcolesList />} />
-            <Route path="orientation/ecoles/:slug" element={<EcoleDetail />} />
-            {/* A propos */}
-            <Route path="a-propos" element={<AboutIndex />} />
-            <Route path="a-propos/qui-sommes-nous" element={<QuiSommesNous />} />
-            <Route path="a-propos/equipe" element={<Equipe />} />
-            <Route path="a-propos/resultats" element={<Resultats />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-        <InscriptionModal />
-      </BrowserRouter>
+      <ProgramDetailModalProvider>
+        <BrowserRouter>
+          <RouteHandler />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="programmes" element={<Programmes />} />
+              <Route path="services" element={<Programmes />} />
+              <Route path="application" element={<Application />} />
+              <Route path="contact" element={<Contact />} />
+              {/* Orientation */}
+              <Route path="orientation" element={<OrientationHub />} />
+              <Route path="orientation/metiers" element={<MetiersList />} />
+              <Route path="orientation/metiers/:slug" element={<MetierDetail />} />
+              <Route path="orientation/ecoles" element={<EcolesList />} />
+              <Route path="orientation/ecoles/:slug" element={<EcoleDetail />} />
+              {/* A propos */}
+              <Route path="a-propos" element={<AboutIndex />} />
+              <Route path="a-propos/qui-sommes-nous" element={<QuiSommesNous />} />
+              <Route path="a-propos/equipe" element={<Equipe />} />
+              <Route path="a-propos/resultats" element={<Resultats />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+          <InscriptionModal />
+          <ProgramDetailModal />
+        </BrowserRouter>
+      </ProgramDetailModalProvider>
     </InscriptionModalProvider>
   );
 }

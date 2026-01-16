@@ -116,6 +116,30 @@ export const programmes = [
     ],
     badge: 'Plus populaire',
     badgeColor: 'bg-orange text-white',
+    // Emploi du temps hebdomadaire
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Mathematiques', type: 'cours' }, { time: '14h - 17h', subject: 'Physique', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Chimie', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices Maths', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Physique', type: 'cours' }, { time: '14h - 17h', subject: 'Informatique', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Mathematiques', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices Physique', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision generale', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 13h', subject: 'Correction + Tutorat', type: 'tutorat' }] },
+    ],
+    // Plans de paiement
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 850000, description: 'Totalite des 6 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement trimestriel', amount: 475000, description: 'Par trimestre (x2)', discount: '5% de reduction', recommended: false },
+      { name: 'Paiement mensuel', amount: 150000, description: 'Par mois (x6)', discount: null, recommended: false },
+    ],
+    // Avantages specifiques
+    advantages: [
+      { title: 'Enseignants polytechniciens', description: 'Cours dispenses par des ingenieurs diplomes de l\'ENSP' },
+      { title: 'Annales corrigees', description: '15 ans d\'annales avec corrections detaillees' },
+      { title: 'Suivi personnalise', description: 'Entretiens individuels mensuels avec un tuteur' },
+      { title: 'Simulation concours', description: 'Conditions reelles d\'examen chaque vendredi' },
+      { title: 'Groupe WhatsApp VIP', description: 'Reponses aux questions sous 2h maximum' },
+      { title: 'Acces bibliotheque', description: 'Espace de travail calme avec ressources' },
+    ],
   },
   {
     id: 'enstp',
@@ -165,6 +189,26 @@ export const programmes = [
     ],
     badge: null,
     badgeColor: '',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Mathematiques', type: 'cours' }, { time: '14h - 17h', subject: 'Dessin technique', type: 'tp' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Physique', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices Maths', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Mecanique', type: 'cours' }, { time: '14h - 17h', subject: 'Dessin technique', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Mathematiques', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices Physique', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Correction + Tutorat', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 665000, description: 'Totalite des 5 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 140000, description: 'Par mois (x5)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Experts travaux publics', description: 'Formateurs issus du secteur BTP et genie civil' },
+      { title: 'Dessin technique intensif', description: 'Maitrise complete du dessin industriel' },
+      { title: 'Visites de chantiers', description: 'Immersion sur des projets reels (optionnel)' },
+      { title: 'Annales specifiques', description: '10 ans d\'annales ENSTP corrigees' },
+      { title: 'Accompagnement personnalise', description: 'Suivi individuel de progression' },
+      { title: 'Materiel fourni', description: 'Instruments de dessin technique inclus' },
+    ],
   },
 
   // ============== SANTÉ & MÉDECINE ==============
@@ -216,6 +260,27 @@ export const programmes = [
     ],
     badge: 'Nouveau',
     badgeColor: 'bg-emerald-500 text-white',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Biologie cellulaire', type: 'cours' }, { time: '14h - 17h', subject: 'Chimie organique', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Physique medicale', type: 'cours' }, { time: '14h - 17h', subject: 'QCM Biologie', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Chimie organique', type: 'cours' }, { time: '14h - 17h', subject: 'Travaux pratiques', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Biologie', type: 'cours' }, { time: '14h - 17h', subject: 'QCM Chimie', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Mathematiques', type: 'cours' }, { time: '14h - 17h', subject: 'Concours blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 13h', subject: 'Correction + Coaching', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 1260000, description: 'Totalite des 8 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement trimestriel', amount: 490000, description: 'Par trimestre (x3)', discount: '5% de reduction', recommended: false },
+      { name: 'Paiement mensuel', amount: 175000, description: 'Par mois (x8)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Medecins enseignants', description: 'Cours par des professionnels de sante en exercice' },
+      { title: 'QCM intensifs', description: 'Plus de 5000 QCM types concours FMSB' },
+      { title: 'Laboratoire equippe', description: 'Travaux pratiques en conditions reelles' },
+      { title: 'Coaching mental', description: 'Preparation psychologique au concours' },
+      { title: 'Annales completes', description: '10 ans d\'annales avec corrections detaillees' },
+      { title: 'Groupe d\'entraide', description: 'Communaute d\'etudiants motivees' },
+    ],
   },
   {
     id: 'infirmier',
@@ -265,6 +330,26 @@ export const programmes = [
     ],
     badge: 'Demande',
     badgeColor: 'bg-rose-500 text-white',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Biologie humaine', type: 'cours' }, { time: '14h - 17h', subject: 'Anatomie', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Hygiene et soins', type: 'cours' }, { time: '14h - 17h', subject: 'Pratique soins', type: 'tp' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Physiologie', type: 'cours' }, { time: '14h - 17h', subject: 'Culture medicale', type: 'td' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Biologie', type: 'cours' }, { time: '14h - 17h', subject: 'QCM entrainement', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Correction + Tutorat', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 540000, description: 'Totalite des 5 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 120000, description: 'Par mois (x5)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Formateurs de sante', description: 'Infirmiers et medecins en exercice' },
+      { title: 'Stages pratiques', description: 'Immersion en milieu hospitalier' },
+      { title: 'Simulations soins', description: 'Mannequins et materiel professionnel' },
+      { title: 'Entretiens prepares', description: 'Coaching pour les oraux d\'admission' },
+      { title: 'Culture medicale', description: 'Actualites et ethique du metier' },
+      { title: 'Reseau professionnel', description: 'Contact avec des IDE en poste' },
+    ],
   },
 
   // ============== ÉCONOMIE & GESTION ==============
@@ -316,16 +401,36 @@ export const programmes = [
     ],
     badge: 'Nouveau',
     badgeColor: 'bg-blue-500 text-white',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Economie generale', type: 'cours' }, { time: '14h - 17h', subject: 'Comptabilite', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Gestion', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices pratiques', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Maths financieres', type: 'cours' }, { time: '14h - 17h', subject: 'Etude de cas', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Culture eco.', type: 'cours' }, { time: '14h - 17h', subject: 'Dissertation', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Correction + Coaching', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 607500, description: 'Totalite des 5 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 135000, description: 'Par mois (x5)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Professionnels du secteur', description: 'Experts en economie et finance' },
+      { title: 'Etudes de cas reels', description: 'Analyses d\'entreprises camerounaises' },
+      { title: 'Techniques de dissertation', description: 'Methodologie specifique ESSEC' },
+      { title: 'Simulation d\'entreprise', description: 'Jeux de gestion pratiques' },
+      { title: 'Coaching entretien', description: 'Preparation aux oraux d\'admission' },
+      { title: 'Reseau alumni', description: 'Contact avec d\'anciens admis' },
+    ],
   },
   {
-    id: 'uccac',
+    id: 'ucac',
     category: 'business',
-    name: 'Programme UCCAC',
+    name: 'Programme UCAC',
     school: 'Universite Catholique d\'Afrique Centrale',
-    shortName: 'UCCAC',
+    shortName: 'UCAC',
     tagline: 'Excellence en sciences economiques et administration',
     description:
-      "Preparation aux concours d'entree a l'UCCAC (FSSG, FSGA). Formation rigoureuse en economie, droit, gestion et administration des entreprises dans un cadre d'excellence.",
+      "Preparation aux concours d'entree a l'UCAC (FSSG, FSGA). Formation rigoureuse en economie, droit, gestion et administration des entreprises dans un cadre d'excellence.",
     duration: '4 mois intensifs',
     sessions: ['Fevrier', 'Octobre'],
     nextSession: 'Fevrier 2025',
@@ -345,7 +450,7 @@ export const programmes = [
       { name: 'Methodologie universitaire', icon: BookOpen, hours: 40 },
     ],
     features: [
-      'Preparation adaptee aux exigences de l\'UCCAC',
+      'Preparation adaptee aux exigences de l\'UCAC',
       'Cours de methodologie universitaire',
       'Travaux diriges en groupe',
       'Examens blancs reguliers',
@@ -365,6 +470,26 @@ export const programmes = [
     ],
     badge: 'Demande',
     badgeColor: 'bg-indigo-500 text-white',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Economie politique', type: 'cours' }, { time: '14h - 17h', subject: 'Introduction au droit', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Gestion', type: 'cours' }, { time: '14h - 17h', subject: 'Travaux diriges', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Methodologie', type: 'cours' }, { time: '14h - 17h', subject: 'Tests psycho.', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Droit', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Correction + Suivi', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 504000, description: 'Totalite des 4 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 140000, description: 'Par mois (x4)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Exigence UCAC', description: 'Preparation adaptee aux standards' },
+      { title: 'Methodologie universitaire', description: 'Redaction et analyse critique' },
+      { title: 'Tests psychotechniques', description: 'Entrainement aux tests d\'aptitude' },
+      { title: 'Petits groupes', description: 'Maximum 20 etudiants par classe' },
+      { title: 'Suivi personnalise', description: 'Rendez-vous individuels reguliers' },
+      { title: 'Culture generale', description: 'Actualites et debats d\'idees' },
+    ],
   },
 
   // ============== ÉDUCATION ==============
@@ -416,6 +541,26 @@ export const programmes = [
     ],
     badge: null,
     badgeColor: '',
+    schedule: [
+      { day: 'Lundi', sessions: [{ time: '08h - 12h', subject: 'Specialite', type: 'cours' }, { time: '14h - 17h', subject: 'Culture generale', type: 'cours' }] },
+      { day: 'Mardi', sessions: [{ time: '08h - 12h', subject: 'Methodologie', type: 'cours' }, { time: '14h - 17h', subject: 'Expression ecrite', type: 'td' }] },
+      { day: 'Mercredi', sessions: [{ time: '08h - 12h', subject: 'Specialite', type: 'cours' }, { time: '14h - 17h', subject: 'Preparation oral', type: 'tp' }] },
+      { day: 'Jeudi', sessions: [{ time: '08h - 12h', subject: 'Culture generale', type: 'cours' }, { time: '14h - 17h', subject: 'Exercices', type: 'td' }] },
+      { day: 'Vendredi', sessions: [{ time: '08h - 12h', subject: 'Revision', type: 'revision' }, { time: '14h - 17h', subject: 'Examen blanc', type: 'examen' }] },
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Coaching individuel', type: 'tutorat' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 468000, description: 'Totalite des 4 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 130000, description: 'Par mois (x4)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Multi-specialites', description: 'Sciences, Lettres, Langues, etc.' },
+      { title: 'Coaching personnalise', description: 'Suivi individuel hebdomadaire' },
+      { title: 'Preparation orale', description: 'Simulations d\'entretien regulieres' },
+      { title: 'Petits effectifs', description: 'Maximum 20 etudiants par groupe' },
+      { title: 'Culture generale', description: 'Actualites et debats de societe' },
+      { title: 'Ressources completes', description: 'Bibliotheque et supports numeriques' },
+    ],
   },
 
   // ============== PROGRAMME PRÉPARATOIRE ==============
@@ -467,6 +612,22 @@ export const programmes = [
     ],
     badge: 'Anticipe',
     badgeColor: 'bg-gray-600 text-white',
+    schedule: [
+      { day: 'Samedi', sessions: [{ time: '08h - 12h', subject: 'Maths renforcees', type: 'cours' }, { time: '14h - 17h', subject: 'Physique-Chimie', type: 'cours' }] },
+      { day: 'Dimanche', sessions: [{ time: '08h - 12h', subject: 'Biologie (sante)', type: 'cours' }, { time: '14h - 16h', subject: 'Methodologie', type: 'td' }] },
+    ],
+    paymentPlans: [
+      { name: 'Paiement integral', amount: 270000, description: 'Totalite des 3 mois', discount: '10% de reduction', recommended: true },
+      { name: 'Paiement mensuel', amount: 100000, description: 'Par mois (x3)', discount: null, recommended: false },
+    ],
+    advantages: [
+      { title: 'Compatible Terminale', description: 'Cours les weekends uniquement' },
+      { title: 'Avance strategique', description: 'Preparation avant le Baccalaureat' },
+      { title: 'Orientation personnalisee', description: 'Choix Ingenieur ou Sante' },
+      { title: 'Bases solides', description: 'Renforcement des fondamentaux' },
+      { title: 'Methodologie concours', description: 'Techniques specifiques' },
+      { title: 'Evaluation continue', description: 'Suivi de progression regulier' },
+    ],
   },
 ];
 
@@ -685,7 +846,7 @@ export const calendar = [
     ],
   },
   {
-    programme: 'UCCAC',
+    programme: 'UCAC',
     category: 'business',
     sessions: [
       {

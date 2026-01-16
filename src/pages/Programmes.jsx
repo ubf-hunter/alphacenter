@@ -1,27 +1,25 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { includedResources, programmes } from '@/data/programmes';
+import Button from '@components/common/Button';
+import Container from '@components/common/Container';
+import SEO from '@components/common/SEO';
+import CTAFinal from '@components/home/CTAFinal';
+import {
+  CalendarSection,
+  MethodologySection,
+  PreparatoireHero,
+  ProgramCard,
+} from '@components/programmes';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  GraduationCap,
-  Users,
-  Trophy,
   BookOpen,
+  GraduationCap,
   Star,
+  Trophy,
+  Users,
 } from 'lucide-react';
-import SEO from '@components/common/SEO';
-import Container from '@components/common/Container';
-import Button from '@components/common/Button';
-import {
-  ProgramCard,
-  MethodologySection,
-  CalendarSection,
-  ComparisonTable,
-  PreparatoireHero,
-} from '@components/programmes';
-import Testimonials from '@components/home/Testimonials';
-import CTAFinal from '@components/home/CTAFinal';
-import { programmes, includedResources } from '@/data/programmes';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useInscriptionModal } from '../hooks/useInscriptionModal';
 
 // Hero Section
@@ -67,7 +65,9 @@ function HeroSection() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight"
           >
             Des programmes adaptés à{' '}
-            <span className="text-orange font-cursive italic">chaque ambition</span>
+            <span className="text-orange font-cursive italic">
+              chaque ambition
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -77,8 +77,8 @@ function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
           >
-            Préparation intensive aux concours des grandes écoles d'ingénieurs du
-            Cameroun : ENSP, ENSTP, ENS. Une méthodologie éprouvée pour
+            Préparation intensive aux concours des grandes écoles d'ingénieurs
+            du Cameroun : ENSP, ENSTP, ENS. Une méthodologie éprouvée pour
             maximiser tes chances de réussite.
           </motion.p>
 
@@ -116,7 +116,9 @@ function HeroSection() {
                 className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-100"
               >
                 <stat.icon size={24} className="text-orange mb-2" />
-                <span className="text-2xl font-bold text-navy">{stat.value}</span>
+                <span className="text-2xl font-bold text-navy">
+                  {stat.value}
+                </span>
                 <span className="text-sm text-gray-500">{stat.label}</span>
               </div>
             ))}
@@ -149,7 +151,10 @@ function PreparatoireHeroSection() {
 // Programs Grid Section
 function ProgramsSection() {
   return (
-    <section id="programmes" className="py-24 bg-white relative overflow-hidden">
+    <section
+      id="programmes"
+      className="py-24 bg-white relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-apricot/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -278,10 +283,9 @@ export default function Programmes() {
       <PreparatoireHeroSection />
       <ProgramsSection />
       <ResourcesSection />
-      <MethodologySection />
-      <ComparisonTable />
       <CalendarSection />
-      <Testimonials />
+      <MethodologySection />
+
       <CTAFinal />
     </>
   );

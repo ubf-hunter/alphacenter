@@ -1,16 +1,15 @@
+import Button from '@components/common/Button';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Calendar,
   Clock,
+  Eye,
   TrendingUp,
   Users,
-  CheckCircle,
 } from 'lucide-react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '@components/common/Button';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
+import { useProgramDetailModal } from '../../hooks/useProgramDetailModal';
 
 const colorStyles = {
   orange: {
@@ -41,11 +40,39 @@ const colorStyles = {
     border: 'hover:border-gray-300',
     button: 'bg-gray-700 hover:bg-gray-800',
   },
+  emerald: {
+    badge: 'bg-emerald-500 text-white',
+    iconBg: 'bg-gradient-to-br from-emerald-500 to-emerald-700',
+    accent: 'text-emerald-600',
+    border: 'hover:border-emerald-300',
+    button: 'bg-emerald-600 hover:bg-emerald-700',
+  },
+  rose: {
+    badge: 'bg-rose-500 text-white',
+    iconBg: 'bg-gradient-to-br from-rose-500 to-rose-600',
+    accent: 'text-rose-600',
+    border: 'hover:border-rose-300',
+    button: 'bg-rose-600 hover:bg-rose-700',
+  },
+  blue: {
+    badge: 'bg-blue-500 text-white',
+    iconBg: 'bg-gradient-to-br from-blue-500 to-blue-700',
+    accent: 'text-blue-600',
+    border: 'hover:border-blue-300',
+    button: 'bg-blue-600 hover:bg-blue-700',
+  },
+  indigo: {
+    badge: 'bg-indigo-500 text-white',
+    iconBg: 'bg-gradient-to-br from-indigo-500 to-indigo-700',
+    accent: 'text-indigo-600',
+    border: 'hover:border-indigo-300',
+    button: 'bg-indigo-600 hover:bg-indigo-700',
+  },
 };
 
 export default function ProgramCard({ program, index, featured = false }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const { openModal } = useInscriptionModal();
+  const { openModal: openInscriptionModal } = useInscriptionModal();
+  const { openModal: openDetailModal } = useProgramDetailModal();
   const styles = colorStyles[program.color] || colorStyles.orange;
   const Icon = program.icon;
 
@@ -56,7 +83,9 @@ export default function ProgramCard({ program, index, featured = false }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className={`group relative ${featured ? 'lg:col-span-2 lg:row-span-2' : ''} scroll-mt-32`}
+      className={`group relative ${
+        featured ? 'lg:col-span-2 lg:row-span-2' : ''
+      } scroll-mt-32`}
     >
       <div
         className={`
@@ -79,7 +108,9 @@ export default function ProgramCard({ program, index, featured = false }) {
         )}
 
         {/* Header with gradient */}
-        <div className={`relative p-6 pb-4 bg-gradient-to-br ${program.gradient} text-white`}>
+        <div
+          className={`relative p-6 pb-4 bg-gradient-to-br ${program.gradient} text-white`}
+        >
           {/* Icon */}
           <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
             <Icon size={32} className="text-white" />
@@ -109,13 +140,15 @@ export default function ProgramCard({ program, index, featured = false }) {
             </div>
             <div className="flex items-center gap-2">
               <Calendar size={18} className="text-gray-400" />
-              <span className="text-sm text-gray-600">{program.nextSession}</span>
+              <span className="text-sm text-gray-600">
+                {program.nextSession}
+              </span>
             </div>
             {program.successRate && (
               <div className="flex items-center gap-2">
                 <TrendingUp size={18} className="text-green-500" />
                 <span className="text-sm font-semibold text-green-600">
-                  {program.successRate}% réussite
+                  {program.successRate}% reussite
                 </span>
               </div>
             )}
@@ -129,7 +162,7 @@ export default function ProgramCard({ program, index, featured = false }) {
           {/* Subjects preview */}
           <div className="mb-6">
             <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              Matières principales
+              Matieres principales
             </h4>
             <div className="flex flex-wrap gap-2">
               {program.subjects.slice(0, 4).map((subject) => (
@@ -143,40 +176,21 @@ export default function ProgramCard({ program, index, featured = false }) {
             </div>
           </div>
 
-          {/* Features (expandable) */}
-          <motion.div
-            initial={false}
-            animate={{ height: isExpanded ? 'auto' : 0 }}
-            className="overflow-hidden"
-          >
-            <div className="pb-6">
-              <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                Ce qui est inclus
-              </h4>
-              <ul className="space-y-2">
-                {program.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className={`${styles.accent} mt-0.5 shrink-0`} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-
-          {/* Toggle expand */}
+          {/* View Details Button */}
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors mb-6"
+            onClick={() => openDetailModal(program)}
+            className="group/btn flex items-center gap-2 text-sm font-semibold text-orange hover:text-navy transition-colors mb-6"
           >
-            {isExpanded ? 'Voir moins' : 'Voir plus de détails'}
+            <Eye size={18} />
+            <span>Voir les details du programme</span>
+            <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
           </button>
 
           {/* Price and CTA */}
           <div className="pt-6 border-t border-gray-100">
             <div className="flex items-end justify-between mb-4">
               <div>
-                <span className="text-sm text-gray-500">À partir de</span>
+                <span className="text-sm text-gray-500">A partir de</span>
                 <div className="text-2xl font-bold text-navy">
                   {program.priceLabel}
                 </div>
@@ -192,17 +206,18 @@ export default function ProgramCard({ program, index, featured = false }) {
             <div className="flex gap-3">
               <Button
                 variant="primary"
-                onClick={() => openModal(program.id)}
+                onClick={() => openInscriptionModal(program.id)}
                 className="flex-1 justify-center"
               >
                 S'inscrire
               </Button>
-              <Link
-                to={`/programmes/${program.id}`}
-                className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+              <button
+                onClick={() => openDetailModal(program)}
+                className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 hover:border-orange hover:bg-orange/5 transition-colors"
+                title="Voir les details"
               >
-                <ArrowRight size={20} className="text-gray-500" />
-              </Link>
+                <Eye size={20} className="text-gray-500 hover:text-orange" />
+              </button>
             </div>
           </div>
         </div>
