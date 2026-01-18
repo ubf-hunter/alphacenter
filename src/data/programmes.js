@@ -15,11 +15,13 @@ import {
   GraduationCap,
   HeartPulse,
   Landmark,
+  Leaf,
   MessageSquare,
   Microscope,
   Monitor,
   PenTool,
   PieChart,
+  Ruler,
   Scale,
   Stethoscope,
   Syringe,
@@ -1466,6 +1468,273 @@ export const programmes = [
       },
     ],
   },
+
+  // ============== ARCHITECTURE & URBANISME ==============
+  {
+    id: 'eamau',
+    category: 'engineering',
+    name: 'Programme EAMAU',
+    school: "Ecole Africaine des Metiers de l'Architecture et de l'Urbanisme",
+    shortName: 'EAMAU',
+    tagline: "Construis l'Afrique de demain",
+    description:
+      "Preparation au concours d'entree a l'EAMAU, ecole de reference en Afrique pour l'architecture et l'urbanisme. Formation intensive couvrant le dessin architectural, la geometrie descriptive et la culture architecturale.",
+    duration: '6 mois intensifs',
+    sessions: ['Janvier', 'Fevrier'],
+    nextSession: 'Janvier 2026',
+    placesAvailable: 30,
+    format: 'Presentiel + ateliers pratiques',
+    price: 60000,
+    priceLabel: '60 000 FCFA/mois',
+    successRate: 85,
+    studentsPerClass: 20,
+    icon: Ruler,
+    color: 'amber',
+    gradient: 'from-amber-500 to-amber-600',
+    subjects: [
+      { name: 'Dessin architectural', icon: PenTool, hours: 120 },
+      { name: 'Geometrie descriptive', icon: Calculator, hours: 80 },
+      { name: 'Mathematiques', icon: Calculator, hours: 60 },
+      { name: 'Culture architecturale', icon: BookOpen, hours: 40 },
+    ],
+    features: [
+      'Ateliers de dessin avec architectes professionnels',
+      'Visites de sites architecturaux',
+      'Portfolio personnel accompagne',
+      'Examens blancs mensuels',
+      'Cours de perspective et rendu',
+      'Groupe WhatsApp dedie',
+    ],
+    testimonial: {
+      quote:
+        "La preparation a l'EAMAU m'a ouvert les portes de ma passion. Les ateliers pratiques sont exceptionnels.",
+      author: 'Patrick M.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat C, D, E ou F',
+      'Aptitude au dessin (test initial)',
+      'Motivation pour les metiers de l\'architecture',
+    ],
+    badge: 'Architecture',
+    badgeColor: 'bg-amber-500 text-white',
+    schedule: [
+      {
+        day: 'Lundi',
+        sessions: [
+          { time: '08h30 - 12h30', subject: 'Dessin architectural', type: 'atelier' },
+          { time: '14h - 17h', subject: 'Geometrie descriptive', type: 'cours' },
+        ],
+      },
+      {
+        day: 'Mardi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Mathematiques', type: 'cours' },
+          { time: '11h - 13h', subject: 'Culture architecturale', type: 'cours' },
+        ],
+      },
+      {
+        day: 'Mercredi',
+        sessions: [
+          { time: '08h30 - 12h30', subject: 'Dessin architectural', type: 'atelier' },
+          { time: '14h - 17h', subject: 'Perspective et rendu', type: 'tp' },
+        ],
+      },
+      {
+        day: 'Jeudi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Geometrie descriptive', type: 'td' },
+          { time: '11h - 13h', subject: 'Mathematiques', type: 'td' },
+        ],
+      },
+      {
+        day: 'Vendredi',
+        sessions: [
+          { time: '08h30 - 12h30', subject: 'Projet personnel', type: 'atelier' },
+          { time: '14h - 17h', subject: 'Correction collective', type: 'revision' },
+        ],
+      },
+    ],
+    paymentPlans: [
+      {
+        name: 'Paiement integral',
+        amount: 324000,
+        description: 'Totalite des 6 mois',
+        discount: '10% de reduction',
+        recommended: true,
+      },
+      {
+        name: 'Paiement trimestriel',
+        amount: 180000,
+        description: 'Par trimestre (x2)',
+        discount: '5% de reduction',
+        recommended: false,
+      },
+      {
+        name: 'Paiement mensuel',
+        amount: 60000,
+        description: 'Par mois (x6)',
+        discount: null,
+        recommended: false,
+      },
+    ],
+    advantages: [
+      {
+        title: 'Architectes professionnels',
+        description: 'Encadrement par des architectes DPLG',
+      },
+      {
+        title: 'Ateliers pratiques',
+        description: 'Materiel de dessin fourni',
+      },
+      {
+        title: 'Portfolio accompagne',
+        description: 'Constitution d\'un dossier personnel',
+      },
+      {
+        title: 'Visites de terrain',
+        description: 'Decouverte de realisations architecturales',
+      },
+      {
+        title: 'Correction individuelle',
+        description: 'Suivi personnalise de chaque projet',
+      },
+      {
+        title: 'Preparation orale',
+        description: 'Entrainement a la presentation de projets',
+      },
+    ],
+  },
+
+  // ============== AGRONOMIE ==============
+  {
+    id: 'fasa',
+    category: 'engineering',
+    name: 'Programme FASA',
+    school: "Faculte d'Agronomie et des Sciences Agricoles",
+    shortName: 'FASA',
+    tagline: 'Nourris le Cameroun de demain',
+    description:
+      "Preparation au concours d'entree a la FASA de l'Universite de Dschang. Formation complete en sciences agricoles, biologie vegetale et chimie pour les futurs ingenieurs agronomes.",
+    duration: '5 mois intensifs',
+    sessions: ['Fevrier', 'Mars'],
+    nextSession: 'Fevrier 2026',
+    placesAvailable: 35,
+    format: 'Presentiel + travaux pratiques',
+    price: 50000,
+    priceLabel: '50 000 FCFA/mois',
+    successRate: 82,
+    studentsPerClass: 25,
+    icon: Leaf,
+    color: 'green',
+    gradient: 'from-green-500 to-green-600',
+    subjects: [
+      { name: 'Biologie vegetale', icon: Leaf, hours: 100 },
+      { name: 'Chimie', icon: FlaskConical, hours: 80 },
+      { name: 'Mathematiques', icon: Calculator, hours: 60 },
+      { name: 'Physique', icon: Atom, hours: 50 },
+    ],
+    features: [
+      'Cours structures par des ingenieurs agronomes',
+      'Travaux pratiques en laboratoire',
+      'Visites d\'exploitations agricoles',
+      'Examens blancs bi-mensuels',
+      'Annales corrigees FASA',
+      'Groupe WhatsApp dedie',
+    ],
+    testimonial: {
+      quote:
+        "Grace a Alpha Center, j'ai integre la FASA. Les cours de biologie m'ont vraiment bien prepare.",
+      author: 'Sandrine A.',
+      year: 'Promo 2024',
+    },
+    requirements: [
+      'Baccalaureat C, D ou equivalent',
+      'Interet pour les sciences agricoles',
+      'Motivation et engagement',
+    ],
+    badge: 'Agronomie',
+    badgeColor: 'bg-green-500 text-white',
+    schedule: [
+      {
+        day: 'Lundi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Biologie vegetale', type: 'cours' },
+          { time: '11h - 13h', subject: 'Chimie', type: 'cours' },
+        ],
+      },
+      {
+        day: 'Mardi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Mathematiques', type: 'cours' },
+          { time: '11h - 13h', subject: 'Physique', type: 'cours' },
+        ],
+      },
+      {
+        day: 'Mercredi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Biologie vegetale', type: 'td' },
+          { time: '11h - 13h', subject: 'Chimie', type: 'tp' },
+        ],
+      },
+      {
+        day: 'Jeudi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Mathematiques', type: 'td' },
+          { time: '11h - 13h', subject: 'Physique', type: 'td' },
+        ],
+      },
+      {
+        day: 'Vendredi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Revision generale', type: 'revision' },
+          { time: '11h - 13h', subject: 'Examen blanc', type: 'examen' },
+        ],
+      },
+    ],
+    paymentPlans: [
+      {
+        name: 'Paiement integral',
+        amount: 225000,
+        description: 'Totalite des 5 mois',
+        discount: '10% de reduction',
+        recommended: true,
+      },
+      {
+        name: 'Paiement mensuel',
+        amount: 50000,
+        description: 'Par mois (x5)',
+        discount: null,
+        recommended: false,
+      },
+    ],
+    advantages: [
+      {
+        title: 'Ingenieurs agronomes',
+        description: 'Cours par des diplomes FASA',
+      },
+      {
+        title: 'Travaux pratiques',
+        description: 'Laboratoire et terrain',
+      },
+      {
+        title: 'Visites de terrain',
+        description: 'Exploitations agricoles modernes',
+      },
+      {
+        title: 'Annales completes',
+        description: '10 ans de sujets corriges',
+      },
+      {
+        title: 'Suivi personnalise',
+        description: 'Entretiens reguliers avec tuteur',
+      },
+      {
+        title: 'Groupe WhatsApp',
+        description: 'Support continu 7j/7',
+      },
+    ],
+  },
 ];
 
 // Méthodologie d'enseignement
@@ -1611,6 +1880,34 @@ export const calendar = [
         status: 'open',
         places: 25,
         placesLeft: 18,
+      },
+    ],
+  },
+  {
+    programme: 'EAMAU',
+    category: 'engineering',
+    sessions: [
+      {
+        name: 'Session Janvier-Juin 2026',
+        startDate: 'Janvier 2026',
+        endDate: 'Juin 2026',
+        status: 'open',
+        places: 30,
+        placesLeft: 20,
+      },
+    ],
+  },
+  {
+    programme: 'FASA',
+    category: 'engineering',
+    sessions: [
+      {
+        name: 'Session Fevrier-Juin 2026',
+        startDate: 'Fevrier 2026',
+        endDate: 'Juin 2026',
+        status: 'open',
+        places: 35,
+        placesLeft: 25,
       },
     ],
   },
@@ -1788,6 +2085,6 @@ export const includedResources = [
 export const globalStats = {
   students: '700+',
   successRate: '85%',
-  programs: 10,
+  programs: 12,
   experience: '15+',
 };

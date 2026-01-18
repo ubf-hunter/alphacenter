@@ -3,12 +3,29 @@
 // Donnees completes des etablissements
 // ============================================
 
-import { Briefcase, Building2, Cpu, GraduationCap, Heart, Radio, Stethoscope } from 'lucide-react';
+import {
+  Briefcase,
+  Building2,
+  Cpu,
+  GraduationCap,
+  Heart,
+  Leaf,
+  Radio,
+  Ruler,
+  Stethoscope,
+} from 'lucide-react';
 
 // Import des logos disponibles
+import logoEAMAU from '@assets/logoEcoles/EAMAU.webp';
 import logoENSPY from '@assets/logoEcoles/enspy.webp';
 import logoENSTP from '@assets/logoEcoles/enstp.png';
+import logoFASA from '@assets/logoEcoles/fasa.webp';
+import logoFMSP from '@assets/logoEcoles/FMSP.webp';
+import logoIUTDouala from '@assets/logoEcoles/iut-douala.webp';
+import logoPrepaVogt from '@assets/logoEcoles/prepa-vogt.png';
+import logoSaintJean from '@assets/logoEcoles/saint-jean.jpeg';
 import logoSUPPTIC from '@assets/logoEcoles/supptic.png';
+import logoUCAC from '@assets/logoEcoles/ucac.webp';
 
 // ===== ECOLES AU CAMEROUN =====
 export const cameroonSchools = [
@@ -311,11 +328,11 @@ export const cameroonSchools = [
     color: 'emerald',
     gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
     logo: null,
-    tagline: 'Excellence medicale dans l\'Ouest',
+    tagline: "Excellence medicale dans l'Ouest",
     description:
-      'La FMSB de Dschang forme des medecins competents avec un cursus rigoureux et des hopitaux d\'application modernes.',
+      "La FMSB de Dschang forme des medecins competents avec un cursus rigoureux et des hopitaux d'application modernes.",
     longDescription:
-      'La Faculte de Medecine et des Sciences Biomedicales de l\'Universite de Dschang participe a la formation medicale de qualite au Cameroun. Situee dans l\'Ouest du pays, elle offre un cadre d\'etude propice et des installations modernes pour former les futurs medecins.',
+      "La Faculte de Medecine et des Sciences Biomedicales de l'Universite de Dschang participe a la formation medicale de qualite au Cameroun. Situee dans l'Ouest du pays, elle offre un cadre d'etude propice et des installations modernes pour former les futurs medecins.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -332,7 +349,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les FMSB)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les FMSB)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -382,9 +400,9 @@ export const cameroonSchools = [
     logo: null,
     tagline: 'La sante pour le Grand Nord',
     description:
-      'La FMSB de Garoua forme des medecins pour repondre aux besoins de sante des regions du Nord et de l\'Extreme-Nord.',
+      "La FMSB de Garoua forme des medecins pour repondre aux besoins de sante des regions du Nord et de l'Extreme-Nord.",
     longDescription:
-      'La Faculte de Medecine et des Sciences Biomedicales de l\'Universite de Garoua contribue a ameliorer l\'acces aux soins dans les regions septentrionales du Cameroun. Elle forme des medecins sensibilises aux specificites sanitaires du Grand Nord.',
+      "La Faculte de Medecine et des Sciences Biomedicales de l'Universite de Garoua contribue a ameliorer l'acces aux soins dans les regions septentrionales du Cameroun. Elle forme des medecins sensibilises aux specificites sanitaires du Grand Nord.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -401,7 +419,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les FMSB)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les FMSB)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -439,7 +458,7 @@ export const cameroonSchools = [
   {
     id: 'fmsp-ebolowa',
     slug: 'fmsp-ebolowa',
-    name: 'Faculte de Medecine et des Sciences Pharmaceutiques - Universite d\'Ebolowa',
+    name: "Faculte de Medecine et des Sciences Pharmaceutiques - Universite d'Ebolowa",
     shortName: 'FMSP Ebolowa',
     acronym: 'FMSP Ebolowa',
     type: 'local',
@@ -451,9 +470,9 @@ export const cameroonSchools = [
     logo: null,
     tagline: 'Medecine et pharmacie pour le Sud',
     description:
-      'La FMSP d\'Ebolowa forme des medecins et pharmaciens pour renforcer le systeme de sante de la region du Sud.',
+      "La FMSP d'Ebolowa forme des medecins et pharmaciens pour renforcer le systeme de sante de la region du Sud.",
     longDescription:
-      'La Faculte de Medecine et des Sciences Pharmaceutiques de l\'Universite d\'Ebolowa (avec campus a Sangmelima) offre des formations medicales et pharmaceutiques de qualite. Elle participe au developpement sanitaire de la region du Sud du Cameroun.',
+      "La Faculte de Medecine et des Sciences Pharmaceutiques de l'Universite d'Ebolowa (avec campus a Sangmelima) offre des formations medicales et pharmaceutiques de qualite. Elle participe au developpement sanitaire de la region du Sud du Cameroun.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -470,7 +489,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les FMSB/FMSP)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les FMSB/FMSP)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -488,7 +508,7 @@ export const cameroonSchools = [
       note: 'Frais universitaires publics',
     },
     facilities: [
-      'Hopital Regional d\'Ebolowa',
+      "Hopital Regional d'Ebolowa",
       'Laboratoires pharmaceutiques',
       'Bibliotheque medicale',
       'Centres de sante',
@@ -517,12 +537,12 @@ export const cameroonSchools = [
     icon: Stethoscope,
     color: 'emerald',
     gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
-    logo: null,
+    logo: logoFMSP,
     tagline: 'Excellence medicale dans la capitale economique',
     description:
       'La FMSP de Douala forme des medecins et pharmaciens pour repondre aux besoins sanitaires de la metropole economique.',
     longDescription:
-      'La Faculte de Medecine et des Sciences Pharmaceutiques de l\'Universite de Douala est situee dans la capitale economique du Cameroun. Elle beneficie d\'infrastructures hospitalieres modernes et forme des praticiens de haut niveau pour le secteur de la sante.',
+      "La Faculte de Medecine et des Sciences Pharmaceutiques de l'Universite de Douala est situee dans la capitale economique du Cameroun. Elle beneficie d'infrastructures hospitalieres modernes et forme des praticiens de haut niveau pour le secteur de la sante.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -539,7 +559,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les FMSB/FMSP)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les FMSB/FMSP)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -609,7 +630,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les facultes)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les facultes)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -678,7 +700,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les facultes)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les facultes)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -728,9 +751,9 @@ export const cameroonSchools = [
     logo: null,
     tagline: 'Former les techniciens de sante',
     description:
-      'L\'ISTM forme des techniciens superieurs de sante et participe egalement a la formation medicale au Cameroun.',
+      "L'ISTM forme des techniciens superieurs de sante et participe egalement a la formation medicale au Cameroun.",
     longDescription:
-      'L\'Institut Superieur de Techniques Medicales de Nkolondom a Yaounde est une institution reconnue pour la formation des professionnels de sante. Il offre des formations techniques medicales de qualite et participe au concours national de medecine.',
+      "L'Institut Superieur de Techniques Medicales de Nkolondom a Yaounde est une institution reconnue pour la formation des professionnels de sante. Il offre des formations techniques medicales de qualite et participe au concours national de medecine.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -747,7 +770,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les institutions)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les institutions)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -795,11 +819,11 @@ export const cameroonSchools = [
     color: 'emerald',
     gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
     logo: null,
-    tagline: 'Innovation en sante dans l\'Ouest',
+    tagline: "Innovation en sante dans l'Ouest",
     description:
-      'L\'ISSS de l\'Universite des Montagnes allie innovation et excellence pour former des professionnels de sante competents.',
+      "L'ISSS de l'Universite des Montagnes allie innovation et excellence pour former des professionnels de sante competents.",
     longDescription:
-      'L\'Institut Superieur des Sciences de la Sante de l\'Universite des Montagnes est une institution privee de reference situee a Bangangte. Elle offre une formation medicale moderne avec des equipements de pointe et participe au concours national de medecine.',
+      "L'Institut Superieur des Sciences de la Sante de l'Universite des Montagnes est une institution privee de reference situee a Bangangte. Elle offre une formation medicale moderne avec des equipements de pointe et participe au concours national de medecine.",
     domains: ['medicine'],
     careers: ['medecin'],
     stats: {
@@ -816,7 +840,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les institutions)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les institutions)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -885,7 +910,8 @@ export const cameroonSchools = [
         'Age limite: 22 ans',
         'Concours national unique',
       ],
-      process: 'Concours national d\'entree (meme concours pour toutes les institutions)',
+      process:
+        "Concours national d'entree (meme concours pour toutes les institutions)",
       dates: {
         inscription: 'Juin - Juillet',
         concours: 'Septembre',
@@ -1002,7 +1028,13 @@ export const cameroonSchools = [
     longDescription:
       "L'Ecole Superieure des Sciences Economiques et Commerciales (ESSEC) de Douala est l'une des principales ecoles de commerce du Cameroun. Fondee en 1989, elle forme des professionnels competents dans les domaines du management, de la gestion, du marketing et de la finance. Ses diplomes sont reconnus par l'Etat et ses anciens occupent des postes cles dans le secteur prive et public.",
     domains: ['business'],
-    careers: ['gestionnaire-projet', 'expert-comptable', 'gestionnaire-rh', 'responsable-marketing', 'entrepreneur'],
+    careers: [
+      'gestionnaire-projet',
+      'expert-comptable',
+      'gestionnaire-rh',
+      'responsable-marketing',
+      'entrepreneur',
+    ],
     stats: {
       founded: 1989,
       students: 1200,
@@ -1013,7 +1045,7 @@ export const cameroonSchools = [
     admission: {
       requirements: [
         'Baccalaureat toutes series',
-        'Test d\'admission',
+        "Test d'admission",
         'Entretien de motivation',
       ],
       process: 'Etude du dossier, test et entretien',
@@ -1034,12 +1066,12 @@ export const cameroonSchools = [
     ],
     tuition: {
       annual: '800 000 - 1 500 000 FCFA',
-      note: 'Selon le niveau d\'etudes',
+      note: "Selon le niveau d'etudes",
     },
     facilities: [
       'Bibliotheque fournie',
       'Salles informatiques',
-      'Incubateur d\'entreprises',
+      "Incubateur d'entreprises",
       'Partenariats entreprises',
       'Stages garantis',
     ],
@@ -1056,25 +1088,30 @@ export const cameroonSchools = [
     },
   },
   {
-    id: 'uccac',
-    slug: 'uccac',
-    name: 'Universite Catholique d\'Afrique Centrale',
-    shortName: 'UCCAC',
-    acronym: 'UCCAC',
+    id: 'ucac',
+    slug: 'ucac',
+    name: "Universite Catholique d'Afrique Centrale",
+    shortName: 'UCAC',
+    acronym: 'UCAC',
     type: 'local',
     country: 'Cameroun',
     city: 'Yaounde',
     icon: GraduationCap,
     color: 'purple',
     gradient: 'from-purple-500 via-purple-600 to-violet-600',
-    logo: null,
+    logo: logoUCAC,
     tagline: 'Excellence academique et valeurs humaines',
     description:
-      "L'UCCAC allie excellence academique et formation humaine integrale dans plusieurs domaines dont le management, le droit et la theologie.",
+      "L'UCAC allie excellence academique et formation humaine integrale dans plusieurs domaines dont le management, le droit et la theologie.",
     longDescription:
       "L'Universite Catholique d'Afrique Centrale est une institution privee catholique de reference au Cameroun et en Afrique Centrale. Fondee en 1989, elle offre des formations de qualite dans plusieurs domaines tout en mettant l'accent sur les valeurs ethiques et humaines. Ses programmes en gestion et en droit sont particulierement reputes.",
     domains: ['business'],
-    careers: ['gestionnaire-projet', 'expert-comptable', 'gestionnaire-rh', 'entrepreneur'],
+    careers: [
+      'gestionnaire-projet',
+      'expert-comptable',
+      'gestionnaire-rh',
+      'entrepreneur',
+    ],
     stats: {
       founded: 1989,
       students: 2500,
@@ -1086,9 +1123,9 @@ export const cameroonSchools = [
       requirements: [
         'Baccalaureat toutes series',
         'Dossier academique solide',
-        'Test d\'admission selon la filiere',
+        "Test d'admission selon la filiere",
       ],
-      process: 'Etude du dossier et test d\'entree',
+      process: "Etude du dossier et test d'entree",
       dates: {
         inscription: 'Juin - Septembre',
         test: 'Septembre',
@@ -1116,14 +1153,14 @@ export const cameroonSchools = [
       'Residences etudiantes',
     ],
     contact: {
-      website: 'https://uccac.net',
-      email: 'info@uccac.net',
+      website: 'https://UCAC.net',
+      email: 'info@UCAC.net',
       phone: '+237 222 XX XX XX',
       address: 'Yaounde, Cameroun',
     },
     alphaPrep: {
       available: true,
-      programme: 'uccac',
+      programme: 'UCAC',
       successRate: 75,
     },
   },
@@ -1146,7 +1183,12 @@ export const cameroonSchools = [
     longDescription:
       "L'Institut Universitaire de la Cote est une institution privee de premier plan au Cameroun. Cree en 2005, l'IUC se distingue par son approche pedagogique innovante et son orientation professionnelle. Il forme des cadres competents en informatique, gestion, et ingenierie, avec un fort taux d'insertion professionnelle.",
     domains: ['business', 'engineering'],
-    careers: ['ingenieur-informatique', 'gestionnaire-projet', 'responsable-marketing', 'entrepreneur'],
+    careers: [
+      'ingenieur-informatique',
+      'gestionnaire-projet',
+      'responsable-marketing',
+      'entrepreneur',
+    ],
     stats: {
       founded: 2005,
       students: 3000,
@@ -1157,7 +1199,7 @@ export const cameroonSchools = [
     admission: {
       requirements: [
         'Baccalaureat C, D pour sciences, toutes series pour gestion',
-        'Test d\'aptitude',
+        "Test d'aptitude",
         'Entretien',
       ],
       process: 'Dossier, test et entretien',
@@ -1218,7 +1260,12 @@ export const cameroonSchools = [
     longDescription:
       "L'Universite de Douala, creee en 1993, est l'une des huit universites d'Etat du Cameroun. Situee dans la capitale economique, elle accueille des milliers d'etudiants dans ses diverses facultes et ecoles. Elle offre des formations de qualite en sciences, lettres, droit, economie, et dispose d'instituts professionnels reconnus.",
     domains: ['engineering', 'business'],
-    careers: ['ingenieur-genie-civil', 'ingenieur-genie-industriel', 'gestionnaire-projet', 'expert-comptable'],
+    careers: [
+      'ingenieur-genie-civil',
+      'ingenieur-genie-industriel',
+      'gestionnaire-projet',
+      'expert-comptable',
+    ],
     stats: {
       founded: 1993,
       students: 45000,
@@ -1289,7 +1336,12 @@ export const cameroonSchools = [
     longDescription:
       "L'Universite de Dschang, fondee en 1993, est situee dans l'Ouest du Cameroun dans un cadre naturel magnifique. Elle s'est imposee comme une universite de reference, particulierement dans les domaines de l'agronomie, de l'economie et de la gestion. Elle dispose de campus decentralises a Douala, Yaounde et Ebolowa.",
     domains: ['business', 'engineering'],
-    careers: ['gestionnaire-projet', 'expert-comptable', 'ingenieur-genie-industriel', 'responsable-marketing'],
+    careers: [
+      'gestionnaire-projet',
+      'expert-comptable',
+      'ingenieur-genie-industriel',
+      'responsable-marketing',
+    ],
     stats: {
       founded: 1993,
       students: 35000,
@@ -1325,7 +1377,7 @@ export const cameroonSchools = [
     facilities: [
       'Campus principal Dschang',
       'Campus Douala et Yaounde',
-      'Ferme d\'application',
+      "Ferme d'application",
       'Bibliotheques',
       'Residences universitaires',
     ],
@@ -1339,6 +1391,213 @@ export const cameroonSchools = [
       available: true,
       programme: 'general',
       successRate: 65,
+    },
+  },
+  {
+    id: 'fasa',
+    slug: 'fasa',
+    name: "Faculte d'Agronomie et des Sciences Agricoles",
+    shortName: 'FASA',
+    acronym: 'FASA',
+    type: 'local',
+    country: 'Cameroun',
+    city: 'Dschang',
+    icon: Leaf,
+    color: 'green',
+    gradient: 'from-green-500 via-green-600 to-emerald-700',
+    logo: logoFASA,
+    tagline: 'Former les agronomes de demain',
+    description:
+      "La FASA forme des ingenieurs agronomes et techniciens agricoles de haut niveau pour le developpement rural et agricole du Cameroun et de l'Afrique.",
+    longDescription:
+      "La Faculte d'Agronomie et des Sciences Agricoles (FASA) de l'Universite de Dschang est la reference en matiere de formation agricole au Cameroun. Fondee pour repondre aux besoins du secteur agricole, elle forme des ingenieurs agronomes, techniciens agricoles et chercheurs capables de contribuer au developpement durable de l'agriculture africaine.",
+    domains: ['agriculture'],
+    careers: ['ingenieur-agronome', 'technicien-agricole', 'chercheur-agricole'],
+    stats: {
+      founded: 1977,
+      students: 2500,
+      successRate: 75,
+      employmentRate: 85,
+      ranking: '#1 Agronomie Cameroun',
+    },
+    admission: {
+      requirements: [
+        'Baccalaureat C, D ou technique agricole',
+        'Age limite: 25 ans',
+        "Concours d'entree selectif",
+      ],
+      process: 'Concours national sur epreuves ecrites',
+      dates: {
+        inscription: 'Mai - Juillet',
+        concours: 'Aout',
+        resultats: 'Septembre',
+      },
+      places: 300,
+      acceptance: '15%',
+    },
+    programs: [
+      { name: 'Ingenieur Agronome', duration: '5 ans', places: 150 },
+      { name: 'Economie et Sociologie Rurales', duration: '5 ans', places: 50 },
+      { name: 'Productions Animales', duration: '5 ans', places: 50 },
+      { name: 'Genie Rural', duration: '5 ans', places: 50 },
+    ],
+    tuition: {
+      annual: '50 000 FCFA',
+      note: 'Frais universitaires publics',
+    },
+    facilities: [
+      "Ferme d'application",
+      'Laboratoires de recherche',
+      'Bibliotheque specialisee',
+      'Parcelles experimentales',
+      'Ateliers de transformation',
+    ],
+    contact: {
+      website: 'https://fasa.univ-dschang.org',
+      email: 'fasa@univ-dschang.org',
+      phone: '+237 233 XX XX XX',
+      address: 'Dschang, Cameroun',
+    },
+    alphaPrep: {
+      available: true,
+      programme: 'fasa',
+      successRate: 72,
+    },
+  },
+  {
+    id: 'prepa-vogt',
+    slug: 'prepa-vogt',
+    name: 'Classes Preparatoires College Vogt',
+    shortName: 'Prepa Vogt',
+    acronym: 'Prepa Vogt',
+    type: 'local',
+    country: 'Cameroun',
+    city: 'Yaounde',
+    icon: GraduationCap,
+    color: 'indigo',
+    gradient: 'from-indigo-600 to-purple-700',
+    logo: logoPrepaVogt,
+    tagline: '2 ans Cameroun + 3 ans France = Ingenieur',
+    description:
+      "Les classes preparatoires du College Vogt preparent les etudiants camerounais aux grandes ecoles d'ingenieurs francaises.",
+    longDescription:
+      "Les classes preparatoires scientifiques du College Vogt a Yaounde offrent une formation d'excellence de type CPGE. Apres 2 ans de preparation intensive au Cameroun, les etudiants integrent les grandes ecoles d'ingenieurs en France (Centrale, Mines, Arts et Metiers, ENSAM...) pour 3 ans de cycle ingenieur.",
+    domains: ['engineering'],
+    careers: ['ingenieur-genie-civil', 'ingenieur-informatique', 'ingenieur-telecom'],
+    stats: {
+      founded: 1990,
+      students: 200,
+      successRate: 90,
+      employmentRate: 98,
+      ranking: '#1 Prepa Cameroun',
+    },
+    admission: {
+      requirements: [
+        'Baccalaureat C, D ou E avec mention',
+        'Excellent niveau en Maths et Physique',
+        'Dossier academique solide',
+      ],
+      process: 'Selection sur dossier et entretien',
+      dates: {
+        inscription: 'Mai - Juillet',
+        selection: 'Aout',
+        resultats: 'Septembre',
+      },
+      places: 50,
+      acceptance: '20%',
+    },
+    programs: [
+      { name: 'MPSI/MP (Maths-Physique)', duration: '2 ans', places: 25 },
+      { name: 'PCSI/PC (Physique-Chimie)', duration: '2 ans', places: 25 },
+    ],
+    tuition: {
+      annual: '2 000 000 FCFA',
+      note: 'Formation intensive de haut niveau',
+    },
+    facilities: [
+      'Salles de cours modernes',
+      'Laboratoires de physique et chimie',
+      'Bibliotheque specialisee',
+      'Accompagnement personnalise',
+    ],
+    contact: {
+      website: 'https://collegevogt.org',
+      email: 'prepa@collegevogt.org',
+      phone: '+237 222 XX XX XX',
+      address: 'Yaounde, Cameroun',
+    },
+    alphaPrep: {
+      available: true,
+      programme: 'prepa-vogt',
+      successRate: 85,
+    },
+  },
+  {
+    id: 'saint-jean',
+    slug: 'saint-jean',
+    name: 'Classes Preparatoires Saint Jean Bosco',
+    shortName: 'Saint Jean',
+    acronym: 'Saint Jean',
+    type: 'local',
+    country: 'Cameroun',
+    city: 'Yaounde',
+    icon: GraduationCap,
+    color: 'blue',
+    gradient: 'from-blue-600 to-indigo-700',
+    logo: logoSaintJean,
+    tagline: '2 ans Cameroun + 3 ans France = Ingenieur',
+    description:
+      "Les classes preparatoires Saint Jean Bosco forment les futurs ingenieurs pour les ecoles francaises (INSA, Polytech, UTC...).",
+    longDescription:
+      "Les classes preparatoires scientifiques du Lycee Saint Jean Bosco offrent un parcours d'excellence permettant aux etudiants camerounais d'integrer les grandes ecoles d'ingenieurs francaises. La formation de 2 ans au Cameroun est suivie de 3 ans en ecole d'ingenieurs en France.",
+    domains: ['engineering'],
+    careers: ['ingenieur-genie-civil', 'ingenieur-informatique', 'ingenieur-telecom'],
+    stats: {
+      founded: 1992,
+      students: 180,
+      successRate: 88,
+      employmentRate: 97,
+      ranking: '#2 Prepa Cameroun',
+    },
+    admission: {
+      requirements: [
+        'Baccalaureat C, D ou E avec mention',
+        'Tres bon niveau scientifique',
+        'Bonne maitrise du francais',
+      ],
+      process: 'Selection sur dossier et tests',
+      dates: {
+        inscription: 'Mai - Juillet',
+        selection: 'Aout',
+        resultats: 'Septembre',
+      },
+      places: 50,
+      acceptance: '22%',
+    },
+    programs: [
+      { name: 'MPSI/MP', duration: '2 ans', places: 25 },
+      { name: 'PCSI/PC', duration: '2 ans', places: 25 },
+    ],
+    tuition: {
+      annual: '1 900 000 FCFA',
+      note: 'Formation intensive incluant tutorat',
+    },
+    facilities: [
+      'Campus moderne',
+      'Laboratoires equipes',
+      'Bibliotheque',
+      'Tutorat par anciens eleves',
+    ],
+    contact: {
+      website: 'https://saintjeanbosco.cm',
+      email: 'prepa@saintjeanbosco.cm',
+      phone: '+237 222 XX XX XX',
+      address: 'Yaounde, Cameroun',
+    },
+    alphaPrep: {
+      available: true,
+      programme: 'saint-jean',
+      successRate: 82,
     },
   },
 ];
@@ -1558,6 +1817,78 @@ export const foreignSchools = [
     alphaPrep: {
       available: false,
       note: 'Admission sur dossier',
+    },
+  },
+  // EAMAU - Ecole Africaine des Metiers de l'Architecture et de l'Urbanisme
+  {
+    id: 'eamau',
+    slug: 'eamau',
+    name: "Ecole Africaine des Metiers de l'Architecture et de l'Urbanisme",
+    shortName: 'EAMAU',
+    acronym: 'EAMAU',
+    type: 'foreign',
+    country: 'Togo',
+    city: 'Lome',
+    icon: Ruler,
+    color: 'amber',
+    gradient: 'from-amber-500 via-amber-600 to-amber-700',
+    logo: logoEAMAU,
+    tagline: "Former les batisseurs de l'Afrique de demain",
+    description:
+      "L'EAMAU est l'ecole de reference en Afrique pour la formation en architecture, urbanisme et gestion urbaine.",
+    longDescription:
+      "L'Ecole Africaine des Metiers de l'Architecture et de l'Urbanisme (EAMAU) est un etablissement inter-etats cree en 1975 a Lome au Togo. Elle forme des architectes, urbanistes et specialistes en gestion urbaine pour l'ensemble du continent africain. L'EAMAU est reconnue pour la qualite de ses formations et son ancrage dans les realites africaines.",
+    domains: ['engineering'],
+    careers: ['architecte', 'urbaniste', 'gestionnaire-urbain'],
+    stats: {
+      founded: 1975,
+      students: 800,
+      successRate: 85,
+      employmentRate: 90,
+      ranking: 'Reference en Afrique',
+    },
+    admission: {
+      requirements: [
+        'Baccalaureat scientifique (C, D, E)',
+        'Concours national de selection',
+        'Dossier de candidature complet',
+      ],
+      process: 'Concours national organise par Alpha Center',
+      dates: {
+        inscription: 'Janvier - Avril',
+        concours: 'Juillet',
+        resultats: 'Aout',
+      },
+      places: 100,
+      acceptance: '15%',
+    },
+    programs: [
+      { name: 'Architecture', duration: '6 ans', places: 40 },
+      { name: 'Urbanisme', duration: '5 ans', places: 30 },
+      { name: 'Gestion urbaine', duration: '3 ans', places: 30 },
+      { name: 'Transport et mobilite', duration: '2 ans', places: 20 },
+    ],
+    tuition: {
+      annual: '1 200 000 FCFA',
+      note: 'Bourses disponibles pour les meilleurs etudiants',
+    },
+    facilities: [
+      'Ateliers de conception',
+      'Laboratoire de maquettes',
+      'Bibliotheque specialisee',
+      'Salle informatique CAO/DAO',
+    ],
+    contact: {
+      website: 'https://www.eamau.org',
+      email: 'contact@eamau.org',
+      phone: '+228 22 21 62 53',
+      address: 'Lome, Togo',
+    },
+    alphaPrep: {
+      available: true,
+      programId: 'eamau',
+      duration: '6 mois',
+      note: 'Preparation intensive au concours EAMAU',
     },
   },
 ];

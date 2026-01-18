@@ -3,17 +3,17 @@ export const mainNavigation = [
   {
     label: 'Accueil',
     href: '/',
-    type: 'link'
+    type: 'link',
   },
   {
     label: 'Programmes',
     href: '/services',
-    type: 'link'
+    type: 'link',
   },
   {
     label: "L'application",
     href: '/application',
-    type: 'link'
+    type: 'link',
   },
   {
     label: 'Orientation',
@@ -23,12 +23,31 @@ export const mainNavigation = [
         title: 'Explore les metiers',
         titleIcon: 'Target',
         items: [
-          { label: 'Ingenieur Genie Civil', href: '/orientation/metiers/ingenieur-genie-civil', icon: 'Building2' },
-          { label: 'Ingenieur Informatique', href: '/orientation/metiers/ingenieur-informatique', icon: 'Monitor' },
-          { label: 'Ingenieur Telecom', href: '/orientation/metiers/ingenieur-telecom', icon: 'Zap' },
-          { label: 'Medecin', href: '/orientation/metiers/medecin', icon: 'Users' },
+          {
+            label: 'Ingenieur Genie Civil',
+            href: '/orientation/metiers/ingenieur-genie-civil',
+            icon: 'Building2',
+          },
+          {
+            label: 'Ingenieur Informatique',
+            href: '/orientation/metiers/ingenieur-informatique',
+            icon: 'Monitor',
+          },
+          {
+            label: 'Ingenieur Telecom',
+            href: '/orientation/metiers/ingenieur-telecom',
+            icon: 'Zap',
+          },
+          {
+            label: 'Medecin',
+            href: '/orientation/metiers/medecin',
+            icon: 'Users',
+          },
         ],
-        viewAll: { label: 'Voir tous les metiers', href: '/orientation/metiers' }
+        viewAll: {
+          label: 'Voir tous les metiers',
+          href: '/orientation/metiers',
+        },
       },
       ecoles: {
         title: 'Decouvre les ecoles',
@@ -36,41 +55,62 @@ export const mainNavigation = [
         cameroun: [
           { label: 'ENSPY (Polytechnique)', href: '/orientation/ecoles/enspy' },
           { label: 'ENSTP', href: '/orientation/ecoles/enstp' },
-          { label: 'SUP\'PTIC', href: '/orientation/ecoles/supptic' },
+          { label: "SUP'PTIC", href: '/orientation/ecoles/supptic' },
           { label: 'FMSB Yaounde', href: '/orientation/ecoles/fmsb' },
           { label: 'FHS Buea', href: '/orientation/ecoles/fhs-buea' },
           { label: 'ESSEC Douala', href: '/orientation/ecoles/essec' },
-          { label: 'UCCAC', href: '/orientation/ecoles/uccac' },
+          { label: 'UCAC', href: '/orientation/ecoles/ucac' },
           { label: 'IUC', href: '/orientation/ecoles/iuc' },
         ],
         etranger: [
-          { label: 'Polytechnique Paris', href: '/orientation/ecoles/polytechnique-paris' },
+          {
+            label: 'Polytechnique Paris',
+            href: '/orientation/ecoles/polytechnique-paris',
+          },
           { label: 'EPFL Suisse', href: '/orientation/ecoles/epfl' },
         ],
-        viewAll: { label: 'Voir toutes les ecoles', href: '/orientation/ecoles' }
+        viewAll: {
+          label: 'Voir toutes les ecoles',
+          href: '/orientation/ecoles',
+        },
       },
       cta: {
         icon: 'Lightbulb',
-        text: "Tu ne sais pas quel metier choisir ?",
+        text: 'Tu ne sais pas quel metier choisir ?',
         subtext: "Explore notre guide d'orientation complet",
-        href: '/orientation'
-      }
-    }
+        href: '/orientation',
+      },
+    },
   },
   {
     label: 'À propos',
     type: 'dropdown',
     items: [
-      { label: 'Qui sommes-nous', href: '/a-propos/qui-sommes-nous', icon: 'Building2', description: 'Notre histoire et nos valeurs' },
-      { label: 'Notre équipe', href: '/a-propos/equipe', icon: 'Users', description: '12 enseignants passionnés' },
-      { label: 'Nos résultats', href: '/a-propos/resultats', icon: 'BarChart3', description: '85% de taux de réussite' },
-    ]
-  }
+      {
+        label: 'Qui sommes-nous',
+        href: '/a-propos/qui-sommes-nous',
+        icon: 'Building2',
+        description: 'Notre histoire et nos valeurs',
+      },
+      {
+        label: 'Notre équipe',
+        href: '/a-propos/equipe',
+        icon: 'Users',
+        description: '12 enseignants passionnés',
+      },
+      {
+        label: 'Nos résultats',
+        href: '/a-propos/resultats',
+        icon: 'BarChart3',
+        description: '85% de taux de réussite',
+      },
+    ],
+  },
 ];
 
 export const ctaButtons = [
   { label: 'Contact', href: '/contact', variant: 'ghost' },
-  { label: "S'inscrire", href: '#', variant: 'primary', isModal: true }
+  { label: "S'inscrire", href: '#', variant: 'primary', isModal: true },
 ];
 
 export const footerNavigation = {

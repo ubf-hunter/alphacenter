@@ -82,6 +82,20 @@ const colorStyles = {
     border: 'hover:border-indigo-300',
     button: 'bg-indigo-600 hover:bg-indigo-700 text-white',
   },
+  amber: {
+    badge: 'bg-amber-500 text-white',
+    iconBg: 'bg-gradient-to-br from-amber-500 to-amber-600',
+    accent: 'text-amber-600',
+    border: 'hover:border-amber-300',
+    button: 'bg-amber-500 hover:bg-amber-600 text-white',
+  },
+  green: {
+    badge: 'bg-green-500 text-white',
+    iconBg: 'bg-gradient-to-br from-green-500 to-green-600',
+    accent: 'text-green-600',
+    border: 'hover:border-green-300',
+    button: 'bg-green-600 hover:bg-green-700 text-white',
+  },
 };
 
 // Session type colors and labels
@@ -92,6 +106,7 @@ const sessionTypes = {
   revision: { label: 'Revision', bg: 'bg-purple-500/10', text: 'text-purple-600' },
   examen: { label: 'Examen', bg: 'bg-rose-500/10', text: 'text-rose-600' },
   tutorat: { label: 'Tutorat', bg: 'bg-amber-500/10', text: 'text-amber-600' },
+  atelier: { label: 'Atelier', bg: 'bg-cyan-500/10', text: 'text-cyan-600' },
 };
 
 // Format price in FCFA
