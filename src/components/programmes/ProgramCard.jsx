@@ -8,8 +8,8 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
-import { useProgramDetailModal } from '../../hooks/useProgramDetailModal';
 
 const colorStyles = {
   orange: {
@@ -72,7 +72,6 @@ const colorStyles = {
 
 export default function ProgramCard({ program, index, featured = false }) {
   const { openModal: openInscriptionModal } = useInscriptionModal();
-  const { openModal: openDetailModal } = useProgramDetailModal();
   const styles = colorStyles[program.color] || colorStyles.orange;
   const Icon = program.icon;
 
@@ -176,15 +175,15 @@ export default function ProgramCard({ program, index, featured = false }) {
             </div>
           </div>
 
-          {/* View Details Button */}
-          <button
-            onClick={() => openDetailModal(program)}
+          {/* View Details Link */}
+          <Link
+            to={`/programmes/${program.id}`}
             className="group/btn flex items-center gap-2 text-sm font-semibold text-orange hover:text-navy transition-colors mb-6"
           >
             <Eye size={18} />
             <span>Voir les details du programme</span>
             <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
-          </button>
+          </Link>
 
           {/* Price and CTA */}
           <div className="pt-6 border-t border-gray-100">
@@ -211,13 +210,13 @@ export default function ProgramCard({ program, index, featured = false }) {
               >
                 S'inscrire
               </Button>
-              <button
-                onClick={() => openDetailModal(program)}
+              <Link
+                to={`/programmes/${program.id}`}
                 className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 hover:border-orange hover:bg-orange/5 transition-colors"
                 title="Voir les details"
               >
-                <Eye size={20} className="text-gray-500 hover:text-orange" />
-              </button>
+                <Eye size={20} className="text-gray-500" />
+              </Link>
             </div>
           </div>
         </div>
