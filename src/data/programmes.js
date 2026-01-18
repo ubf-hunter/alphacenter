@@ -31,6 +31,16 @@ import {
   Video,
 } from 'lucide-react';
 
+// Import des logos d'écoles
+import logoENSPY from '@assets/logoEcoles/enspy.webp';
+import logoENSTP from '@assets/logoEcoles/enstp.png';
+import logoSUPPTIC from '@assets/logoEcoles/supptic.png';
+import logoPrepaVogt from '@assets/logoEcoles/prepa-vogt.png';
+import logoSaintJean from '@assets/logoEcoles/saint-jean.jpeg';
+import logoEAMAU from '@assets/logoEcoles/EAMAU.webp';
+import logoFASA from '@assets/logoEcoles/fasa.webp';
+import logoUCAC from '@assets/logoEcoles/ucac.webp';
+
 // Catégories de programmes
 export const programCategories = [
   {
@@ -89,6 +99,7 @@ export const programmes = [
     icon: Building2,
     color: 'orange',
     gradient: 'from-orange to-orange-600',
+    logo: logoENSPY,
     subjects: [
       { name: 'Mathematiques avancees', icon: Calculator, hours: 120 },
       { name: 'Physique', icon: Atom, hours: 100 },
@@ -232,6 +243,7 @@ export const programmes = [
     icon: Landmark,
     color: 'navy',
     gradient: 'from-navy to-blue-800',
+    logo: logoENSTP,
     subjects: [
       { name: 'Mathematiques', icon: Calculator, hours: 100 },
       { name: 'Physique', icon: Atom, hours: 80 },
@@ -370,6 +382,7 @@ export const programmes = [
     icon: GraduationCap,
     color: 'indigo',
     gradient: 'from-indigo-600 to-purple-700',
+    logo: logoPrepaVogt,
     subjects: [
       { name: 'Mathematiques superieures', icon: Calculator, hours: 150 },
       { name: 'Physique approfondie', icon: Atom, hours: 120 },
@@ -516,6 +529,7 @@ export const programmes = [
     icon: GraduationCap,
     color: 'blue',
     gradient: 'from-blue-600 to-indigo-700',
+    logo: logoSaintJean,
     subjects: [
       { name: 'Mathematiques superieures', icon: Calculator, hours: 150 },
       { name: 'Physique-Chimie', icon: Atom, hours: 130 },
@@ -1100,6 +1114,7 @@ export const programmes = [
     icon: Scale,
     color: 'indigo',
     gradient: 'from-indigo-500 to-indigo-700',
+    logo: logoUCAC,
     subjects: [
       { name: 'Economie politique', icon: PieChart, hours: 70 },
       { name: 'Introduction au droit', icon: Scale, hours: 60 },
@@ -1491,6 +1506,7 @@ export const programmes = [
     icon: Ruler,
     color: 'amber',
     gradient: 'from-amber-500 to-amber-600',
+    logo: logoEAMAU,
     subjects: [
       { name: 'Dessin architectural', icon: PenTool, hours: 120 },
       { name: 'Geometrie descriptive', icon: Calculator, hours: 80 },
@@ -1628,6 +1644,7 @@ export const programmes = [
     icon: Leaf,
     color: 'green',
     gradient: 'from-green-500 to-green-600',
+    logo: logoFASA,
     subjects: [
       { name: 'Biologie vegetale', icon: Leaf, hours: 100 },
       { name: 'Chimie', icon: FlaskConical, hours: 80 },

@@ -12,23 +12,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { programmes, programCategories } from '@/data/programmes';
 
-// ===== IMPORTS DES LOGOS =====
-import logoENSPY from '@assets/logoEcoles/enspy.webp';
-import logoENSTP from '@assets/logoEcoles/enstp.png';
-import logosupptic from '@assets/logoEcoles/supptic.png';
-// Ajouter les logos sante quand disponibles:
-// import logoFMSB from '@assets/logoEcoles/fmsb.png';
-// import logoIDE from '@assets/logoEcoles/ide.png';
-
-// Mapping des logos par programme ID
-const programLogos = {
-  ensp: logoENSPY,
-  enstp: logoENSTP,
-  supptic: logosupptic,
-  // medecine: logoFMSB,
-  // infirmier: logoIDE,
-};
-
 // Configuration des couleurs par categorie
 const categoryColors = {
   engineering: {
@@ -66,17 +49,15 @@ const programGradients = {
 };
 
 // Composant Logo avec fallback vers icone
-function SchoolLogo({ programId, icon: Icon }) {
-  const logo = programLogos[programId];
-
+function SchoolLogo({ logo, icon: Icon, shortName }) {
   if (logo) {
     return (
       <div className="relative">
         <div className="relative z-10 w-24 h-24 bg-white/90 backdrop-blur-md rounded-2xl border border-white/50 flex items-center justify-center shadow-2xl p-2 group-hover:scale-105 transition-transform duration-500">
           <img
             src={logo}
-            alt={`Logo ${programId}`}
-            className="w-full h-full object-cover rounded-2xl"
+            alt={`Logo ${shortName}`}
+            className="w-full h-full object-contain rounded-xl"
           />
         </div>
         <div className="absolute -top-2 -right-8 w-12 h-12 bg-white/40 rounded-full" />
@@ -151,7 +132,7 @@ function ProgramCard({ program, index }) {
 
           {/* Logo/Icone centre */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <SchoolLogo programId={program.id} icon={program.icon} />
+            <SchoolLogo logo={program.logo} icon={program.icon} shortName={program.shortName} />
           </div>
         </div>
 

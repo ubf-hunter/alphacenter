@@ -110,9 +110,17 @@ export default function ProgramCard({ program, index, featured = false }) {
         <div
           className={`relative p-6 pb-4 bg-gradient-to-br ${program.gradient} text-white`}
         >
-          {/* Icon */}
-          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-            <Icon size={32} className="text-white" />
+          {/* Logo ou Icon */}
+          <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center mb-4 p-2">
+            {program.logo ? (
+              <img
+                src={program.logo}
+                alt={program.shortName}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <Icon size={32} className="text-gray-700" />
+            )}
           </div>
 
           {/* Title */}
