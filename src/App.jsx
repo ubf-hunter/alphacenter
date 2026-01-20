@@ -19,6 +19,7 @@ import {
 import AboutIndex, {
   QuiSommesNous,
   Equipe,
+  MemberProfile,
   Resultats,
 } from '@pages/about';
 import { InscriptionModalProvider } from './hooks/useInscriptionModal';
@@ -67,6 +68,7 @@ export default function App() {
             <Route path="a-propos" element={<AboutIndex />} />
             <Route path="a-propos/qui-sommes-nous" element={<QuiSommesNous />} />
             <Route path="a-propos/equipe" element={<Equipe />} />
+            <Route path="a-propos/equipe/:memberId" element={<MemberProfile />} />
             <Route path="a-propos/resultats" element={<Resultats />} />
             <Route path="*" element={<NotFound />} />
           </Route>

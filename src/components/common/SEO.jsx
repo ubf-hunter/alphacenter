@@ -15,6 +15,7 @@ export default function SEO({
   url = '',
   type = 'website',
   noIndex = false,
+  jsonLd = null,
 }) {
   const fullUrl = `${SITE_URL}${url}`;
   const fullImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
@@ -46,6 +47,11 @@ export default function SEO({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
+
+      {/* JSON-LD Structured Data */}
+      {jsonLd && (
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      )}
     </Helmet>
   );
 }

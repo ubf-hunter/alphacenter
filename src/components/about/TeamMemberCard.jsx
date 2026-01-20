@@ -4,16 +4,18 @@
 
 import { motion } from 'framer-motion';
 import {
+  ArrowRight,
   BadgeCheck,
   BookOpen,
-  GraduationCap,
   Linkedin,
   Mail,
+  Plus,
   Quote,
   RotateCcw,
   Users,
 } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Avatar avec initiales si pas de photo
 function Avatar({ photo, initials, name, className = '' }) {
@@ -108,26 +110,24 @@ export function LeadershipCard({ member, index }) {
               {/* Stats row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-sm text-white/70">
-                  <span className="flex items-center gap-1">
-                    <GraduationCap size={14} />
-                    <span className="font-medium text-white">
-                      {member.experience}
-                    </span>
+                  <span className="flex items-center text-white text-sm">
+                    {member.experience}
                   </span>
                 </div>
 
                 {/* Flip indicator */}
                 <button
                   className="
-                  flex items-center gap-2 px-4 py-2
+                  flex items-center px-2 py-2
                   text-sm font-medium text-white
                   bg-white/20 hover:bg-white/30
                   rounded-full backdrop-blur-sm
-                  transition-colors
+                  transition-colors flex-row w-auto
                 "
                 >
-                  <RotateCcw size={14} />
-                  Voir plus
+                  {' '}
+                  <span className="flex items-center justify-center">Voir</span>
+                  <Plus size={16} />
                 </button>
               </div>
             </div>
@@ -232,6 +232,18 @@ export function LeadershipCard({ member, index }) {
               )}
             </div>
           )}
+
+          {/* Profile page link */}
+          {member.slug && (
+            <Link
+              to={`/a-propos/equipe/${member.slug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="mt-3 flex items-center justify-center gap-2 p-3 rounded-xl bg-orange text-white hover:bg-orange/90 transition-colors text-sm font-medium"
+            >
+              Voir le profil complet
+              <ArrowRight size={16} />
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>
@@ -298,19 +310,37 @@ export function TeacherCard({ teacher, index, onSelect }) {
               </span>
             </div>
 
-            {/* View button */}
-            <button
-              className="
-              flex items-center gap-1 px-4 py-2
-              text-sm font-medium
-              text-navy
-              bg-gray-100 hover:bg-navy hover:text-white
-              rounded-full
-              transition-colors
-            "
-            >
-              Voir +
-            </button>
+            {/* View profile link */}
+            {teacher.slug ? (
+              <Link
+                to={`/a-propos/equipe/${teacher.slug}`}
+                onClick={(e) => e.stopPropagation()}
+                className="
+                flex items-center gap-1 px-4 py-2
+                text-sm font-medium
+                text-white
+                bg-orange hover:bg-orange/90
+                rounded-full
+                transition-colors
+              "
+              >
+                Profil
+                <ArrowRight size={14} />
+              </Link>
+            ) : (
+              <button
+                className="
+                flex items-center gap-1 px-4 py-2
+                text-sm font-medium
+                text-navy
+                bg-gray-100 hover:bg-navy hover:text-white
+                rounded-full
+                transition-colors
+              "
+              >
+                Voir +
+              </button>
+            )}
           </div>
         </div>
       </div>

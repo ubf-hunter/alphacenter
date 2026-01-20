@@ -2,18 +2,19 @@
 // TEAM DATA - Direction, Enseignants, Staff
 // ============================================
 //import
-import ggPro from '../assets/images/team/ggPro.jpeg';
+import ggPro from '../assets/images/team/ggPro2.jpeg';
 import ubfPro from '../assets/images/team/ubfPro3.jpeg';
 // Direction
 export const leadership = [
   {
     id: 'academic-director',
+    slug: 'agabus-gaimatakone',
     name: 'Ing. Agabus Gaimatakone',
-    role: 'Co-Fondateur & Directeur Pedagogique',
+    role: 'Directeur Pédagogique',
     title: 'Ingenieur ENSP - Genie Civil',
     photo: ggPro,
     initials: 'GG',
-    bio: "Diplome de l'ENSPY, major de sa promotion en Genie Civil. Apres 5 ans dans le BTP, il fonde Alpha Center avec la conviction que chaque etudiant meritant peut reussir avec le bon accompagnement. Il supervise la strategie pedagogique et le developpement du centre.",
+    bio: "Ingénieur diplômé de l'ENSPY (Polytech Yaoundé), je mets mon expertise au service de la préparation aux concours d'élite depuis 2022. Enseignant de Mathématiques et de Physique, j'interviens dans des centres de référence tels qu'Alpha Center, Évidence et Clever Academy. Mon objectif est de transmettre la rigueur scientifique et les méthodes stratégiques nécessaires pour permettre aux étudiants de franchir les portes des grandes écoles d'ingénieurs et de médecine",
     education: [
       'ENSP Yaounde - Genie Civil',
       'Enseignant de Physique, Evidence 2023-2026',
@@ -30,19 +31,20 @@ export const leadership = [
   },
   {
     id: 'SI-director',
+    slug: 'uwayo-beni',
     name: 'Ing. Uwayo Beni',
-    role: 'Co-Fondateur & Directeur SI',
+    role: 'Directeur SI',
     title: 'Ingenieur IT',
     photo: ubfPro,
     initials: 'UBF',
-    bio: "Docteur en Mathematiques Appliquees de l'Universite de Yaounde I. Ancienne enseignante a l'ENSP, elle apporte 15 ans d'experience dans l'enseignement superieur. Elle coordonne l'equipe pedagogique et veille a la qualite des programmes.",
+    bio: "Ingénieur des Travaux de Télécommunications diplômé de Sup'ptic (ENSPT), je conjugue aujourd'hui mes fonctions de Directeur du Système d'Information (DSI) chez Alpha Center et de Directeur du développement web chez Nolate SARL. Passionné par la pédagogie, j'enseigne les Mathématiques, l'Informatique et la Chimie depuis 3 ans. Mon expérience acquise dans des centres comme KOBU inc ou La Relève me permet d'offrir aux candidats un accompagnement multidisciplinaire, alliant innovation technologique et excellence académique.",
     education: [
       "Ingenieur des telecoms - SUP'PTIC",
       'Agregation de Mathematiques',
     ],
     experience: "4 ans d'experience",
     quote:
-      "Un bon professeur n'enseigne pas seulement une matiere, il transmet une passion.",
+      "Un bon Enseignant n'enseigne pas seulement une matiere, il transmet une passion.",
     social: {
       linkedin: 'https://www.linkedin.com/in/beni-fidele-uwayo-2b1bb6336/',
       email: 'sidirector@alphacenter.cm',
@@ -53,11 +55,12 @@ export const leadership = [
 // Enseignants
 export const teachers = [
   {
-    id: 'kamga',
-    name: 'Dr. Kamga',
+    id: 'Ndongo',
+    slug: 'Ing-Ndongo',
+    name: 'Ing Ndongo Nkodo Marcel',
     subject: 'Mathematiques',
     specialty: 'Analyse & Algebre',
-    photo: '/images/team/kamga.jpg',
+    photo: '/images/team/Marcelo.jpg',
     initials: 'DK',
     color: 'orange',
     shortBio: "Ancien major ENSP, 10 ans d'experience en prepa concours",
@@ -77,6 +80,7 @@ export const teachers = [
   },
   {
     id: 'ngo-bama',
+    slug: 'ngo-bama',
     name: 'Ing. Ngo Bama',
     subject: 'Physique',
     specialty: 'Mecanique & Electromagnetisme',
@@ -100,6 +104,7 @@ export const teachers = [
   },
   {
     id: 'mbarga',
+    slug: 'pr-mbarga',
     name: 'Pr. Mbarga',
     subject: 'Chimie',
     specialty: 'Chimie Organique & Minerale',
@@ -114,6 +119,7 @@ export const teachers = [
   },
   {
     id: 'essomba',
+    slug: 'dr-essomba',
     name: 'Dr. Essomba',
     subject: 'Biologie',
     specialty: 'SVT & Sciences Biomedicales',
@@ -129,6 +135,7 @@ export const teachers = [
   },
   {
     id: 'nguema',
+    slug: 'm-nguema',
     name: 'M. Nguema',
     subject: 'Anglais',
     specialty: 'Anglais Scientifique',
@@ -143,6 +150,7 @@ export const teachers = [
   },
   {
     id: 'fotso',
+    slug: 'mme-fotso',
     name: 'Mme Fotso',
     subject: 'Francais',
     specialty: 'Expression Ecrite & Orale',

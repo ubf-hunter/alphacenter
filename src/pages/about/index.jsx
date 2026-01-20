@@ -9,5 +9,6 @@ export default function AboutIndex() {
 }
 
 export { default as Equipe } from './Equipe';
+export { default as MemberProfile } from './MemberProfile';
 export { default as QuiSommesNous } from './QuiSommesNous';
 export { default as Resultats } from './Resultats';

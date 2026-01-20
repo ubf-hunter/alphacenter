@@ -17,6 +17,7 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { useState } from 'react';
 import { leadership, staff, teachers, teamStats } from '../../data/team';
+import { generateTeamPageSchema } from '../../utils/seo';
 
 // Temoignages des etudiants sur les profs
 const teacherTestimonials = teachers
@@ -29,12 +30,17 @@ const teacherTestimonials = teachers
 export default function Equipe() {
   const [selectedTeacher, setSelectedTeacher] = useState(null);
 
+  // Generer le schema JSON-LD pour le SEO Google
+  const allMembers = [...leadership, ...teachers];
+  const teamJsonLd = generateTeamPageSchema(allMembers);
+
   return (
     <>
       <SEO
         title="Notre Equipe | Alpha Center"
         description="Rencontrez l'equipe pedagogique d'Alpha Center : des experts passionnes, anciens laureats des grandes ecoles, dedies a votre reussite."
         url="/a-propos/equipe"
+        jsonLd={teamJsonLd}
       />
 
       {/* Hero */}
