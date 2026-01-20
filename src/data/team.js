@@ -2,7 +2,7 @@
 // TEAM DATA - Direction, Enseignants, Staff
 // ============================================
 //import
-import ggPro from '../assets/images/team/ggPro2.png';
+import ggPro from '../assets/images/team/ggPro2.jpeg';
 import ubfPro from '../assets/images/team/ubfPro3.png';
 // Direction
 export const leadership = [
