@@ -7,7 +7,6 @@ import {
   Target,
   Trophy,
   Users,
-  BookOpen,
 } from 'lucide-react';
 import Button from '@components/common/Button';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
@@ -93,9 +92,7 @@ export default function PreparatoireHero({ program }) {
           viewport={{ once: true }}
           className="space-y-3"
         >
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
+          {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.text}
                 initial={{ opacity: 0, x: -20 }}
@@ -104,13 +101,12 @@ export default function PreparatoireHero({ program }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3"
               >
-                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-orange/10 flex items-center justify-center">
+                <div className="shrink-0 w-5 h-5 rounded-full bg-orange/10 flex items-center justify-center">
                   <CheckCircle size={14} className="text-orange" />
                 </div>
                 <span className="text-base text-gray-700">{benefit.text}</span>
               </motion.div>
-            );
-          })}
+          ))}
         </motion.div>
 
         {/* CTAs */}
@@ -176,7 +172,7 @@ export default function PreparatoireHero({ program }) {
                   className="flex flex-col items-center justify-center"
                 >
                   <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center mb-2 shadow-lg`}
+                    className={`w-16 h-16 rounded-2xl bg-linear-to-br ${color} flex items-center justify-center mb-2 shadow-lg`}
                   >
                     <Icon size={28} className="text-white" />
                   </div>
@@ -185,7 +181,7 @@ export default function PreparatoireHero({ program }) {
             </div>
 
             {/* Central connecting element */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-to-br from-orange/20 to-apricot/20 blur-2xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-linear-to-br from-orange/20 to-apricot/20 blur-2xl" />
           </div>
 
           {/* Decorative floating elements */}
@@ -198,7 +194,7 @@ export default function PreparatoireHero({ program }) {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-orange/10 to-apricot/10 blur-xl"
+            className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-linear-to-br from-orange/10 to-apricot/10 blur-xl"
           />
           <motion.div
             animate={{
@@ -210,7 +206,7 @@ export default function PreparatoireHero({ program }) {
               ease: 'easeInOut',
               delay: 1,
             }}
-            className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full bg-gradient-to-br from-apricot/10 to-orange/10 blur-xl"
+            className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full bg-linear-to-br from-apricot/10 to-orange/10 blur-xl"
           />
         </motion.div>
       </div>

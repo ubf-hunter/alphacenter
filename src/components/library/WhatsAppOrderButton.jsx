@@ -1,6 +1,7 @@
 // ============================================
 // WHATSAPP ORDER BUTTON
 // Bouton de commande via WhatsApp
+// Version imprimee uniquement
 // ============================================
 
 import { MessageCircle } from 'lucide-react';
@@ -8,13 +9,12 @@ import { generateWhatsAppLink } from '@/data/purchaseInfo';
 
 export default function WhatsAppOrderButton({
   product,
-  format = 'digital',
   variant = 'primary',
   size = 'md',
   className = '',
   children,
 }) {
-  const whatsappLink = generateWhatsAppLink(product, format);
+  const whatsappLink = generateWhatsAppLink(product);
 
   const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300';
 

@@ -72,7 +72,7 @@ const StatCard = memo(({ icon: Icon, value, label, color = 'orange' }) => (
 
       {/* Icon */}
       <div
-        className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-${color} to-${color}-600 flex items-center justify-center text-white mb-3 shadow-lg shadow-${color}/25`}
+        className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br from-${color} to-${color}-600 flex items-center justify-center text-white mb-3 shadow-lg shadow-${color}/25`}
       >
         <Icon size={20} className="sm:w-6 sm:h-6" />
       </div>
@@ -98,7 +98,7 @@ const UrgencyBadge = memo(() => (
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange/10 to-red-500/10 border border-orange/20 mb-6"
+    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-orange/10 to-red-500/10 border border-orange/20 mb-6"
   >
     <motion.span
       animate={{ scale: [1, 1.2, 1] }}
@@ -157,7 +157,7 @@ export default function CTAFinal() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/[0.02] via-transparent to-orange/[0.03]" />
+      <div className="absolute inset-0 bg-linear-to-br from-navy/[0.02] via-transparent to-orange/[0.03]" />
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-orange/10 rounded-full blur-[100px] pointer-events-none" />
@@ -167,13 +167,13 @@ export default function CTAFinal() {
       <motion.div
         variants={floatVariants}
         animate="float"
-        className="absolute top-32 right-[15%] w-16 h-16 rounded-2xl bg-gradient-to-br from-orange/20 to-orange/5 backdrop-blur-sm border border-orange/10 hidden lg:block"
+        className="absolute top-32 right-[15%] w-16 h-16 rounded-2xl bg-linear-to-br from-orange/20 to-orange/5 backdrop-blur-sm border border-orange/10 hidden lg:block"
       />
       <motion.div
         variants={floatVariants}
         animate="float"
         style={{ animationDelay: '1s' }}
-        className="absolute bottom-32 left-[10%] w-12 h-12 rounded-xl bg-gradient-to-br from-navy/20 to-navy/5 backdrop-blur-sm border border-navy/10 hidden lg:block"
+        className="absolute bottom-32 left-[10%] w-12 h-12 rounded-xl bg-linear-to-br from-navy/20 to-navy/5 backdrop-blur-sm border border-navy/10 hidden lg:block"
       />
 
       <Container className="relative z-10">
@@ -185,10 +185,10 @@ export default function CTAFinal() {
           className="max-w-5xl mx-auto"
         >
           {/* Main Card */}
-          <div className="relative p-6 sm:p-10 lg:p-14 rounded-[2rem] bg-white/70 backdrop-blur-xl border border-white/50 shadow-2xl shadow-navy/5">
+          <div className="relative p-6 sm:p-10 lg:p-14 rounded-4xl bg-white/70 backdrop-blur-xl border border-white/50 shadow-2xl shadow-navy/5">
             {/* Gradient border effect */}
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-orange/20 via-transparent to-navy/20 opacity-50 pointer-events-none" />
-            <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] bg-white/80 backdrop-blur-xl pointer-events-none" />
+            <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-orange/20 via-transparent to-navy/20 opacity-50 pointer-events-none" />
+            <div className="absolute inset-px rounded-4xl bg-white/80 backdrop-blur-xl pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-10 text-center">
@@ -205,7 +205,7 @@ export default function CTAFinal() {
                   animate="pulse"
                   className="relative"
                 >
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-orange via-orange to-orange-600 flex items-center justify-center text-white shadow-2xl shadow-orange/30">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-linear-to-br from-orange via-orange to-orange-600 flex items-center justify-center text-white shadow-2xl shadow-orange/30">
                     <Rocket size={40} className="sm:w-12 sm:h-12" />
                   </div>
                   {/* Sparkle decoration */}
@@ -230,7 +230,7 @@ export default function CTAFinal() {
               >
                 Prêt à réaliser ton{' '}
                 <span className="relative">
-                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange to-orange-600">
+                  <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-orange to-orange-600">
                     rêve professionnel
                   </span>
                   <motion.span
@@ -320,11 +320,11 @@ export default function CTAFinal() {
                 variants={itemVariants}
                 className="flex items-center gap-4 max-w-md mx-auto mb-8"
               >
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+                <div className="flex-1 h-px bg-linear-to-r from-transparent via-gray-200 to-transparent" />
                 <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">
                   ou contacte-nous
                 </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+                <div className="flex-1 h-px bg-linear-to-r from-transparent via-gray-200 to-transparent" />
               </motion.div>
 
               {/* Contact Info */}

@@ -32,13 +32,12 @@ import {
 } from 'lucide-react';
 
 // Import des logos d'écoles
+import logoEAMAU from '@assets/logoEcoles/EAMAU.webp';
 import logoENSPY from '@assets/logoEcoles/enspy.webp';
 import logoENSTP from '@assets/logoEcoles/enstp.png';
-import logoSUPPTIC from '@assets/logoEcoles/supptic.png';
+import logoFASA from '@assets/logoEcoles/fasa.webp';
 import logoPrepaVogt from '@assets/logoEcoles/prepa-vogt.png';
 import logoSaintJean from '@assets/logoEcoles/saint-jean.jpeg';
-import logoEAMAU from '@assets/logoEcoles/EAMAU.webp';
-import logoFASA from '@assets/logoEcoles/fasa.webp';
 import logoUCAC from '@assets/logoEcoles/ucac.webp';
 
 // Catégories de programmes
@@ -375,8 +374,8 @@ export const programmes = [
     nextSession: 'Septembre 2026',
     placesAvailable: 25,
     format: 'Presentiel intensif',
-    price: 200000,
-    priceLabel: '200 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 90,
     studentsPerClass: 20,
     icon: GraduationCap,
@@ -460,7 +459,7 @@ export const programmes = [
     ],
     paymentPlans: [
       {
-        name: 'Paiement annuel',
+        name: 'Paiement total',
         amount: 1800000,
         description: 'Totalite de l annee',
         discount: '10% de reduction',
@@ -522,8 +521,8 @@ export const programmes = [
     nextSession: 'Septembre 2026',
     placesAvailable: 25,
     format: 'Presentiel intensif',
-    price: 190000,
-    priceLabel: '190 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 88,
     studentsPerClass: 20,
     icon: GraduationCap,
@@ -671,8 +670,8 @@ export const programmes = [
     nextSession: 'Juin 2026',
     placesAvailable: 40,
     format: 'Presentiel + laboratoires + e-learning',
-    price: 175000,
-    priceLabel: '175 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session(x2)',
     successRate: 78,
     studentsPerClass: 30,
     icon: Stethoscope,
@@ -823,9 +822,9 @@ export const programmes = [
     sessions: ['Septembre', 'Mars'],
     nextSession: 'Mars 2026',
     placesAvailable: 35,
-    format: 'Presentiel + stages pratiques',
-    price: 120000,
-    priceLabel: '120 000 FCFA/mois',
+    format: 'Presentiel + e-learning',
+    price: 45000,
+    priceLabel: '45 000 FCFA/sessions(x3)',
     successRate: 85,
     studentsPerClass: 25,
     icon: HeartPulse,
@@ -964,8 +963,8 @@ export const programmes = [
     nextSession: 'Juin 2026',
     placesAvailable: 30,
     format: 'Presentiel + etudes de cas',
-    price: 135000,
-    priceLabel: '135 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 82,
     studentsPerClass: 25,
     icon: BarChart3,
@@ -1107,8 +1106,8 @@ export const programmes = [
     nextSession: 'Fevrier 2026',
     placesAvailable: 25,
     format: 'Presentiel + travaux diriges',
-    price: 140000,
-    priceLabel: '140 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 80,
     studentsPerClass: 20,
     icon: Scale,
@@ -1256,8 +1255,8 @@ export const programmes = [
     nextSession: 'Mars 2026',
     placesAvailable: 35,
     format: 'Presentiel + coaching personnalise',
-    price: 130000,
-    priceLabel: '130 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 85,
     studentsPerClass: 20,
     icon: GraduationCap,
@@ -1397,7 +1396,7 @@ export const programmes = [
     placesAvailable: 50,
     format: 'Weekends + vacances scolaires',
     price: 100000,
-    priceLabel: '100 000 FCFA/mois',
+    priceLabel: '100 000 FCFA/session',
     successRate: null,
     studentsPerClass: 30,
     icon: BookOpen,
@@ -1500,7 +1499,7 @@ export const programmes = [
     placesAvailable: 30,
     format: 'Presentiel + ateliers pratiques',
     price: 60000,
-    priceLabel: '60 000 FCFA/mois',
+    priceLabel: '60 000 FCFA/session',
     successRate: 85,
     studentsPerClass: 20,
     icon: Ruler,
@@ -1637,8 +1636,8 @@ export const programmes = [
     nextSession: 'Fevrier 2026',
     placesAvailable: 35,
     format: 'Presentiel + travaux pratiques',
-    price: 50000,
-    priceLabel: '50 000 FCFA/mois',
+    price: 45000,
+    priceLabel: '45 000 FCFA/session',
     successRate: 82,
     studentsPerClass: 25,
     icon: Leaf,
@@ -1718,9 +1717,9 @@ export const programmes = [
         recommended: true,
       },
       {
-        name: 'Paiement mensuel',
-        amount: 50000,
-        description: 'Par mois (x5)',
+        name: 'Paiement par phase',
+        amount: 45000,
+        description: 'Par phase (x2)',
         discount: null,
         recommended: false,
       },

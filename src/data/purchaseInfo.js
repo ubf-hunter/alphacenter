@@ -1,6 +1,7 @@
 // ============================================
 // PURCHASE INFO - Informations d'achat
 // Processus, paiement, livraison, garanties
+// Version imprimee uniquement
 // ============================================
 
 import {
@@ -39,7 +40,7 @@ export const purchaseProcess = [
     step: 4,
     title: 'Recevez vos documents',
     description:
-      'Version digitale par email/WhatsApp. Version physique a retirer au centre ou livraison.',
+      'Retrait au centre Alpha Center ou livraison a domicile.',
     icon: Download,
   },
 ];
@@ -64,12 +65,6 @@ export const paymentMethods = [
 
 // ===== LIVRAISON =====
 export const deliveryOptions = {
-  digital: {
-    method: 'Email ou WhatsApp',
-    delay: 'Immediat apres confirmation du paiement',
-    format: 'PDF haute qualite',
-    cost: 0,
-  },
   physical: [
     {
       id: 'pickup',
@@ -105,7 +100,7 @@ export const guarantees = [
   {
     id: 'refund',
     title: 'Satisfait ou rembourse',
-    description: 'Remboursement sous 7 jours si non satisfait (version digitale)',
+    description: 'Remboursement sous 7 jours si non satisfait',
     icon: RefreshCw,
     color: 'blue',
   },
@@ -133,17 +128,12 @@ export const orderContact = {
 };
 
 // ===== GENERATION LIEN WHATSAPP =====
-export const generateWhatsAppLink = (product, format = 'digital') => {
-  const price = product.pricing[format] || product.pricing.digital;
-  const formatLabel =
-    format === 'digital' ? 'Version digitale (PDF)' : 'Version imprimee';
-
+export const generateWhatsAppLink = (product) => {
   const message = encodeURIComponent(
     `Bonjour Alpha Center !\n\n` +
       `Je souhaite commander :\n` +
       `*${product.name}*\n` +
-      `Format : ${formatLabel}\n` +
-      `Prix : ${price?.toLocaleString()} FCFA\n\n` +
+      `Prix : ${product.price > 0 ? product.price.toLocaleString() + ' FCFA' : 'A confirmer'}\n\n` +
       `Merci de me confirmer la disponibilite et les modalites de paiement.`
   );
 
@@ -153,24 +143,24 @@ export const generateWhatsAppLink = (product, format = 'digital') => {
 // ===== FAQ ACHAT =====
 export const purchaseFAQ = [
   {
-    question: 'Quels formats sont disponibles ?',
+    question: 'Comment commander un document ?',
     answer:
-      'Tous nos documents sont disponibles en version digitale (PDF) et en version imprimee. Certains packs proposent un tarif reduit pour les deux formats.',
+      "Cliquez sur le bouton 'Commander sur WhatsApp' sur la fiche du document. Vous serez redirige vers WhatsApp avec un message pre-rempli. Notre equipe vous repondra rapidement.",
   },
   {
     question: 'Comment payer ma commande ?',
     answer:
-      'Nous acceptons Orange Money et MTN Mobile Money. Apres avoir clique sur "Commander", vous recevrez les instructions de paiement via WhatsApp.',
+      'Nous acceptons Orange Money et MTN Mobile Money. Apres votre commande sur WhatsApp, vous recevrez les instructions de paiement.',
   },
   {
     question: 'Combien de temps pour recevoir ma commande ?',
     answer:
-      'La version digitale est envoyee immediatement apres confirmation du paiement. Pour la version imprimee, comptez 24h pour le retrait au centre ou 24-48h pour la livraison a Yaounde.',
+      'Comptez 24h pour le retrait au centre Alpha Center ou 24-48h pour la livraison a Yaounde. Pour les autres villes, la livraison prend 3-5 jours.',
   },
   {
     question: 'Puis-je etre rembourse si je ne suis pas satisfait ?',
     answer:
-      'Oui, pour les versions digitales uniquement. Vous avez 7 jours pour demander un remboursement si le contenu ne correspond pas a vos attentes.',
+      "Oui, vous avez 7 jours apres reception pour demander un remboursement si le contenu ne correspond pas a vos attentes. Contactez-nous sur WhatsApp.",
   },
   {
     question: 'Les documents sont-ils mis a jour ?',
@@ -178,9 +168,9 @@ export const purchaseFAQ = [
       "Oui, nous mettons a jour nos documents chaque annee avec les derniers sujets d'annales et les evolutions des programmes. Les acheteurs recoivent les mises a jour gratuitement.",
   },
   {
-    question: 'Puis-je partager les documents avec mes amis ?',
+    question: 'Ou puis-je retirer ma commande ?',
     answer:
-      'Les documents sont strictement personnels et ne peuvent pas etre partages. Chaque fichier PDF est nomme avec les informations de l\'acheteur.',
+      "Vous pouvez retirer votre commande au centre Alpha Center, situe au quartier Omnisports a Yaounde. L'adresse exacte vous sera communiquee par WhatsApp.",
   },
 ];
 

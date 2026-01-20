@@ -21,7 +21,7 @@ import logoENSPY from '@assets/logoEcoles/enspy.webp';
 import logoENSTP from '@assets/logoEcoles/enstp.png';
 import logoFASA from '@assets/logoEcoles/fasa.webp';
 import logoFMSP from '@assets/logoEcoles/FMSP.webp';
-import logoIUTDouala from '@assets/logoEcoles/iut-douala.webp';
+// import logoIUTDouala from '@assets/logoEcoles/iut-douala.webp'; // Not currently used
 import logoPrepaVogt from '@assets/logoEcoles/prepa-vogt.png';
 import logoSaintJean from '@assets/logoEcoles/saint-jean.jpeg';
 import logoSUPPTIC from '@assets/logoEcoles/supptic.png';

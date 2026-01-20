@@ -16,6 +16,11 @@ export const mainNavigation = [
     type: 'link',
   },
   {
+    label: 'Ressources',
+    href: '/ressources',
+    type: 'link',
+  },
+  {
     label: 'Orientation',
     type: 'megamenu',
     megamenu: {
@@ -117,6 +122,7 @@ export const footerNavigation = {
   navigation: [
     { label: 'Accueil', href: '/' },
     { label: 'Programmes', href: '/services' },
+    { label: 'Ressources', href: '/ressources' },
     { label: 'Qui sommes-nous', href: '/a-propos/qui-sommes-nous' },
     { label: 'Notre équipe', href: '/a-propos/equipe' },
     { label: 'Nos résultats', href: '/a-propos/resultats' },

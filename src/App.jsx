@@ -5,6 +5,7 @@ import { InscriptionModal } from '@components/modals';
 import Home from '@pages/Home';
 import Programmes from '@pages/Programmes';
 import ProgrammeDetail from '@pages/ProgrammeDetail';
+import Ressources from '@pages/Ressources';
 import Application from '@pages/Application';
 import Contact from '@pages/Contact';
 import NotFound from '@pages/NotFound';
@@ -51,6 +52,8 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="programmes" element={<Programmes />} />
             <Route path="programmes/:programId" element={<ProgrammeDetail />} />
+            <Route path="ressources" element={<Ressources />} />
+            <Route path="bibliotheque" element={<Ressources />} />
             <Route path="services" element={<Programmes />} />
             <Route path="application" element={<Application />} />
             <Route path="contact" element={<Contact />} />

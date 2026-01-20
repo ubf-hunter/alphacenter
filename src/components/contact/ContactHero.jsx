@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export default function ContactHero() {
   return (
-    <section className="relative bg-gradient-to-br from-navy via-navy to-blue-900 py-16 md:py-20 overflow-hidden">
+    <section className="relative bg-linear-to-br from-navy via-navy to-blue-900 py-16 md:py-20 overflow-hidden">
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-5"
@@ -21,7 +21,7 @@ export default function ContactHero() {
       {/* Orbes decoratives */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-orange/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-apricot/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <Container className="relative z-10">
         {/* Breadcrumb */}
@@ -58,9 +58,12 @@ export default function ContactHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-black text-white text-center mb-4"
         >
-          Contactez-nous
+          <span className="text-orange font-cursive font-black italic">
+            Contactez
+          </span>
+          -nous
         </motion.h1>
 
         {/* Sous-titre */}
@@ -70,7 +73,8 @@ export default function ContactHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-white/80 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed"
         >
-          Une question sur nos programmes ? Besoin d'informations ?<br className="hidden sm:block" />
+          Une question sur nos programmes ? Besoin d'informations ?
+          <br className="hidden sm:block" />
           Notre equipe est la pour t'accompagner vers la reussite.
         </motion.p>
 
@@ -90,7 +94,9 @@ export default function ContactHero() {
               <div className="text-xl md:text-2xl font-bold text-orange">
                 {stat.value}
               </div>
-              <div className="text-xs md:text-sm text-white/60">{stat.label}</div>
+              <div className="text-xs md:text-sm text-white/60">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>

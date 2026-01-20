@@ -29,11 +29,11 @@ function HeroSection() {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-apricot-light via-white to-white" />
+      <div className="absolute inset-0 bg-linear-to-b from-apricot-light via-white to-white" />
 
       {/* Decorative blobs */}
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-orange/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-navy/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-20 right-0 w-150 h-150 bg-orange/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-navy/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Pattern overlay */}
       <div
@@ -62,7 +62,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-navy mb-6 leading-tight"
           >
             Des programmes adaptés à{' '}
             <span className="text-orange font-cursive italic">

@@ -3,20 +3,19 @@
 // Hero section pour la bibliotheque
 // ============================================
 
-import { motion } from 'framer-motion';
-import { BookOpen, Download, Shield, Star } from 'lucide-react';
 import Container from '@components/common/Container';
+import { motion } from 'framer-motion';
+import { BookOpen, Shield, Star } from 'lucide-react';
 
 const stats = [
-  { icon: BookOpen, value: '25+', label: 'Documents' },
-  { icon: Download, value: '500+', label: 'Telechargements' },
+  { icon: BookOpen, value: '6', label: 'Documents' },
   { icon: Star, value: '4.9', label: 'Note moyenne' },
   { icon: Shield, value: '100%', label: 'Qualite garantie' },
 ];
 
 export default function LibraryHero() {
   return (
-    <section className="relative pt-32 pb-20 bg-gradient-to-br from-navy via-navy to-blue-900 overflow-hidden">
+    <section className="relative pt-32 pb-20 bg-linear-to-br from-navy via-navy to-blue-900 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange/20 rounded-full blur-3xl" />
@@ -51,9 +50,13 @@ export default function LibraryHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"
           >
-            Tous les <span className="text-orange">outils</span> pour
+            Tous les{' '}
+            <span className="text-orange font-cursive italic font-black">
+              outils
+            </span>{' '}
+            pour
             <br />
             reussir tes concours
           </motion.h1>
@@ -74,7 +77,7 @@ export default function LibraryHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+            className="grid grid-cols-3 gap-4 md:gap-8"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
