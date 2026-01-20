@@ -30,14 +30,20 @@ export default function MemberProfile() {
     return <Navigate to="/a-propos/equipe" replace />;
   }
 
-  const jsonLd = generatePersonSchema(member, `/a-propos/equipe/${member.slug}`);
+  const jsonLd = generatePersonSchema(
+    member,
+    `/a-propos/equipe/${member.slug}`,
+  );
 
   return (
     <>
       <SEO
         title={`${member.name} - ${member.role || member.subject}`}
         description={
-          member.bio || member.fullBio || member.shortBio || `Profil de ${member.name} chez Alpha Center`
+          member.bio ||
+          member.fullBio ||
+          member.shortBio ||
+          `Profil de ${member.name} chez Alpha Center`
         }
         url={`/a-propos/equipe/${member.slug}`}
         jsonLd={jsonLd}
@@ -99,12 +105,10 @@ export default function MemberProfile() {
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
                 {member.name}
               </h1>
-              <p className="text-xl text-orange font-medium mb-1">
+              <p className="text-xl text-orange font-medium mb-1 font-cursive italic">
                 {member.role || member.subject}
               </p>
-              {member.title && (
-                <p className="text-white/70">{member.title}</p>
-              )}
+              {member.title && <p className="text-white/70">{member.title}</p>}
               {member.specialty && (
                 <p className="text-white/60 text-sm mt-1">{member.specialty}</p>
               )}

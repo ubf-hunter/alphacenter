@@ -3,6 +3,7 @@
 // ============================================
 //import
 import ggPro from '../assets/images/team/ggPro2.jpeg';
+import marcelo from '../assets/images/team/ndongo-marcel.jpg';
 import ubfPro from '../assets/images/team/ubfPro3.png';
 // Direction
 export const leadership = [
@@ -60,79 +61,25 @@ export const teachers = [
     name: 'Ing Ndongo Nkodo Marcel',
     subject: 'Mathematiques',
     specialty: 'Analyse & Algebre',
-    photo: '/images/team/Marcelo.jpg',
-    initials: 'DK',
+    photo: marcelo,
+    initials: 'NKM',
     color: 'orange',
     shortBio: "Ancien major ENSP, 10 ans d'experience en prepa concours",
     fullBio:
-      "Diplome de l'ENSP en Genie Informatique, Dr. Kamga s'est specialise dans l'enseignement des mathematiques pour les concours. Sa methode : 'Ne memorisez pas les formules, comprenez d'ou elles viennent.'",
-    education: ['ENSP - Genie Informatique', 'Master Didactique des Maths'],
+      "Ingénieur diplômé de l'IUT en Génie des Télécommunications, avec une spécialisation en Informatique et Réseaux, je mets mon expertise technique au service de la réussite académique. En tant qu'Ing. NDONGO NKODO, j'allie la rigueur de l'ingénierie à une solide expérience pédagogique pour accompagner les étudiants d'Alpha Center. Spécialiste des systèmes numériques et des sciences appliquées, mon objectif est de fournir aux candidats les outils techniques et méthodologiques indispensables pour réussir les concours les plus exigeants et intégrer les grandes écoles de demain.",
+    education: ['IUT - Genie Telecoms', 'Master Recherche des telecoms-ENSPT'],
     achievements: [
       "Auteur de 'Mathematiques pour les Concours'",
-      '200+ etudiants admis',
+      '70+ etudiants admis',
     ],
     testimonial: {
       quote:
-        "Dr. Kamga m'a appris a ne plus apprendre par coeur mais a comprendre. Il disait: 'Marie, arrete de memoriser les formules. Comprends d'ou elles viennent.' C'est ce qui m'a debloquee.",
+        "M. Nkodo m'a appris a ne plus apprendre par coeur mais a comprendre. Il disait: 'Marie, arrete de memoriser les formules. Comprends d'ou elles viennent.' C'est ce qui m'a debloquee.",
       author: 'Marie FOTSO',
-      school: 'ENSTP 2023',
+      school: 'ENSTP 2024',
     },
   },
-  {
-    id: 'ngo-bama',
-    slug: 'ngo-bama',
-    name: 'Ing. Ngo Bama',
-    subject: 'Physique',
-    specialty: 'Mecanique & Electromagnetisme',
-    photo: '/images/team/ngo-bama.jpg',
-    initials: 'NB',
-    color: 'navy',
-    shortBio: 'Ingenieur ENSTP, specialiste des methodes de resolution rapide',
-    fullBio:
-      "Ingenieur diplomee de l'ENSTP, Ing. Ngo Bama a developpe une approche pedagogique basee sur les exemples de la vie quotidienne pour rendre la physique accessible et intuitive.",
-    education: ['ENSTP - Genie Electrique', 'Certificat Pedagogie ENSET'],
-    achievements: [
-      'Taux de reussite 90% en physique',
-      "Creatrice du 'Kit Physique Express'",
-    ],
-    testimonial: {
-      quote:
-        "Ing. Ngo Bama m'a reconciliee avec la physique. Je detestais cette matiere avant. Elle explique avec des exemples de la vie quotidienne qui rendent tout clair. Maintenant c'est ma matiere preferee !",
-      author: 'Claire MANGA',
-      school: 'ENSP 2024',
-    },
-  },
-  {
-    id: 'mbarga',
-    slug: 'pr-mbarga',
-    name: 'Pr. Mbarga',
-    subject: 'Chimie',
-    specialty: 'Chimie Organique & Minerale',
-    photo: '/images/team/mbarga.jpg',
-    initials: 'PM',
-    color: 'emerald',
-    shortBio: "Professeur certifie, 12 ans d'experience lycee et prepa",
-    fullBio:
-      'Professeur certifie en Sciences Physiques et Chimie, Pr. Mbarga combine une solide experience en lycee et en classes preparatoires. Son approche methodique aide les etudiants a structurer leurs connaissances.',
-    education: ['ENS Yaounde - Sciences Physiques', 'CAPES Chimie'],
-    achievements: ["12 ans d'experience", 'Formateur pour enseignants'],
-  },
-  {
-    id: 'essomba',
-    slug: 'dr-essomba',
-    name: 'Dr. Essomba',
-    subject: 'Biologie',
-    specialty: 'SVT & Sciences Biomedicales',
-    photo: '/images/team/essomba.jpg',
-    initials: 'DE',
-    color: 'rose',
-    shortBio: 'Medecin et enseignant, expert preparation FMSB',
-    fullBio:
-      'Medecin diplome de la FMSB, Dr. Essomba apporte son expertise pour la preparation aux concours de medecine. Il connait parfaitement les attentes des jurys et les pieges classiques.',
-    education: ['FMSB Yaounde - Medecine', 'DIU Pedagogie Medicale'],
-    achievements: ['Ancien membre jury FMSB', 'Expert preparation medecine'],
-    forDomain: 'medicine',
-  },
+
   {
     id: 'nguema',
     slug: 'm-nguema',
