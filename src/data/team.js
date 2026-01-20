@@ -2,6 +2,8 @@
 // TEAM DATA - Direction, Enseignants, Staff
 // ============================================
 //import
+import aromaine from '../assets/images/team/aromaine.jpg';
+import ebai from '../assets/images/team/ebai-junior.jpg';
 import ggPro from '../assets/images/team/ggPro2.jpeg';
 import marcelo from '../assets/images/team/ndongo-marcel.jpg';
 import ubfPro from '../assets/images/team/ubfPro3.png';
@@ -81,34 +83,58 @@ export const teachers = [
   },
 
   {
-    id: 'nguema',
-    slug: 'm-nguema',
-    name: 'M. Nguema',
-    subject: 'Anglais',
-    specialty: 'Anglais Scientifique',
-    photo: '/images/team/nguema.jpg',
-    initials: 'MN',
-    color: 'blue',
-    shortBio: "Bilingue, specialiste de l'anglais technique",
+    id: 'ebai-jordan',
+    slug: 'dr-ebai-jordan',
+    name: 'Dr. Ebai Junior Jordan',
+    subject: 'Chimie & Biologie',
+    specialty: 'Sciences Biomédicales & Pharmacie',
+    photo: ebai,
+    initials: 'EJJ',
+    color: 'emerald',
+    shortBio: "Docteur en pharmacie FMSB, 8 ans d'experience en prepa concours",
     fullBio:
-      "Parfaitement bilingue, M. Nguema prepare les etudiants a l'epreuve d'anglais des concours avec un focus sur le vocabulaire technique et scientifique.",
-    education: ['Licence Anglais - UY1', 'Cambridge CELTA'],
-    achievements: ["5 ans d'experience prepa concours"],
+      "Docteur en pharmacie diplômé de la Faculté de Médecine et des Sciences Biomédicales (FMSB), actuellement en spécialisation, je mets mes 8 années d'expérience dans l'enseignement au service des futurs candidats aux concours de médecine et de pharmacie. Ma connaissance approfondie du cursus médical et pharmaceutique me permet d'accompagner efficacement les étudiants dans leur préparation aux épreuves scientifiques les plus exigeantes.",
+    education: [
+      'Doctorat en Pharmacie - FMSB',
+      'Spécialisation en cours - FMSB',
+    ],
+    achievements: [
+      "8 ans d'experience en enseignement",
+      'Expert concours Médecine/Pharmacie',
+    ],
   },
   {
-    id: 'fotso',
-    slug: 'mme-fotso',
-    name: 'Mme Fotso',
-    subject: 'Francais',
-    specialty: 'Expression Ecrite & Orale',
-    photo: '/images/team/fotso.jpg',
-    initials: 'MF',
-    color: 'purple',
-    shortBio: 'Agregee de Lettres, coach en expression',
+    id: 'ngota-alexandre',
+    slug: 'ngota-alexandre',
+    name: 'Ngota Eteme Alexandre',
+    subject: 'Biologie & SVT',
+    specialty: 'Sciences Médicales',
+    photo: '/images/team/ngota-alexandre.jpg',
+    initials: 'NEA',
+    color: 'teal',
+    shortBio: "Etudiant en 4eme annee FMSB, 4 ans d'experience",
     fullBio:
-      'Agregee de Lettres Modernes, Mme Fotso aide les etudiants a ameliorer leur expression ecrite et orale, competences souvent negligees mais determinantes pour les concours.',
-    education: ['Agregation Lettres Modernes', 'Master Sciences du Langage'],
-    achievements: ['Coach preparation oraux', 'Formatrice communication'],
+      "Étudiant en 4ème année de Médecine Générale à la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé 1 (FMSB-UY1), je cumule 4 années d'expérience dans l'enseignement des sciences médicales. Ma proximité avec le cursus médical actuel et ma maîtrise des programmes de concours me permettent d'offrir un accompagnement adapté et efficace aux candidats aspirant aux grandes écoles de santé.",
+    education: [
+      'FMSB-UY1 - Médecine Générale (4ème année)',
+      '4 ans enseignement prépa concours',
+    ],
+    achievements: ['Etudiant FMSB en cours', 'Specialiste concours sante'],
+  },
+  {
+    id: 'nyanga-aromaine',
+    slug: 'nyanga-aromaine',
+    name: 'Nyanga Aromaine',
+    subject: 'Informatique & Mathématiques',
+    specialty: 'Data Science & Programmation',
+    photo: aromaine,
+    initials: 'NA',
+    color: 'indigo',
+    shortBio: 'Etudiante ENSPY 4eme annee, Data Scientist',
+    fullBio:
+      "Étudiante en 4ème année à l'École Nationale Supérieure Polytechnique de Yaoundé (ENSPY), spécialisée en Data Science, je mets mes compétences en analyse de données et en programmation au service de la préparation aux concours d'entrée dans les grandes écoles d'ingénieurs. Mon parcours à Polytechnique me permet de transmettre aux candidats les méthodes rigoureuses et les connaissances techniques nécessaires pour réussir les épreuves scientifiques.",
+    education: ['ENSPY - 4ème année', 'Spécialisation Data Science'],
+    achievements: ['Etudiante Polytechnique', 'Experte en analyse de donnees'],
   },
 ];
 
