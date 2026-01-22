@@ -167,7 +167,6 @@ export const programmes = [
           { time: '11h - 13h', subject: 'Examen blanc', type: 'examen' },
         ],
       },
-  
     ],
     // Plans de paiement
     paymentPlans: [
@@ -1431,31 +1430,38 @@ export const programmes = [
     badgeColor: 'bg-gray-600 text-white',
     schedule: [
       {
-        day: 'Samedi',
-        sessions: [
-          { time: '08h30 - 10h30', subject: 'Maths renforcees', type: 'cours' },
-          { time: '11h - 13h', subject: 'Physique-Chimie', type: 'cours' },
-        ],
-      },
-      {
         day: 'Dimanche',
         sessions: [
           { time: '08h30 - 10h30', subject: 'Biologie (sante)', type: 'cours' },
           { time: '11h - 16h', subject: 'Methodologie', type: 'td' },
         ],
       },
+      {
+        day: 'Mercredi',
+        sessions: [
+          { time: '13h30 - 15h30', subject: 'Maths ', type: 'cours' },
+          { time: '16h - 17h', subject: 'Chimie', type: 'cours' },
+        ],
+      },
+      {
+        day: 'Samedi',
+        sessions: [
+          { time: '08h30 - 10h30', subject: 'Maths renforcees', type: 'cours' },
+          { time: '11h - 13h', subject: 'Physique-Chimie', type: 'cours' },
+        ],
+      },
     ],
     paymentPlans: [
       {
         name: 'Paiement integral',
-        amount: 270000,
+        amount: 75000,
         description: 'Totalite des 3 mois',
         discount: '10% de reduction',
         recommended: true,
       },
       {
         name: 'Paiement mensuel',
-        amount: 100000,
+        amount: 25000,
         description: 'Par mois (x3)',
         discount: null,
         recommended: false,
@@ -1529,7 +1535,7 @@ export const programmes = [
     requirements: [
       'Baccalaureat C, D, E ou F',
       'Aptitude au dessin (test initial)',
-      'Motivation pour les metiers de l\'architecture',
+      "Motivation pour les metiers de l'architecture",
     ],
     badge: 'Architecture',
     badgeColor: 'bg-amber-500 text-white',
@@ -1537,36 +1543,64 @@ export const programmes = [
       {
         day: 'Lundi',
         sessions: [
-          { time: '08h30 - 12h30', subject: 'Dessin architectural', type: 'atelier' },
-          { time: '14h - 17h', subject: 'Geometrie descriptive', type: 'cours' },
+          {
+            time: '08h30 - 12h30',
+            subject: 'Dessin architectural',
+            type: 'atelier',
+          },
+          {
+            time: '14h - 17h',
+            subject: 'Geometrie descriptive',
+            type: 'cours',
+          },
         ],
       },
       {
         day: 'Mardi',
         sessions: [
           { time: '08h30 - 10h30', subject: 'Mathematiques', type: 'cours' },
-          { time: '11h - 13h', subject: 'Culture architecturale', type: 'cours' },
+          {
+            time: '11h - 13h',
+            subject: 'Culture architecturale',
+            type: 'cours',
+          },
         ],
       },
       {
         day: 'Mercredi',
         sessions: [
-          { time: '08h30 - 12h30', subject: 'Dessin architectural', type: 'atelier' },
+          {
+            time: '08h30 - 12h30',
+            subject: 'Dessin architectural',
+            type: 'atelier',
+          },
           { time: '14h - 17h', subject: 'Perspective et rendu', type: 'tp' },
         ],
       },
       {
         day: 'Jeudi',
         sessions: [
-          { time: '08h30 - 10h30', subject: 'Geometrie descriptive', type: 'td' },
+          {
+            time: '08h30 - 10h30',
+            subject: 'Geometrie descriptive',
+            type: 'td',
+          },
           { time: '11h - 13h', subject: 'Mathematiques', type: 'td' },
         ],
       },
       {
         day: 'Vendredi',
         sessions: [
-          { time: '08h30 - 12h30', subject: 'Projet personnel', type: 'atelier' },
-          { time: '14h - 17h', subject: 'Correction collective', type: 'revision' },
+          {
+            time: '08h30 - 12h30',
+            subject: 'Projet personnel',
+            type: 'atelier',
+          },
+          {
+            time: '14h - 17h',
+            subject: 'Correction collective',
+            type: 'revision',
+          },
         ],
       },
     ],
@@ -1604,7 +1638,7 @@ export const programmes = [
       },
       {
         title: 'Portfolio accompagne',
-        description: 'Constitution d\'un dossier personnel',
+        description: "Constitution d'un dossier personnel",
       },
       {
         title: 'Visites de terrain',
@@ -1653,7 +1687,7 @@ export const programmes = [
     features: [
       'Cours structures par des ingenieurs agronomes',
       'Travaux pratiques en laboratoire',
-      'Visites d\'exploitations agricoles',
+      "Visites d'exploitations agricoles",
       'Examens blancs bi-mensuels',
       'Annales corrigees FASA',
       'Groupe WhatsApp dedie',
@@ -1675,7 +1709,11 @@ export const programmes = [
       {
         day: 'Lundi',
         sessions: [
-          { time: '08h30 - 10h30', subject: 'Biologie vegetale', type: 'cours' },
+          {
+            time: '08h30 - 10h30',
+            subject: 'Biologie vegetale',
+            type: 'cours',
+          },
           { time: '11h - 13h', subject: 'Chimie', type: 'cours' },
         ],
       },
@@ -1703,7 +1741,11 @@ export const programmes = [
       {
         day: 'Vendredi',
         sessions: [
-          { time: '08h30 - 10h30', subject: 'Revision generale', type: 'revision' },
+          {
+            time: '08h30 - 10h30',
+            subject: 'Revision generale',
+            type: 'revision',
+          },
           { time: '11h - 13h', subject: 'Examen blanc', type: 'examen' },
         ],
       },
