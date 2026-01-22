@@ -39,8 +39,7 @@ export const purchaseProcess = [
   {
     step: 4,
     title: 'Recevez vos documents',
-    description:
-      'Retrait au centre Alpha Center ou livraison a domicile.',
+    description: 'Retrait au centre Alpha Center ou livraison a domicile.',
     icon: Download,
   },
 ];
@@ -122,8 +121,8 @@ export const guarantees = [
 
 // ===== CONTACT COMMANDE =====
 export const orderContact = {
-  whatsapp: '+237 691 034 397',
-  whatsappClean: '237691034397',
+  whatsapp: '+237 670 102 293',
+  whatsappClean: '237670102293',
   email: 'contact@alphacenter.cm',
 };
 
@@ -134,7 +133,7 @@ export const generateWhatsAppLink = (product) => {
       `Je souhaite commander :\n` +
       `*${product.name}*\n` +
       `Prix : ${product.price > 0 ? product.price.toLocaleString() + ' FCFA' : 'A confirmer'}\n\n` +
-      `Merci de me confirmer la disponibilite et les modalites de paiement.`
+      `Merci de me confirmer la disponibilite et les modalites de paiement.`,
   );
 
   return `https://wa.me/${orderContact.whatsappClean}?text=${message}`;
@@ -160,7 +159,7 @@ export const purchaseFAQ = [
   {
     question: 'Puis-je etre rembourse si je ne suis pas satisfait ?',
     answer:
-      "Oui, vous avez 7 jours apres reception pour demander un remboursement si le contenu ne correspond pas a vos attentes. Contactez-nous sur WhatsApp.",
+      'Oui, vous avez 7 jours apres reception pour demander un remboursement si le contenu ne correspond pas a vos attentes. Contactez-nous sur WhatsApp.',
   },
   {
     question: 'Les documents sont-ils mis a jour ?',

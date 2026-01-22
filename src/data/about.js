@@ -26,9 +26,9 @@ export const alphaCenter = {
     country: 'Cameroun',
   },
   contact: {
-    phone: '+237 6XX XXX XXX',
+    phone: '+237 670102293',
     email: 'contact@alphacenter.cm',
-    whatsapp: '+237 6XX XXX XXX',
+    whatsapp: '+237 670102293',
   },
   socialMedia: {
     facebook: 'https://facebook.com/alphacenter',

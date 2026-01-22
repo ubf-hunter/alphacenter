@@ -6,20 +6,24 @@ import CTAFinal from '@components/home/CTAFinal';
 import {
   CalendarSection,
   MethodologySection,
-  PreparatoireHero,
   ProgramCard,
 } from '@components/programmes';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   ArrowRight,
   BookOpen,
+  Calendar,
+  CheckCircle2,
+  Clock,
   GraduationCap,
+  Sparkles,
   Star,
   Trophy,
   Users,
 } from 'lucide-react';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import bgimageu from '../assets/images/misc/prep1.jpg';
 import { useInscriptionModal } from '../hooks/useInscriptionModal';
 
 // Hero Section
@@ -129,22 +133,375 @@ function HeroSection() {
   );
 }
 
-// Preparatoire Hero Section
-function PreparatoireHeroSection() {
+// ============================================
+// CONFIGURATION - Personnalise ici ton image
+// ============================================
+const HERO_CONFIG = {
+  // Remplace par le chemin de ton image
+  backgroundImage: bgimageu,
+  // Alternative: image d'étudiants en salle de classe
+  // backgroundImage: '/images/students-classroom.jpg',
+};
+
+// ============================================
+// COMPOSANTS AUXILIAIRES
+// ============================================
+
+// Badge flottant avec animation
+function FloatingBadge({
+  icon: Icon,
+  label,
+  value,
+  delay = 0,
+  className = '',
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+      className={`
+        flex items-center gap-3 px-4 py-3
+        bg-white/90 backdrop-blur-md
+        rounded-2xl shadow-lg shadow-navy/5
+        border border-white/50
+        ${className}
+      `}
+    >
+      <div className="p-2 bg-gradient-to-br from-orange to-orange/80 rounded-xl">
+        <Icon className="w-5 h-5 text-white" />
+      </div>
+      <div>
+        <p className="text-xl font-bold text-navy font-display">{value}</p>
+        <p className="text-xs text-navy/60 font-medium">{label}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+// Point fort avec check
+function HighlightPoint({ children, delay = 0 }) {
+  return (
+    <motion.li
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay }}
+      className="flex items-center gap-2 text-navy/80"
+    >
+      <CheckCircle2 className="w-5 h-5 text-orange flex-shrink-0" />
+      <span className="text-sm font-medium">{children}</span>
+    </motion.li>
+  );
+}
+
+// Bouton CTA principal
+function PrimaryButton({ children, onClick, className = '' }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
+      className={`
+        group relative inline-flex items-center gap-2
+        px-8 py-4 
+        bg-gradient-to-r from-orange to-orange/90
+        text-white font-semibold text-lg
+        rounded-2xl
+        shadow-xl shadow-orange/25
+        hover:shadow-2xl hover:shadow-orange/30
+        transition-shadow duration-300
+        overflow-hidden
+        ${className}
+      `}
+    >
+      {/* Effet de brillance au hover */}
+      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+      <span className="relative">{children}</span>
+      <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
+    </motion.button>
+  );
+}
+
+// Bouton CTA secondaire
+function SecondaryButton({ children, onClick, className = '' }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
+      className={`
+        inline-flex items-center gap-2
+        px-8 py-4
+        bg-white/80 backdrop-blur-sm
+        text-navy font-semibold
+        rounded-2xl
+        border-2 border-navy/10
+        hover:border-orange/30 hover:bg-white
+        transition-all duration-300
+        ${className}
+      `}
+    >
+      {children}
+    </motion.button>
+  );
+}
+
+// Tag de session/promotion
+function SessionTag({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="
+        inline-flex items-center gap-2
+        px-4 py-2
+        bg-navy text-white
+        rounded-full
+        text-sm font-semibold
+        shadow-lg
+      "
+    >
+      <Sparkles className="w-4 h-4" />
+      {children}
+    </motion.div>
+  );
+}
+
+export function PreparatoireHeroSection() {
   const preparatoire = programmes.find((p) => p.id === 'preparatoire');
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const { openModal } = useInscriptionModal();
+  const navigate = useNavigate();
+
+  // Effet parallax au scroll
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], [0, 0]);
+  const contentY = useTransform(scrollY, [0, 500], [0, -50]);
+
+  // Préchargement de l'image
+  useEffect(() => {
+    const img = new Image();
+    img.src = HERO_CONFIG.backgroundImage;
+    img.onload = () => setImageLoaded(true);
+  }, []);
 
   if (!preparatoire) return null;
 
-  return (
-    <section className="py-20 bg-gradient-to-b from-apricot-light to-white relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-orange/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-64 h-64 bg-navy/5 rounded-full blur-3xl" />
+  // Données pour les badges (à personnaliser)
+  const stats = {
+    students: '500+',
+    successRate: '85%',
+    years: '10 ans',
+  };
 
-      <Container>
-        <PreparatoireHero program={preparatoire} />
+  return (
+    <section className="relative h-screen w-full flex items-center overflow-hidden">
+      {/* ========== FOND AVEC IMAGE ========== */}
+      <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
+        {/* Image de fond */}
+        <div
+          className={`
+            absolute inset-0 top-0
+            bg-cover bg-center bg-no-repeat
+            transition-opacity duration-1000
+            ${imageLoaded ? 'opacity-100' : 'opacity-0'}
+          `}
+          style={{ backgroundImage: `url(${HERO_CONFIG.backgroundImage})` }}
+        />
+
+        {/* Overlay gradient pour lisibilité */}
+        <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/40" />
+        <div className="absolute inset-0 bg-linear-to-b from-apricot-light/50 via-transparent to-white/80" />
+
+        {/* Éléments décoratifs */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-orange/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-navy/5 rounded-full blur-3xl" />
+      </motion.div>
+
+      {/* ========== CONTENU PRINCIPAL ========== */}
+      <Container className="relative z-10 ">
+        <motion.div
+          style={{ y: contentY }}
+          className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center py-8"
+        >
+          {/* Colonne gauche - Texte */}
+          <div className="space-y-8">
+            {/* Tag de session */}
+            <SessionTag>Rentrée 2025 - Inscriptions ouvertes</SessionTag>
+
+            {/* Titre principal */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-4"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-navy leading-tight">
+                Préparez votre{' '}
+                <span className="relative">
+                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange to-orange/80">
+                    réussite
+                  </span>
+                  {/* Soulignement décoratif */}
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-3 text-orange/20"
+                    viewBox="0 0 200 12"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0,8 Q50,0 100,8 T200,8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                  </svg>
+                </span>
+                <br />
+                aux concours
+              </h1>
+
+              <p className="text-lg md:text-xl text-navy/70 leading-relaxed max-w-xl">
+                {preparatoire.description ||
+                  "Intégrez les meilleures écoles du Cameroun grâce à notre programme de préparation intensive aux concours d'entrée."}
+              </p>
+            </motion.div>
+
+            {/* Points forts */}
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="grid sm:grid-cols-2 gap-3"
+            >
+              <HighlightPoint delay={0.4}>
+                Cours intensifs & encadrement personnalisé
+              </HighlightPoint>
+              <HighlightPoint delay={0.5}>
+                Épreuves blanches chaque semaine
+              </HighlightPoint>
+              <HighlightPoint delay={0.6}>
+                Professeurs expérimentés
+              </HighlightPoint>
+              <HighlightPoint delay={0.7}>
+                Suivi individuel des progrès
+              </HighlightPoint>
+            </motion.ul>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
+              <PrimaryButton onClick={() => openModal()}>
+                S'inscrire maintenant
+              </PrimaryButton>
+              <SecondaryButton
+                onClick={() => navigate('/services/preparatoire')}
+              >
+                Voir les programmes
+              </SecondaryButton>
+            </motion.div>
+
+            {/* Informations pratiques */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="flex flex-wrap items-center gap-6 pt-4 text-sm text-navy/60"
+            >
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-orange" />
+                <span>Du lundi au samedi</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-orange" />
+                <span>8h - 18h</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Colonne droite - Image & Badges flottants */}
+          <div className="relative hidden lg:block">
+            {/* Image principale avec effet */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              {/* Cadre décoratif */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-orange/20 to-navy/10 rounded-3xl blur-2xl" />
+
+              {/* Image avec glassmorphism */}
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/50 shadow-2xl">
+                <img
+                  src={HERO_CONFIG.backgroundImage}
+                  alt="Étudiants en préparation"
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay subtil */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+
+            {/* Badges flottants positionnés autour de l'image */}
+            <FloatingBadge
+              icon={Users}
+              label="Étudiants formés"
+              value={stats.students}
+              delay={0.6}
+              className="absolute -left-8 top-1/4"
+            />
+            <FloatingBadge
+              icon={Trophy}
+              label="Taux de réussite"
+              value={stats.successRate}
+              delay={0.8}
+              className="absolute -right-4 top-1/2"
+            />
+            <FloatingBadge
+              icon={GraduationCap}
+              label="D'expérience"
+              value={stats.years}
+              delay={1}
+              className="absolute -left-4 bottom-20"
+            />
+          </div>
+        </motion.div>
       </Container>
+
+      {/* ========== BANDE DE CONFIANCE ========== */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="absolute bottom-0 left-0 right-0 z-10"
+      >
+        <div className="bg-white/80 backdrop-blur-md border-t border-navy/5">
+          <Container>
+            <div className="py-6 flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              <TrustItem icon={GraduationCap} text="ENSP" />
+              <TrustItem icon={GraduationCap} text="ENSTP" />
+              <TrustItem icon={GraduationCap} text="ENS" />
+              <TrustItem icon={GraduationCap} text="FMBS" />
+              <TrustItem icon={GraduationCap} text="ISSEA" />
+            </div>
+          </Container>
+        </div>
+      </motion.div>
     </section>
+  );
+}
+
+// Item de la bande de confiance
+function TrustItem({ icon: Icon, text }) {
+  return (
+    <div className="flex items-center gap-2 text-navy/50 hover:text-navy transition-colors">
+      <Icon className="w-5 h-5" />
+      <span className="font-semibold text-sm tracking-wide">{text}</span>
+    </div>
   );
 }
 
