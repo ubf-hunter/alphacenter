@@ -91,18 +91,27 @@ export default function Header() {
               onClick={(e) => e.stopPropagation()}
             >
               {item.type === 'link' ? (
-                <NavLink
-                  to={item.href}
-                  className={({ isActive }) =>
-                    `px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                      isActive
-                        ? 'text-navy bg-navy/8'
-                        : 'text-gray-600 hover:text-navy hover:bg-navy/5'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
+                item.disabled ? (
+                  <span
+                    className="px-4 py-2 text-sm font-medium rounded-full text-gray-400 cursor-not-allowed"
+                    title={item.disabledMessage || 'Non disponible'}
+                  >
+                    {item.label}
+                  </span>
+                ) : (
+                  <NavLink
+                    to={item.href}
+                    className={({ isActive }) =>
+                      `px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                        isActive
+                          ? 'text-navy bg-navy/8'
+                          : 'text-gray-600 hover:text-navy hover:bg-navy/5'
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                )
               ) : (
                 <button
                   onClick={() => handleDropdownToggle(item.label)}
@@ -314,19 +323,29 @@ export default function Header() {
               {mainNavigation.map((item) => (
                 <div key={item.label}>
                   {item.type === 'link' ? (
-                    <NavLink
-                      to={item.href}
-                      className={({ isActive }) =>
-                        `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                          isActive
-                            ? 'text-navy bg-navy/8'
-                            : 'text-gray-600 hover:text-navy hover:bg-navy/5'
-                        }`
-                      }
-                      onClick={toggleMobileMenu}
-                    >
-                      {item.label}
-                    </NavLink>
+                    item.disabled ? (
+                      <span
+                        className="block px-4 py-3 rounded-xl text-sm font-medium text-gray-400 cursor-not-allowed"
+                        title={item.disabledMessage || 'Non disponible'}
+                      >
+                        {item.label}
+                        <span className="ml-2 text-xs text-gray-400">({item.disabledMessage})</span>
+                      </span>
+                    ) : (
+                      <NavLink
+                        to={item.href}
+                        className={({ isActive }) =>
+                          `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                            isActive
+                              ? 'text-navy bg-navy/8'
+                              : 'text-gray-600 hover:text-navy hover:bg-navy/5'
+                          }`
+                        }
+                        onClick={toggleMobileMenu}
+                      >
+                        {item.label}
+                      </NavLink>
+                    )
                   ) : (
                     <div>
                       <button
