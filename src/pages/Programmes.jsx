@@ -398,7 +398,7 @@ export function PreparatoireHeroSection() {
                 S'inscrire maintenant
               </PrimaryButton>
               <SecondaryButton
-                onClick={() => navigate('/services/preparatoire')}
+                onClick={() => navigate('/programmes/preparatoire')}
               >
                 Voir les programmes
               </SecondaryButton>
