@@ -263,7 +263,7 @@ export default function CTAFinal() {
               >
                 <StatCard
                   icon={Clock}
-                  value="Jan 2025"
+                  value="Juin 2026"
                   label="Prochaine session"
                   color="orange"
                 />

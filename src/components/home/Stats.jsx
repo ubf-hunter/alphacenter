@@ -1,10 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Users, Trophy, Calendar, GraduationCap } from 'lucide-react';
-import Container from '@components/common/Container';
 import Card from '@components/common/Card';
+import Container from '@components/common/Container';
+import { motion, useInView } from 'framer-motion';
+import { Calendar, GraduationCap, Trophy, Users } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
-function useCountUp(end, duration = 2000, startOnView = false, isInView = true) {
+function useCountUp(
+  end,
+  duration = 2000,
+  startOnView = false,
+  isInView = true,
+) {
   const [count, setCount] = useState(0);
   const hasAnimated = useRef(false);
 
@@ -41,7 +46,14 @@ function useCountUp(end, duration = 2000, startOnView = false, isInView = true) 
   return count;
 }
 
-function StatCard({ icon: Icon, number, suffix = '', label, sublabel, delay = 0 }) {
+function StatCard({
+  icon: Icon,
+  number,
+  suffix = '',
+  label,
+  sublabel,
+  delay = 0,
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const count = useCountUp(number, 2000, true, isInView);
@@ -59,7 +71,8 @@ function StatCard({ icon: Icon, number, suffix = '', label, sublabel, delay = 0 
           <Icon size={28} />
         </div>
         <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
-          {count}{suffix}
+          {count}
+          {suffix}
         </div>
         <div className="text-navy font-semibold mb-1">{label}</div>
         <div className="text-sm text-gray-500">{sublabel}</div>
@@ -71,32 +84,32 @@ function StatCard({ icon: Icon, number, suffix = '', label, sublabel, delay = 0 
 const stats = [
   {
     icon: Users,
-    number: 500,
+    number: 680,
     suffix: '+',
     label: 'Étudiants admis',
-    sublabel: 'depuis 2009'
+    sublabel: 'depuis 2022',
   },
   {
     icon: Trophy,
-    number: 95,
+    number: 85,
     suffix: '%',
     label: 'Taux de réussite',
-    sublabel: 'aux concours'
+    sublabel: 'aux concours',
   },
   {
     icon: Calendar,
-    number: 15,
+    number: 3,
     suffix: '+',
     label: "Années d'expérience",
-    sublabel: "d'excellence"
+    sublabel: "d'excellence",
   },
   {
     icon: GraduationCap,
-    number: 50,
+    number: 10,
     suffix: '+',
     label: 'Enseignants experts',
-    sublabel: 'et passionnés'
-  }
+    sublabel: 'et passionnés',
+  },
 ];
 
 export default function Stats() {

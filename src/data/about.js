@@ -40,9 +40,9 @@ export const alphaCenter = {
 
   // Chiffres cles
   stats: {
-    yearsOfExperience: 7,
-    totalStudentsTrained: 800,
-    totalAdmitted: 680,
+    yearsOfExperience: 3,
+    totalStudentsTrained: 400,
+    totalAdmitted: 340,
     averageSuccessRate: 85,
     nationalAverageRate: 8,
     teachersCount: 12,
@@ -53,7 +53,7 @@ export const alphaCenter = {
 // Histoire & Timeline
 export const history = {
   founding: {
-    year: 2018,
+    year: 2023,
     story:
       "Alpha Center est ne d'un constat simple : des milliers d'etudiants brillants echouent chaque annee aux concours, non par manque de talent, mais par manque de methode et d'encadrement adapte. Fonde par d'anciens laureats des grandes ecoles, Alpha Center a pour mission de democratiser l'acces aux meilleures formations du Cameroun.",
     founders:
@@ -62,59 +62,31 @@ export const history = {
 
   timeline: [
     {
-      year: 2018,
+      year: 2023,
       title: "Creation d'Alpha Center",
       description:
-        'Lancement avec une premiere promotion de 68 etudiants, focus sur la preparation ENSP.',
-      highlight: '76% de taux de reussite des la premiere annee',
-    },
-    {
-      year: 2019,
-      title: 'Expansion des programmes',
-      description:
-        'Ouverture des preparations ENSTP et ENS. 77 etudiants formes.',
-      highlight: '79% de reussite',
-    },
-    {
-      year: 2020,
-      title: 'Resilience face au COVID',
-      description:
-        'Adaptation rapide avec des cours hybrides. Introduction des premiers outils numeriques.',
-      highlight: '78% de reussite malgre les defis',
-    },
-    {
-      year: 2021,
-      title: 'Consolidation',
-      description:
-        "Renforcement de l'equipe pedagogique. 90 etudiants formes.",
-      highlight: '82% de reussite, depassement des 80%',
-    },
-    {
-      year: 2022,
-      title: 'Innovation pedagogique',
-      description:
-        "Lancement de l'application mobile Alpha. Passage a 12 examens blancs par an.",
-      highlight: '83% de reussite, 110 etudiants',
-    },
-    {
-      year: 2023,
-      title: 'Diversification',
-      description:
-        'Ouverture des preparations Medecine (FMSB) et Sciences Infirmieres (CESSI).',
-      highlight: '84% de reussite, 131 etudiants',
+        'Lancement avec une premiere promotion de 131 etudiants. Ouverture des preparations ENSP, ENSTP, ENS, Medecine (FMSB) et Sciences Infirmieres (CESSI).',
+      highlight: '84% de taux de reussite des la premiere annee',
     },
     {
       year: 2024,
       title: 'Annee record',
       description:
-        'Meilleurs resultats historiques. 8 etudiants dans le top 10 ENSP.',
-      highlight: '85% de reussite, 140 etudiants',
+        'Meilleurs resultats historiques. 8 etudiants dans le top 10 ENSP. 140 etudiants formes.',
+      highlight: '85% de reussite, 1er ENSTP',
     },
     {
       year: 2025,
+      title: 'Consolidation et innovation',
+      description:
+        "Lancement de l'application mobile Alpha et du nouveau site web. Renforcement de l'equipe pedagogique.",
+      highlight: '85% de reussite, 150 etudiants',
+    },
+    {
+      year: 2026,
       title: 'Nouvelles ambitions',
       description:
-        'Lancement du nouveau site web et renforcement de la plateforme digitale. Objectif : 200 etudiants.',
+        'Expansion des programmes et objectif de 200 etudiants. Lancement de la Bibliotheque Alpha.',
       highlight: 'En cours...',
     },
   ],
@@ -226,7 +198,7 @@ export const methodology = {
 
 // Stats hero pour la page
 export const heroStats = [
-  { number: '7', label: "Annees d'experience", suffix: '' },
-  { number: '800', label: 'Etudiants formes', suffix: '+' },
+  { number: '3', label: "Annees d'experience", suffix: '' },
+  { number: '400', label: 'Etudiants formes', suffix: '+' },
   { number: '85', label: 'Taux de reussite', suffix: '%' },
 ];
