@@ -168,7 +168,7 @@ function FloatingBadge({
         ${className}
       `}
     >
-      <div className="p-2 bg-gradient-to-br from-orange to-orange/80 rounded-xl">
+      <div className="p-2 bg-linear-to-br from-orange to-orange/80 rounded-xl">
         <Icon className="w-5 h-5 text-white" />
       </div>
       <div>
@@ -188,7 +188,7 @@ function HighlightPoint({ children, delay = 0 }) {
       transition={{ duration: 0.4, delay }}
       className="flex items-center gap-2 text-navy/80"
     >
-      <CheckCircle2 className="w-5 h-5 text-orange flex-shrink-0" />
+      <CheckCircle2 className="w-5 h-5 text-orange shrink-0" />
       <span className="text-sm font-medium">{children}</span>
     </motion.li>
   );
@@ -204,7 +204,7 @@ function PrimaryButton({ children, onClick, className = '' }) {
       className={`
         group relative inline-flex items-center gap-2
         px-8 py-4 
-        bg-gradient-to-r from-orange to-orange/90
+        bg-linear-to-r from-orange to-orange/90
         text-white font-semibold text-lg
         rounded-2xl
         shadow-xl shadow-orange/25
@@ -215,7 +215,7 @@ function PrimaryButton({ children, onClick, className = '' }) {
       `}
     >
       {/* Effet de brillance au hover */}
-      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+      <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       <span className="relative">{children}</span>
       <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
     </motion.button>
@@ -339,7 +339,7 @@ export function PreparatoireHeroSection() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-navy leading-tight">
                 Préparez votre{' '}
                 <span className="relative">
-                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange to-orange/80">
+                  <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-orange to-orange/80">
                     réussite
                   </span>
                   {/* Soulignement décoratif */}
@@ -432,17 +432,17 @@ export function PreparatoireHeroSection() {
               className="relative"
             >
               {/* Cadre décoratif */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-orange/20 to-navy/10 rounded-3xl blur-2xl" />
+              <div className="absolute -inset-4 bg-linear-to-br from-orange/20 to-navy/10 rounded-3xl blur-2xl" />
 
               {/* Image avec glassmorphism */}
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/50 shadow-2xl">
+              <div className="relative aspect-4/5 rounded-3xl overflow-hidden border border-white/50 shadow-2xl">
                 <img
                   src={HERO_CONFIG.backgroundImage}
                   alt="Étudiants en préparation"
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay subtil */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-navy/40 via-transparent to-transparent" />
               </div>
             </motion.div>
 

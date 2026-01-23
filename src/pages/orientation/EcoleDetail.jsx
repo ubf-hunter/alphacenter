@@ -54,6 +54,8 @@ export default function EcoleDetail() {
       <SEO
         title={`${school.shortName} - Fiche ecole`}
         description={school.description}
+        image={school.logo}
+        url={`/orientation/ecoles/${school.slug}`}
       />
 
       {/* Hero */}
@@ -495,7 +497,7 @@ export default function EcoleDetail() {
                     variant="secondary"
                     to={`/programmes#${school.alphaPrep.programme}`}
                     size="md"
-                    className="w-full justify-center !bg-white !text-orange hover:!bg-white/90"
+                    className="w-full justify-center bg-white! text-orange! hover:bg-white/90!"
                   >
                     Voir le programme
                   </Button>

@@ -48,6 +48,8 @@ export default function MetierDetail() {
       <SEO
         title={`${career.name} - Fiche metier`}
         description={career.description}
+        image={career.ogImage}
+        url={`/orientation/metiers/${career.slug}`}
       />
 
       {/* Hero */}

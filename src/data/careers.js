@@ -31,6 +31,17 @@ import {
   Zap,
 } from 'lucide-react';
 
+// Images pour Open Graph (prévisualisation réseaux sociaux)
+import ogGC from '../assets/images/metiers/GC.jpeg';
+import ogGI from '../assets/images/metiers/GI.jpeg';
+import ogGelec from '../assets/images/metiers/Gelec.jpeg';
+import ogGmeca from '../assets/images/metiers/Gmeca.jpeg';
+import ogGpetro from '../assets/images/metiers/Gpetro.jpeg';
+import ogGenviron from '../assets/images/metiers/Genviron.jpeg';
+import ogArchitec from '../assets/images/metiers/architec.jpeg';
+import ogMedecin from '../assets/images/metiers/medecin.jpeg';
+import ogGestion from '../assets/images/metiers/gestion.jpeg';
+
 // ===== METIERS INGENIERIE =====
 export const engineeringCareers = [
   {
@@ -40,6 +51,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Genie Civil',
     shortName: 'Genie Civil',
     icon: Building2,
+    ogImage: ogGC,
     color: 'orange',
     gradient: 'from-orange via-orange/80 to-amber-500',
     tagline: 'Construis les infrastructures de demain',
@@ -102,6 +114,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Informatique',
     shortName: 'Informatique',
     icon: Cpu,
+    ogImage: ogGI,
     color: 'blue',
     gradient: 'from-blue-500 via-blue-600 to-indigo-600',
     tagline: 'Code le futur numerique',
@@ -226,6 +239,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Genie Mecanique',
     shortName: 'Genie Mecanique',
     icon: Cog,
+    ogImage: ogGmeca,
     color: 'slate',
     gradient: 'from-slate-500 via-slate-600 to-slate-700',
     tagline: 'Concois et optimise les systemes mecaniques',
@@ -288,6 +302,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Genie Electrique',
     shortName: 'Genie Electrique',
     icon: Zap,
+    ogImage: ogGelec,
     color: 'yellow',
     gradient: 'from-yellow-500 via-amber-500 to-orange-500',
     tagline: 'Electrifie le monde et innove en energie',
@@ -350,6 +365,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Genie Chimique',
     shortName: 'Genie Chimique',
     icon: FlaskConical,
+    ogImage: ogGpetro,
     color: 'teal',
     gradient: 'from-teal-500 via-cyan-600 to-blue-600',
     tagline: 'Transforme la matiere pour innover',
@@ -474,6 +490,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Environnement',
     shortName: 'Environnement',
     icon: Leaf,
+    ogImage: ogGenviron,
     color: 'green',
     gradient: 'from-green-500 via-emerald-600 to-teal-600',
     tagline: 'Protege la planete et preserve l\'avenir',
@@ -536,6 +553,7 @@ export const engineeringCareers = [
     name: 'Architecte',
     shortName: 'Architecte',
     icon: Home,
+    ogImage: ogArchitec,
     color: 'amber',
     gradient: 'from-amber-500 via-amber-600 to-orange-500',
     tagline: 'Conçois les espaces de vie de demain',
@@ -664,6 +682,7 @@ export const medicineCareers = [
     name: 'Medecin',
     shortName: 'Medecin',
     icon: Stethoscope,
+    ogImage: ogMedecin,
     color: 'emerald',
     gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
     tagline: 'Soigne et sauve des vies',
@@ -796,6 +815,7 @@ export const businessCareers = [
     name: 'Gestionnaire de Projet',
     shortName: 'Chef de Projet',
     icon: Target,
+    ogImage: ogGestion,
     color: 'blue',
     gradient: 'from-blue-500 via-blue-600 to-indigo-600',
     tagline: 'Pilote et mene les projets au succes',
@@ -858,6 +878,7 @@ export const businessCareers = [
     name: 'Expert-Comptable',
     shortName: 'Comptable',
     icon: Calculator,
+    ogImage: ogGestion,
     color: 'emerald',
     gradient: 'from-emerald-500 via-teal-600 to-cyan-600',
     tagline: 'Gere les finances et garantit la conformite',
@@ -920,6 +941,7 @@ export const businessCareers = [
     name: 'Gestionnaire Ressources Humaines',
     shortName: 'RH Manager',
     icon: Users,
+    ogImage: ogGestion,
     color: 'purple',
     gradient: 'from-purple-500 via-violet-600 to-indigo-600',
     tagline: 'Gere le capital humain de l\'entreprise',
@@ -982,6 +1004,7 @@ export const businessCareers = [
     name: 'Responsable Marketing',
     shortName: 'Marketing Manager',
     icon: BarChart3,
+    ogImage: ogGestion,
     color: 'orange',
     gradient: 'from-orange via-red-500 to-pink-500',
     tagline: 'Developpe la marque et conquiert les marches',
@@ -1044,6 +1067,7 @@ export const businessCareers = [
     name: 'Entrepreneur / Manager',
     shortName: 'Entrepreneur',
     icon: Rocket,
+    ogImage: ogGestion,
     color: 'red',
     gradient: 'from-red-500 via-orange-500 to-amber-500',
     tagline: 'Cree et developpe son entreprise',
@@ -1106,6 +1130,7 @@ export const businessCareers = [
     name: 'Actuaire',
     shortName: 'Actuaire',
     icon: PieChart,
+    ogImage: ogGestion,
     color: 'indigo',
     gradient: 'from-indigo-500 via-purple-600 to-violet-600',
     tagline: 'Évalue et gère les risques financiers',
@@ -1168,6 +1193,7 @@ export const businessCareers = [
     name: 'Ingénieur Financier',
     shortName: 'Génie Financier',
     icon: LineChart,
+    ogImage: ogGestion,
     color: 'cyan',
     gradient: 'from-cyan-500 via-blue-600 to-indigo-600',
     tagline: 'Optimise les stratégies financières complexes',
