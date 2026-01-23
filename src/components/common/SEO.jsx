@@ -11,14 +11,21 @@ const DEFAULT_IMAGE = '/og-image.jpg';
 export default function SEO({
   title = 'Alpha Center',
   description = 'Centre de preparation aux concours des grandes ecoles au Cameroun. Ingenieurs, Medecine, Infirmieres.',
-  image = DEFAULT_IMAGE,
+  image,
   url = '',
   type = 'website',
   noIndex = false,
   jsonLd = null,
 }) {
   const fullUrl = `${SITE_URL}${url}`;
-  const fullImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+
+  // Gestion de l'image OG : utilise l'image passée ou l'image par défaut
+  const effectiveImage = image || DEFAULT_IMAGE;
+  const fullImage = effectiveImage.startsWith('http')
+    ? effectiveImage
+    : effectiveImage.startsWith('/')
+      ? `${SITE_URL}${effectiveImage}`
+      : `${SITE_URL}/${effectiveImage}`;
   const fullTitle = title === 'Alpha Center' ? title : `${title} | Alpha Center`;
 
   return (
