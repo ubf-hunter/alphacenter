@@ -4,24 +4,24 @@
 
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
-
+import bgimage from '../../assets/images/centreLieu/alpha1.jpeg';
 export default function AboutHero({
   title,
   subtitle,
   stats = [],
-  backgroundImage = null,
+  backgroundImage = bgimage,
   children,
 }) {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-br from-navy via-navy-900 to-navy-950" />
+      <div className="absolute inset-0 bg-linear-to-br from-navy via-navy/50 to-navy/25" />
 
       {/* Background image avec overlay */}
       {backgroundImage && (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-20"
+            className="absolute inset-0 bg-cover bg-center opacity-85"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
           <div className="absolute inset-0 bg-linear-to-t from-navy via-navy/80 to-navy/60" />

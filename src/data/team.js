@@ -5,6 +5,7 @@
 import aromaine from '../assets/images/team/aromaine.jpg';
 import ebai from '../assets/images/team/ebai-junior.jpg';
 import ggPro from '../assets/images/team/ggPro2.jpeg';
+import melchi from '../assets/images/team/melchi.png';
 import marcelo from '../assets/images/team/ndongo-marcel.jpg';
 import ubfPro from '../assets/images/team/ubfPro3.png';
 // Direction
@@ -102,6 +103,33 @@ export const teachers = [
       "8 ans d'experience en enseignement",
       'Expert concours Médecine/Pharmacie',
     ],
+  },
+  {
+    id: 'melchi',
+    slug: 'Ing Mvogo',
+    name: 'Ing Mvogo Emmanuel Melchi...',
+    subject: 'Mathematiques',
+    specialty: 'Mathematiques & Physique',
+    photo: melchi,
+    initials: 'MME',
+    color: 'blue',
+    shortBio: "Ancien major ENSP, 10 ans d'experience en prepa concours",
+    fullBio:
+      "Ingénieur diplômé de l'IUT en Génie des Télécommunications, avec une spécialisation en Informatique et Réseaux, je mets mon expertise technique au service de la réussite académique. En tant qu'Ing. NDONGO NKODO, j'allie la rigueur de l'ingénierie à une solide expérience pédagogique pour accompagner les étudiants d'Alpha Center. Spécialiste des systèmes numériques et des sciences appliquées, mon objectif est de fournir aux candidats les outils techniques et méthodologiques indispensables pour réussir les concours les plus exigeants et intégrer les grandes écoles de demain.",
+    education: [
+      "SUP'PTIC - Genie Telecoms",
+      "Master Recherche des telecoms-SUP'PTIC",
+    ],
+    achievements: [
+      "Auteur de 'Mathematiques pour les Concours'",
+      '50+ etudiants admis',
+    ],
+    testimonial: {
+      quote:
+        "M. Mvogo m'a appris a ne plus apprendre par coeur mais a comprendre. Il disait: 'Marie, arrete de memoriser les formules. Comprends d'ou elles viennent.' C'est ce qui m'a debloquee.",
+      author: 'Roxanne Abogo',
+      school: 'Supptic 2024',
+    },
   },
   {
     id: 'ngota-alexandre',
