@@ -19,91 +19,116 @@ const BOT_PATTERNS = [
   'bingbot',
 ];
 
-// Career data for meta tags
+// Career data for meta tags (images in /public/og/ folder)
 const careers = {
   'ingenieur-genie-civil': {
     name: 'Ingénieur Génie Civil',
     description: 'L\'ingénieur en génie civil conçoit, construit et supervise les infrastructures essentielles : routes, ponts, bâtiments, barrages.',
-    image: '/assets/images/metiers/GC.jpeg',
+    image: '/og/GC.jpeg',
   },
   'ingenieur-informatique': {
     name: 'Ingénieur Informatique',
     description: 'L\'ingénieur informatique conçoit et développe des solutions logicielles et systèmes informatiques.',
-    image: '/assets/images/metiers/GI.jpeg',
+    image: '/og/GI.jpeg',
   },
   'ingenieur-telecom': {
     name: 'Ingénieur Télécommunications',
     description: 'L\'ingénieur télécom conçoit et gère les réseaux de communication.',
-    image: '/assets/images/metiers/GI.jpeg',
+    image: '/og/GI.jpeg',
   },
   'ingenieur-mecanique': {
     name: 'Ingénieur Mécanique',
     description: 'L\'ingénieur mécanique conçoit et optimise des systèmes mécaniques.',
-    image: '/assets/images/metiers/Gmeca.jpeg',
+    image: '/og/Gmeca.jpeg',
   },
   'ingenieur-electrique': {
     name: 'Ingénieur Électrique',
     description: 'L\'ingénieur électrique conçoit des systèmes électriques et électroniques.',
-    image: '/assets/images/metiers/Gelec.jpeg',
+    image: '/og/Gelec.jpeg',
   },
   'ingenieur-chimique': {
     name: 'Ingénieur Chimique',
     description: 'L\'ingénieur chimique transforme les matières premières en produits finis.',
-    image: '/assets/images/metiers/Gpetro.jpeg',
+    image: '/og/Gpetro.jpeg',
   },
   'ingenieur-environnement': {
     name: 'Ingénieur Environnement',
     description: 'L\'ingénieur environnement protège et préserve notre planète.',
-    image: '/assets/images/metiers/Genviron.jpeg',
+    image: '/og/Genviron.jpeg',
   },
   'architecte': {
     name: 'Architecte',
     description: 'L\'architecte conçoit et supervise la construction de bâtiments.',
-    image: '/assets/images/metiers/architec.jpeg',
+    image: '/og/architec.jpeg',
   },
   'medecin': {
     name: 'Médecin',
     description: 'Le médecin diagnostique les maladies, prescrit des traitements et accompagne les patients.',
-    image: '/assets/images/metiers/medecin.jpeg',
+    image: '/og/medecin.jpeg',
   },
   'infirmier': {
     name: 'Infirmier',
     description: 'L\'infirmier prodigue des soins aux patients et assiste les médecins.',
-    image: '/assets/images/metiers/medecin.jpeg',
+    image: '/og/medecin.jpeg',
   },
   'gestionnaire-projet': {
     name: 'Gestionnaire de Projet',
     description: 'Le gestionnaire de projet planifie, organise et supervise des projets de A à Z.',
-    image: '/assets/images/metiers/gestion.jpeg',
+    image: '/og/gestion.jpeg',
   },
   'expert-comptable': {
     name: 'Expert-Comptable',
     description: 'L\'expert-comptable tient les comptes et conseille les entreprises sur leur gestion financière.',
-    image: '/assets/images/metiers/gestion.jpeg',
+    image: '/og/gestion.jpeg',
   },
 };
 
-// School data for meta tags
+// School data for meta tags (images in /public/og/ folder)
 const schools = {
   'enspy': {
     name: 'ENSPY',
     description: 'École Nationale Supérieure Polytechnique de Yaoundé - Formation d\'ingénieurs de haut niveau.',
-    image: '/assets/images/schools/enspy.png',
+    image: '/og/enspy.webp',
   },
   'enstp': {
     name: 'ENSTP',
     description: 'École Nationale Supérieure des Travaux Publics - Formation en génie civil et travaux publics.',
-    image: '/assets/images/schools/enstp.png',
+    image: '/og/enstp.png',
   },
   'fmsb': {
     name: 'FMSB',
     description: 'Faculté de Médecine et des Sciences Biomédicales de Yaoundé.',
-    image: '/assets/images/schools/fmsb.png',
+    image: '/og/FMSP.webp',
   },
-  'essec': {
-    name: 'ESSEC',
-    description: 'École Supérieure des Sciences Économiques et Commerciales.',
-    image: '/assets/images/schools/essec.png',
+  'fmsp-douala': {
+    name: 'FMSP Douala',
+    description: 'Faculté de Médecine et des Sciences Pharmaceutiques de Douala.',
+    image: '/og/FMSP.webp',
+  },
+  'supptic': {
+    name: 'SUP\'PทIC',
+    description: 'École Nationale Supérieure des Postes, Télécommunications et TIC.',
+    image: '/og/supptic.png',
+  },
+  'ucac': {
+    name: 'UCAC',
+    description: 'Université Catholique d\'Afrique Centrale.',
+    image: '/og/ucac.webp',
+  },
+  'fasa': {
+    name: 'FASA',
+    description: 'Faculté d\'Agronomie et des Sciences Agricoles.',
+    image: '/og/fasa.webp',
+  },
+  'eamau': {
+    name: 'EAMAU',
+    description: 'École Africaine des Métiers de l\'Architecture et de l\'Urbanisme.',
+    image: '/og/EAMAU.webp',
+  },
+  'prepa-vogt': {
+    name: 'Prépa Vogt',
+    description: 'Classes préparatoires aux grandes écoles - Collège Vogt.',
+    image: '/og/prepa-vogt.png',
   },
 };
 
