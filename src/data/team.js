@@ -115,7 +115,7 @@ export const teachers = [
     color: 'blue',
     shortBio: "Ancien major ENSP, 10 ans d'experience en prepa concours",
     fullBio:
-      "Ingénieur diplômé de l'IUT en Génie des Télécommunications, avec une spécialisation en Informatique et Réseaux, je mets mon expertise technique au service de la réussite académique. En tant qu'Ing. NDONGO NKODO, j'allie la rigueur de l'ingénierie à une solide expérience pédagogique pour accompagner les étudiants d'Alpha Center. Spécialiste des systèmes numériques et des sciences appliquées, mon objectif est de fournir aux candidats les outils techniques et méthodologiques indispensables pour réussir les concours les plus exigeants et intégrer les grandes écoles de demain.",
+      'As an engineer specialized in Radiocommunications, trained at SUP’PTIC and with a strong foundation in Mathematics and Physics, I am committed to preparing students for entrance examinations (concours) and academic exams across different training schools and institutions.I focus on building solid understanding, effective problem-solving skills, and confidence, helping learners succeed in Mathematics and Physics through structured guidance and targeted preparation. The experience in teaching students and helping them overcome challenges will gladly be committed in accompanying you too !!!',
     education: [
       "SUP'PTIC - Genie Telecoms",
       "Master Recherche des telecoms-SUP'PTIC",
