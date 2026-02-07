@@ -8,6 +8,7 @@ import ggPro from '../assets/images/team/ggPro2.jpeg';
 import melchi from '../assets/images/team/melchi.png';
 import marcelo from '../assets/images/team/ndongo-marcel.jpg';
 import ubfPro from '../assets/images/team/ubfPro3.png';
+import ulrick from '../assets/images/team/ulrick.jpeg';
 // Direction
 export const leadership = [
   {
@@ -149,6 +150,26 @@ export const teachers = [
     ],
     achievements: ['Etudiant FMSB en cours', 'Specialiste concours sante'],
   },
+
+  {
+    id: 'ULRICK',
+    slug: 'ulrick-enongo-ndzie',
+    name: 'Ulrick Enongo Ndzié',
+    subject: 'Chimie',
+    specialty: 'Chimie Générale & Organique',
+    photo: ulrick,
+    initials: 'UEN',
+    color: 'green',
+    shortBio: "Étudiant ENSTP en Génie Civil, enseignant de Chimie chez Alpha Center",
+    fullBio:
+      "Étudiant en 4ème année à l'École Nationale Supérieure des Travaux Publics (ENSTP) en Génie Civil, je mets ma maîtrise de la chimie au service des candidats préparant les concours d'entrée aux grandes écoles d'ingénieurs. Mon parcours à l'ENSTP et ma connaissance approfondie des épreuves de chimie me permettent d'accompagner efficacement les étudiants dans leur préparation, en leur transmettant les méthodes rigoureuses et les astuces nécessaires pour réussir.",
+    education: [
+      'ENSTP - Génie Civil (4ème année)',
+      'Enseignant de Chimie - Alpha Center',
+    ],
+    achievements: ['Étudiant ENSTP en cours', 'Spécialiste Chimie concours ingénieurs'],
+  },
+
   {
     id: 'nyanga-aromaine',
     slug: 'nyanga-aromaine',
