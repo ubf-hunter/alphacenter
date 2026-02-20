@@ -33,8 +33,8 @@ const careers = {
   },
   'ingenieur-telecom': {
     name: 'Ingénieur Télécommunications',
-    description: 'L\'ingénieur télécom conçoit et gère les réseaux de communication.',
-    image: '/og/GI.jpeg',
+    description: 'L\'ingénieur télécom conçoit et gère les réseaux de communication : téléphonie, internet, satellite.',
+    image: '/og/telecoms.jpg',
   },
   'ingenieur-mecanique': {
     name: 'Ingénieur Mécanique',
@@ -51,6 +51,11 @@ const careers = {
     description: 'L\'ingénieur chimique transforme les matières premières en produits finis.',
     image: '/og/Gpetro.jpeg',
   },
+  'ingenieur-industriel': {
+    name: 'Ingénieur Génie Industriel',
+    description: 'L\'ingénieur industriel optimise les systèmes de production et la chaîne logistique.',
+    image: '/og/genie-industriel.jpg',
+  },
   'ingenieur-environnement': {
     name: 'Ingénieur Environnement',
     description: 'L\'ingénieur environnement protège et préserve notre planète.',
@@ -61,6 +66,11 @@ const careers = {
     description: 'L\'architecte conçoit et supervise la construction de bâtiments.',
     image: '/og/architec.jpeg',
   },
+  'urbaniste': {
+    name: 'Urbaniste',
+    description: 'L\'urbaniste planifie le développement des villes et territoires pour des espaces durables et harmonieux.',
+    image: '/og/urbanist.jpg',
+  },
   'medecin': {
     name: 'Médecin',
     description: 'Le médecin diagnostique les maladies, prescrit des traitements et accompagne les patients.',
@@ -68,8 +78,8 @@ const careers = {
   },
   'infirmier': {
     name: 'Infirmier',
-    description: 'L\'infirmier prodigue des soins aux patients et assiste les médecins.',
-    image: '/og/medecin.jpeg',
+    description: 'L\'infirmier prodigue des soins aux patients et assure leur bien-être.',
+    image: '/og/infirmier.jpg',
   },
   'gestionnaire-projet': {
     name: 'Gestionnaire de Projet',
@@ -79,6 +89,31 @@ const careers = {
   'expert-comptable': {
     name: 'Expert-Comptable',
     description: 'L\'expert-comptable tient les comptes et conseille les entreprises sur leur gestion financière.',
+    image: '/og/expert-comptable.jpg',
+  },
+  'gestionnaire-rh': {
+    name: 'Gestionnaire Ressources Humaines',
+    description: 'Le gestionnaire RH recrute, forme et développe les talents de l\'entreprise.',
+    image: '/og/gestion.jpeg',
+  },
+  'responsable-marketing': {
+    name: 'Responsable Marketing',
+    description: 'Le responsable marketing développe la stratégie commerciale et pilote les campagnes.',
+    image: '/og/gestion.jpeg',
+  },
+  'entrepreneur': {
+    name: 'Entrepreneur / Manager',
+    description: 'L\'entrepreneur crée et dirige sa propre entreprise en identifiant des opportunités.',
+    image: '/og/gestion.jpeg',
+  },
+  'actuaire': {
+    name: 'Actuaire',
+    description: 'L\'actuaire analyse les risques financiers à l\'aide de modèles mathématiques et statistiques.',
+    image: '/og/actuariat.jpg',
+  },
+  'ingenieur-financier': {
+    name: 'Ingénieur Financier',
+    description: 'L\'ingénieur financier conçoit des produits financiers et optimise les stratégies d\'investissement.',
     image: '/og/gestion.jpeg',
   },
 };
