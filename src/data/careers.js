@@ -41,6 +41,12 @@ import ogGenviron from '../assets/images/metiers/Genviron.jpeg';
 import ogArchitec from '../assets/images/metiers/architec.jpeg';
 import ogMedecin from '../assets/images/metiers/medecin.jpeg';
 import ogGestion from '../assets/images/metiers/gestion.jpeg';
+import ogActuariat from '../assets/images/metiers/actuariat.jpg';
+import ogTelecoms from '../assets/images/metiers/telecoms.jpg';
+import ogGIndus from '../assets/images/metiers/genie-industriel.jpg';
+import ogUrbanist from '../assets/images/metiers/urbanist.jpg';
+import ogInfirmier from '../assets/images/metiers/infirmier.jpg';
+import ogExpertComptable from '../assets/images/metiers/expert-comptable.jpg';
 
 // ===== METIERS INGENIERIE =====
 export const engineeringCareers = [
@@ -177,6 +183,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Telecommunications',
     shortName: 'Telecom',
     icon: Radio,
+    ogImage: ogTelecoms,
     color: 'purple',
     gradient: 'from-purple-500 via-purple-600 to-violet-600',
     tagline: 'Connecte le monde',
@@ -428,6 +435,7 @@ export const engineeringCareers = [
     name: 'Ingenieur Genie Industriel',
     shortName: 'Genie Industriel',
     icon: Wrench,
+    ogImage: ogGIndus,
     color: 'indigo',
     gradient: 'from-indigo-500 via-purple-600 to-violet-600',
     tagline: 'Optimise les processus de production',
@@ -616,6 +624,7 @@ export const engineeringCareers = [
     name: 'Urbaniste',
     shortName: 'Urbaniste',
     icon: Map,
+    ogImage: ogUrbanist,
     color: 'teal',
     gradient: 'from-teal-500 via-cyan-600 to-blue-500',
     tagline: 'Planifie et aménage les villes durables',
@@ -749,6 +758,7 @@ export const nursingCareers = [
     name: 'Infirmier Diplome d\'Etat',
     shortName: 'Infirmier',
     icon: Heart,
+    ogImage: ogInfirmier,
     color: 'rose',
     gradient: 'from-rose-400 via-rose-500 to-pink-600',
     tagline: 'Le coeur des soins de sante',
@@ -878,7 +888,7 @@ export const businessCareers = [
     name: 'Expert-Comptable',
     shortName: 'Comptable',
     icon: Calculator,
-    ogImage: ogGestion,
+    ogImage: ogExpertComptable,
     color: 'emerald',
     gradient: 'from-emerald-500 via-teal-600 to-cyan-600',
     tagline: 'Gere les finances et garantit la conformite',
@@ -1130,7 +1140,7 @@ export const businessCareers = [
     name: 'Actuaire',
     shortName: 'Actuaire',
     icon: PieChart,
-    ogImage: ogGestion,
+    ogImage: ogActuariat,
     color: 'indigo',
     gradient: 'from-indigo-500 via-purple-600 to-violet-600',
     tagline: 'Évalue et gère les risques financiers',
