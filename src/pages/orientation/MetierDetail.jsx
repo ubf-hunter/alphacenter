@@ -70,61 +70,102 @@ export default function MetierDetail() {
             <span>Retour aux metiers</span>
           </Link>
 
-          <div className="flex flex-col lg:flex-row items-start gap-8">
-            {/* Icon */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center shrink-0"
-            >
-              <Icon size={48} className="text-white" />
-            </motion.div>
-
-            {/* Content */}
-            <div className="flex-1">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            {/* Left: Icon + Text */}
+            <div className="flex-1 flex flex-col lg:flex-row items-start gap-8">
+              {/* Icon */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center shrink-0"
               >
-                {/* Domain badge */}
-                {domain && (
-                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm mb-4">
-                    <domain.icon size={14} />
-                    {domain.name}
-                  </span>
-                )}
+                <Icon size={48} className="text-white" />
+              </motion.div>
 
-                <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                  {career.name}
-                </h1>
-                <p className="text-xl text-white/80 mb-6">
-                  {career.tagline}
-                </p>
-
-                {/* Quick stats */}
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
-                    <Clock size={18} className="text-white/70" />
-                    <span className="text-white text-sm">{career.education.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
-                    <Briefcase size={18} className="text-white/70" />
-                    <span className="text-white text-sm">{career.employment.rate}% emploi</span>
-                  </div>
-                  {career.outlook?.trend === 'up' && (
-                    <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-xl">
-                      <TrendingUp size={18} className="text-emerald-300" />
-                      <span className="text-white text-sm">En hausse</span>
-                    </div>
+              {/* Content */}
+              <div className="flex-1">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  {/* Domain badge */}
+                  {domain && (
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm mb-4">
+                      <domain.icon size={14} />
+                      {domain.name}
+                    </span>
                   )}
+
+                  <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                    {career.name}
+                  </h1>
+                  <p className="text-xl text-white/80 mb-6">
+                    {career.tagline}
+                  </p>
+
+                  {/* Quick stats */}
+                  <div className="flex flex-wrap gap-4">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
+                      <Clock size={18} className="text-white/70" />
+                      <span className="text-white text-sm">{career.education.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
+                      <Briefcase size={18} className="text-white/70" />
+                      <span className="text-white text-sm">{career.employment.rate}% emploi</span>
+                    </div>
+                    {career.outlook?.trend === 'up' && (
+                      <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-xl">
+                        <TrendingUp size={18} className="text-emerald-300" />
+                        <span className="text-white text-sm">En hausse</span>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right: Career Image */}
+            {career.ogImage && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hidden lg:block shrink-0"
+              >
+                <div className="w-64 h-64 rounded-2xl overflow-hidden ring-4 ring-white/20 shadow-2xl">
+                  <img
+                    src={career.ogImage}
+                    alt={career.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
-            </div>
+            )}
           </div>
         </Container>
       </section>
+
+      {/* Mobile Career Image */}
+      {career.ogImage && (
+        <section className="lg:hidden bg-white pt-8 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-sm mx-auto"
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src={career.ogImage}
+                alt={career.name}
+                className="w-full h-56 object-cover"
+              />
+            </div>
+          </motion.div>
+        </section>
+      )}
 
       {/* Main Content */}
       <section className="py-16 bg-white">
