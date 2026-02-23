@@ -41,7 +41,7 @@ export default function Resultats() {
       {/* Hero */}
       <AboutHero
         title="Nos Resultats Parlent d'Eux-Memes"
-        subtitle="85% de taux de reussite en 2025"
+        subtitle="85% de taux de reussite moyen depuis 2023"
         stats={[
           {
             number: globalStats.totalTrained,

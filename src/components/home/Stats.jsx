@@ -84,10 +84,10 @@ function StatCard({
 const stats = [
   {
     icon: Users,
-    number: 680,
+    number: 358,
     suffix: '+',
     label: 'Étudiants admis',
-    sublabel: 'depuis 2022',
+    sublabel: 'depuis 2023',
   },
   {
     icon: Trophy,
@@ -105,8 +105,8 @@ const stats = [
   },
   {
     icon: GraduationCap,
-    number: 10,
-    suffix: '+',
+    number: 12,
+    suffix: '',
     label: 'Enseignants experts',
     sublabel: 'et passionnés',
   },

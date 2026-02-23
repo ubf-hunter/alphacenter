@@ -19,7 +19,7 @@ import {
 export const alphaCenter = {
   name: 'Alpha Center',
   fullName: 'Alpha Center - Centre de Preparation aux Concours',
-  founded: 2018,
+  founded: 2023,
   location: {
     city: 'Yaounde',
     quarter: 'Omnisports',
@@ -41,8 +41,8 @@ export const alphaCenter = {
   // Chiffres cles
   stats: {
     yearsOfExperience: 3,
-    totalStudentsTrained: 400,
-    totalAdmitted: 340,
+    totalStudentsTrained: 421,
+    totalAdmitted: 358,
     averageSuccessRate: 85,
     nationalAverageRate: 8,
     teachersCount: 12,
@@ -199,6 +199,6 @@ export const methodology = {
 // Stats hero pour la page
 export const heroStats = [
   { number: '3', label: "Annees d'experience", suffix: '' },
-  { number: '400', label: 'Etudiants formes', suffix: '+' },
+  { number: '421', label: 'Etudiants formes', suffix: '+' },
   { number: '85', label: 'Taux de reussite', suffix: '%' },
 ];

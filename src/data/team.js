@@ -185,29 +185,174 @@ export const teachers = [
     education: ['ENSPY - 4ème année', 'Spécialisation Data Science'],
     achievements: ['Etudiante Polytechnique', 'Experte en analyse de donnees'],
   },
+
+  {
+    id: 'ngo-bama-elodie',
+    slug: 'ngo-bama-elodie',
+    name: 'Ing. Ngo Bama Elodie',
+    subject: 'Physique',
+    specialty: 'Mecanique & Electromagnetisme',
+    photo: '/images/team/ngo-bama.jpg',
+    initials: 'NBE',
+    color: 'violet',
+    shortBio: "Ingenieure ENSPY Genie Electrique, 3 ans d'experience",
+    fullBio:
+      "Ingenieure diplomee de l'Ecole Nationale Superieure Polytechnique de Yaounde (ENSPY) en Genie Electrique, je me consacre a l'enseignement de la Physique pour les candidats aux concours des grandes ecoles. Ma maitrise de la mecanique, de l'electromagnetisme et de l'optique me permet de rendre accessibles les concepts les plus exigeants. Je privilegies un suivi personnalise pour identifier et combler les lacunes de chaque etudiant.",
+    education: [
+      'ENSPY - Genie Electrique (Bac+5)',
+      'Enseignante de Physique - Alpha Center depuis 2023',
+    ],
+    achievements: [
+      '40+ etudiants admis',
+      'Specialiste preparation concours ENSP/ENSTP',
+    ],
+    testimonial: {
+      quote:
+        "Ing. Ngo Bama a pris le temps de comprendre pourquoi je bloquais sur certains chapitres. Elle m'a donne des exercices supplementaires cibles et m'a suivie de pres.",
+      author: 'Marie FOTSO',
+      school: 'ENSTP 2024',
+    },
+  },
+
+  {
+    id: 'tamo-kouam-rodrigue',
+    slug: 'tamo-kouam-rodrigue',
+    name: 'Ing. Tamo Kouam Rodrigue',
+    subject: 'Physique & Sciences de l\'Ingenieur',
+    specialty: 'Thermodynamique & Mecanique des Fluides',
+    photo: '/images/team/tamo-rodrigue.jpg',
+    initials: 'TKR',
+    color: 'cyan',
+    shortBio: "Ingenieur ENSPY Genie Mecanique, 3 ans d'experience",
+    fullBio:
+      "Ingenieur diplome de l'Ecole Nationale Superieure Polytechnique de Yaounde en Genie Mecanique, je suis passionne par la transmission du savoir scientifique. Mes domaines de predilection sont la thermodynamique, la mecanique des fluides et les sciences de l'ingenieur. J'accompagne les candidats en leur inculquant une demarche rigoureuse de resolution de problemes et une comprehension profonde des phenomenes physiques.",
+    education: [
+      'ENSPY - Genie Mecanique (Bac+5)',
+      'Certifie en pedagogie universitaire',
+    ],
+    achievements: [
+      '35+ etudiants admis',
+      'Concepteur de sujets type concours',
+    ],
+  },
+
+  {
+    id: 'tchatchoua-kevin',
+    slug: 'tchatchoua-kevin',
+    name: 'M. Tchatchoua Nguefack Kevin',
+    subject: 'Francais & Culture Generale',
+    specialty: 'Expression Ecrite & Methodologie de Dissertation',
+    photo: '/images/team/tchatchoua-kevin.jpg',
+    initials: 'TNK',
+    color: 'amber',
+    shortBio: "Diplome ENS Lettres Modernes, 4 ans d'experience",
+    fullBio:
+      "Diplome de l'Ecole Normale Superieure de Yaounde en Lettres Modernes Francaises, j'enseigne le Francais et la Culture Generale aux candidats des concours d'entree dans les grandes ecoles. Ma methode repose sur la maitrise de la dissertation, du resume de texte et de l'analyse argumentative. Beaucoup d'etudiants sous-estiment ces epreuves, pourtant elles font souvent la difference entre les candidats au meme niveau scientifique.",
+    education: [
+      'ENS Yaounde - Lettres Modernes Francaises (Bac+5)',
+      'DIPES II - Francais',
+    ],
+    achievements: [
+      "4 ans d'experience en prepa concours",
+      'Specialiste methodologie de dissertation',
+    ],
+  },
+
+  {
+    id: 'atangana-esther',
+    slug: 'atangana-esther',
+    name: 'Mlle Atangana Meva Esther',
+    subject: 'Anglais',
+    specialty: 'Expression Ecrite & Orale Anglaise',
+    photo: '/images/team/atangana-esther.jpg',
+    initials: 'AME',
+    color: 'rose',
+    shortBio: "Diplomee ENS Bilingue, 2 ans d'experience",
+    fullBio:
+      "Diplomee de l'Ecole Normale Superieure de Yaounde section Bilingue, specialisee en didactique de l'anglais, j'accompagne les etudiants dans la preparation des epreuves d'anglais aux concours. L'anglais est souvent une matiere negligee par les candidats scientifiques, mais elle peut faire gagner des points precieux. Mon approche est pragmatique : comprehension de texte, grammaire appliquee et techniques de traduction efficaces.",
+    education: [
+      'ENS Bilingue Yaounde (Bac+5)',
+      'DIPES II - Anglais',
+    ],
+    achievements: [
+      'Specialiste anglais concours scientifiques',
+      'Methode acceleree de progression',
+    ],
+  },
+
+  {
+    id: 'mba-owono-cedric',
+    slug: 'mba-owono-cedric',
+    name: 'Dr. Mba Owono Cedric',
+    subject: 'Biochimie & Physiologie',
+    specialty: 'Sciences Biomedicales',
+    photo: '/images/team/mba-cedric.jpg',
+    initials: 'MOC',
+    color: 'lime',
+    shortBio: "Docteur en Medecine FMSB, 3 ans d'experience",
+    fullBio:
+      "Docteur en Medecine diplome de la Faculte de Medecine et des Sciences Biomedicales (FMSB) de l'Universite de Yaounde I, actuellement en specialisation en Chirurgie Generale, je mets ma connaissance approfondie du cursus medical au service des candidats au concours d'entree en Medecine. Ayant moi-meme passe ce concours et l'ayant reussi avec mention, je comprends les defis specifiques auxquels font face les aspirants medecins.",
+    education: [
+      'Doctorat en Medecine - FMSB (Bac+7)',
+      'Specialisation Chirurgie Generale en cours',
+    ],
+    achievements: [
+      '25+ etudiants admis en Medecine',
+      'Ancien laureat concours FMSB avec mention',
+    ],
+  },
+
+  {
+    id: 'kamga-yvan',
+    slug: 'kamga-yvan',
+    name: 'Ing. Kamga Talla Yvan',
+    subject: 'Mathematiques',
+    specialty: 'Probabilites & Statistiques',
+    photo: '/images/team/kamga-yvan.jpg',
+    initials: 'KTY',
+    color: 'sky',
+    shortBio: "Ingenieur ENSPY Genie Informatique, 2 ans d'experience",
+    fullBio:
+      "Ingenieur diplome de l'Ecole Nationale Superieure Polytechnique de Yaounde en Genie Informatique, je me suis specialise dans l'enseignement des mathematiques appliquees, en particulier les probabilites, les statistiques et l'analyse numerique. Mon approche pedagogique allie rigueur mathematique et applications concretes, permettant aux etudiants de comprendre l'utilite de chaque notion. Je mets l'accent sur la resolution methodique de problemes et la gestion du temps en condition d'examen.",
+    education: [
+      'ENSPY - Genie Informatique (Bac+5)',
+      'Certifie Machine Learning - Stanford Online',
+    ],
+    achievements: [
+      '30+ etudiants admis',
+      'Createur de banques d\'exercices corriges',
+    ],
+  },
 ];
 
 // Staff administratif
 export const staff = [
   {
-    name: 'Mme Eyene',
+    name: 'Mme Eyene Christelle',
     role: 'Responsable Administrative',
     photo: '/images/team/admin.jpg',
-    initials: 'ME',
+    initials: 'EC',
     description: 'Gestion des inscriptions et suivi administratif',
   },
   {
-    name: 'M. Abega',
+    name: 'M. Abega Samuel',
     role: 'Responsable Communication',
     photo: '/images/team/comm.jpg',
-    initials: 'MA',
+    initials: 'AS',
     description: 'Relations etudiants et communication digitale',
+  },
+  {
+    name: 'Mlle Ondoa Brigitte',
+    role: 'Assistante Pedagogique',
+    photo: '/images/team/ondoa-brigitte.jpg',
+    initials: 'OB',
+    description: 'Coordination des emplois du temps et suivi des presences',
   },
 ];
 
 // Stats equipe
 export const teamStats = {
   totalTeachers: 12,
-  totalExperience: '100+',
+  totalExperience: '50+',
   allLaureates: true,
 };

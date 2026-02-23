@@ -110,10 +110,10 @@ function HeroSection() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {[
-              { icon: Users, value: '500+', label: 'Étudiants formés' },
-              { icon: Trophy, value: '90%', label: 'Taux de réussite' },
+              { icon: Users, value: '420+', label: 'Étudiants formés' },
+              { icon: Trophy, value: '85%', label: 'Taux de réussite' },
               { icon: BookOpen, value: '4', label: 'Programmes' },
-              { icon: Star, value: '15+', label: "Années d'expertise" },
+              { icon: Star, value: '3', label: "Années d'expertise" },
             ].map((stat, index) => (
               <div
                 key={stat.label}
@@ -289,9 +289,9 @@ export function PreparatoireHeroSection() {
 
   // Données pour les badges (à personnaliser)
   const stats = {
-    students: '500+',
+    students: '420+',
     successRate: '85%',
-    years: '10 ans',
+    years: '3 ans',
   };
 
   return (
@@ -327,7 +327,7 @@ export function PreparatoireHeroSection() {
           {/* Colonne gauche - Texte */}
           <div className="space-y-8">
             {/* Tag de session */}
-            <SessionTag>Rentrée 2025 - Inscriptions ouvertes</SessionTag>
+            <SessionTag>Rentrée 2026 - Inscriptions ouvertes</SessionTag>
 
             {/* Titre principal */}
             <motion.div

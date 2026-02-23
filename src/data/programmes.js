@@ -2048,7 +2048,7 @@ export const calendar = [
         placesLeft: 15,
       },
       {
-        name: 'Session Juin-Juillet 2026',
+        name: 'Session Juillet-Aout 2026',
         startDate: 'Juillet 2026',
         endDate: 'Aout 2026',
         status: 'upcoming',

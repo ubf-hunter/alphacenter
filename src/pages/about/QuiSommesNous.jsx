@@ -21,14 +21,14 @@ export default function QuiSommesNous() {
     <>
       <SEO
         title="Qui sommes-nous | Alpha Center - Centre de Preparation aux Concours"
-        description="Decouvrez l'histoire d'Alpha Center, notre mission et nos valeurs. Depuis 2018, nous accompagnons les etudiants camerounais vers la reussite aux concours."
+        description="Decouvrez l'histoire d'Alpha Center, notre mission et nos valeurs. Depuis 2023, nous accompagnons les etudiants camerounais vers la reussite aux concours."
         url="/a-propos/qui-sommes-nous"
       />
 
       {/* Hero */}
       <AboutHero
         title="Notre Histoire, Votre Reussite"
-        subtitle="Depuis 2018, nous accompagnons les etudiants camerounais vers l'excellence"
+        subtitle="Depuis 2023, nous accompagnons les etudiants camerounais vers l'excellence"
         stats={heroStats}
       />
 
@@ -56,7 +56,7 @@ export default function QuiSommesNous() {
       <Timeline
         items={history.timeline}
         title="Notre *parcours*"
-        subtitle="7 annees de croissance et d'excellence au service des etudiants camerounais"
+        subtitle="3 annees de croissance et d'excellence au service des etudiants camerounais"
       />
 
       {/* Vision */}
@@ -150,12 +150,12 @@ export default function QuiSommesNous() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter
-              end="7"
+              end="3"
               label="Annees d'experience"
               color="white"
             />
             <StatCounter
-              end="800"
+              end="421"
               suffix="+"
               label="Etudiants formes"
               color="orange"

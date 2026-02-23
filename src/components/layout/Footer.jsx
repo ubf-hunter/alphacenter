@@ -31,7 +31,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/70 text-sm mb-6 leading-relaxed">
               Le centre de référence pour la préparation aux concours des
-              grandes écoles d'ingénieurs au Cameroun depuis 2009.
+              grandes écoles d'ingénieurs au Cameroun depuis 2023.
             </p>
             <div className="flex gap-3">
               {footerNavigation.social.map((social) => {
