@@ -4,8 +4,27 @@
 
 import { motion } from 'framer-motion';
 import { MessageCircle, Phone, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { z } from 'zod';
 import { contactInfo, getWhatsAppUrl, programmeOptions } from '../../data/contact';
+
+// Schema de validation
+const contactSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, 'Le nom doit contenir au moins 2 caracteres')
+    .max(100, 'Le nom ne peut pas depasser 100 caracteres'),
+  email: z
+    .string()
+    .email('Adresse email invalide')
+    .max(254, 'Email trop long')
+    .or(z.literal('')),
+  programme: z.string(),
+  message: z
+    .string()
+    .max(2000, 'Le message ne peut pas depasser 2000 caracteres'),
+});
 
 // Animation variants
 const formVariants = {
@@ -86,7 +105,7 @@ function Select({ label, options, required, ...props }) {
 }
 
 // Composant Textarea
-function Textarea({ label, required, ...props }) {
+function Textarea({ label, required, error, ...props }) {
   return (
     <div className="space-y-2">
       {label && (
@@ -100,11 +119,19 @@ function Textarea({ label, required, ...props }) {
       )}
       <textarea
         {...props}
-        className="w-full px-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm border-2 border-gray-200 text-navy placeholder:text-gray-400 focus:border-orange focus:ring-2 focus:ring-orange/20 focus:outline-none transition-all duration-200 resize-none"
+        className={`w-full px-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm border-2 border-gray-200 text-navy placeholder:text-gray-400 focus:border-orange focus:ring-2 focus:ring-orange/20 focus:outline-none transition-all duration-200 resize-none ${error ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : ''}`}
       />
+      {error && (
+        <p className="text-sm text-red-500" role="alert">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
+
+// Cooldown anti-spam (minimum 5s entre soumissions)
+const SUBMIT_COOLDOWN_MS = 5000;
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -115,26 +142,38 @@ export default function ContactForm() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const lastSubmitRef = useRef(0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user types
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
   const validateForm = () => {
+    const result = contactSchema.safeParse(formData);
+    if (result.success) return {};
+
     const newErrors = {};
-    if (!formData.name.trim()) {
-      newErrors.name = 'Le nom est requis';
+    for (const issue of result.error.issues) {
+      const field = issue.path[0];
+      if (!newErrors[field]) {
+        newErrors[field] = issue.message;
+      }
     }
     return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Rate limiting
+    const now = Date.now();
+    if (now - lastSubmitRef.current < SUBMIT_COOLDOWN_MS) {
+      return;
+    }
 
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
@@ -143,12 +182,11 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
+    lastSubmitRef.current = now;
 
-    // Generate WhatsApp URL and redirect
     const whatsappUrl = getWhatsAppUrl(formData);
     window.open(whatsappUrl, '_blank');
 
-    // Reset after short delay
     setTimeout(() => {
       setIsSubmitting(false);
     }, 1000);
@@ -203,6 +241,8 @@ export default function ContactForm() {
                 placeholder="ton.email@exemple.com"
                 value={formData.email}
                 onChange={handleChange}
+                error={errors.email}
+                maxLength={254}
               />
             </div>
 
@@ -225,6 +265,7 @@ export default function ContactForm() {
               rows={4}
               value={formData.message}
               onChange={handleChange}
+              maxLength={2000}
             />
 
             {/* Bouton WhatsApp principal */}
