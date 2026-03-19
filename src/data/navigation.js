@@ -14,8 +14,6 @@ export const mainNavigation = [
     label: "L'application",
     href: '/application',
     type: 'link',
-    disabled: true,
-    disabledMessage: 'Bientôt disponible',
   },
   {
     label: 'Ressources',
