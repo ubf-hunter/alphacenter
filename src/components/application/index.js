@@ -11,3 +11,4 @@ export { default as AppTestimonials } from './AppTestimonials';
 export { default as AppFAQ } from './AppFAQ';
 export { default as DownloadCTA } from './DownloadCTA';
 export { default as PhoneMockup, PhoneMockupWithImage, DualPhoneMockup } from './PhoneMockup';
+export { default as IOSInstallModal } from './IOSInstallModal';
