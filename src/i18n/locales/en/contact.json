@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbContact": "Contact",
+    "title": "Contact Us",
+    "subtitle": "Have questions about our programs? Need information? Our team is here to help you succeed.",
+    "responseTime": "Response time",
+    "whatsappAvailable": "WhatsApp available",
+    "free": "Free & no commitment"
+  },
+  "form": {
+    "title": "Write to us",
+    "subtitle": "Fill out the form and we'll reply on WhatsApp",
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "programme": "Program you're interested in",
+    "message": "Your message",
+    "messagePlaceholder": "Describe your situation or ask your question...",
+    "sending": "Redirecting...",
+    "submit": "Send on WhatsApp",
+    "or": "or",
+    "callDirectly": "Call directly",
+    "privacy": "By contacting us, you accept our privacy policy. We never share your information.",
+    "responseGuarantee": "Response guaranteed within 24 business hours",
+    "selectProgramme": "Select a program",
+    "programOptions": {
+      "engineer": "Engineering Exam (ENSP, ENSTP, FGI)",
+      "medicine": "Medical Exam (FMSB)",
+      "nursing": "Nursing Exam (CESSI, Health Schools)",
+      "orientation": "Need orientation",
+      "other": "Other question"
+    }
+  },
+  "info": {
+    "title": "Find us",
+    "subtitle": "Multiple ways to contact us based on your preferences",
+    "phone": "Phone",
+    "phoneAvailable": "Direct calls available",
+    "emailLabel": "Email",
+    "emailResponse": "Response within 24-48h",
+    "address": "Address",
+    "hours": "Opening hours",
+    "social": "Follow us on social media",
+    "available": "Available now"
+  },
+  "map": {
+    "title": "Find us in Yaoundé",
+    "locationLabel": "Our location",
+    "byTransport": "By transport",
+    "transportDesc": "Buses and taxis available. Omnisports stop.",
+    "byCar": "By car",
+    "carDesc": "Free parking available on site.",
+    "onFoot": "On foot",
+    "footDesc": "5 min walk from Omnisports station.",
+    "directions": "Get directions"
+  },
+  "cta": {
+    "title": "Ready to pass your exam?",
+    "subtitle": "Join hundreds of students who have already gotten into the school of their dreams thanks to Alpha Center.",
+    "chatAdviser": "Chat with an adviser",
+    "viewPrograms": "View programs",
+    "stats": {
+      "successRate": "Success rate",
+      "admitted": "Students admitted",
+      "experience": "Of experience"
+    }
+  },
+  "data": {
+    "address": {
+      "street": "Adventist school complex, Odza neighborhood",
+      "city": "Yaoundé",
+      "country": "Cameroon",
+      "fullName": "Adventist school complex of Odza"
+    },
+    "hours": {
+      "weekdays": "Monday - Friday: 08:00 AM - 06:00 PM",
+      "saturday": "Saturday: 09:00 AM - 03:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "whatsappDefault": "Hello Alpha Center! I'd like to get information about your exam preparation programs.",
+    "whatsappMessages": {
+      "engineer": "Hello Alpha Center! I'm interested in engineering exam preparation. I'd like more information about the program, fees and registration dates. Thank you!",
+      "medicine": "Hello Alpha Center! I'm interested in medical exam preparation. I'd like more information about the program, fees and registration dates. Thank you!",
+      "nursing": "Hello Alpha Center! I'm interested in nursing/health sciences exam preparation. I'd like more information about the program, fees and registration dates. Thank you!",
+      "default": "Hello Alpha Center! I'd like to get information about your exam preparation programs. Can you help me?"
+    }
+  },
+  "modal": {
+    "title": "Contact us on WhatsApp",
+    "subtitle": "Select your program to start the conversation",
+    "close": "Close",
+    "responseGuarantee": "Response guaranteed within 24 business hours",
+    "options": {
+      "engineer": { "title": "Engineering Exam", "description": "Polytechnique, ENSPY, FGI..." },
+      "medicine": { "title": "Medical Exam", "description": "FMSB, Medical schools..." },
+      "nursing": { "title": "Nursing Exam", "description": "CESSI, Health schools..." },
+      "other": { "title": "Other / Question", "description": "I have a specific question" }
+    }
+  }
+}

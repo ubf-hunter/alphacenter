@@ -1,0 +1,355 @@
+{
+  "hero1": {
+    "badge": "+700 admis depuis 2009",
+    "titlePart1": "Integre l'ecole",
+    "titlePart2": "de tes reves.",
+    "slides": {
+      "engineers": "d'ingenieurs",
+      "medicine": "de medecine",
+      "management": "de management",
+      "accounting": "de comptables",
+      "nursing": "d'infirmieres"
+    },
+    "subtitle": "Preparation intensive aux concours des grandes ecoles : Ingenierie, Medecine, Sciences Infirmieres au Cameroun.",
+    "ctaRegister": "Je m'inscris →",
+    "ctaDiscover": "Découvrir nos programmes",
+    "stats": {
+      "admitted": "Etudiants admis",
+      "successRate": "Taux de reussite",
+      "experience": "Annees d'experience",
+      "programs": "Programmes"
+    }
+  },
+  "hero": {
+    "badge": "+500 admis depuis 2009",
+    "titlePart1": "Intègre l'école d'",
+    "titleHighlight": "ingénieurs",
+    "titlePart2": "de tes rêves.",
+    "subtitle": "Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles d'ingénieurs au Cameroun et à l'étranger.",
+    "ctaRegister": "Je m'inscris",
+    "ctaDiscover": "Découvrir nos programmes",
+    "examPrep": "Préparation aux concours :",
+    "stats": {
+      "successRate": "Taux de réussite",
+      "admitted": "Étudiants admis",
+      "experience": "Années d'expérience",
+      "experts": "Enseignants experts"
+    }
+  },
+  "hero2": {
+    "badge": "+500 admis depuis 2009",
+    "titlePart1": "Intègre l'école d'",
+    "titleHighlight": "ingénieurs",
+    "titlePart2": "de tes rêves.",
+    "subtitle": "Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles d'ingénieurs au Cameroun et à l'étranger.",
+    "ctaRegister": "Je m'inscris →",
+    "ctaPrograms": "Voir les programmes",
+    "nav": {
+      "home": "Accueil",
+      "programs": "Programmes",
+      "orientation": "Orientation",
+      "about": "À propos",
+      "contact": "Contact",
+      "register": "S'inscrire"
+    },
+    "stats": {
+      "success": "Réussite",
+      "teachers": "Professeurs",
+      "experience": "Ans d'expérience"
+    },
+    "imageAlt": "Étudiants qui étudient",
+    "floatingAdmitted": "Admis",
+    "floatingSuccess": "Réussite"
+  },
+  "hero3": {
+    "badge": "+500 admis depuis 2009 • 95% de réussite",
+    "titlePart1": "Intègre l'école d'",
+    "titleHighlight": "ingénieurs",
+    "titlePart2": "de tes rêves.",
+    "subtitle": "Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles d'ingénieurs.",
+    "ctaRegister": "Je m'inscris →",
+    "ctaPrograms": "Découvrir nos programmes",
+    "nav": {
+      "home": "Accueil",
+      "programs": "Programmes",
+      "orientation": "Orientation",
+      "about": "À propos",
+      "contact": "Contact",
+      "register": "S'inscrire"
+    },
+    "imageAlt": "Étudiants célébrant leur diplôme",
+    "floatingAdmitted": "Étudiants admis",
+    "floatingSuccess": "Taux de réussite",
+    "floatingYears": "Années",
+    "floatingTeachers": "Profs",
+    "floatingExams": "Concours"
+  },
+  "hero4": {
+    "socialProofStudents": "500+ étudiants",
+    "socialProofText": "nous ont fait confiance",
+    "titlePart1": "Intègre l'école d'",
+    "titleHighlight": "ingénieurs",
+    "titlePart2": "de tes rêves.",
+    "subtitle": "Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles d'ingénieurs au Cameroun.",
+    "ctaRegister": "Je m'inscris maintenant",
+    "ctaPrograms": "Voir les programmes",
+    "nav": {
+      "home": "Accueil",
+      "programs": "Programmes",
+      "orientation": "Orientation",
+      "about": "À propos",
+      "contact": "Contact",
+      "register": "S'inscrire"
+    },
+    "features": {
+      "courses": "Cours intensifs",
+      "teachers": "50+ Profs experts",
+      "app": "App mobile gratuite"
+    },
+    "avatarAlt": "Étudiant {{index}}",
+    "stats": {
+      "admitted": "Étudiants admis",
+      "successRate": "Taux de réussite",
+      "experience": "Années d'expérience",
+      "experts": "Enseignants experts"
+    },
+    "trustedBy": "Nos anciens intègrent les meilleures écoles"
+  },
+  "programsHome": {
+    "badge": "Nos formations",
+    "title": "Des programmes adaptés à chaque concours",
+    "subtitle": "Choisis la préparation qui correspond à tes objectifs et maximise tes chances de réussite.",
+    "ensp": {
+      "title": "Prépa ENSP",
+      "school": "École Nationale Supérieure Polytechnique",
+      "description": "Préparation intensive pour intégrer la plus prestigieuse école d'ingénieurs du Cameroun. Génie Civil, Informatique, Électrique, Mécanique.",
+      "features": ["Cours intensifs", "Concours blancs hebdomadaires", "Suivi personnalisé"]
+    },
+    "enstp": {
+      "title": "Prépa ENSTP",
+      "school": "École Nationale Supérieure des Travaux Publics",
+      "description": "Formation complète pour réussir le concours d'entrée à l'ENSTP. Spécialisation en génie civil et travaux publics.",
+      "features": ["Méthodologie adaptée", "Exercices ciblés", "Coaching individuel"]
+    },
+    "ens": {
+      "title": "Prépa ENS",
+      "school": "École Normale Supérieure",
+      "description": "Préparation rigoureuse aux concours de l'ENS pour devenir enseignant du secondaire ou poursuivre en recherche.",
+      "features": ["Renforcement académique", "Culture générale", "Expression écrite"]
+    },
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tous les programmes"
+  },
+  "programsAlt": {
+    "badge": "Nos formations",
+    "title": "Des *programmes* adaptés à chaque concours",
+    "titleV1": "Des programmes adaptés à chaque concours",
+    "subtitle": "Choisis la préparation qui correspond à tes objectifs et maximise tes chances de réussite.",
+    "viewAll": "Voir tous les programmes",
+    "viewAllV3": "Voir tous nos programmes",
+    "discoverProgram": "Découvrir le programme",
+    "v1": {
+      "ensp": {
+        "title": "Prépa ENSP",
+        "school": "Polytechnique Yaoundé",
+        "description": "Préparation intensive pour intégrer la plus prestigieuse école d'ingénieurs du Cameroun.",
+        "features": ["Cours intensifs", "Concours blancs hebdo", "Suivi personnalisé"]
+      },
+      "enstp": {
+        "title": "Prépa ENSTP",
+        "school": "Travaux Publics",
+        "description": "Formation complète pour réussir le concours d'entrée à l'ENSTP. Génie civil et infrastructures.",
+        "features": ["Méthodologie adaptée", "Exercices ciblés", "Coaching individuel"]
+      },
+      "ens": {
+        "title": "Prépa ENS",
+        "school": "École Normale Sup.",
+        "description": "Préparation rigoureuse aux concours de l'ENS pour devenir enseignant ou chercheur.",
+        "features": ["Renforcement académique", "Culture générale", "Expression écrite"]
+      }
+    },
+    "v2": {
+      "ensp": {
+        "title": "Prépa ENSP",
+        "subtitle": "Polytechnique",
+        "description": "Intègre la plus prestigieuse école d'ingénieurs du Cameroun avec notre préparation intensive."
+      },
+      "enstp": {
+        "title": "Prépa ENSTP",
+        "subtitle": "Travaux Publics",
+        "description": "Maîtrise les techniques de génie civil et d'infrastructure avec nos experts du domaine."
+      },
+      "ens": {
+        "title": "Prépa ENS",
+        "subtitle": "École Normale",
+        "description": "Deviens enseignant ou chercheur avec une préparation académique rigoureuse et complète."
+      }
+    },
+    "v3": {
+      "ensp": {
+        "title": "Prépa ENSP",
+        "subtitle": "École Polytechnique",
+        "description": "Notre programme phare te prépare intensivement au concours le plus sélectif du Cameroun.",
+        "cta": "Programme Polytechnique"
+      },
+      "enstp": {
+        "title": "Prépa ENSTP",
+        "subtitle": "Travaux Publics",
+        "description": "Spécialise-toi dans le génie civil et les infrastructures avec des experts du BTP camerounais.",
+        "cta": "Programme ENSTP"
+      },
+      "ens": {
+        "title": "Prépa ENS",
+        "subtitle": "École Normale",
+        "description": "Construis une carrière d'enseignant ou de chercheur avec une préparation académique solide.",
+        "cta": "Programme ENS"
+      }
+    }
+  },
+  "whyAlpha": {
+    "badge": "Pourquoi nous choisir",
+    "title": "Ce qui nous rend *differents*",
+    "subtitle": "Depuis 15 ans, Alpha Center accompagne les futurs professionnels camerounais vers la reussite avec une methode qui a fait ses preuves.",
+    "stats": {
+      "years": "Annees",
+      "success": "Reussite",
+      "admitted": "Admis"
+    },
+    "socialProof": {
+      "satisfied": "Étudiants satisfaits",
+      "recommend": "qui nous recommandent"
+    },
+    "cta": "Rejoindre Alpha Center",
+    "features": {
+      "teachers": {
+        "title": "Enseignants d'excellence",
+        "description": "Experts issus des meilleures universités avec une pédagogie éprouvée."
+      },
+      "smallGroups": {
+        "title": "Petits groupes",
+        "description": "Classes de 25 max pour une attention personnalisée."
+      },
+      "personalFollowUp": {
+        "title": "Suivi individualisé",
+        "description": "Accompagnement personnalisé avec bilans réguliers."
+      },
+      "mockExams": {
+        "title": "Concours blancs",
+        "description": "Examens en conditions réelles chaque semaine."
+      },
+      "app": {
+        "title": "Application Alpha",
+        "description": "Révise partout, même hors connexion."
+      },
+      "pricing": {
+        "title": "Tarifs accessibles",
+        "description": "Formation de qualité avec facilités de paiement."
+      }
+    }
+  },
+  "ctaFinal": {
+    "urgencyBadge": "Inscriptions ouvertes — Places limitées",
+    "title": "Prêt à réaliser ton",
+    "titleHighlight": "rêve professionnel",
+    "subtitle1": "Rejoins les",
+    "subtitle2": "800+ étudiants",
+    "subtitle3": "qui ont transformé leur avenir avec Alpha Center. La prochaine success story, c'est",
+    "subtitle4": "toi",
+    "stats": {
+      "nextSessionValue": "Juin 2026",
+      "nextSession": "Prochaine session",
+      "remaining": "Places restantes",
+      "successRate": "Taux de réussite"
+    },
+    "ctaRegister": "Je m'inscris maintenant",
+    "ctaWhatsapp": "Discuter sur WhatsApp",
+    "divider": "ou contacte-nous",
+    "whatsappMessage": "Bonjour Alpha Center ! 👋\n\nJe suis intéressé(e) par vos programmes de préparation aux concours. Pouvez-vous me donner plus d'informations ?\n\nMerci !",
+    "trust": {
+      "payment": "Paiement sécurisé",
+      "personalized": "Accompagnement personnalisé",
+      "guarantee": "Satisfaction garantie"
+    }
+  },
+  "appPromo": {
+    "badge": "Application mobile",
+    "title": "Révise partout avec",
+    "titleHighlight": "l'app Alpha",
+    "subtitle": "Notre application mobile te permet de réviser efficacement où que tu sois. QCM, cours, annales corrigées... tout est accessible même sans internet.",
+    "downloadOn": "Télécharger sur",
+    "availableOn": "Disponible sur",
+    "phone": {
+      "tagline": "Révise & Réussis",
+      "progression": "Progression",
+      "qcm": "répondus cette semaine",
+      "topUsers": "des utilisateurs"
+    },
+    "features": {
+      "qcm": {
+        "title": "QCM interactifs",
+        "description": "+2000 questions par matière avec corrections détaillées"
+      },
+      "offline": {
+        "title": "Mode hors-ligne",
+        "description": "Révise même sans connexion internet"
+      },
+      "corrections": {
+        "title": "Corrections détaillées",
+        "description": "Comprends chaque erreur avec des explications claires"
+      },
+      "progress": {
+        "title": "Suivi de progression",
+        "description": "Visualise tes progrès et identifie tes points faibles"
+      }
+    }
+  },
+  "orientation": {
+    "badge": "🧭 Orientation",
+    "title": "Tu ne sais pas quel *ingénieur* tu veux devenir ?",
+    "subtitle": "Explore les différents domaines de l'ingénierie et découvre celui qui te correspond le mieux.",
+    "metiers": {
+      "civilEng": { "title": "Génie Civil", "tagline": "Construis le monde de demain" },
+      "compEng": { "title": "Génie Informatique", "tagline": "Crée les technologies du futur" },
+      "elecEng": { "title": "Génie Électrique", "tagline": "Maîtrise l'énergie" },
+      "mechEng": { "title": "Génie Mécanique", "tagline": "Conçois les machines" },
+      "petroEng": { "title": "Génie Pétrolier", "tagline": "Exploite les ressources" },
+      "envEng": { "title": "Génie Environnement", "tagline": "Protège la planète" }
+    },
+    "badges": {
+      "popular": "🏗️ Populaire",
+      "trending": "🔥 Tendance",
+      "topSalary": "💰 Top Salaire",
+      "future": "🌱 Avenir"
+    },
+    "perMonth": "mois",
+    "schools": "écoles",
+    "viewCareer": "Voir la fiche métier",
+    "exploreAll": "Explorer tous les métiers",
+    "funFact": {
+      "title": "Le savais-tu ?",
+      "text": "Le Cameroun aura besoin de plus de 50 000 ingénieurs d'ici 2030 !"
+    }
+  },
+  "testimonials": {
+    "badge": "Ils ont réussi",
+    "title": "Ce que disent nos *anciens étudiants*",
+    "subtitle": "Découvre les témoignages de ceux qui ont intégré leur école de rêve grâce à Alpha Center.",
+    "prevLabel": "Témoignage précédent",
+    "nextLabel": "Témoignage suivant",
+    "goTo": "Aller au témoignage"
+  },
+  "stats": {
+    "admitted": { "label": "Etudiants admis", "sublabel": "depuis 2023" },
+    "success": { "label": "Taux de reussite", "sublabel": "aux concours" },
+    "experience": { "label": "Annees d'experience", "sublabel": "d'excellence" },
+    "experts": { "label": "Enseignants experts", "sublabel": "et passionnes" }
+  },
+  "programs": {
+    "badge": "Nos formations",
+    "title": "Des *programmes* adaptes a chaque *ambition*",
+    "subtitle": "Ingenierie, medecine, gestion ou enseignement - trouve la preparation qui te correspond.",
+    "discoverProgram": "Decouvrir le programme",
+    "success": "reussite",
+    "viewAll": "Voir tous nos programmes"
+  }
+}

@@ -15,6 +15,7 @@ import {
   Users,
 } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 // Avatar avec initiales si pas de photo
@@ -50,6 +51,7 @@ function Avatar({ photo, initials, name, className = '' }) {
 // Card pour la direction - Style flip card avec glassmorphism
 export function LeadershipCard({ member, index }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { t } = useTranslation('about');
 
   return (
     <motion.div
@@ -126,7 +128,7 @@ export function LeadershipCard({ member, index }) {
                 "
                 >
                   {' '}
-                  <span className="flex items-center justify-center">Voir</span>
+                  <span className="flex items-center justify-center">{t('team.see')}</span>
                   <Plus size={16} />
                 </button>
               </div>
@@ -136,7 +138,7 @@ export function LeadershipCard({ member, index }) {
           {/* Top badge */}
           <div className="absolute top-4 left-4">
             <span className="px-3 py-1 bg-orange text-white text-xs font-bold rounded-full shadow-lg">
-              Direction
+              {t('team.leadership')}
             </span>
           </div>
         </div>
@@ -192,7 +194,7 @@ export function LeadershipCard({ member, index }) {
           {member.education && (
             <div className="mb-4">
               <div className="text-xs font-semibold text-navy mb-2">
-                Formation
+                {t('team.formation')}
               </div>
               <div className="flex flex-wrap gap-1">
                 {member.education.slice(0, 2).map((edu, i) => (
@@ -240,7 +242,7 @@ export function LeadershipCard({ member, index }) {
               onClick={(e) => e.stopPropagation()}
               className="mt-3 flex items-center justify-center gap-2 p-3 rounded-xl bg-orange text-white hover:bg-orange/90 transition-colors text-sm font-medium"
             >
-              Voir le profil complet
+              {t('team.viewFullProfile')}
               <ArrowRight size={16} />
             </Link>
           )}
@@ -252,6 +254,8 @@ export function LeadershipCard({ member, index }) {
 
 // Card pour les enseignants - Style moderne avec grande photo
 export function TeacherCard({ teacher, index, onSelect }) {
+  const { t } = useTranslation('about');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -324,7 +328,7 @@ export function TeacherCard({ teacher, index, onSelect }) {
                 transition-colors
               "
               >
-                Profil
+                {t('team.profile')}
                 <ArrowRight size={14} />
               </Link>
             ) : (
@@ -338,7 +342,7 @@ export function TeacherCard({ teacher, index, onSelect }) {
                 transition-colors
               "
               >
-                Voir +
+                {t('team.seeMore')}
               </button>
             )}
           </div>

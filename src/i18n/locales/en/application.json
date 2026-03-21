@@ -1,0 +1,423 @@
+{
+  "page": {
+    "title": "Alpha Mobile App",
+    "subtitle": "Download the Alpha app to study anywhere, even offline. 1000+ corrected exercises, AI planning, peer community. Available on iOS and Android."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "resources": {
+    "title": "Alpha Library - Documents and Resources | Alpha Center"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "heading": "Legal Notice"
+    },
+    "cgu": {
+      "heading": "Terms of Use",
+      "lastUpdated": "Last updated: March 2026"
+    },
+    "confidentialite": {
+      "heading": "Privacy Policy",
+      "lastUpdated": "Last updated: March 2026"
+    }
+  },
+  "library": {
+    "hero": {
+      "badge": "Alpha Library",
+      "titlePart1": "All the",
+      "titleHighlight": "tools",
+      "titlePart2": "to",
+      "titlePart3": "ace your exams",
+      "subtitle": "Study guides, corrected past exams, notes - quality resources created by our teachers to maximize your chances of success.",
+      "stats": {
+        "documents": "Documents",
+        "averageRating": "Average rating",
+        "guaranteedQuality": "Guaranteed quality"
+      }
+    },
+    "faq": {
+      "badge": "Frequently asked questions",
+      "title": "Everything about our *documents*",
+      "needHelp": "Need help?",
+      "findAnswers": "Quickly find answers to your questions",
+      "items": {
+        "0": {
+          "question": "How to order a document?",
+          "answer": "Click the 'Order on WhatsApp' button on the document page. You will be redirected to WhatsApp with a pre-filled message. Our team will respond quickly."
+        },
+        "1": {
+          "question": "How to pay for my order?",
+          "answer": "We accept Orange Money and MTN Mobile Money. After your order on WhatsApp, you will receive payment instructions."
+        },
+        "2": {
+          "question": "How long to receive my order?",
+          "answer": "Allow 24h for pickup at Alpha Center or 24-48h for delivery in Yaounde. For other cities, delivery takes 3-5 days."
+        },
+        "3": {
+          "question": "Can I get a refund if I'm not satisfied?",
+          "answer": "Yes, you have 7 days after receipt to request a refund if the content does not meet your expectations. Contact us on WhatsApp."
+        },
+        "4": {
+          "question": "Are the documents updated?",
+          "answer": "Yes, we update our documents every year with the latest exam subjects and program changes. Buyers receive updates for free."
+        },
+        "5": {
+          "question": "Where can I pick up my order?",
+          "answer": "You can pick up your order at the Alpha Center, located in the Omnisports neighborhood in Yaounde. The exact address will be communicated via WhatsApp."
+        }
+      }
+    },
+    "orderProcess": {
+      "badge": "How to order",
+      "title": "A *simple* and *fast* process",
+      "subtitle": "Order your documents in a few clicks via WhatsApp",
+      "steps": {
+        "0": {
+          "title": "Choose your documents",
+          "description": "Browse our catalog and select the resources that interest you"
+        },
+        "1": {
+          "title": "Contact us on WhatsApp",
+          "description": "Click 'Order' to send us your order via WhatsApp"
+        },
+        "2": {
+          "title": "Pay by Mobile Money",
+          "description": "Pay your order via Orange Money or MTN MoMo"
+        },
+        "3": {
+          "title": "Receive your documents",
+          "description": "Pickup at Alpha Center or home delivery."
+        }
+      }
+    },
+    "search": {
+      "placeholder": "Search for a document...",
+      "all": "All",
+      "sortBy": "Sort by:",
+      "popular": "Popular",
+      "newest": "Newest",
+      "priceAsc": "Price ascending",
+      "priceDesc": "Price descending"
+    },
+    "guarantees": {
+      "badge": "Our commitments",
+      "title": "*Guarantees* for your peace of mind"
+    },
+    "product": {
+      "bestseller": "Bestseller",
+      "new": "New",
+      "price": "Price",
+      "priceTbd": "Price coming soon",
+      "comingSoon": "Coming soon",
+      "orderWhatsApp": "Order on WhatsApp"
+    },
+    "grid": {
+      "documentsFound": "document(s) found",
+      "noResults": "No documents found",
+      "noResultsHint": "Try adjusting your search criteria",
+      "resetFilters": "Reset filters"
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "They *succeeded* with our documents",
+      "subtitle": "Discover feedback from our students who used our resources",
+      "items": {
+        "0": {
+          "name": "Kevin M.",
+          "role": "Admitted ENSP 2024",
+          "content": "The Alpha Center study guides really helped me structure my revision. The corrected exercises are very well explained.",
+          "product": "Mathematics Study Guide ENSP"
+        },
+        "1": {
+          "name": "Diane T.",
+          "role": "Admitted Medicine 2024",
+          "content": "I used the corrected past exams for 3 months. The quality of corrections helped me understand my mistakes.",
+          "product": "Medicine Past Exams Pack"
+        },
+        "2": {
+          "name": "Paul E.",
+          "role": "Admitted ENSTP 2024",
+          "content": "The complete engineering pack is really comprehensive. I was able to study all subjects with quality materials.",
+          "product": "Complete Engineering Pack"
+        }
+      }
+    }
+  },
+  "appHero": {
+    "badge": "Available on iOS and Android",
+    "titleLine1": "Study",
+    "titleHighlight": "anywhere",
+    "titleLine2": "with Alpha",
+    "subtitle": "Full offline mode, all Cameroon entrance exams in your pocket. 1000+ corrected exercises, AI planning and peer community.",
+    "badgeOffline": "Offline mode",
+    "badgeRating": "4.8 on App Store",
+    "installOn": "Install on",
+    "iPhone": "iPhone",
+    "downloadFor": "Download for",
+    "android": "Android",
+    "screenTitle": "Alpha App",
+    "screenSubtitle": "Prepare for your exam anywhere, even without internet",
+    "stats": {
+      "exercises": "Corrected exercises",
+      "users": "Active users",
+      "concours": "Exams covered",
+      "rating": "App Store rating"
+    }
+  },
+  "appFaq": {
+    "badge": "FAQ",
+    "title": "Frequently asked *questions*",
+    "subtitle": "Everything you need to know about the Alpha app.",
+    "otherQuestions": "Have other questions?",
+    "contactSupport": "Contact our support team",
+    "questions": {
+      "q1": {
+        "question": "Is the app free?",
+        "answer": "The app is free to download with limited access. To unlock all content (full courses, exercises, mock exams), a monthly subscription is available starting at 5000 FCFA/month."
+      },
+      "q2": {
+        "question": "How does offline mode work?",
+        "answer": "You can download the chapters you're interested in when you have a connection. Then you can study that content even without internet. A chapter weighs about 50 MB."
+      },
+      "q3": {
+        "question": "How to pay with Orange Money or MTN MoMo?",
+        "answer": "In the app, go to Subscription then choose Pay. Select Orange Money or MTN MoMo, enter your number and confirm. It's instant!"
+      },
+      "q4": {
+        "question": "Is the app available on iPhone?",
+        "answer": "Yes! The Alpha app is available on iOS (App Store) and Android (Google Play). It works on all recent smartphones."
+      },
+      "q5": {
+        "question": "Can I use the app without being enrolled at Alpha Center?",
+        "answer": "Absolutely! The app is independent from the physical center. You can subscribe directly in the app, whether you're enrolled at the center or not."
+      },
+      "q6": {
+        "question": "How to contact support?",
+        "answer": "In the app, go to Profile > Help. You can contact us via WhatsApp, email or through the built-in form. Response within 24h guaranteed."
+      }
+    }
+  },
+  "appTestimonials": {
+    "badge": "Testimonials",
+    "title": "They *succeeded* with Alpha",
+    "subtitle": "Discover what Alpha app users have to say.",
+    "ratingLabel": "on App Store",
+    "testimonials": {
+      "t1": {
+        "name": "Kevin M.",
+        "school": "Admitted ENSP 2024",
+        "quote": "The Alpha app allowed me to study on the bus, during breaks... The offline mode is really practical in Cameroon where the connection isn't always stable."
+      },
+      "t2": {
+        "name": "Grace N.",
+        "school": "Admitted FMSB 2024",
+        "quote": "The app's MCQs are exactly like those of the FMSB exam. I was able to practice hundreds of times. The AI planning helped me get organized."
+      },
+      "t3": {
+        "name": "Emmanuel T.",
+        "school": "Admitted ENSTP 2024",
+        "quote": "The app's forum is great. I was able to ask my questions and get quick answers from Alpha Center teachers. A real peer support community!"
+      },
+      "t4": {
+        "name": "Sandrine A.",
+        "school": "Admitted CESSI 2024",
+        "quote": "Paying with Orange Money is so simple. No need for a bank card. And the biology exercises are really comprehensive for the CESSI exam."
+      }
+    }
+  },
+  "whyAlphaApp": {
+    "badge": "Why Alpha App?",
+    "title": "Everything you need to *succeed*",
+    "subtitle": "An app designed for Cameroon's realities: offline mode, Mobile Money payment, tailored content.",
+    "advantages": {
+      "offline": {
+        "title": "Study anywhere",
+        "description": "Full offline mode. Download your courses once, study without internet."
+      },
+      "targeted": {
+        "title": "Targeted content",
+        "description": "Exercises and courses specifically tailored to each exam: ENSP, FMSB, CESSI..."
+      },
+      "progress": {
+        "title": "Real-time tracking",
+        "description": "Personalized dashboard with detailed statistics and score prediction."
+      },
+      "ai": {
+        "title": "Smart planning",
+        "description": "AI generates a plan adapted to your exam date and availability."
+      },
+      "payment": {
+        "title": "Mobile Money payment",
+        "description": "Pay easily with Orange Money or MTN MoMo, no bank card needed."
+      },
+      "community": {
+        "title": "Active community",
+        "description": "2000+ students helping each other. Alpha Center teachers available daily."
+      }
+    }
+  },
+  "downloadCta": {
+    "badge": "Free on iOS and Android",
+    "titleLine1": "Download",
+    "titleHighlight": "Alpha",
+    "titleLine2": "and start studying",
+    "description": "Join the 2000+ students preparing for their exams with Alpha. Available 24/7, even without an internet connection.",
+    "installOn": "Install on",
+    "iPhone": "iPhone",
+    "downloadFor": "Download for",
+    "android": "Android",
+    "stats": {
+      "usersValue": "2000+",
+      "usersLabel": "Active users",
+      "ratingValue": "4.8/5",
+      "ratingLabel": "Average rating",
+      "concoursValue": "5",
+      "concoursLabel": "Exams covered"
+    },
+    "screenTitle": "Alpha",
+    "screenSubtitle": "Prepare for your exam",
+    "screenInstall": "Install",
+    "floatingBadge": "iOS & Android"
+  },
+  "featureShowcase": {
+    "badge": "Features",
+    "title": "A *complete* app for your *success*",
+    "subtitle": "Discover all the features that make Alpha the go-to app for preparing entrance exams in Cameroon.",
+    "features": {
+      "library": {
+        "title": "Course library",
+        "tagline": "Your entire syllabus in your pocket",
+        "description": "Access all courses in Math, Physics, Chemistry, Biology, English and French. Organized by exam, chapter and difficulty level.",
+        "highlights": [
+          "PDF courses and video explanations",
+          "Offline mode with downloads",
+          "Favorites and personal notes system",
+          "Regular content updates"
+        ]
+      },
+      "exercises": {
+        "title": "Exercises & solutions",
+        "tagline": "1000+ exercises with detailed solutions",
+        "description": "Practice with step-by-step corrected exercises. Filter by subject, chapter, difficulty and exam type.",
+        "highlights": [
+          "Detailed step-by-step solutions",
+          "Optional timer for real conditions",
+          "History of solved exercises",
+          "New exercises every week"
+        ]
+      },
+      "qcm": {
+        "title": "MCQs & mock exams",
+        "tagline": "Simulate exam conditions",
+        "description": "Timed MCQs and mock exams based on official past papers. Detailed analysis of your results after each session.",
+        "highlights": [
+          "ENSP, ENSTP, ENS, FMSB, CESSI past papers",
+          "Timer and real conditions",
+          "Detailed error analysis",
+          "Ranking with other users"
+        ]
+      },
+      "tracking": {
+        "title": "Progress tracking",
+        "tagline": "Visualize your progress",
+        "description": "Personal dashboard with progress charts by subject. Success rate, score prediction and personalized alerts.",
+        "highlights": [
+          "Progress charts by subject",
+          "Exam score prediction",
+          "Alerts and recommendations",
+          "Weekly progress summary"
+        ]
+      },
+      "planning": {
+        "title": "AI personalized planning",
+        "tagline": "Your custom study program",
+        "description": "AI automatically generates a plan based on your exam date, level and availability. Push reminders before each session.",
+        "highlights": [
+          "Automatic plan generation",
+          "Adapts to your level",
+          "Daily push reminders",
+          "Readjustment based on your progress"
+        ]
+      },
+      "forum": {
+        "title": "Community forum",
+        "tagline": "Peer support and motivation",
+        "description": "Join 2000+ students helping each other. Ask your questions and get answers from Alpha Center teachers.",
+        "highlights": [
+          "Moderated Q&A",
+          "Teachers active daily",
+          "Sections by topic and exam",
+          "Tips and motivation"
+        ]
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "How it works",
+    "title": "*4 steps* to get started",
+    "subtitle": "Download the app and start studying in minutes. It's simple, fast and free.",
+    "ctaText": "Ready to start? Download the app for free.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "steps": {
+      "s1": {
+        "title": "Download the app",
+        "description": "Available for free on App Store and Google Play."
+      },
+      "s2": {
+        "title": "Choose your exam",
+        "description": "ENSP, ENSTP, ENS, FMSB, CESSI... Select your goals."
+      },
+      "s3": {
+        "title": "Access the content",
+        "description": "Courses, exercises, MCQs: everything at your fingertips."
+      },
+      "s4": {
+        "title": "Study offline",
+        "description": "Download chapters and study anywhere, even without internet."
+      }
+    }
+  },
+  "iosInstall": {
+    "title": "Install Alpha on iPhone",
+    "subtitle": "Follow these 3 steps to add Alpha to your home screen",
+    "step1Title": "Open in Safari",
+    "step1Desc": "Go to alphacenter.cm with Safari",
+    "step2Title": "Tap Share",
+    "step2Desc": "The square icon with the upward arrow, at the bottom of Safari",
+    "step3Title": "\"Add to Home Screen\"",
+    "step3Desc": "Choose this option in the menu that appears",
+    "understood": "Got it!"
+  },
+  "concoursList": {
+    "badge": "Exams covered",
+    "title": "All *exams* in Cameroon",
+    "subtitle": "The Alpha app covers the main entrance exams to Cameroon's top schools.",
+    "concoursCount": "{{count}} exams covered",
+    "viewPrograms": "View programs",
+    "moreComingSoon": "More exams will be added soon. Stay tuned!",
+    "categories": {
+      "engineering": {
+        "name": "Engineering Schools"
+      },
+      "health": {
+        "name": "Medicine"
+      },
+      "nursing": {
+        "name": "Nursing Sciences"
+      }
+    },
+    "concoursNames": {
+      "ensp": { "name": "ENSP", "fullName": "National Advanced School of Engineering" },
+      "enstp": { "name": "ENSTP", "fullName": "National Advanced School of Public Works" },
+      "ens": { "name": "ENS", "fullName": "Higher Teacher Training College" },
+      "fmsb": { "name": "FMSB", "fullName": "Faculty of Medicine and Biomedical Sciences" },
+      "fms": { "name": "FMS Douala", "fullName": "Faculty of Medicine and Sciences of Douala" },
+      "cessi": { "name": "CESSI", "fullName": "Specialized Center for Nursing Education" },
+      "ide": { "name": "IDE", "fullName": "State Registered Nurse" }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "footer": {
+    "tagline": "The leading center for competitive exam preparation for top engineering schools in Cameroon since 2023.",
+    "copyright": "© {{year}} Alpha Center. All rights reserved.",
+    "navigation": "Navigation",
+    "orientation": "Orientation",
+    "contact": "Contact"
+  },
+  "header": {
+    "cameroun": "Cameroon",
+    "etranger": "International",
+    "unavailable": "Unavailable"
+  },
+  "language": {
+    "switchTo": "FR",
+    "ariaLabel": "Passer en Français"
+  },
+  "scrollToTop": "Back to top"
+}

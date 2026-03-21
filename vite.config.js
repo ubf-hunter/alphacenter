@@ -15,7 +15,8 @@ export default defineConfig({
       '@pages': '/src/pages',
       '@assets': '/src/assets',
       '@hooks': '/src/hooks',
-      '@utils': '/src/utils'
+      '@utils': '/src/utils',
+      '@i18n': '/src/i18n'
     }
   },
   build: {
@@ -29,7 +30,8 @@ export default defineConfig({
           // Separer les vendors pour meilleur caching
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-ui': ['framer-motion', 'lucide-react'],
-          'vendor-seo': ['react-helmet-async', 'react-ga4']
+          'vendor-seo': ['react-helmet-async', 'react-ga4'],
+          'vendor-i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
         }
       }
     },

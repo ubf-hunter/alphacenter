@@ -15,8 +15,10 @@ import {
   Zap,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, NavLink } from 'react-router-dom';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
+import LanguageSwitcher from '../common/LanguageSwitcher';
 
 // Icon map for dynamic rendering
 const iconMap = {
@@ -36,6 +38,8 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('navigation');
+  const { t: tc } = useTranslation('common');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,6 +70,9 @@ export default function Header() {
     return IconComponent ? <IconComponent size={size} /> : null;
   };
 
+  const getLabel = (item) => item.tKey ? t(item.tKey) : item.label;
+  const getDesc = (item) => item.descKey ? t(item.descKey) : item.description;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:pt-6">
       <nav
@@ -86,7 +93,7 @@ export default function Header() {
         <div className="hidden xl:flex items-center gap-1">
           {mainNavigation.map((item) => (
             <div
-              key={item.label}
+              key={item.tKey || item.label}
               className="relative"
               onClick={(e) => e.stopPropagation()}
             >
@@ -94,9 +101,9 @@ export default function Header() {
                 item.disabled ? (
                   <span
                     className="px-4 py-2 text-sm font-medium rounded-full text-gray-400 cursor-not-allowed"
-                    title={item.disabledMessage || 'Non disponible'}
+                    title={item.disabledMessageKey ? t(item.disabledMessageKey) : tc('header.unavailable')}
                   >
-                    {item.label}
+                    {getLabel(item)}
                   </span>
                 ) : (
                   <NavLink
@@ -109,33 +116,33 @@ export default function Header() {
                       }`
                     }
                   >
-                    {item.label}
+                    {getLabel(item)}
                   </NavLink>
                 )
               ) : (
                 <button
-                  onClick={() => handleDropdownToggle(item.label)}
+                  onClick={() => handleDropdownToggle(item.tKey || item.label)}
                   className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                    activeDropdown === item.label
+                    activeDropdown === (item.tKey || item.label)
                       ? 'text-navy bg-navy/8'
                       : 'text-gray-600 hover:text-navy hover:bg-navy/5'
                   }`}
                 >
-                  {item.label}
+                  {getLabel(item)}
                   <ChevronDown
                     size={14}
                     className={`transition-transform duration-200 ${
-                      activeDropdown === item.label ? 'rotate-180' : ''
+                      activeDropdown === (item.tKey || item.label) ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
               )}
 
-              {item.type === 'dropdown' && activeDropdown === item.label && (
+              {item.type === 'dropdown' && activeDropdown === (item.tKey || item.label) && (
                 <div className="absolute top-full left-0 mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-navy/10 border border-gray-100 p-2">
                   {item.items.map((subItem) => (
                     <Link
-                      key={subItem.label}
+                      key={subItem.href}
                       to={subItem.href}
                       className="flex items-start gap-3 p-3 rounded-xl hover:bg-navy/5 transition-colors"
                       onClick={() => setActiveDropdown(null)}
@@ -145,11 +152,11 @@ export default function Header() {
                       </span>
                       <div>
                         <div className="font-semibold text-navy">
-                          {subItem.label}
+                          {getLabel(subItem)}
                         </div>
-                        {subItem.description && (
+                        {(subItem.descKey || subItem.description) && (
                           <div className="text-sm text-gray-500">
-                            {subItem.description}
+                            {getDesc(subItem)}
                           </div>
                         )}
                       </div>
@@ -158,7 +165,7 @@ export default function Header() {
                 </div>
               )}
 
-              {item.type === 'megamenu' && activeDropdown === item.label && (
+              {item.type === 'megamenu' && activeDropdown === (item.tKey || item.label) && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-150 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-navy/10 border border-gray-100 p-6">
                   <div className="grid grid-cols-2 gap-6">
                     <div>
@@ -166,12 +173,12 @@ export default function Header() {
                         <span className="w-6 h-6 rounded-lg bg-orange/10 flex items-center justify-center text-orange">
                           {getIcon(item.megamenu.metiers.titleIcon, 14)}
                         </span>
-                        {item.megamenu.metiers.title}
+                        {item.megamenu.metiers.tKey ? t(item.megamenu.metiers.tKey) : item.megamenu.metiers.title}
                       </h3>
                       <div className="space-y-1">
                         {item.megamenu.metiers.items.map((metier) => (
                           <Link
-                            key={metier.label}
+                            key={metier.href}
                             to={metier.href}
                             className="flex items-center gap-2 p-2 rounded-lg hover:bg-navy/5 transition-colors"
                             onClick={() => setActiveDropdown(null)}
@@ -180,7 +187,7 @@ export default function Header() {
                               {getIcon(metier.icon, 16)}
                             </span>
                             <span className="text-sm font-medium text-navy">
-                              {metier.label}
+                              {getLabel(metier)}
                             </span>
                           </Link>
                         ))}
@@ -189,7 +196,7 @@ export default function Header() {
                           className="block p-2 text-sm font-semibold text-orange hover:text-orange-600 transition-colors"
                           onClick={() => setActiveDropdown(null)}
                         >
-                          {item.megamenu.metiers.viewAll.label} →
+                          {item.megamenu.metiers.viewAll.tKey ? t(item.megamenu.metiers.viewAll.tKey) : item.megamenu.metiers.viewAll.label} →
                         </Link>
                       </div>
                     </div>
@@ -199,12 +206,12 @@ export default function Header() {
                         <span className="w-6 h-6 rounded-lg bg-orange/10 flex items-center justify-center text-orange">
                           {getIcon(item.megamenu.ecoles.titleIcon, 14)}
                         </span>
-                        {item.megamenu.ecoles.title}
+                        {item.megamenu.ecoles.tKey ? t(item.megamenu.ecoles.tKey) : item.megamenu.ecoles.title}
                       </h3>
                       <div className="space-y-3">
                         <div>
                           <p className="text-xs font-semibold text-gray-400 mb-2">
-                            Cameroun
+                            {tc('header.cameroun')}
                           </p>
                           <div className="space-y-1">
                             {item.megamenu.ecoles.cameroun.map((ecole) => (
@@ -221,7 +228,7 @@ export default function Header() {
                         </div>
                         <div>
                           <p className="text-xs font-semibold text-gray-400 mb-2">
-                            Étranger
+                            {tc('header.etranger')}
                           </p>
                           <div className="space-y-1">
                             {item.megamenu.ecoles.etranger.map((ecole) => (
@@ -242,7 +249,7 @@ export default function Header() {
                             className="block p-2 text-sm font-semibold text-orange hover:text-orange-600 transition-colors"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            {item.megamenu.ecoles.viewAll.label} →
+                            {item.megamenu.ecoles.viewAll.tKey ? t(item.megamenu.ecoles.viewAll.tKey) : item.megamenu.ecoles.viewAll.label} →
                           </Link>
                         )}
                       </div>
@@ -259,10 +266,10 @@ export default function Header() {
                     </span>
                     <div>
                       <p className="font-semibold text-navy">
-                        {item.megamenu.cta.text}
+                        {item.megamenu.cta.textKey ? t(item.megamenu.cta.textKey) : item.megamenu.cta.text}
                       </p>
                       <p className="text-sm text-gray-600">
-                        {item.megamenu.cta.subtext}
+                        {item.megamenu.cta.subtextKey ? t(item.megamenu.cta.subtextKey) : item.megamenu.cta.subtext}
                       </p>
                     </div>
                   </Link>
@@ -273,10 +280,11 @@ export default function Header() {
         </div>
 
         <div className="hidden xl:flex items-center gap-2">
+          <LanguageSwitcher />
           {ctaButtons.map((btn) =>
             btn.isModal ? (
               <button
-                key={btn.label}
+                key={btn.tKey}
                 onClick={() => openModal()}
                 className={`
                   px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
@@ -287,11 +295,11 @@ export default function Header() {
                   }
                 `}
               >
-                {btn.label}
+                {getLabel(btn)}
               </button>
             ) : (
               <Link
-                key={btn.label}
+                key={btn.tKey}
                 to={btn.href}
                 className={`
                   px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
@@ -302,7 +310,7 @@ export default function Header() {
                   }
                 `}
               >
-                {btn.label}
+                {getLabel(btn)}
               </Link>
             )
           )}
@@ -319,17 +327,20 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="xl:hidden mt-3 mx-auto max-w-5xl bg-white/95 backdrop-blur-xl rounded-2xl border border-gray-100 shadow-xl shadow-navy/10 overflow-hidden">
           <div className="p-4">
+            <div className="flex justify-end mb-2">
+              <LanguageSwitcher />
+            </div>
             <nav className="space-y-1">
               {mainNavigation.map((item) => (
-                <div key={item.label}>
+                <div key={item.tKey || item.label}>
                   {item.type === 'link' ? (
                     item.disabled ? (
                       <span
                         className="block px-4 py-3 rounded-xl text-sm font-medium text-gray-400 cursor-not-allowed"
-                        title={item.disabledMessage || 'Non disponible'}
+                        title={item.disabledMessageKey ? t(item.disabledMessageKey) : tc('header.unavailable')}
                       >
-                        {item.label}
-                        <span className="ml-2 text-xs text-gray-400">({item.disabledMessage})</span>
+                        {getLabel(item)}
+                        <span className="ml-2 text-xs text-gray-400">({item.disabledMessageKey ? t(item.disabledMessageKey) : item.disabledMessage})</span>
                       </span>
                     ) : (
                       <NavLink
@@ -343,7 +354,7 @@ export default function Header() {
                         }
                         onClick={toggleMobileMenu}
                       >
-                        {item.label}
+                        {getLabel(item)}
                       </NavLink>
                     )
                   ) : (
@@ -351,23 +362,23 @@ export default function Header() {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleDropdownToggle(item.label);
+                          handleDropdownToggle(item.tKey || item.label);
                         }}
                         className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors"
                       >
-                        {item.label}
+                        {getLabel(item)}
                         <ChevronDown
                           size={16}
                           className={`transition-transform ${
-                            activeDropdown === item.label ? 'rotate-180' : ''
+                            activeDropdown === (item.tKey || item.label) ? 'rotate-180' : ''
                           }`}
                         />
                       </button>
-                      {activeDropdown === item.label && item.items && (
+                      {activeDropdown === (item.tKey || item.label) && item.items && (
                         <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
                           {item.items.map((subItem) => (
                             <Link
-                              key={subItem.label}
+                              key={subItem.href}
                               to={subItem.href}
                               className="flex items-start gap-3 py-3 px-2 rounded-lg hover:bg-navy/5 transition-colors"
                               onClick={toggleMobileMenu}
@@ -376,16 +387,16 @@ export default function Header() {
                                 {getIcon(subItem.icon, 16)}
                               </span>
                               <div>
-                                <p className="text-sm font-medium text-navy">{subItem.label}</p>
-                                {subItem.description && (
-                                  <p className="text-xs text-gray-500 mt-0.5">{subItem.description}</p>
+                                <p className="text-sm font-medium text-navy">{getLabel(subItem)}</p>
+                                {(subItem.descKey || subItem.description) && (
+                                  <p className="text-xs text-gray-500 mt-0.5">{getDesc(subItem)}</p>
                                 )}
                               </div>
                             </Link>
                           ))}
                         </div>
                       )}
-                      {activeDropdown === item.label && item.megamenu && (
+                      {activeDropdown === (item.tKey || item.label) && item.megamenu && (
                         <div className="ml-4 mt-2 space-y-4 border-l-2 border-gray-200 pl-4">
                           {/* Section Métiers */}
                           <div>
@@ -393,12 +404,12 @@ export default function Header() {
                               <span className="w-5 h-5 rounded bg-orange/10 flex items-center justify-center text-orange">
                                 {getIcon(item.megamenu.metiers.titleIcon, 12)}
                               </span>
-                              {item.megamenu.metiers.title}
+                              {item.megamenu.metiers.tKey ? t(item.megamenu.metiers.tKey) : item.megamenu.metiers.title}
                             </p>
                             <div className="space-y-1">
                               {item.megamenu.metiers.items.map((metier) => (
                                 <Link
-                                  key={metier.label}
+                                  key={metier.href}
                                   to={metier.href}
                                   className="flex items-center gap-2 py-2 px-2 rounded-lg text-sm text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors"
                                   onClick={toggleMobileMenu}
@@ -406,7 +417,7 @@ export default function Header() {
                                   <span className="w-6 h-6 rounded bg-navy/5 flex items-center justify-center text-navy">
                                     {getIcon(metier.icon, 14)}
                                   </span>
-                                  {metier.label}
+                                  {getLabel(metier)}
                                 </Link>
                               ))}
                               <Link
@@ -414,7 +425,7 @@ export default function Header() {
                                 className="block py-2 px-2 text-sm font-semibold text-orange"
                                 onClick={toggleMobileMenu}
                               >
-                                {item.megamenu.metiers.viewAll.label} →
+                                {item.megamenu.metiers.viewAll.tKey ? t(item.megamenu.metiers.viewAll.tKey) : item.megamenu.metiers.viewAll.label} →
                               </Link>
                             </div>
                           </div>
@@ -425,11 +436,11 @@ export default function Header() {
                               <span className="w-5 h-5 rounded bg-orange/10 flex items-center justify-center text-orange">
                                 {getIcon(item.megamenu.ecoles.titleIcon, 12)}
                               </span>
-                              {item.megamenu.ecoles.title}
+                              {item.megamenu.ecoles.tKey ? t(item.megamenu.ecoles.tKey) : item.megamenu.ecoles.title}
                             </p>
                             <div className="space-y-2">
                               <div>
-                                <p className="text-xs text-gray-400 font-medium mb-1 px-2">Cameroun</p>
+                                <p className="text-xs text-gray-400 font-medium mb-1 px-2">{tc('header.cameroun')}</p>
                                 <div className="grid grid-cols-2 gap-1">
                                   {item.megamenu.ecoles.cameroun.slice(0, 4).map((ecole) => (
                                     <Link
@@ -449,7 +460,7 @@ export default function Header() {
                                   className="block py-2 px-2 text-sm font-semibold text-orange"
                                   onClick={toggleMobileMenu}
                                 >
-                                  {item.megamenu.ecoles.viewAll.label} →
+                                  {item.megamenu.ecoles.viewAll.tKey ? t(item.megamenu.ecoles.viewAll.tKey) : item.megamenu.ecoles.viewAll.label} →
                                 </Link>
                               )}
                             </div>
@@ -465,8 +476,8 @@ export default function Header() {
                               {getIcon(item.megamenu.cta.icon, 16)}
                             </span>
                             <div>
-                              <p className="text-sm font-semibold text-navy">{item.megamenu.cta.text}</p>
-                              <p className="text-xs text-gray-600">{item.megamenu.cta.subtext}</p>
+                              <p className="text-sm font-semibold text-navy">{item.megamenu.cta.textKey ? t(item.megamenu.cta.textKey) : item.megamenu.cta.text}</p>
+                              <p className="text-xs text-gray-600">{item.megamenu.cta.subtextKey ? t(item.megamenu.cta.subtextKey) : item.megamenu.cta.subtext}</p>
                             </div>
                           </Link>
                         </div>
@@ -481,7 +492,7 @@ export default function Header() {
               {ctaButtons.map((btn) =>
                 btn.isModal ? (
                   <button
-                    key={btn.label}
+                    key={btn.tKey}
                     onClick={() => {
                       toggleMobileMenu();
                       openModal();
@@ -495,11 +506,11 @@ export default function Header() {
                       }
                     `}
                   >
-                    {btn.label}
+                    {getLabel(btn)}
                   </button>
                 ) : (
                   <Link
-                    key={btn.label}
+                    key={btn.tKey}
                     to={btn.href}
                     onClick={toggleMobileMenu}
                     className={`
@@ -511,7 +522,7 @@ export default function Header() {
                       }
                     `}
                   >
-                    {btn.label}
+                    {getLabel(btn)}
                   </Link>
                 )
               )}

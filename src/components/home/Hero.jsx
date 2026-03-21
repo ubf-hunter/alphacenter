@@ -1,17 +1,19 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, GraduationCap, Trophy, Users, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
-
-const stats = [
-  { icon: Trophy, value: '95%', label: 'Taux de réussite' },
-  { icon: Users, value: '500+', label: 'Étudiants admis' },
-  { icon: Calendar, value: '15+', label: "Années d'expérience" },
-  { icon: GraduationCap, value: '50+', label: 'Enseignants experts' },
-];
 
 export default function Hero() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
+
+  const stats = [
+    { icon: Trophy, value: '95%', label: t('hero.stats.successRate') },
+    { icon: Users, value: '500+', label: t('hero.stats.admitted') },
+    { icon: Calendar, value: '15+', label: t('hero.stats.experience') },
+    { icon: GraduationCap, value: '50+', label: t('hero.stats.experts') },
+  ];
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden flex-1">
@@ -41,7 +43,7 @@ export default function Hero() {
             <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--color-orange)]/10">
               <Trophy size={14} className="text-[var(--color-orange)]" />
             </span>
-            +500 admis depuis 2009
+            {t('hero.badge')}
           </span>
         </motion.div>
 
@@ -52,15 +54,15 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-navy)] mb-6 leading-[1.1] max-w-4xl"
         >
-          Intègre l'école d'
+          {t('hero.titlePart1')}
           <span
             className="text-[var(--color-orange)] italic"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            ingénieurs
+            {t('hero.titleHighlight')}
           </span>
           <br className="hidden sm:block" />
-          de tes rêves.
+          {t('hero.titlePart2')}
         </motion.h1>
 
         {/* Subtitle */}
@@ -70,7 +72,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-[var(--color-gray-600)] mb-10 max-w-2xl leading-relaxed"
         >
-          Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles d'ingénieurs au Cameroun et à l'étranger.
+          {t('hero.subtitle')}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -84,14 +86,14 @@ export default function Hero() {
             onClick={() => openModal()}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange)] text-white font-semibold rounded-full shadow-lg shadow-[var(--color-orange)]/25 hover:bg-[var(--color-orange-600)] hover:shadow-xl hover:shadow-[var(--color-orange)]/30 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
           >
-            Je m'inscris
+            {t('hero.ctaRegister')}
             <ArrowRight size={20} />
           </button>
           <Link
             to="/services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 backdrop-blur-xl text-[var(--color-navy)] font-semibold rounded-full border border-[var(--color-gray-200)] hover:bg-white hover:border-[var(--color-navy)]/20 hover:-translate-y-0.5 transition-all duration-200"
           >
-            Découvrir nos programmes
+            {t('hero.ctaDiscover')}
           </Link>
         </motion.div>
 
@@ -102,7 +104,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[var(--color-gray-500)] mb-8"
         >
-          <span>Préparation aux concours :</span>
+          <span>{t('hero.examPrep')}</span>
           {['ENSP', 'ENSTP', 'ENS', 'Polytechnique', 'EPFL'].map((school) => (
             <span
               key={school}

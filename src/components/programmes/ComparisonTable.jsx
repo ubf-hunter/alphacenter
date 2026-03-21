@@ -1,40 +1,11 @@
 import { motion } from 'framer-motion';
 import { Check, X, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import Button from '@components/common/Button';
 import { programmes } from '@/data/programmes';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
-
-const comparisonData = [
-  {
-    category: 'Général',
-    items: [
-      { label: 'Durée de formation', key: 'duration' },
-      { label: 'Prix mensuel', key: 'priceLabel' },
-      { label: 'Étudiants par classe', key: 'studentsPerClass', suffix: ' max' },
-      { label: 'Taux de réussite', key: 'successRate', suffix: '%' },
-    ],
-  },
-  {
-    category: 'Format',
-    items: [
-      { label: 'Cours en présentiel', value: true, type: 'boolean' },
-      { label: 'Modules en ligne', key: 'format', includes: 'ligne', type: 'boolean' },
-      { label: 'Support WhatsApp', value: true, type: 'boolean' },
-      { label: 'Examens blancs', value: true, type: 'boolean' },
-    ],
-  },
-  {
-    category: 'Ressources',
-    items: [
-      { label: 'Fiches de révision', value: true, type: 'boolean' },
-      { label: 'Vidéos de cours', value: true, type: 'boolean' },
-      { label: 'Coaching individuel', key: 'format', includes: 'coaching', type: 'boolean' },
-      { label: 'Accès plateforme e-learning', value: true, type: 'boolean' },
-    ],
-  },
-];
 
 // Only show main 3 programs in comparison
 const mainPrograms = programmes.filter((p) =>
@@ -58,6 +29,37 @@ const programColors = {
 
 export default function ComparisonTable() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
+
+  const comparisonData = [
+    {
+      category: t('comparison.general'),
+      items: [
+        { label: t('comparison.duration'), key: 'duration' },
+        { label: t('comparison.monthlyPrice'), key: 'priceLabel' },
+        { label: t('comparison.studentsPerClass'), key: 'studentsPerClass', suffix: ' max' },
+        { label: t('comparison.successRate'), key: 'successRate', suffix: '%' },
+      ],
+    },
+    {
+      category: t('comparison.format'),
+      items: [
+        { label: t('comparison.inPerson'), value: true, type: 'boolean' },
+        { label: t('comparison.onlineModules'), key: 'format', includes: 'ligne', type: 'boolean' },
+        { label: t('comparison.whatsappSupport'), value: true, type: 'boolean' },
+        { label: t('comparison.mockExams'), value: true, type: 'boolean' },
+      ],
+    },
+    {
+      category: t('comparison.resources'),
+      items: [
+        { label: t('comparison.revisionSheets'), value: true, type: 'boolean' },
+        { label: t('comparison.courseVideos'), value: true, type: 'boolean' },
+        { label: t('comparison.individualCoaching'), key: 'format', includes: 'coaching', type: 'boolean' },
+        { label: t('comparison.elearningAccess'), value: true, type: 'boolean' },
+      ],
+    },
+  ];
 
   const getValue = (program, item) => {
     if (item.type === 'boolean') {
@@ -80,9 +82,9 @@ export default function ComparisonTable() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="Comparatif"
-          title="*Compare* nos programmes"
-          subtitle="Trouve le programme qui correspond le mieux à tes objectifs et à ton profil."
+          badge={t('comparison.badge')}
+          title={t('comparison.title')}
+          subtitle={t('comparison.subtitle')}
         />
 
         <motion.div
@@ -100,7 +102,7 @@ export default function ComparisonTable() {
                 <tr>
                   <th className="p-6 text-left bg-gray-50 border-b border-gray-100">
                     <span className="text-sm font-medium text-gray-500">
-                      Caractéristiques
+                      {t('comparison.features')}
                     </span>
                   </th>
                   {mainPrograms.map((program) => {
@@ -193,7 +195,7 @@ export default function ComparisonTable() {
                         size="sm"
                         onClick={() => openModal(program.id)}
                       >
-                        Choisir {program.shortName}
+                        {t('comparison.choose')} {program.shortName}
                       </Button>
                     </td>
                   ))}
@@ -236,21 +238,21 @@ export default function ComparisonTable() {
                   <div className="p-6 space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <span className="text-xs text-gray-400">Durée</span>
+                        <span className="text-xs text-gray-400">{t('comparison.durationLabel')}</span>
                         <p className="font-semibold text-navy">{program.duration}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-gray-400">Prix</span>
+                        <span className="text-xs text-gray-400">{t('comparison.priceLabel')}</span>
                         <p className="font-semibold text-navy">{program.priceLabel}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-gray-400">Réussite</span>
+                        <span className="text-xs text-gray-400">{t('comparison.successLabel')}</span>
                         <p className="font-semibold text-green-600">
                           {program.successRate}%
                         </p>
                       </div>
                       <div>
-                        <span className="text-xs text-gray-400">Classe</span>
+                        <span className="text-xs text-gray-400">{t('comparison.classLabel')}</span>
                         <p className="font-semibold text-navy">
                           {program.studentsPerClass} max
                         </p>
@@ -262,7 +264,7 @@ export default function ComparisonTable() {
                       onClick={() => openModal(program.id)}
                       className="w-full justify-center mt-4"
                     >
-                      S'inscrire au {program.shortName}
+                      {t('comparison.registerFor')} {program.shortName}
                       <ArrowRight size={18} />
                     </Button>
                   </div>

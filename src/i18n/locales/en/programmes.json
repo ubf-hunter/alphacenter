@@ -1,0 +1,167 @@
+{
+  "page": {
+    "badge": "Programs of excellence",
+    "title": "Programs tailored to every ambition",
+    "subtitle": "Intensive preparation for competitive exams to top engineering schools in Cameroon: ENSP, ENSTP, ENS. A proven methodology to maximize your chances of success.",
+    "ctaRegister": "Register now",
+    "ctaView": "View programs",
+    "stats": {
+      "trained": "Students trained",
+      "successRate": "Success rate",
+      "programs": "Programs",
+      "experience": "Years of expertise"
+    },
+    "prepHero": {
+      "badge": "2026 School Year - Registration Open",
+      "title": "Prepare for your success",
+      "titleHighlight": "success",
+      "titleSuffix": "in exams",
+      "subtitle": "Get into the best schools in Cameroon with our intensive exam preparation program.",
+      "features": [
+        "Intensive courses & personalized support",
+        "Mock exams every week",
+        "Experienced teachers",
+        "Individual progress tracking"
+      ],
+      "cta": "Register now",
+      "ctaSecondary": "View programs",
+      "schedule": "Monday to Saturday",
+      "hours": "8am - 6pm",
+      "studentsLabel": "Students trained",
+      "successLabel": "Success rate",
+      "experienceLabel": "Of experience",
+      "imageAlt": "Students preparing"
+    },
+    "formations": {
+      "badge": "Our programs",
+      "title": "Choose your preparation program",
+      "subtitle": "Each program is designed to guide you toward success with a methodology adapted to each exam's requirements."
+    },
+    "resources": {
+      "title": "Included in all programs",
+      "subtitle": "Complete resources to maximize your success"
+    }
+  },
+  "categories": {
+    "engineering": "Engineering Schools",
+    "health": "Health & Medicine",
+    "business": "Economics & Management",
+    "education": "Education & Teaching"
+  },
+  "detail": {
+    "back": "Back to programs",
+    "maxPerClass": "max/class",
+    "success": "success rate",
+    "registerNow": "Register now",
+    "strengths": "Our strengths",
+    "whyChoose": "Why choose this program?",
+    "schedule": "Schedule",
+    "weeklySchedule": "Weekly timetable",
+    "day": "Day",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "program": "Program",
+    "subjects": "Subjects taught",
+    "subjectsLabel": "Subjects",
+    "totalVolume": "Total volume",
+    "pricing": "Pricing",
+    "pricingOptions": "Payment options",
+    "startingFrom": "Starting from",
+    "recommended": "Recommended",
+    "paymentMethods": "Accepted payment methods",
+    "cash": "Cash",
+    "mobileMoney": "Mobile Money",
+    "bankTransfer": "Bank transfer",
+    "check": "Check",
+    "ctaTitle": "Ready to join the",
+    "ctaSubtitle1": "Register now and start your preparation for success. Spots limited to",
+    "ctaSubtitle2": "per session.",
+    "contactUs": "Contact us",
+    "notFound": "Program not found",
+    "notFoundDesc": "The requested program does not exist.",
+    "viewAll": "View all programs",
+    "sessionTypes": {
+      "cours": "Lecture",
+      "td": "Tutorial",
+      "tp": "Practical",
+      "revision": "Revision",
+      "examen": "Exam",
+      "tutorat": "Tutoring",
+      "atelier": "Workshop"
+    }
+  },
+  "calendar": {
+    "badge": "Calendar",
+    "title": "Upcoming *training sessions*",
+    "subtitle": "Check start dates and register for the session that suits you.",
+    "programLabel": "Program",
+    "statusOpen": "Registration open",
+    "statusUpcoming": "Coming soon",
+    "statusClosed": "Full",
+    "startDate": "Start",
+    "endDate": "End",
+    "placesAvailable": "{{left}} spots out of {{total}} available",
+    "placesTaken": "{{percentage}}% of spots taken",
+    "registerNow": "Register now",
+    "notifyMe": "Notify me when open",
+    "noSessionFound": "Can't find the session you're looking for?",
+    "contactForOptions": "Contact us for more options"
+  },
+  "comparison": {
+    "badge": "Comparison",
+    "title": "*Compare* our programs",
+    "subtitle": "Find the program that best matches your goals and profile.",
+    "features": "Features",
+    "general": "General",
+    "format": "Format",
+    "resources": "Resources",
+    "duration": "Training duration",
+    "monthlyPrice": "Monthly price",
+    "studentsPerClass": "Students per class",
+    "successRate": "Success rate",
+    "inPerson": "In-person classes",
+    "onlineModules": "Online modules",
+    "whatsappSupport": "WhatsApp support",
+    "mockExams": "Mock exams",
+    "revisionSheets": "Revision sheets",
+    "courseVideos": "Course videos",
+    "individualCoaching": "Individual coaching",
+    "elearningAccess": "E-learning platform access",
+    "choose": "Choose",
+    "registerFor": "Register for",
+    "durationLabel": "Duration",
+    "priceLabel": "Price",
+    "successLabel": "Success",
+    "classLabel": "Class"
+  },
+  "methodology": {
+    "badge": "Our approach",
+    "title": "A *proven methodology*",
+    "subtitle": "Discover the 6 steps of our method that helped over 500 students get into their dream school.",
+    "statsTitle": "The Alpha method in numbers",
+    "statsSubtitle": "Concrete results that make the difference"
+  },
+  "preparatoire": {
+    "headline": "Not yet at Bac level?",
+    "headlineHighlight": "Start now!",
+    "description": "Prepare your future during your final year. Strengthen your foundations in math and science, master exam methodology and get a head start. Compatible with your school schedule.",
+    "benefits": {
+      "flexibleSchedule": "Flexible hours (weekends + holidays)",
+      "compatible": "Compatible with final year",
+      "orientation": "Personalized orientation (Engineering or Health)",
+      "price": "Affordable price: {{price}}"
+    },
+    "ctaPrimary": "I start now",
+    "ctaSecondary": "Learn more"
+  },
+  "card": {
+    "mainSubjects": "Main subjects",
+    "viewDetails": "View program details",
+    "startingFrom": "Starting from",
+    "remainingPlaces": "Remaining spots",
+    "register": "Register",
+    "viewDetailsTitle": "View details",
+    "maxPerClass": "max/class",
+    "success": "success rate"
+  }
+}

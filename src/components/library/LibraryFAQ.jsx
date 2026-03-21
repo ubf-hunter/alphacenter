@@ -6,18 +6,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
-import { purchaseFAQ } from '@/data/purchaseInfo';
 
-function FAQItem({ item, isOpen, onToggle }) {
+const FAQ_COUNT = 6;
+
+function FAQItem({ question, answer, isOpen, onToggle }) {
   return (
     <div className="border-b border-gray-100 last:border-0">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-5 text-left"
       >
-        <span className="font-semibold text-navy pr-4">{item.question}</span>
+        <span className="font-semibold text-navy pr-4">{question}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -35,7 +37,7 @@ function FAQItem({ item, isOpen, onToggle }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-gray-600 leading-relaxed">{item.answer}</p>
+            <p className="pb-5 text-gray-600 leading-relaxed">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -45,14 +47,15 @@ function FAQItem({ item, isOpen, onToggle }) {
 
 export default function LibraryFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+  const { t } = useTranslation('application');
 
   return (
     <section className="py-20 bg-white">
       <Container>
         <div className="max-w-3xl mx-auto">
           <SectionTitle
-            badge="Questions frequentes"
-            title="Tout savoir sur nos *documents*"
+            badge={t('library.faq.badge')}
+            title={t('library.faq.title')}
             centered
           />
 
@@ -68,17 +71,18 @@ export default function LibraryFAQ() {
                 <HelpCircle size={24} className="text-orange" />
               </div>
               <div>
-                <h3 className="font-bold text-navy">Besoin d'aide ?</h3>
+                <h3 className="font-bold text-navy">{t('library.faq.needHelp')}</h3>
                 <p className="text-sm text-gray-500">
-                  Trouvez rapidement les reponses a vos questions
+                  {t('library.faq.findAnswers')}
                 </p>
               </div>
             </div>
 
-            {purchaseFAQ.map((item, index) => (
+            {Array.from({ length: FAQ_COUNT }, (_, index) => (
               <FAQItem
                 key={index}
-                item={item}
+                question={t(`library.faq.items.${index}.question`)}
+                answer={t(`library.faq.items.${index}.answer`)}
                 isOpen={openIndex === index}
                 onToggle={() => setOpenIndex(openIndex === index ? -1 : index)}
               />

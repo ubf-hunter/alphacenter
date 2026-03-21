@@ -8,6 +8,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
@@ -72,6 +73,7 @@ const colorStyles = {
 
 export default function ProgramCard({ program, index, featured = false }) {
   const { openModal: openInscriptionModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
   const styles = colorStyles[program.color] || colorStyles.orange;
   const Icon = program.icon;
 
@@ -142,7 +144,7 @@ export default function ProgramCard({ program, index, featured = false }) {
             <div className="flex items-center gap-2">
               <Users size={18} className="text-gray-400" />
               <span className="text-sm text-gray-600">
-                {program.studentsPerClass} max/classe
+                {program.studentsPerClass} {t('card.maxPerClass')}
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -155,7 +157,7 @@ export default function ProgramCard({ program, index, featured = false }) {
               <div className="flex items-center gap-2">
                 <TrendingUp size={18} className="text-green-500" />
                 <span className="text-sm font-semibold text-green-600">
-                  {program.successRate}% reussite
+                  {program.successRate}% {t('card.success')}
                 </span>
               </div>
             )}
@@ -169,7 +171,7 @@ export default function ProgramCard({ program, index, featured = false }) {
           {/* Subjects preview */}
           <div className="mb-6">
             <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              Matieres principales
+              {t('card.mainSubjects')}
             </h4>
             <div className="flex flex-wrap gap-2">
               {program.subjects.slice(0, 4).map((subject) => (
@@ -189,7 +191,7 @@ export default function ProgramCard({ program, index, featured = false }) {
             className="group/btn flex items-center gap-2 text-sm font-semibold text-orange hover:text-navy transition-colors mb-6"
           >
             <Eye size={18} />
-            <span>Voir les details du programme</span>
+            <span>{t('card.viewDetails')}</span>
             <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
           </Link>
 
@@ -197,13 +199,13 @@ export default function ProgramCard({ program, index, featured = false }) {
           <div className="pt-6 border-t border-gray-100">
             <div className="flex items-end justify-between mb-4">
               <div>
-                <span className="text-sm text-gray-500">A partir de</span>
+                <span className="text-sm text-gray-500">{t('card.startingFrom')}</span>
                 <div className="text-2xl font-bold text-navy">
                   {program.priceLabel}
                 </div>
               </div>
               <div className="text-right">
-                <span className="text-sm text-gray-500">Places restantes</span>
+                <span className="text-sm text-gray-500">{t('card.remainingPlaces')}</span>
                 <div className={`text-lg font-bold ${styles.accent}`}>
                   {program.placesAvailable}
                 </div>
@@ -216,12 +218,12 @@ export default function ProgramCard({ program, index, featured = false }) {
                 onClick={() => openInscriptionModal(program.id)}
                 className="flex-1 justify-center"
               >
-                S'inscrire
+                {t('card.register')}
               </Button>
               <Link
                 to={`/programmes/${program.id}`}
                 className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 hover:border-orange hover:bg-orange/5 transition-colors"
-                title="Voir les details"
+                title={t('card.viewDetailsTitle')}
               >
                 <Eye size={20} className="text-gray-500" />
               </Link>

@@ -6,6 +6,7 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function TimelineItem({ item, index, isLast }) {
   const isLeft = index % 2 === 0;
@@ -92,6 +93,8 @@ function TimelineItem({ item, index, isLast }) {
 }
 
 export default function Timeline({ items, title, subtitle }) {
+  const { t } = useTranslation('about');
+
   return (
     <section className="py-24 bg-off-white relative overflow-hidden">
       {/* Background decoration */}
@@ -101,7 +104,7 @@ export default function Timeline({ items, title, subtitle }) {
       <Container>
         {title && (
           <SectionTitle
-            badge="Notre parcours"
+            badge={t('whoWeAre.journey')}
             title={title}
             subtitle={subtitle}
             align="center"

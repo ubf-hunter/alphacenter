@@ -6,6 +6,7 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
 import { Award, Medal, Trophy } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function RankBadge({ rank }) {
   // Extract number from rank string like "1er", "2eme", "3eme"
@@ -43,13 +44,15 @@ function RankBadge({ rank }) {
 }
 
 export default function LeaderboardTable({ rankings }) {
+  const { t } = useTranslation('about');
+
   return (
     <section className="py-20 bg-off-white">
       <Container>
         <SectionTitle
-          badge="Tableau d'honneur"
-          title="Nos meilleurs *classements*"
-          subtitle="Les etudiants Alpha Center dans le top des concours"
+          badge={t('results.leaderboard.badge')}
+          title={t('results.leaderboard.title')}
+          subtitle={t('results.leaderboard.subtitle')}
           align="center"
         />
 
@@ -57,10 +60,10 @@ export default function LeaderboardTable({ rankings }) {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             {/* Header */}
             <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-navy text-white text-sm font-medium">
-              <div className="col-span-1">Rang</div>
-              <div className="col-span-5">Nom</div>
-              <div className="col-span-3">Ecole</div>
-              <div className="col-span-3 text-right">Annee</div>
+              <div className="col-span-1">{t('results.leaderboard.rank')}</div>
+              <div className="col-span-5">{t('results.leaderboard.name')}</div>
+              <div className="col-span-3">{t('results.leaderboard.school')}</div>
+              <div className="col-span-3 text-right">{t('results.leaderboard.year')}</div>
             </div>
 
             {/* Rows */}
@@ -116,14 +119,14 @@ export default function LeaderboardTable({ rankings }) {
                 <span className="font-bold text-navy">
                   {rankings.filter((r) => r.rank === '1er').length}
                 </span>{' '}
-                premiers
+                {t('results.leaderboard.firsts')}
               </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
               <Award size={18} className="text-orange" />
               <span className="text-sm text-gray-600">
                 <span className="font-bold text-navy">{rankings.length}</span>{' '}
-                dans le top 15
+                {t('results.leaderboard.inTop15')}
               </span>
             </div>
           </motion.div>

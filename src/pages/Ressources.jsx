@@ -4,6 +4,7 @@
 // ============================================
 
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   LibraryHero,
   ProductGrid,
@@ -14,10 +15,12 @@ import {
 } from '@components/library';
 
 export default function Ressources() {
+  const { t } = useTranslation('application');
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Bibliotheque Alpha - Documents et Ressources | Alpha Center';
-  }, []);
+    document.title = t('resources.title');
+  }, [t]);
 
   return (
     <main>

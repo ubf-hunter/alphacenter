@@ -1,0 +1,55 @@
+{
+  "defaultDescription": "Exam preparation center for top schools in Cameroon. Engineering, Medicine, Nursing.",
+  "home": {
+    "title": "Home",
+    "description": "Alpha Center - Leading exam preparation center for engineering, medicine and nursing in Cameroon. 700+ admitted, 85% success rate."
+  },
+  "programmes": {
+    "title": "Our Programs",
+    "description": "Discover our exam preparation programs for top schools in Cameroon. Engineering, Medicine, Nursing."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact Alpha Center for more information about our exam preparation programs."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Discover Alpha Center, the leading exam preparation center in Cameroon."
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "Meet the Alpha Center teaching team. 12 passionate educators."
+  },
+  "results": {
+    "title": "Our Results",
+    "description": "85% success rate, 700+ students admitted. Discover Alpha Center's results."
+  },
+  "orientation": {
+    "title": "Orientation",
+    "description": "Complete orientation guide for future engineers, doctors and nurses in Cameroon."
+  },
+  "application": {
+    "title": "The Alpha App",
+    "description": "Study anywhere with the Alpha Center mobile app. MCQs, courses, past papers."
+  },
+  "resources": {
+    "title": "Resources",
+    "description": "Educational resources for exam preparation in Cameroon."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist."
+  },
+  "mentionsLegales": {
+    "title": "Legal Notice",
+    "description": "Legal notice of the Alpha Center website"
+  },
+  "cgu": {
+    "title": "Terms of Use",
+    "description": "Terms of use of the Alpha Center website"
+  },
+  "confidentialite": {
+    "title": "Privacy Policy",
+    "description": "Privacy policy and personal data protection of the Alpha Center website"
+  }
+}

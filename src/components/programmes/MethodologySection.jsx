@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import { methodology, advantages } from '@/data/programmes';
@@ -15,6 +16,8 @@ const colorStyles = {
 };
 
 export default function MethodologySection() {
+  const { t } = useTranslation('programmes');
+
   return (
     <section className="py-24 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
       {/* Background decoration */}
@@ -23,9 +26,9 @@ export default function MethodologySection() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="Notre approche"
-          title="Une *méthodologie* éprouvée"
-          subtitle="Découvre les 6 étapes de notre méthode qui a permis à plus de 500 étudiants d'intégrer leur école de rêve."
+          badge={t('methodology.badge')}
+          title={t('methodology.title')}
+          subtitle={t('methodology.subtitle')}
         />
 
         {/* Timeline / Steps */}
@@ -115,10 +118,10 @@ export default function MethodologySection() {
             <div className="relative z-10">
               <div className="text-center mb-10">
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
-                  La méthode Alpha en chiffres
+                  {t('methodology.statsTitle')}
                 </h3>
                 <p className="text-white/70">
-                  Des résultats concrets qui font la différence
+                  {t('methodology.statsSubtitle')}
                 </p>
               </div>
 

@@ -10,11 +10,13 @@ import Container from '@components/common/Container';
 import ProductCard from './ProductCard';
 import SearchAndFilters from './SearchAndFilters';
 import { allProducts } from '@/data/products';
+import { useTranslation } from 'react-i18next';
 
 export default function ProductGrid() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
+  const { t } = useTranslation('application');
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
@@ -72,7 +74,7 @@ export default function ProductGrid() {
         {/* Results count */}
         <div className="mt-6 mb-8 flex items-center justify-between">
           <p className="text-gray-500 text-sm">
-            <span className="font-semibold text-navy">{filteredProducts.length}</span> document(s) trouve(s)
+            <span className="font-semibold text-navy">{filteredProducts.length}</span> {t('library.grid.documentsFound')}
           </p>
         </div>
 
@@ -101,9 +103,9 @@ export default function ProductGrid() {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Package size={40} className="text-gray-400" />
               </div>
-              <h3 className="text-xl font-bold text-navy mb-2">Aucun document trouve</h3>
+              <h3 className="text-xl font-bold text-navy mb-2">{t('library.grid.noResults')}</h3>
               <p className="text-gray-500 mb-6">
-                Essayez de modifier vos criteres de recherche
+                {t('library.grid.noResultsHint')}
               </p>
               <button
                 onClick={() => {
@@ -112,7 +114,7 @@ export default function ProductGrid() {
                 }}
                 className="text-orange font-semibold hover:underline"
               >
-                Reinitialiser les filtres
+                {t('library.grid.resetFilters')}
               </button>
             </motion.div>
           )}

@@ -4,22 +4,24 @@
 // ============================================
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function Hero2() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
 
   const navLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Programmes', href: '/services' },
-    { label: 'Orientation', href: '/orientation' },
-    { label: 'À propos', href: '/resultats' },
+    { label: t('hero2.nav.home'), href: '/' },
+    { label: t('hero2.nav.programs'), href: '/services' },
+    { label: t('hero2.nav.orientation'), href: '/orientation' },
+    { label: t('hero2.nav.about'), href: '/resultats' },
   ];
 
   const miniStats = [
-    { number: '95%', label: 'Réussite' },
-    { number: '50+', label: 'Professeurs' },
-    { number: '15', label: "Ans d'expérience" },
+    { number: '95%', label: t('hero2.stats.success') },
+    { number: '50+', label: t('hero2.stats.teachers') },
+    { number: '15', label: t('hero2.stats.experience') },
   ];
 
   return (
@@ -51,9 +53,9 @@ export default function Hero2() {
               to="/contact"
               className="px-4 py-2 text-sm font-medium text-[#001A51] border border-gray-200 rounded-full hover:border-[#001A51] transition-all"
             >
-              Contact
+              {t('hero2.nav.contact')}
             </Link>
-            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">S'inscrire
+            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">{t('hero2.nav.register')}
             </button>
           </div>
         </div>
@@ -67,32 +69,30 @@ export default function Hero2() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-orange-100 rounded-full">
               <span className="text-[#FA5614] font-semibold text-sm">
-                🏆 +500 admis depuis 2009
+                {t('hero2.badge')}
               </span>
             </div>
 
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#001A51] mb-6 leading-tight">
-              Intègre l'école d'
-              <span className="italic text-[#FA5614]">ingénieurs</span> de tes
-              rêves.
+              {t('hero2.titlePart1')}
+              <span className="italic text-[#FA5614]">{t('hero2.titleHighlight')}</span> {t('hero2.titlePart2')}
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Préparation intensive aux concours ENSP, ENSTP, ENS et grandes
-              écoles d'ingénieurs au Cameroun et à l'étranger.
+              {t('hero2.subtitle')}
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-10">
-              <button onClick={() => openModal()} className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">Je m'inscris →
+              <button onClick={() => openModal()} className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">{t('hero2.ctaRegister')}
               </button>
               <Link
                 to="/services"
                 className="px-8 py-4 text-lg font-semibold text-[#001A51] border-2 border-gray-200 rounded-full hover:border-[#001A51] transition-all"
               >
-                Voir les programmes
+                {t('hero2.ctaPrograms')}
               </Link>
             </div>
 
@@ -115,7 +115,7 @@ export default function Hero2() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80"
-                alt="Étudiants qui étudient"
+                alt={t('hero2.imageAlt')}
                 className="w-full h-[450px] lg:h-[500px] object-cover"
               />
             </div>
@@ -130,7 +130,7 @@ export default function Hero2() {
                   <div className="text-xl lg:text-2xl font-bold text-[#001A51]">
                     500+
                   </div>
-                  <div className="text-xs lg:text-sm text-gray-500">Admis</div>
+                  <div className="text-xs lg:text-sm text-gray-500">{t('hero2.floatingAdmitted')}</div>
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function Hero2() {
                     95%
                   </div>
                   <div className="text-xs lg:text-sm text-gray-500">
-                    Réussite
+                    {t('hero2.floatingSuccess')}
                   </div>
                 </div>
               </div>

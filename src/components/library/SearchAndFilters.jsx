@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { categories } from '@/data/products';
+import { useTranslation } from 'react-i18next';
 
 export default function SearchAndFilters({
   searchQuery,
@@ -17,12 +18,13 @@ export default function SearchAndFilters({
   setSortBy,
 }) {
   const [showFilters, setShowFilters] = useState(false);
+  const { t } = useTranslation('application');
 
   const sortOptions = [
-    { value: 'popular', label: 'Populaires' },
-    { value: 'newest', label: 'Nouveautes' },
-    { value: 'price-asc', label: 'Prix croissant' },
-    { value: 'price-desc', label: 'Prix decroissant' },
+    { value: 'popular', label: t('library.search.popular') },
+    { value: 'newest', label: t('library.search.newest') },
+    { value: 'price-asc', label: t('library.search.priceAsc') },
+    { value: 'price-desc', label: t('library.search.priceDesc') },
   ];
 
   return (
@@ -37,7 +39,7 @@ export default function SearchAndFilters({
           />
           <input
             type="text"
-            placeholder="Rechercher un document..."
+            placeholder={t('library.search.placeholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange/30 focus:border-orange transition-all"
@@ -78,7 +80,7 @@ export default function SearchAndFilters({
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              Tous
+              {t('library.search.all')}
             </button>
             {categories.map((category) => {
               const Icon = category.icon;
@@ -102,7 +104,7 @@ export default function SearchAndFilters({
 
           {/* Sort */}
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-500">Trier par:</span>
+            <span className="text-sm text-gray-500">{t('library.search.sortBy')}</span>
             <div className="flex flex-wrap gap-2">
               {sortOptions.map((option) => (
                 <button

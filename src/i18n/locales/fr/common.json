@@ -1,0 +1,19 @@
+{
+  "footer": {
+    "tagline": "Le centre de référence pour la préparation aux concours des grandes écoles d'ingénieurs au Cameroun depuis 2023.",
+    "copyright": "© {{year}} Alpha Center. Tous droits réservés.",
+    "navigation": "Navigation",
+    "orientation": "Orientation",
+    "contact": "Contact"
+  },
+  "header": {
+    "cameroun": "Cameroun",
+    "etranger": "Étranger",
+    "unavailable": "Non disponible"
+  },
+  "language": {
+    "switchTo": "EN",
+    "ariaLabel": "Switch to English"
+  },
+  "scrollToTop": "Retour en haut de page"
+}

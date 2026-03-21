@@ -5,9 +5,12 @@
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function ContactHero() {
+  const { t } = useTranslation('contact');
+
   return (
     <section className="relative bg-linear-to-br from-navy via-navy to-blue-900 py-16 md:py-20 overflow-hidden">
       {/* Background texture */}
@@ -35,10 +38,10 @@ export default function ContactHero() {
             to="/"
             className="hover:text-white transition-colors duration-200"
           >
-            Accueil
+            {t('hero.breadcrumbHome')}
           </Link>
           <ChevronRight size={16} />
-          <span className="text-white font-medium">Contact</span>
+          <span className="text-white font-medium">{t('hero.breadcrumbContact')}</span>
         </motion.nav>
 
         {/* Icone */}
@@ -60,10 +63,7 @@ export default function ContactHero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-3xl sm:text-4xl md:text-5xl font-black text-white text-center mb-4"
         >
-          <span className="text-orange font-cursive font-black italic">
-            Contactez
-          </span>
-          -nous
+          {t('hero.title')}
         </motion.h1>
 
         {/* Sous-titre */}
@@ -73,9 +73,7 @@ export default function ContactHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-white/80 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed"
         >
-          Une question sur nos programmes ? Besoin d'informations ?
-          <br className="hidden sm:block" />
-          Notre equipe est la pour t'accompagner vers la reussite.
+          {t('hero.subtitle')}
         </motion.p>
 
         {/* Stats rapides */}
@@ -86,9 +84,9 @@ export default function ContactHero() {
           className="flex flex-wrap justify-center gap-6 md:gap-10 mt-10"
         >
           {[
-            { value: '<24h', label: 'Temps de reponse' },
-            { value: '7j/7', label: 'WhatsApp disponible' },
-            { value: '100%', label: 'Gratuit & sans engagement' },
+            { value: '<24h', label: t('hero.responseTime') },
+            { value: '7j/7', label: t('hero.whatsappAvailable') },
+            { value: '100%', label: t('hero.free') },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-xl md:text-2xl font-bold text-orange">

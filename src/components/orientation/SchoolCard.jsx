@@ -3,11 +3,13 @@
 // Carte pour afficher une ecole
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Users, Trophy, Globe } from 'lucide-react';
 
 export default function SchoolCard({ school, index = 0, variant = 'default' }) {
+  const { t } = useTranslation('orientation');
   const Icon = school.icon;
   const isLocal = school.type === 'local';
 
@@ -66,14 +68,14 @@ export default function SchoolCard({ school, index = 0, variant = 'default' }) {
           {!isLocal && (
             <div className="absolute top-4 left-4 z-10 flex items-center gap-1 px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded-full">
               <Globe size={12} />
-              <span>International</span>
+              <span>{t('schoolDetail.international')}</span>
             </div>
           )}
 
           {/* Alpha Prep badge */}
           {school.alphaPrep?.available && (
             <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-orange text-white text-xs font-semibold rounded-full">
-              Prep Alpha
+              {t('schoolDetail.prepAlpha')}
             </div>
           )}
 
@@ -127,7 +129,7 @@ export default function SchoolCard({ school, index = 0, variant = 'default' }) {
               {school.stats.students && (
                 <div className="flex items-center gap-1.5 text-xs text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full">
                   <Users size={14} className="text-gray-400" />
-                  <span>{school.stats.students.toLocaleString()} etudiants</span>
+                  <span>{school.stats.students.toLocaleString()} {t('components.students')}</span>
                 </div>
               )}
             </div>
@@ -135,7 +137,7 @@ export default function SchoolCard({ school, index = 0, variant = 'default' }) {
             {/* CTA */}
             <div className="flex items-center justify-between">
               <span className="text-sm font-semibold text-orange border-b-2 border-current pb-0.5">
-                Voir l'ecole
+                {t('components.viewSchool')}
               </span>
               <span className="w-9 h-9 bg-gray-100 group-hover:bg-navy rounded-full flex items-center justify-center transition-colors duration-300">
                 <ArrowRight size={16} className="text-gray-600 group-hover:text-white transition-colors" />

@@ -5,6 +5,7 @@
 
 import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Lightbulb, Cog, Stethoscope, Heart } from 'lucide-react';
 import Container from '@components/common/Container';
@@ -22,6 +23,7 @@ const domainFilters = domains.map(domain => ({
 }));
 
 export default function MetiersList() {
+  const { t } = useTranslation('orientation');
   const [searchParams] = useSearchParams();
   const initialDomain = searchParams.get('domaine');
 
@@ -55,15 +57,15 @@ export default function MetiersList() {
   return (
     <>
       <SEO
-        title="Metiers - Explorer les carrieres"
-        description="Decouvre les metiers d'avenir en ingenierie, medecine et sciences infirmieres. Missions, competences, salaires et perspectives de carriere."
+        title={t('seo.careersTitle')}
+        description={t('seo.careersDescription')}
       />
 
       {/* Hero */}
       <OrientationHero
-        badge="Metiers"
-        title="Explore les metiers d'avenir"
-        subtitle="Decouvre les carrieres qui t'attendent : missions quotidiennes, competences requises, salaires et perspectives d'evolution."
+        badge={t('careers.badge')}
+        title={t('careers.title')}
+        subtitle={t('careers.subtitle')}
         icon={Lightbulb}
         gradient="from-orange via-orange/95 to-amber-600"
       />
@@ -79,7 +81,7 @@ export default function MetiersList() {
               filters={domainFilters}
               activeFilters={activeFilters}
               onFilterChange={setActiveFilters}
-              placeholder="Rechercher un metier..."
+              placeholder={t('careers.searchPlaceholder')}
             />
           </div>
 
@@ -90,11 +92,11 @@ export default function MetiersList() {
             className="mb-8 flex items-center justify-between"
           >
             <p className="text-gray-600">
-              <span className="font-semibold text-navy">{filteredCareers.length}</span> metier{filteredCareers.length > 1 ? 's' : ''} trouve{filteredCareers.length > 1 ? 's' : ''}
+              <span className="font-semibold text-navy">{filteredCareers.length}</span> {t('careers.career')}{filteredCareers.length > 1 ? 's' : ''} {filteredCareers.length > 1 ? t('careers.found_plural') : t('careers.found_singular')}
             </p>
             {activeFilters.length > 0 && (
               <p className="text-sm text-gray-500">
-                Filtres: {activeFilters.map(f => domains.find(d => d.id === f)?.name).join(', ')}
+                {t('careers.filters')} {activeFilters.map(f => domains.find(d => d.id === f)?.name).join(', ')}
               </p>
             )}
           </motion.div>
@@ -115,9 +117,9 @@ export default function MetiersList() {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Lightbulb size={40} className="text-gray-400" />
               </div>
-              <h3 className="text-xl font-bold text-navy mb-2">Aucun metier trouve</h3>
+              <h3 className="text-xl font-bold text-navy mb-2">{t('careers.noResults')}</h3>
               <p className="text-gray-600 mb-6">
-                Essaie de modifier tes filtres ou ta recherche
+                {t('careers.noResultsSubtitle')}
               </p>
               <button
                 onClick={() => {
@@ -126,7 +128,7 @@ export default function MetiersList() {
                 }}
                 className="text-orange font-semibold hover:underline"
               >
-                Reinitialiser les filtres
+                {t('careers.resetFilters')}
               </button>
             </motion.div>
           )}

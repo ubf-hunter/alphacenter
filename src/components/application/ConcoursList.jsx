@@ -3,6 +3,7 @@
 // Grille par categorie avec badges
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Container from '@components/common/Container';
@@ -41,7 +42,7 @@ const categoryColors = {
   },
 };
 
-function CategoryCard({ category, index }) {
+function CategoryCard({ category, index, t }) {
   const Icon = category.icon;
   const colors = categoryColors[category.color] || categoryColors.orange;
 
@@ -63,8 +64,8 @@ function CategoryCard({ category, index }) {
           <Icon size={28} className="text-white" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-navy">{category.name}</h3>
-          <p className="text-sm text-gray-500">{category.concours.length} concours prepares</p>
+          <h3 className="text-xl font-bold text-navy">{t(`concoursList.categories.${category.id}.name`)}</h3>
+          <p className="text-sm text-gray-500">{t('concoursList.concoursCount', { count: category.concours.length })}</p>
         </div>
       </div>
 
@@ -81,11 +82,11 @@ function CategoryCard({ category, index }) {
           >
             <div>
               <span className={`inline-block px-2.5 py-1 ${colors.badge} rounded-md text-sm font-bold mr-2`}>
-                {concours.name}
+                {t(`concoursList.concoursNames.${concours.id}.name`)}
               </span>
             </div>
             <span className="text-xs text-gray-500 hidden sm:block truncate max-w-[140px]">
-              {concours.fullName}
+              {t(`concoursList.concoursNames.${concours.id}.fullName`)}
             </span>
           </motion.div>
         ))}
@@ -96,7 +97,7 @@ function CategoryCard({ category, index }) {
         href="/programmes"
         className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-navy hover:text-orange transition-colors group/link"
       >
-        <span>Voir les programmes</span>
+        <span>{t('concoursList.viewPrograms')}</span>
         <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
       </a>
 
@@ -107,13 +108,15 @@ function CategoryCard({ category, index }) {
 }
 
 export default function ConcoursList() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
       <Container>
         <SectionTitle
-          badge="Concours prepares"
-          title="Tous les *concours* du Cameroun"
-          subtitle="L'app Alpha couvre les principaux concours d'entree aux grandes ecoles du Cameroun."
+          badge={t('concoursList.badge')}
+          title={t('concoursList.title')}
+          subtitle={t('concoursList.subtitle')}
         />
 
         {/* Grille des categories */}
@@ -123,6 +126,7 @@ export default function ConcoursList() {
               key={category.id}
               category={category}
               index={index}
+              t={t}
             />
           ))}
         </div>
@@ -135,7 +139,7 @@ export default function ConcoursList() {
           viewport={{ once: true }}
           className="mt-12 text-center text-gray-500"
         >
-          D'autres concours seront ajoutes prochainement. Reste connecte !
+          {t('concoursList.moreComingSoon')}
         </motion.p>
       </Container>
     </section>

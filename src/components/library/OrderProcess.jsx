@@ -4,23 +4,33 @@
 // ============================================
 
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { Search, MessageCircle, Smartphone, Download } from 'lucide-react';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
-import { purchaseProcess } from '@/data/purchaseInfo';
+
+const stepsConfig = [
+  { step: 1, icon: Search },
+  { step: 2, icon: MessageCircle },
+  { step: 3, icon: Smartphone },
+  { step: 4, icon: Download },
+];
 
 export default function OrderProcess() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 bg-gray-50">
       <Container>
         <SectionTitle
-          badge="Comment commander"
-          title="Un processus *simple* et *rapide*"
-          subtitle="Commandez vos documents en quelques clics via WhatsApp"
+          badge={t('library.orderProcess.badge')}
+          title={t('library.orderProcess.title')}
+          subtitle={t('library.orderProcess.subtitle')}
           centered
         />
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {purchaseProcess.map((step, index) => {
+          {stepsConfig.map((step, index) => {
             const Icon = step.icon;
             return (
               <motion.div
@@ -32,7 +42,7 @@ export default function OrderProcess() {
                 className="relative"
               >
                 {/* Connector line */}
-                {index < purchaseProcess.length - 1 && (
+                {index < stepsConfig.length - 1 && (
                   <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-orange/50 to-transparent -translate-x-1/2" />
                 )}
 
@@ -48,8 +58,12 @@ export default function OrderProcess() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="font-bold text-navy mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                  <h3 className="font-bold text-navy mb-2">
+                    {t(`library.orderProcess.steps.${index}.title`)}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {t(`library.orderProcess.steps.${index}.description`)}
+                  </p>
                 </div>
               </motion.div>
             );

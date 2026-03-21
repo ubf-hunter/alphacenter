@@ -6,16 +6,18 @@ import Button from '@components/common/Button';
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function AboutCTA({
-  title = 'Rejoignez la famille Alpha Center',
-  subtitle = 'La prochaine success story, c\'est vous',
-  primaryButton = { label: "S'inscrire maintenant", isModal: true },
-  secondaryButton = { label: 'Parler a un conseiller', href: '/contact' },
+  title,
+  subtitle,
+  primaryButton = { label: '', isModal: true },
+  secondaryButton = { label: '', href: '/contact' },
   variant = 'gradient', // 'gradient' | 'navy' | 'light'
 }) {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('about');
   const variants = {
     gradient: {
       bg: 'bg-linear-to-br from-orange via-orange-600 to-orange-700',
@@ -70,7 +72,7 @@ export default function AboutCTA({
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6"
           >
             <Sparkles size={16} />
-            Pret a transformer votre avenir ?
+            {t('cta.readyToTransform')}
           </motion.div>
 
           {/* Title */}

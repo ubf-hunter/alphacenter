@@ -1,0 +1,62 @@
+{
+  "main": {
+    "home": "Home",
+    "programmes": "Programs",
+    "application": "The App",
+    "resources": "Resources",
+    "orientation": "Orientation",
+    "about": "About"
+  },
+  "disabled": {
+    "comingSoon": "Coming soon"
+  },
+  "megamenu": {
+    "metiers": {
+      "title": "Explore careers",
+      "civilEngineer": "Civil Engineer",
+      "computerEngineer": "Computer Engineer",
+      "telecomEngineer": "Telecom Engineer",
+      "doctor": "Doctor",
+      "viewAll": "View all careers"
+    },
+    "ecoles": {
+      "title": "Discover schools",
+      "viewAll": "View all schools"
+    },
+    "cta": {
+      "text": "Not sure which career to choose?",
+      "subtext": "Explore our complete orientation guide"
+    }
+  },
+  "about": {
+    "whoWeAre": "About Us",
+    "whoWeAreDesc": "Our history and values",
+    "team": "Our Team",
+    "teamDesc": "12 passionate teachers",
+    "results": "Our Results",
+    "resultsDesc": "85% success rate"
+  },
+  "cta": {
+    "contact": "Contact",
+    "register": "Register"
+  },
+  "footerNav": {
+    "home": "Home",
+    "programmes": "Programs",
+    "resources": "Resources",
+    "whoWeAre": "About Us",
+    "team": "Our Team",
+    "results": "Our Results",
+    "application": "The App"
+  },
+  "footerOrientation": {
+    "hub": "Orientation Hub",
+    "careers": "Careers",
+    "schools": "Schools"
+  },
+  "legal": {
+    "legalNotice": "Legal Notice",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
+  }
+}

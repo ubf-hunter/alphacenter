@@ -4,16 +4,18 @@
 // ============================================
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function Hero3() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
 
   const navLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Programmes', href: '/services' },
-    { label: 'Orientation', href: '/orientation' },
-    { label: 'À propos', href: '/resultats' },
+    { label: t('hero3.nav.home'), href: '/' },
+    { label: t('hero3.nav.programs'), href: '/services' },
+    { label: t('hero3.nav.orientation'), href: '/orientation' },
+    { label: t('hero3.nav.about'), href: '/resultats' },
   ];
 
   return (
@@ -49,9 +51,9 @@ export default function Hero3() {
               to="/contact"
               className="px-4 py-2 text-sm font-medium text-[#001A51] border border-gray-200 rounded-full hover:border-[#001A51] hover:bg-white/50 transition-all"
             >
-              Contact
+              {t('hero3.nav.contact')}
             </Link>
-            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">S'inscrire
+            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">{t('hero3.nav.register')}
             </button>
           </div>
         </div>
@@ -62,32 +64,30 @@ export default function Hero3() {
         {/* Badge */}
         <div className="mb-6 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 shadow-sm">
           <span className="text-sm font-medium text-gray-700">
-            🏆 +500 admis depuis 2009 • 95% de réussite
+            {t('hero3.badge')}
           </span>
         </div>
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#001A51] text-center mb-6 max-w-4xl leading-tight">
-          Intègre l'école d'
-          <span className="italic text-[#FA5614]">ingénieurs</span> de tes
-          rêves.
+          {t('hero3.titlePart1')}
+          <span className="italic text-[#FA5614]">{t('hero3.titleHighlight')}</span> {t('hero3.titlePart2')}
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-gray-600 text-center max-w-2xl mb-10">
-          Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles
-          d'ingénieurs.
+          {t('hero3.subtitle')}
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-          <button onClick={() => openModal()} className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">Je m'inscris →
+          <button onClick={() => openModal()} className="px-8 py-4 text-lg font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">{t('hero3.ctaRegister')}
           </button>
           <Link
             to="/services"
             className="px-8 py-4 text-lg font-semibold text-[#001A51] bg-white border-2 border-gray-200 rounded-full hover:border-[#001A51] transition-all"
           >
-            Découvrir nos programmes
+            {t('hero3.ctaPrograms')}
           </Link>
         </div>
 
@@ -97,7 +97,7 @@ export default function Hero3() {
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
             <img
               src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80"
-              alt="Étudiants célébrant leur diplôme"
+              alt={t('hero3.imageAlt')}
               className="w-full h-[350px] sm:h-[400px] md:h-[450px] object-cover"
             />
             {/* Gradient Overlay Bottom */}
@@ -115,7 +115,7 @@ export default function Hero3() {
                   500+
                 </div>
                 <div className="text-xs sm:text-sm text-gray-500">
-                  Étudiants admis
+                  {t('hero3.floatingAdmitted')}
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function Hero3() {
                   95%
                 </div>
                 <div className="text-xs sm:text-sm text-gray-500">
-                  Taux de réussite
+                  {t('hero3.floatingSuccess')}
                 </div>
               </div>
             </div>
@@ -146,21 +146,21 @@ export default function Hero3() {
                   15+
                 </div>
                 <div className="text-[10px] sm:text-xs text-gray-500">
-                  Années
+                  {t('hero3.floatingYears')}
                 </div>
               </div>
               <div className="text-center px-2 sm:px-3 lg:px-4 border-r border-gray-200">
                 <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[#001A51]">
                   50+
                 </div>
-                <div className="text-[10px] sm:text-xs text-gray-500">Profs</div>
+                <div className="text-[10px] sm:text-xs text-gray-500">{t('hero3.floatingTeachers')}</div>
               </div>
               <div className="text-center px-2 sm:px-3 lg:px-4">
                 <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[#001A51]">
                   3
                 </div>
                 <div className="text-[10px] sm:text-xs text-gray-500">
-                  Concours
+                  {t('hero3.floatingExams')}
                 </div>
               </div>
             </div>

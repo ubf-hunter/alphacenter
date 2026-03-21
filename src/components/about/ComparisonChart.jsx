@@ -6,10 +6,12 @@ import Container from '@components/common/Container';
 import { motion, useInView } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function ComparisonChart({ comparison }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useTranslation('about');
 
   return (
     <section ref={ref} className="py-20 bg-navy relative overflow-hidden">
@@ -29,10 +31,10 @@ export default function ComparisonChart({ comparison }) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange/20 rounded-full text-orange text-sm font-medium mb-4">
               <TrendingUp size={16} />
-              {comparison.multiplier}x plus de chances de reussir
+              {comparison.multiplier}{t('results.comparison.moreChances')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Alpha Center vs Moyenne Nationale
+              {t('results.comparison.vsNational')}
             </h2>
             <p className="text-white/60">{comparison.message}</p>
           </motion.div>
@@ -46,7 +48,7 @@ export default function ComparisonChart({ comparison }) {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white font-medium">Alpha Center</span>
+                <span className="text-white font-medium">{t('results.comparison.alphaCenter')}</span>
                 <span className="text-orange font-bold text-xl">
                   {comparison.alphaCenter}%
                 </span>
@@ -73,7 +75,7 @@ export default function ComparisonChart({ comparison }) {
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-white/60 font-medium">
-                  Moyenne Nationale
+                  {t('results.comparison.nationalAverage')}
                 </span>
                 <span className="text-white/60 font-bold text-xl">
                   {comparison.nationalAverage}%
@@ -107,10 +109,10 @@ export default function ComparisonChart({ comparison }) {
               </div>
               <div className="text-left">
                 <div className="text-white font-semibold">
-                  Plus de chances
+                  {t('results.comparison.moreChancesLabel')}
                 </div>
                 <div className="text-white/60 text-sm">
-                  de reussir avec Alpha Center
+                  {t('results.comparison.withAlpha')}
                 </div>
               </div>
             </div>

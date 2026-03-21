@@ -4,13 +4,15 @@
 // ============================================
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
-import { appFAQ } from '@/data/application';
 
-function FAQItem({ item, isOpen, onClick }) {
+const faqIds = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+
+function FAQItem({ questionKey, isOpen, onClick, t }) {
   return (
     <div className="border-b border-gray-200 last:border-b-0">
       <button
@@ -18,7 +20,7 @@ function FAQItem({ item, isOpen, onClick }) {
         className="w-full flex items-center justify-between py-5 text-left group"
       >
         <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-orange' : 'text-navy group-hover:text-orange'}`}>
-          {item.question}
+          {t(`appFaq.questions.${questionKey}.question`)}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -39,7 +41,7 @@ function FAQItem({ item, isOpen, onClick }) {
             className="overflow-hidden"
           >
             <p className="pb-5 text-gray-600 leading-relaxed">
-              {item.answer}
+              {t(`appFaq.questions.${questionKey}.answer`)}
             </p>
           </motion.div>
         )}
@@ -49,7 +51,8 @@ function FAQItem({ item, isOpen, onClick }) {
 }
 
 export default function AppFAQ() {
-  const [openId, setOpenId] = useState(1);
+  const { t } = useTranslation('application');
+  const [openId, setOpenId] = useState('q1');
 
   const toggleItem = (id) => {
     setOpenId(openId === id ? null : id);
@@ -59,9 +62,9 @@ export default function AppFAQ() {
     <section className="py-20 lg:py-28 bg-white">
       <Container>
         <SectionTitle
-          badge="FAQ"
-          title="Questions *frequentes*"
-          subtitle="Tout ce que tu dois savoir sur l'application Alpha."
+          badge={t('appFaq.badge')}
+          title={t('appFaq.title')}
+          subtitle={t('appFaq.subtitle')}
         />
 
         <div className="mt-16 max-w-3xl mx-auto">
@@ -73,12 +76,13 @@ export default function AppFAQ() {
             viewport={{ once: true }}
             className="bg-gray-50 rounded-2xl p-6 lg:p-8"
           >
-            {appFAQ.map((item) => (
+            {faqIds.map((id) => (
               <FAQItem
-                key={item.id}
-                item={item}
-                isOpen={openId === item.id}
-                onClick={() => toggleItem(item.id)}
+                key={id}
+                questionKey={id}
+                isOpen={openId === id}
+                onClick={() => toggleItem(id)}
+                t={t}
               />
             ))}
           </motion.div>
@@ -95,13 +99,13 @@ export default function AppFAQ() {
               <HelpCircle size={24} className="text-navy" />
               <div className="text-left">
                 <p className="text-navy font-medium">
-                  Tu as d'autres questions ?
+                  {t('appFaq.otherQuestions')}
                 </p>
                 <a
                   href="/contact"
                   className="text-orange hover:underline text-sm"
                 >
-                  Contacte notre equipe support
+                  {t('appFaq.contactSupport')}
                 </a>
               </div>
             </div>

@@ -4,6 +4,7 @@
 // ============================================
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { appStats } from '@/data/application';
 import Container from '@components/common/Container';
 import IOSInstallModal from './IOSInstallModal';
@@ -15,7 +16,11 @@ const APK_URL = 'https://github.com/ubf-hunter/e-alpha/releases/latest/download/
 // Placeholder pour screenshot (a remplacer par vrais screenshots)
 const placeholderScreen = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300&h=600&fit=crop';
 
+// Map stat keys to translation keys
+const statLabelKeys = ['stats.exercises', 'stats.users', 'stats.concours', 'stats.rating'];
+
 export default function AppHero() {
+  const { t } = useTranslation('application');
   const [showIOSModal, setShowIOSModal] = useState(false);
 
   return (
@@ -53,7 +58,7 @@ export default function AppHero() {
             >
               <Sparkles size={16} className="text-orange" />
               <span className="text-sm font-medium text-white/90">
-                Disponible sur iOS et Android
+                {t('appHero.badge')}
               </span>
             </motion.div>
 
@@ -62,28 +67,26 @@ export default function AppHero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight"
               style={{ color: 'white' }}
             >
-              Revise{' '}
-              <span className="text-orange italic font-cursive">partout</span>
+              {t('appHero.titleLine1')}{' '}
+              <span className="text-orange italic font-cursive">{t('appHero.titleHighlight')}</span>
               <br />
-              avec Alpha
+              {t('appHero.titleLine2')}
             </h1>
 
             {/* Sous-titre */}
             <p className="text-lg lg:text-xl text-white/70 max-w-xl mb-8">
-              Mode hors-ligne complet, tous les concours du Cameroun dans ta
-              poche. 1000+ exercices corriges, planning IA et communaute
-              d'entraide.
+              {t('appHero.subtitle')}
             </p>
 
             {/* Badges features */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
                 <WifiOff size={16} />
-                Mode hors-ligne
+                {t('appHero.badgeOffline')}
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
                 <Star size={16} className="text-yellow-400" />
-                4.8 sur App Store
+                {t('appHero.badgeRating')}
               </span>
             </div>
 
@@ -102,9 +105,9 @@ export default function AppHero() {
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Installer sur</div>
+                  <div className="text-xs text-gray-500">{t('appHero.installOn')}</div>
                   <div className="text-base font-semibold text-gray-900">
-                    iPhone
+                    {t('appHero.iPhone')}
                   </div>
                 </div>
               </button>
@@ -123,9 +126,9 @@ export default function AppHero() {
                   <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z" />
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Telecharger pour</div>
+                  <div className="text-xs text-gray-500">{t('appHero.downloadFor')}</div>
                   <div className="text-base font-semibold text-gray-900">
-                    Android
+                    {t('appHero.android')}
                   </div>
                 </div>
               </a>
@@ -144,7 +147,7 @@ export default function AppHero() {
                   <div className="text-3xl lg:text-4xl font-bold text-orange">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
+                  <div className="text-sm text-white/60">{t(`appHero.${statLabelKeys[index]}`)}</div>
                 </motion.div>
               ))}
             </div>
@@ -179,10 +182,10 @@ export default function AppHero() {
                         </span>
                       </div>
                       <h3 className="text-navy font-bold text-lg mb-2">
-                        Alpha App
+                        {t('appHero.screenTitle')}
                       </h3>
                       <p className="text-gray-500 text-sm text-center">
-                        Prepare ton concours partout, meme sans internet
+                        {t('appHero.screenSubtitle')}
                       </p>
                     </div>
 

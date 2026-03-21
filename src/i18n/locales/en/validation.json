@@ -1,0 +1,7 @@
+{
+  "name_min": "Name must be at least 2 characters",
+  "name_max": "Name cannot exceed 100 characters",
+  "email_invalid": "Invalid email address",
+  "email_max": "Email is too long",
+  "message_max": "Message cannot exceed 2000 characters"
+}

@@ -4,13 +4,14 @@
 // ============================================
 
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 const SITE_URL = 'https://alphacenter.cm';
 const DEFAULT_IMAGE = '/og-image.jpg';
 
 export default function SEO({
   title = 'Alpha Center',
-  description = 'Centre de preparation aux concours des grandes ecoles au Cameroun. Ingenieurs, Medecine, Infirmieres.',
+  description,
   image,
   url = '',
   type = 'website',
@@ -26,16 +27,21 @@ export default function SEO({
     : effectiveImage.startsWith('/')
       ? `${SITE_URL}${effectiveImage}`
       : `${SITE_URL}/${effectiveImage}`;
+  const { t, i18n } = useTranslation('seo');
+  const effectiveDescription = description || t('defaultDescription');
   const fullTitle = title === 'Alpha Center' ? title : `${title} | Alpha Center`;
 
   return (
     <Helmet>
+      {/* Language */}
+      <html lang={i18n.language} />
+
       {/* Title */}
       <title>{fullTitle}</title>
 
       {/* Primary Meta Tags */}
       <meta name="title" content={fullTitle} />
-      <meta name="description" content={description} />
+      <meta name="description" content={effectiveDescription} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Canonical */}
@@ -45,14 +51,14 @@ export default function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={effectiveDescription} />
       <meta property="og:image" content={fullImage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={fullUrl} />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={effectiveDescription} />
       <meta name="twitter:image" content={fullImage} />
 
       {/* JSON-LD Structured Data */}

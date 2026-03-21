@@ -6,13 +6,16 @@ import OrientationPreview from '@components/home/OrientationPreview';
 import Programs from '@components/home/ProgramsWithLogos';
 import Testimonials from '@components/home/Testimonials';
 import WhyAlpha from '@components/home/WhyAlpha';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation('seo');
+
   return (
     <>
       <SEO
-        title="Accueil"
-        description="Alpha Center - Premier centre de preparation aux concours d'ingenieurs, medecine et infirmieres au Cameroun. 700+ admis, 85% de taux de reussite."
+        title={t('home.title')}
+        description={t('home.description')}
         url="/"
       />
       <Hero1 />

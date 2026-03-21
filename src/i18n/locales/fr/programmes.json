@@ -1,0 +1,167 @@
+{
+  "page": {
+    "badge": "Formations d'excellence",
+    "title": "Des programmes adaptés à chaque ambition",
+    "subtitle": "Préparation intensive aux concours des grandes écoles d'ingénieurs du Cameroun : ENSP, ENSTP, ENS. Une méthodologie éprouvée pour maximiser tes chances de réussite.",
+    "ctaRegister": "Je m'inscris maintenant",
+    "ctaView": "Voir les programmes",
+    "stats": {
+      "trained": "Étudiants formés",
+      "successRate": "Taux de réussite",
+      "programs": "Programmes",
+      "experience": "Années d'expertise"
+    },
+    "prepHero": {
+      "badge": "Rentrée 2026 - Inscriptions ouvertes",
+      "title": "Préparez votre réussite",
+      "titleHighlight": "réussite",
+      "titleSuffix": "aux concours",
+      "subtitle": "Intégrez les meilleures écoles du Cameroun grâce à notre programme de préparation intensive aux concours d'entrée.",
+      "features": [
+        "Cours intensifs & encadrement personnalisé",
+        "Épreuves blanches chaque semaine",
+        "Professeurs expérimentés",
+        "Suivi individuel des progrès"
+      ],
+      "cta": "S'inscrire maintenant",
+      "ctaSecondary": "Voir les programmes",
+      "schedule": "Du lundi au samedi",
+      "hours": "8h - 18h",
+      "studentsLabel": "Étudiants formés",
+      "successLabel": "Taux de réussite",
+      "experienceLabel": "D'expérience",
+      "imageAlt": "Étudiants en préparation"
+    },
+    "formations": {
+      "badge": "Nos formations",
+      "title": "Choisis ton programme de préparation",
+      "subtitle": "Chaque programme est conçu pour t'accompagner vers la réussite avec une méthodologie adaptée aux exigences de chaque concours."
+    },
+    "resources": {
+      "title": "Inclus dans tous les programmes",
+      "subtitle": "Des ressources complètes pour maximiser ta réussite"
+    }
+  },
+  "categories": {
+    "engineering": "Ecoles d'Ingenieurs",
+    "health": "Sante & Medecine",
+    "business": "Economie & Gestion",
+    "education": "Education & Enseignement"
+  },
+  "detail": {
+    "back": "Retour aux programmes",
+    "maxPerClass": "max/classe",
+    "success": "reussite",
+    "registerNow": "S'inscrire maintenant",
+    "strengths": "Nos atouts",
+    "whyChoose": "Pourquoi choisir ce programme?",
+    "schedule": "Organisation",
+    "weeklySchedule": "Emploi du temps hebdomadaire",
+    "day": "Jour",
+    "morning": "Matin",
+    "afternoon": "Apres-midi",
+    "program": "Programme",
+    "subjects": "Matieres enseignees",
+    "subjectsLabel": "Matieres",
+    "totalVolume": "Volume total",
+    "pricing": "Tarifs",
+    "pricingOptions": "Options de paiement",
+    "startingFrom": "A partir de",
+    "recommended": "Recommande",
+    "paymentMethods": "Modes de paiement acceptes",
+    "cash": "Especes",
+    "mobileMoney": "Mobile Money",
+    "bankTransfer": "Virement bancaire",
+    "check": "Cheque",
+    "ctaTitle": "Pret a rejoindre le",
+    "ctaSubtitle1": "Inscris-toi maintenant et commence ta preparation vers la reussite. Places limitees a",
+    "ctaSubtitle2": "par session.",
+    "contactUs": "Nous contacter",
+    "notFound": "Programme non trouve",
+    "notFoundDesc": "Le programme demande n'existe pas.",
+    "viewAll": "Voir tous les programmes",
+    "sessionTypes": {
+      "cours": "Cours",
+      "td": "TD",
+      "tp": "TP",
+      "revision": "Revision",
+      "examen": "Examen",
+      "tutorat": "Tutorat",
+      "atelier": "Atelier"
+    }
+  },
+  "calendar": {
+    "badge": "Calendrier",
+    "title": "Prochaines *sessions* de formation",
+    "subtitle": "Consulte les dates de démarrage et inscris-toi à la session qui te convient.",
+    "programLabel": "Programme",
+    "statusOpen": "Inscriptions ouvertes",
+    "statusUpcoming": "Prochainement",
+    "statusClosed": "Complet",
+    "startDate": "Début",
+    "endDate": "Fin",
+    "placesAvailable": "{{left}} places sur {{total}} disponibles",
+    "placesTaken": "{{percentage}}% des places prises",
+    "registerNow": "S'inscrire maintenant",
+    "notifyMe": "Me notifier à l'ouverture",
+    "noSessionFound": "Tu ne trouves pas la session qui te convient ?",
+    "contactForOptions": "Contacte-nous pour plus d'options"
+  },
+  "comparison": {
+    "badge": "Comparatif",
+    "title": "*Compare* nos programmes",
+    "subtitle": "Trouve le programme qui correspond le mieux à tes objectifs et à ton profil.",
+    "features": "Caractéristiques",
+    "general": "Général",
+    "format": "Format",
+    "resources": "Ressources",
+    "duration": "Durée de formation",
+    "monthlyPrice": "Prix mensuel",
+    "studentsPerClass": "Étudiants par classe",
+    "successRate": "Taux de réussite",
+    "inPerson": "Cours en présentiel",
+    "onlineModules": "Modules en ligne",
+    "whatsappSupport": "Support WhatsApp",
+    "mockExams": "Examens blancs",
+    "revisionSheets": "Fiches de révision",
+    "courseVideos": "Vidéos de cours",
+    "individualCoaching": "Coaching individuel",
+    "elearningAccess": "Accès plateforme e-learning",
+    "choose": "Choisir",
+    "registerFor": "S'inscrire au",
+    "durationLabel": "Durée",
+    "priceLabel": "Prix",
+    "successLabel": "Réussite",
+    "classLabel": "Classe"
+  },
+  "methodology": {
+    "badge": "Notre approche",
+    "title": "Une *méthodologie* éprouvée",
+    "subtitle": "Découvre les 6 étapes de notre méthode qui a permis à plus de 500 étudiants d'intégrer leur école de rêve.",
+    "statsTitle": "La méthode Alpha en chiffres",
+    "statsSubtitle": "Des résultats concrets qui font la différence"
+  },
+  "preparatoire": {
+    "headline": "Pas encore au Bac?",
+    "headlineHighlight": "Commence dès maintenant!",
+    "description": "Prépare ton avenir pendant ta Terminale. Renforce tes bases en maths et sciences, maîtrise la méthodologie des concours et gagne une longueur d'avance. Compatible avec ton emploi du temps scolaire.",
+    "benefits": {
+      "flexibleSchedule": "Horaires flexibles (weekends + vacances)",
+      "compatible": "Compatible avec la Terminale",
+      "orientation": "Orientation personnalisée (Ingénieur ou Santé)",
+      "price": "Prix accessible : {{price}}"
+    },
+    "ctaPrimary": "Je commence maintenant",
+    "ctaSecondary": "En savoir plus"
+  },
+  "card": {
+    "mainSubjects": "Matieres principales",
+    "viewDetails": "Voir les details du programme",
+    "startingFrom": "A partir de",
+    "remainingPlaces": "Places restantes",
+    "register": "S'inscrire",
+    "viewDetailsTitle": "Voir les details",
+    "maxPerClass": "max/classe",
+    "success": "reussite"
+  }
+}

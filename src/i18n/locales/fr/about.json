@@ -1,0 +1,127 @@
+{
+  "whoWeAre": {
+    "heroTitle": "Notre Histoire, Votre Reussite",
+    "heroSubtitle": "Depuis 2023, nous accompagnons les etudiants camerounais vers l'excellence",
+    "mission": "Notre mission",
+    "journey": "Notre parcours",
+    "journeySubtitle": "3 annees de croissance et d'excellence au service des etudiants camerounais",
+    "vision": "Notre vision",
+    "whatDefinesUs": "Ce qui nous definit",
+    "values": "Nos *valeurs*",
+    "valuesSubtitle": "Les principes qui guident chacune de nos actions",
+    "approach": "Notre approche",
+    "keyFigures": "Chiffres cles",
+    "proofByNumbers": "La preuve par les chiffres",
+    "stats": {
+      "experience": "Annees d'experience",
+      "trained": "Etudiants formes",
+      "successRate": "Taux de reussite",
+      "experts": "Enseignants experts"
+    },
+    "ctaTitle": "Rejoignez la famille Alpha Center",
+    "ctaSubtitle": "Decouvrez nos programmes et rencontrez notre equipe",
+    "ctaPrograms": "Decouvrir nos programmes",
+    "ctaTeam": "Rencontrer l'equipe"
+  },
+  "team": {
+    "pageTitle": "Notre Equipe",
+    "heroTitle": "Une Equipe d'Excellence",
+    "heroSubtitle": "Des experts passionnes par votre reussite",
+    "teachers": "Enseignants",
+    "experienceLabel": "Annees d'experience cumulees",
+    "leadership": "Direction",
+    "leadershipTitle": "Notre *direction*",
+    "leadershipSubtitle": "Des leaders experimentés qui guident l'equipe vers l'excellence",
+    "clickForMore": "Cliquez sur une carte pour en savoir plus",
+    "pedagogicalTeam": "Notre Equipe *Pedagogique*",
+    "pedagogicalSubtitle": "Chaque professeur est un expert de sa matiere et un ancien laureat des concours",
+    "testimonials": "Temoignages",
+    "testimonialTitle": "Ce que disent nos etudiants",
+    "aboutTeacher": "A propos de",
+    "adminTeam": "Notre equipe administrative",
+    "adminSubtitle": "Les personnes qui assurent le bon fonctionnement du centre",
+    "contactUs": "Nous contacter",
+    "joinUs": "Envie de nous rejoindre ?",
+    "joinSubtitle": "Rencontrez-nous lors de nos portes ouvertes ou contactez-nous",
+    "viewResults": "Voir nos resultats",
+    "formation": "Formation",
+    "viewFullProfile": "Voir le profil complet",
+    "seeMore": "Voir +",
+    "profile": "Profil",
+    "see": "Voir",
+    "about": "A propos",
+    "achievements": "Realisations"
+  },
+  "results": {
+    "heroTitle": "Nos Resultats Parlent d'Eux-Memes",
+    "heroSubtitle": "85% de taux de reussite moyen depuis 2023",
+    "trainedStudents": "Etudiants formes",
+    "admittedStudents": "Admis aux concours",
+    "averageRateLabel": "Taux moyen",
+    "totalAdmitted": "Total admis",
+    "averageRate": "Taux moyen",
+    "top15": "Dans le top 15",
+    "successStories": "Success Stories",
+    "storiesTitle": "Ils ont reussi avec *Alpha Center*",
+    "storiesSubtitle": "Decouvrez les parcours inspirants de nos etudiants",
+    "accessibleCareers": "Metiers accessibles",
+    "accessibleCareersSubtitle": "Les carrieres que tu peux viser apres cette ecole",
+    "nextStoryTitle": "La prochaine success story, c'est vous",
+    "nextStorySubtitle": "Rejoignez Alpha Center et ecrivez votre propre histoire de reussite",
+    "registerNow": "S'inscrire maintenant",
+    "talkToAdviser": "Parler a un conseiller",
+    "comparison": {
+      "moreChances": "x plus de chances de reussir",
+      "vsNational": "Alpha Center vs Moyenne Nationale",
+      "alphaCenter": "Alpha Center",
+      "nationalAverage": "Moyenne Nationale",
+      "moreChancesLabel": "Plus de chances",
+      "withAlpha": "de reussir avec Alpha Center"
+    },
+    "leaderboard": {
+      "badge": "Tableau d'honneur",
+      "title": "Nos meilleurs *classements*",
+      "subtitle": "Les etudiants Alpha Center dans le top des concours",
+      "rank": "Rang",
+      "name": "Nom",
+      "school": "Ecole",
+      "year": "Annee",
+      "firsts": "premiers",
+      "inTop15": "dans le top 15"
+    },
+    "distribution": {
+      "badge": "Repartition",
+      "title": "Nos admis par *ecole*",
+      "subtitle": "Repartition de nos etudiants admis par etablissement",
+      "totalAdmitted": "Total admis"
+    },
+    "yearResults": {
+      "badge": "Annee par annee",
+      "title": "Resultats *detailles*",
+      "subtitle": "Explorez nos performances annee par annee",
+      "trained": "Etudiants formes",
+      "admitted": "Admis",
+      "successRate": "Taux de reussite",
+      "specialMentions": "Mentions speciales"
+    },
+    "journey": {
+      "title": "Son parcours",
+      "before": "Avant",
+      "during": "Alpha Center",
+      "after": "Apres"
+    }
+  },
+  "cta": {
+    "readyToTransform": "Pret a transformer votre avenir ?"
+  },
+  "memberProfile": {
+    "backToTeam": "Retour a l'equipe",
+    "profileOf": "Profil de {{name}} chez Alpha Center",
+    "biography": "Biographie",
+    "studentsSay": "Ce que disent les etudiants",
+    "formation": "Formation",
+    "achievements": "Realisations",
+    "experience": "Experience",
+    "viewAllTeam": "Voir toute l'equipe"
+  }
+}

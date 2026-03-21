@@ -17,6 +17,7 @@ import Container from '@components/common/Container';
 import SEO from '@components/common/SEO';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
   comparison,
   globalStats,
@@ -29,33 +30,35 @@ import {
 export default function Resultats() {
   const featuredStories = successStories.filter((s) => s.featured);
   const otherStories = successStories.filter((s) => !s.featured);
+  const { t } = useTranslation('about');
+  const { t: ts } = useTranslation('seo');
 
   return (
     <>
       <SEO
-        title="Nos Resultats | 85% de Reussite | Alpha Center"
-        description="85% de taux de reussite aux concours ENSP, ENSTP, ENS, FMSB. Decouvrez les resultats d'Alpha Center et les success stories de nos etudiants."
+        title={ts('results.title')}
+        description={ts('results.description')}
         url="/a-propos/resultats"
       />
 
       {/* Hero */}
       <AboutHero
-        title="Nos Resultats Parlent d'Eux-Memes"
-        subtitle="85% de taux de reussite moyen depuis 2023"
+        title={t('results.heroTitle')}
+        subtitle={t('results.heroSubtitle')}
         stats={[
           {
             number: globalStats.totalTrained,
-            label: 'Etudiants formes',
+            label: t('results.trainedStudents'),
             suffix: '',
           },
           {
             number: globalStats.totalAdmitted,
-            label: 'Admis aux concours',
+            label: t('results.admittedStudents'),
             suffix: '',
           },
           {
             number: globalStats.averageSuccessRate,
-            label: 'Taux moyen',
+            label: t('results.averageRateLabel'),
             suffix: '%',
           },
         ]}
@@ -74,7 +77,7 @@ export default function Resultats() {
             >
               <StatCounter
                 end={globalStats.totalTrained}
-                label="Etudiants formes"
+                label={t('results.trainedStudents')}
                 color="navy"
               />
             </motion.div>
@@ -87,7 +90,7 @@ export default function Resultats() {
             >
               <StatCounter
                 end={globalStats.totalAdmitted}
-                label="Total admis"
+                label={t('results.totalAdmitted')}
                 color="orange"
               />
             </motion.div>
@@ -101,7 +104,7 @@ export default function Resultats() {
               <StatCounter
                 end={globalStats.averageSuccessRate}
                 suffix="%"
-                label="Taux moyen"
+                label={t('results.averageRate')}
                 color="navy"
               />
             </motion.div>
@@ -114,7 +117,7 @@ export default function Resultats() {
             >
               <StatCounter
                 end={globalStats.topRankings}
-                label="Dans le top 15"
+                label={t('results.top15')}
                 color="orange"
               />
             </motion.div>
@@ -135,9 +138,9 @@ export default function Resultats() {
       <section className="py-24 bg-off-white">
         <Container>
           <SectionTitle
-            badge="Success Stories"
-            title="Ils ont reussi avec *Alpha Center*"
-            subtitle="Decouvrez les parcours inspirants de nos etudiants"
+            badge={t('results.successStories')}
+            title={t('results.storiesTitle')}
+            subtitle={t('results.storiesSubtitle')}
             align="center"
           />
 
@@ -174,10 +177,10 @@ export default function Resultats() {
 
       {/* CTA */}
       <AboutCTA
-        title="La prochaine success story, c'est vous"
-        subtitle="Rejoignez Alpha Center et ecrivez votre propre histoire de reussite"
-        primaryButton={{ label: "S'inscrire maintenant", isModal: true }}
-        secondaryButton={{ label: 'Parler a un conseiller', href: '/contact' }}
+        title={t('results.nextStoryTitle')}
+        subtitle={t('results.nextStorySubtitle')}
+        primaryButton={{ label: t('results.registerNow'), isModal: true }}
+        secondaryButton={{ label: t('results.talkToAdviser'), href: '/contact' }}
         variant="gradient"
       />
     </>

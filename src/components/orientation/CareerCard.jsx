@@ -3,11 +3,13 @@
 // Carte pour afficher un metier
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Clock, Briefcase } from 'lucide-react';
 
 export default function CareerCard({ career, index = 0, variant = 'default' }) {
+  const { t } = useTranslation('orientation');
   const Icon = career.icon;
 
   if (variant === 'compact') {
@@ -55,7 +57,7 @@ export default function CareerCard({ career, index = 0, variant = 'default' }) {
             {career.outlook?.trend === 'up' && (
               <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full">
                 <TrendingUp size={14} className="text-white" />
-                <span className="text-white text-xs font-medium">En hausse</span>
+                <span className="text-white text-xs font-medium">{t('careerDetail.trending')}</span>
               </div>
             )}
 
@@ -87,14 +89,14 @@ export default function CareerCard({ career, index = 0, variant = 'default' }) {
               </div>
               <div className="flex items-center gap-1.5 text-xs text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full">
                 <Briefcase size={14} className="text-gray-400" />
-                <span>{career.employment.rate}% emploi</span>
+                <span>{career.employment.rate}% {t('careerDetail.employment')}</span>
               </div>
             </div>
 
             {/* CTA */}
             <div className="flex items-center justify-between">
               <span className="text-sm font-semibold text-orange border-b-2 border-current pb-0.5">
-                Decouvrir ce metier
+                {t('components.discoverCareer')}
               </span>
               <span className="w-9 h-9 bg-gray-100 group-hover:bg-navy rounded-full flex items-center justify-center transition-colors duration-300">
                 <ArrowRight size={16} className="text-gray-600 group-hover:text-white transition-colors" />

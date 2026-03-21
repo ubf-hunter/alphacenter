@@ -4,6 +4,7 @@
 
 import { motion } from 'framer-motion';
 import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { contactInfo, getWhatsAppUrl } from '../../data/contact';
 
 // Animation variants
@@ -76,6 +77,8 @@ function InfoCard({ icon: Icon, title, children, onClick, href, isHighlight }) {
 }
 
 export default function ContactInfo() {
+  const { t } = useTranslation('contact');
+
   const handleWhatsAppClick = () => {
     window.open(getWhatsAppUrl(), '_blank');
   };
@@ -97,36 +100,36 @@ export default function ContactInfo() {
         <p className="text-bark">{contactInfo.phones[0].number}</p>
         <span className="inline-flex items-center gap-1.5 mt-2 text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">
           <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-          Disponible maintenant
+          {t('info.available')}
         </span>
       </InfoCard>
 
       {/* Telephone */}
       <InfoCard
         icon={Phone}
-        title="Telephone"
+        title={t('info.phone')}
         href={`tel:${contactInfo.phones[1].formatted}`}
       >
         <p className="text-bark">{contactInfo.phones[1].number}</p>
         <span className="text-xs text-gray-500 mt-1 block">
-          Appels directs disponibles
+          {t('info.phoneAvailable')}
         </span>
       </InfoCard>
 
       {/* Email */}
       <InfoCard
         icon={Mail}
-        title="Email"
+        title={t('info.emailLabel')}
         href={`mailto:${contactInfo.email.address}`}
       >
         <p className="text-bark break-all">{contactInfo.email.address}</p>
         <span className="text-xs text-gray-500 mt-1 block">
-          Reponse sous 24-48h
+          {t('info.emailResponse')}
         </span>
       </InfoCard>
 
       {/* Adresse */}
-      <InfoCard icon={MapPin} title="Adresse">
+      <InfoCard icon={MapPin} title={t('info.address')}>
         <p className="text-bark">{contactInfo.address.street}</p>
         <p className="text-bark">
           {contactInfo.address.city}, {contactInfo.address.country}
@@ -137,7 +140,7 @@ export default function ContactInfo() {
       </InfoCard>
 
       {/* Horaires */}
-      <InfoCard icon={Clock} title="Horaires d'ouverture">
+      <InfoCard icon={Clock} title={t('info.hours')}>
         <div className="space-y-1 text-sm text-bark">
           <p>{contactInfo.hours.weekdays}</p>
           <p>{contactInfo.hours.saturday}</p>
@@ -148,7 +151,7 @@ export default function ContactInfo() {
       {/* Reseaux sociaux */}
       <motion.div variants={cardVariants} className="pt-4">
         <h3 className="text-sm font-semibold text-navy mb-3">
-          Suivez-nous sur les reseaux
+          {t('info.social')}
         </h3>
         <div className="flex gap-3">
           {contactInfo.socials.map((social) => (

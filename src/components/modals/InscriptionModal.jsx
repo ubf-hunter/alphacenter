@@ -13,49 +13,18 @@ import {
   X,
 } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 // WhatsApp configuration
 const WHATSAPP_NUMBER = '+237670102293';
 
-// Programme options
-const programmes = [
-  {
-    id: 'ingenieur',
-    title: 'Concours Ingenieur',
-    description: 'Polytechnique, ENSPY, FGI...',
-    icon: Calculator,
-    color: 'navy',
-    message:
-      "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours d'ingenieur. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
-  },
-  {
-    id: 'medecine',
-    title: 'Concours Medecine',
-    description: 'FMSB, Facultes de medecine...',
-    icon: HeartPulse,
-    color: 'orange',
-    message:
-      "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours de medecine. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
-  },
-  {
-    id: 'infirmier',
-    title: 'Concours Infirmier',
-    description: 'CESSI, Ecoles de sante...',
-    icon: Beaker,
-    color: 'success',
-    message:
-      "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours infirmier/sciences de la sante. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
-  },
-  {
-    id: 'autre',
-    title: 'Autre / Question',
-    description: "J'ai une question specifique",
-    icon: HelpCircle,
-    color: 'gray',
-    message:
-      "Bonjour Alpha Center ! J'aimerais avoir des informations sur vos programmes de preparation aux concours. Pouvez-vous m'aider ?",
-  },
+// Programme config (icons + colors only, text from i18n)
+const programmeConfig = [
+  { id: 'engineer', icon: Calculator, color: 'navy' },
+  { id: 'medicine', icon: HeartPulse, color: 'orange' },
+  { id: 'nursing', icon: Beaker, color: 'success' },
+  { id: 'other', icon: HelpCircle, color: 'gray' },
 ];
 
 // Generate WhatsApp URL
@@ -160,8 +129,17 @@ function ProgrammeCard({ programme, index }) {
 
 export default function InscriptionModal() {
   const { isOpen, closeModal } = useInscriptionModal();
+  const { t } = useTranslation('contact');
   const modalRef = useRef(null);
   const firstFocusableRef = useRef(null);
+
+  // Build programmes from i18n
+  const programmes = programmeConfig.map((cfg) => ({
+    ...cfg,
+    title: t(`modal.options.${cfg.id}.title`),
+    description: t(`modal.options.${cfg.id}.description`),
+    message: t(`data.whatsappMessages.${cfg.id === 'other' ? 'default' : cfg.id}`),
+  }));
 
   // Close on Escape key
   useEffect(() => {
@@ -221,7 +199,7 @@ export default function InscriptionModal() {
               ref={firstFocusableRef}
               onClick={closeModal}
               className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-orange"
-              aria-label="Fermer"
+              aria-label={t('modal.close')}
             >
               <X size={20} className="text-gray-600" />
             </button>
@@ -244,10 +222,10 @@ export default function InscriptionModal() {
                   id="inscription-modal-title"
                   className="text-xl sm:text-2xl font-bold text-navy mb-2"
                 >
-                  Contactez-nous sur WhatsApp
+                  {t('modal.title')}
                 </h2>
                 <p className="text-gray-500">
-                  Selectionnez votre programme pour demarrer la conversation
+                  {t('modal.subtitle')}
                 </p>
               </motion.div>
 
@@ -269,7 +247,7 @@ export default function InscriptionModal() {
                 transition={{ duration: 0.3, delay: 0.5 }}
                 className="text-center text-xs text-gray-400 mt-4 sm:mt-6"
               >
-                Reponse garantie sous 24h ouvrables
+                {t('modal.responseGuarantee')}
               </motion.p>
             </div>
           </motion.div>

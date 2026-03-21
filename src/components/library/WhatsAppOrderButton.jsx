@@ -6,6 +6,7 @@
 
 import { MessageCircle } from 'lucide-react';
 import { generateWhatsAppLink } from '@/data/purchaseInfo';
+import { useTranslation } from 'react-i18next';
 
 export default function WhatsAppOrderButton({
   product,
@@ -14,6 +15,7 @@ export default function WhatsAppOrderButton({
   className = '',
   children,
 }) {
+  const { t } = useTranslation('application');
   const whatsappLink = generateWhatsAppLink(product);
 
   const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300';
@@ -38,7 +40,7 @@ export default function WhatsAppOrderButton({
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       <MessageCircle size={size === 'lg' ? 24 : size === 'sm' ? 16 : 20} />
-      {children || 'Commander sur WhatsApp'}
+      {children || t('library.product.orderWhatsApp')}
     </a>
   );
 }

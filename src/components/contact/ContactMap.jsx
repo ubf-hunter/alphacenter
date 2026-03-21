@@ -5,9 +5,12 @@
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { ExternalLink, MapPin, Navigation } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { contactInfo, mapConfig } from '../../data/contact';
 
 export default function ContactMap() {
+  const { t } = useTranslation('contact');
+
   return (
     <section className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50">
       <Container>
@@ -21,10 +24,10 @@ export default function ContactMap() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange/10 rounded-full text-orange font-medium text-sm mb-4">
             <MapPin size={16} />
-            Notre localisation
+            {t('map.locationLabel')}
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">
-            Retrouve-nous a Yaounde
+            {t('map.title')}
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto">
             {contactInfo.address.full}
@@ -80,7 +83,7 @@ export default function ContactMap() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg text-navy font-medium text-sm hover:bg-white transition-colors"
               >
                 <Navigation size={16} className="text-orange" />
-                <span className="hidden sm:inline">Itineraire</span>
+                <span className="hidden sm:inline">{t('map.directions')}</span>
               </a>
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${mapConfig.lat},${mapConfig.lng}`}
@@ -105,18 +108,18 @@ export default function ContactMap() {
         >
           {[
             {
-              title: 'En transport',
-              description: 'Bus et taxis disponibles. Arret Omnisports.',
+              title: t('map.byTransport'),
+              description: t('map.transportDesc'),
               icon: '🚌',
             },
             {
-              title: 'En voiture',
-              description: 'Parking gratuit disponible sur place.',
+              title: t('map.byCar'),
+              description: t('map.carDesc'),
               icon: '🚗',
             },
             {
-              title: 'A pied',
-              description: '5 min a pied de la station Omnisports.',
+              title: t('map.onFoot'),
+              description: t('map.footDesc'),
               icon: '🚶',
             },
           ].map((item, index) => (

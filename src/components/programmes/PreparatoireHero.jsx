@@ -8,27 +8,30 @@ import {
   Trophy,
   Users,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Button from '@components/common/Button';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function PreparatoireHero({ program }) {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
+
   const benefits = [
     {
       icon: Calendar,
-      text: 'Horaires flexibles (weekends + vacances)',
+      text: t('preparatoire.benefits.flexibleSchedule'),
     },
     {
       icon: Clock,
-      text: 'Compatible avec la Terminale',
+      text: t('preparatoire.benefits.compatible'),
     },
     {
       icon: Target,
-      text: 'Orientation personnalisée (Ingénieur ou Santé)',
+      text: t('preparatoire.benefits.orientation'),
     },
     {
       icon: Users,
-      text: `Prix accessible : ${program.priceLabel}`,
+      text: t('preparatoire.benefits.price', { price: program.priceLabel }),
     },
   ];
 
@@ -65,9 +68,9 @@ export default function PreparatoireHero({ program }) {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy leading-tight"
         >
-          Pas encore au Bac?{' '}
+          {t('preparatoire.headline')}{' '}
           <span className="text-orange font-cursive italic">
-            Commence dès maintenant!
+            {t('preparatoire.headlineHighlight')}
           </span>
         </motion.h2>
 
@@ -79,9 +82,7 @@ export default function PreparatoireHero({ program }) {
           viewport={{ once: true }}
           className="text-lg text-gray-600 leading-relaxed"
         >
-          Prépare ton avenir pendant ta Terminale. Renforce tes bases en maths
-          et sciences, maîtrise la méthodologie des concours et gagne une
-          longueur d'avance. Compatible avec ton emploi du temps scolaire.
+          {t('preparatoire.description')}
         </motion.p>
 
         {/* Benefits List */}
@@ -122,11 +123,11 @@ export default function PreparatoireHero({ program }) {
             size="lg"
             onClick={() => openModal('preparatoire')}
           >
-            Je commence maintenant
+            {t('preparatoire.ctaPrimary')}
             <ArrowRight size={20} />
           </Button>
           <Button variant="ghost" size="lg" to="#programmes">
-            En savoir plus
+            {t('preparatoire.ctaSecondary')}
           </Button>
         </motion.div>
 

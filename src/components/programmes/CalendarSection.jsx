@@ -1,34 +1,11 @@
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Users, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import Button from '@components/common/Button';
 import { calendar } from '@/data/programmes';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
-
-const statusStyles = {
-  open: {
-    bg: 'bg-green-50',
-    text: 'text-green-700',
-    badge: 'bg-green-100 text-green-700',
-    icon: CheckCircle,
-    label: 'Inscriptions ouvertes',
-  },
-  upcoming: {
-    bg: 'bg-amber-50',
-    text: 'text-amber-700',
-    badge: 'bg-amber-100 text-amber-700',
-    icon: Clock,
-    label: 'Prochainement',
-  },
-  closed: {
-    bg: 'bg-gray-50',
-    text: 'text-gray-500',
-    badge: 'bg-gray-100 text-gray-500',
-    icon: AlertCircle,
-    label: 'Complet',
-  },
-};
 
 const programColors = {
   ENSP: 'border-l-orange',
@@ -39,6 +16,31 @@ const programColors = {
 
 export default function CalendarSection() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
+
+  const statusStyles = {
+    open: {
+      bg: 'bg-green-50',
+      text: 'text-green-700',
+      badge: 'bg-green-100 text-green-700',
+      icon: CheckCircle,
+      label: t('calendar.statusOpen'),
+    },
+    upcoming: {
+      bg: 'bg-amber-50',
+      text: 'text-amber-700',
+      badge: 'bg-amber-100 text-amber-700',
+      icon: Clock,
+      label: t('calendar.statusUpcoming'),
+    },
+    closed: {
+      bg: 'bg-gray-50',
+      text: 'text-gray-500',
+      badge: 'bg-gray-100 text-gray-500',
+      icon: AlertCircle,
+      label: t('calendar.statusClosed'),
+    },
+  };
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -47,9 +49,9 @@ export default function CalendarSection() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="Calendrier"
-          title="Prochaines *sessions* de formation"
-          subtitle="Consulte les dates de démarrage et inscris-toi à la session qui te convient."
+          badge={t('calendar.badge')}
+          title={t('calendar.title')}
+          subtitle={t('calendar.subtitle')}
         />
 
         <div className="mt-16 space-y-8">
@@ -75,7 +77,7 @@ export default function CalendarSection() {
                   }`}
                 />
                 <h3 className="text-xl font-bold text-navy">
-                  Programme {programGroup.programme}
+                  {t('calendar.programLabel')} {programGroup.programme}
                 </h3>
               </div>
 
@@ -122,18 +124,18 @@ export default function CalendarSection() {
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <Calendar size={16} className="text-gray-400" />
-                          <span>Début : {session.startDate}</span>
+                          <span>{t('calendar.startDate')} : {session.startDate}</span>
                         </div>
                         {session.endDate && (
                           <div className="flex items-center gap-2 text-sm text-gray-600">
                             <Clock size={16} className="text-gray-400" />
-                            <span>Fin : {session.endDate}</span>
+                            <span>{t('calendar.endDate')} : {session.endDate}</span>
                           </div>
                         )}
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <Users size={16} className="text-gray-400" />
                           <span>
-                            {session.placesLeft} places sur {session.places} disponibles
+                            {t('calendar.placesAvailable', { left: session.placesLeft, total: session.places })}
                           </span>
                         </div>
                       </div>
@@ -153,7 +155,7 @@ export default function CalendarSection() {
                           />
                         </div>
                         <p className="text-xs text-gray-500 mt-1">
-                          {Math.round(placesPercentage)}% des places prises
+                          {t('calendar.placesTaken', { percentage: Math.round(placesPercentage) })}
                         </p>
                       </div>
 
@@ -165,7 +167,7 @@ export default function CalendarSection() {
                           onClick={() => openModal(programGroup.programme.toLowerCase())}
                           className="w-full justify-center"
                         >
-                          S'inscrire maintenant
+                          {t('calendar.registerNow')}
                           <ArrowRight size={16} />
                         </Button>
                       )}
@@ -176,7 +178,7 @@ export default function CalendarSection() {
                           to="/contact"
                           className="w-full justify-center"
                         >
-                          Me notifier à l'ouverture
+                          {t('calendar.notifyMe')}
                         </Button>
                       )}
                     </motion.div>
@@ -196,10 +198,10 @@ export default function CalendarSection() {
           className="mt-12 text-center"
         >
           <p className="text-gray-500 mb-4">
-            Tu ne trouves pas la session qui te convient ?
+            {t('calendar.noSessionFound')}
           </p>
           <Button variant="ghost" to="/contact">
-            Contacte-nous pour plus d'options
+            {t('calendar.contactForOptions')}
             <ArrowRight size={18} />
           </Button>
         </motion.div>

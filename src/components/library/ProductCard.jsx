@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';
 import WhatsAppOrderButton from './WhatsAppOrderButton';
+import { useTranslation } from 'react-i18next';
 
 const colorStyles = {
   orange: {
@@ -27,6 +28,7 @@ const colorStyles = {
 export default function ProductCard({ product, index = 0 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
+  const { t } = useTranslation('application');
   const colors = colorStyles[product.color] || colorStyles.orange;
   const Icon = product.icon;
 
@@ -62,13 +64,13 @@ export default function ProductCard({ product, index = 0 }) {
           {product.bestseller && (
             <span className="flex items-center gap-1 px-2.5 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full">
               <Star size={12} className="fill-current" />
-              Bestseller
+              {t('library.product.bestseller')}
             </span>
           )}
           {product.isNew && (
             <span className="flex items-center gap-1 px-2.5 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
               <Sparkles size={12} />
-              Nouveau
+              {t('library.product.new')}
             </span>
           )}
         </div>
@@ -169,14 +171,14 @@ export default function ProductCard({ product, index = 0 }) {
           {/* Price */}
           <div className="flex items-end justify-between mb-4">
             <div>
-              <span className="text-sm text-gray-500">Prix</span>
+              <span className="text-sm text-gray-500">{t('library.product.price')}</span>
               {product.price > 0 ? (
                 <div className="text-2xl font-bold text-navy">
                   {product.price.toLocaleString()} <span className="text-sm font-normal">FCFA</span>
                 </div>
               ) : (
                 <div className="text-lg font-semibold text-gray-400">
-                  Prix a venir
+                  {t('library.product.priceTbd')}
                 </div>
               )}
             </div>
@@ -198,7 +200,7 @@ export default function ProductCard({ product, index = 0 }) {
               disabled
               className="w-full py-3 bg-gray-100 text-gray-400 font-semibold rounded-xl cursor-not-allowed"
             >
-              Bientot disponible
+              {t('library.product.comingSoon')}
             </button>
           )}
         </div>

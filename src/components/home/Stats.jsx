@@ -3,6 +3,7 @@ import Container from '@components/common/Container';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, GraduationCap, Trophy, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function useCountUp(
   end,
@@ -81,38 +82,40 @@ function StatCard({
   );
 }
 
-const stats = [
-  {
-    icon: Users,
-    number: 358,
-    suffix: '+',
-    label: 'Étudiants admis',
-    sublabel: 'depuis 2023',
-  },
-  {
-    icon: Trophy,
-    number: 85,
-    suffix: '%',
-    label: 'Taux de réussite',
-    sublabel: 'aux concours',
-  },
-  {
-    icon: Calendar,
-    number: 3,
-    suffix: '+',
-    label: "Années d'expérience",
-    sublabel: "d'excellence",
-  },
-  {
-    icon: GraduationCap,
-    number: 12,
-    suffix: '',
-    label: 'Enseignants experts',
-    sublabel: 'et passionnés',
-  },
-];
-
 export default function Stats() {
+  const { t } = useTranslation('home');
+
+  const stats = [
+    {
+      icon: Users,
+      number: 358,
+      suffix: '+',
+      label: t('stats.admitted.label'),
+      sublabel: t('stats.admitted.sublabel'),
+    },
+    {
+      icon: Trophy,
+      number: 85,
+      suffix: '%',
+      label: t('stats.success.label'),
+      sublabel: t('stats.success.sublabel'),
+    },
+    {
+      icon: Calendar,
+      number: 3,
+      suffix: '+',
+      label: t('stats.experience.label'),
+      sublabel: t('stats.experience.sublabel'),
+    },
+    {
+      icon: GraduationCap,
+      number: 12,
+      suffix: '',
+      label: t('stats.experts.label'),
+      sublabel: t('stats.experts.sublabel'),
+    },
+  ];
+
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Subtle background decoration */}
@@ -121,7 +124,7 @@ export default function Stats() {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <StatCard key={stat.label} {...stat} delay={index * 0.1} />
+            <StatCard key={index} {...stat} delay={index * 0.1} />
           ))}
         </div>
       </Container>

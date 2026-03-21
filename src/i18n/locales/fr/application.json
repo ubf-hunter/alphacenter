@@ -1,0 +1,423 @@
+{
+  "page": {
+    "title": "Application Mobile Alpha",
+    "subtitle": "Telecharge l'app Alpha pour reviser partout, meme hors-ligne. 1000+ exercices corriges, planning IA, communaute d'entraide. Disponible sur iOS et Android."
+  },
+  "notFound": {
+    "title": "Page non trouvee",
+    "subtitle": "Desole, la page que vous recherchez n'existe pas ou a ete deplacee.",
+    "backHome": "Retour a l'accueil"
+  },
+  "resources": {
+    "title": "Bibliotheque Alpha - Documents et Ressources | Alpha Center"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "heading": "Mentions legales"
+    },
+    "cgu": {
+      "heading": "Conditions Generales d'Utilisation",
+      "lastUpdated": "Derniere mise a jour : Mars 2026"
+    },
+    "confidentialite": {
+      "heading": "Politique de confidentialite",
+      "lastUpdated": "Derniere mise a jour : Mars 2026"
+    }
+  },
+  "library": {
+    "hero": {
+      "badge": "Bibliotheque Alpha",
+      "titlePart1": "Tous les",
+      "titleHighlight": "outils",
+      "titlePart2": "pour",
+      "titlePart3": "reussir tes concours",
+      "subtitle": "Fascicules, annales corrigees, bords - des ressources de qualite creees par nos enseignants pour maximiser tes chances de reussite.",
+      "stats": {
+        "documents": "Documents",
+        "averageRating": "Note moyenne",
+        "guaranteedQuality": "Qualite garantie"
+      }
+    },
+    "faq": {
+      "badge": "Questions frequentes",
+      "title": "Tout savoir sur nos *documents*",
+      "needHelp": "Besoin d'aide ?",
+      "findAnswers": "Trouvez rapidement les reponses a vos questions",
+      "items": {
+        "0": {
+          "question": "Comment commander un document ?",
+          "answer": "Cliquez sur le bouton 'Commander sur WhatsApp' sur la fiche du document. Vous serez redirige vers WhatsApp avec un message pre-rempli. Notre equipe vous repondra rapidement."
+        },
+        "1": {
+          "question": "Comment payer ma commande ?",
+          "answer": "Nous acceptons Orange Money et MTN Mobile Money. Apres votre commande sur WhatsApp, vous recevrez les instructions de paiement."
+        },
+        "2": {
+          "question": "Combien de temps pour recevoir ma commande ?",
+          "answer": "Comptez 24h pour le retrait au centre Alpha Center ou 24-48h pour la livraison a Yaounde. Pour les autres villes, la livraison prend 3-5 jours."
+        },
+        "3": {
+          "question": "Puis-je etre rembourse si je ne suis pas satisfait ?",
+          "answer": "Oui, vous avez 7 jours apres reception pour demander un remboursement si le contenu ne correspond pas a vos attentes. Contactez-nous sur WhatsApp."
+        },
+        "4": {
+          "question": "Les documents sont-ils mis a jour ?",
+          "answer": "Oui, nous mettons a jour nos documents chaque annee avec les derniers sujets d'annales et les evolutions des programmes. Les acheteurs recoivent les mises a jour gratuitement."
+        },
+        "5": {
+          "question": "Ou puis-je retirer ma commande ?",
+          "answer": "Vous pouvez retirer votre commande au centre Alpha Center, situe au quartier Omnisports a Yaounde. L'adresse exacte vous sera communiquee par WhatsApp."
+        }
+      }
+    },
+    "orderProcess": {
+      "badge": "Comment commander",
+      "title": "Un processus *simple* et *rapide*",
+      "subtitle": "Commandez vos documents en quelques clics via WhatsApp",
+      "steps": {
+        "0": {
+          "title": "Choisissez vos documents",
+          "description": "Parcourez notre catalogue et selectionnez les ressources qui vous interessent"
+        },
+        "1": {
+          "title": "Contactez-nous sur WhatsApp",
+          "description": "Cliquez sur 'Commander' pour nous envoyer votre commande via WhatsApp"
+        },
+        "2": {
+          "title": "Payez par Mobile Money",
+          "description": "Reglez votre commande par Orange Money ou MTN MoMo"
+        },
+        "3": {
+          "title": "Recevez vos documents",
+          "description": "Retrait au centre Alpha Center ou livraison a domicile."
+        }
+      }
+    },
+    "search": {
+      "placeholder": "Rechercher un document...",
+      "all": "Tous",
+      "sortBy": "Trier par:",
+      "popular": "Populaires",
+      "newest": "Nouveautes",
+      "priceAsc": "Prix croissant",
+      "priceDesc": "Prix decroissant"
+    },
+    "guarantees": {
+      "badge": "Nos engagements",
+      "title": "Des *garanties* pour votre tranquillite"
+    },
+    "product": {
+      "bestseller": "Bestseller",
+      "new": "Nouveau",
+      "price": "Prix",
+      "priceTbd": "Prix a venir",
+      "comingSoon": "Bientot disponible",
+      "orderWhatsApp": "Commander sur WhatsApp"
+    },
+    "grid": {
+      "documentsFound": "document(s) trouve(s)",
+      "noResults": "Aucun document trouve",
+      "noResultsHint": "Essayez de modifier vos criteres de recherche",
+      "resetFilters": "Reinitialiser les filtres"
+    },
+    "testimonials": {
+      "badge": "Temoignages",
+      "title": "Ils ont *reussi* avec nos documents",
+      "subtitle": "Decouvrez les retours de nos etudiants qui ont utilise nos ressources",
+      "items": {
+        "0": {
+          "name": "Kevin M.",
+          "role": "Admis ENSP 2024",
+          "content": "Les fascicules Alpha Center m'ont vraiment aide a structurer mes revisions. Les exercices corriges sont tres bien expliques.",
+          "product": "Fascicule Mathematiques ENSP"
+        },
+        "1": {
+          "name": "Diane T.",
+          "role": "Admise Medecine 2024",
+          "content": "J'ai utilise les annales corrigees pendant 3 mois. La qualite des corrections m'a permis de comprendre mes erreurs.",
+          "product": "Pack Annales Medecine"
+        },
+        "2": {
+          "name": "Paul E.",
+          "role": "Admis ENSTP 2024",
+          "content": "Le pack complet ingenierie est vraiment complet. J'ai pu reviser toutes les matieres avec des supports de qualite.",
+          "product": "Pack Complet Ingenierie"
+        }
+      }
+    }
+  },
+  "appHero": {
+    "badge": "Disponible sur iOS et Android",
+    "titleLine1": "Revise",
+    "titleHighlight": "partout",
+    "titleLine2": "avec Alpha",
+    "subtitle": "Mode hors-ligne complet, tous les concours du Cameroun dans ta poche. 1000+ exercices corriges, planning IA et communaute d'entraide.",
+    "badgeOffline": "Mode hors-ligne",
+    "badgeRating": "4.8 sur App Store",
+    "installOn": "Installer sur",
+    "iPhone": "iPhone",
+    "downloadFor": "Telecharger pour",
+    "android": "Android",
+    "screenTitle": "Alpha App",
+    "screenSubtitle": "Prepare ton concours partout, meme sans internet",
+    "stats": {
+      "exercises": "Exercices corriges",
+      "users": "Utilisateurs actifs",
+      "concours": "Concours prepares",
+      "rating": "Note App Store"
+    }
+  },
+  "appFaq": {
+    "badge": "FAQ",
+    "title": "Questions *frequentes*",
+    "subtitle": "Tout ce que tu dois savoir sur l'application Alpha.",
+    "otherQuestions": "Tu as d'autres questions ?",
+    "contactSupport": "Contacte notre equipe support",
+    "questions": {
+      "q1": {
+        "question": "L'application est-elle gratuite ?",
+        "answer": "L'app est gratuite a telecharger avec un acces limite. Pour debloquer tous les contenus (cours complets, exercices, examens blancs), un abonnement mensuel est disponible a partir de 5000 FCFA/mois."
+      },
+      "q2": {
+        "question": "Comment fonctionne le mode hors-ligne ?",
+        "answer": "Tu peux telecharger les chapitres qui t'interessent quand tu as une connexion. Ensuite, tu peux reviser ces contenus meme sans internet. Un chapitre pese environ 50 MB."
+      },
+      "q3": {
+        "question": "Comment payer avec Orange Money ou MTN MoMo ?",
+        "answer": "Dans l'app, va dans Abonnement puis choisis Payer. Selectionne Orange Money ou MTN MoMo, entre ton numero et confirme. C'est instantane !"
+      },
+      "q4": {
+        "question": "L'app est-elle disponible sur iPhone ?",
+        "answer": "Oui ! L'app Alpha est disponible sur iOS (App Store) et Android (Google Play). Elle fonctionne sur tous les smartphones recents."
+      },
+      "q5": {
+        "question": "Puis-je utiliser l'app sans etre inscrit au centre Alpha Center ?",
+        "answer": "Absolument ! L'app est independante du centre physique. Tu peux t'abonner directement dans l'app, que tu sois inscrit au centre ou non."
+      },
+      "q6": {
+        "question": "Comment contacter le support ?",
+        "answer": "Dans l'app, va dans Profil > Aide. Tu peux nous contacter par WhatsApp, email ou via le formulaire integre. Reponse sous 24h garantie."
+      }
+    }
+  },
+  "appTestimonials": {
+    "badge": "Temoignages",
+    "title": "Ils ont *reussi* avec Alpha",
+    "subtitle": "Decouvre ce que disent les utilisateurs de l'app Alpha.",
+    "ratingLabel": "sur App Store",
+    "testimonials": {
+      "t1": {
+        "name": "Kevin M.",
+        "school": "Admis ENSP 2024",
+        "quote": "L'app Alpha m'a permis de reviser dans le bus, pendant les pauses... Le mode hors-ligne est vraiment pratique au Cameroun ou la connexion n'est pas toujours stable."
+      },
+      "t2": {
+        "name": "Grace N.",
+        "school": "Admise FMSB 2024",
+        "quote": "Les QCM de l'app sont exactement comme ceux du concours FMSB. J'ai pu m'entrainer des centaines de fois. Le planning IA m'a aide a m'organiser."
+      },
+      "t3": {
+        "name": "Emmanuel T.",
+        "school": "Admis ENSTP 2024",
+        "quote": "Le forum de l'app est genial. J'ai pu poser mes questions et avoir des reponses rapides des profs Alpha Center. Une vraie communaute d'entraide !"
+      },
+      "t4": {
+        "name": "Sandrine A.",
+        "school": "Admise CESSI 2024",
+        "quote": "Payer avec Orange Money c'est trop simple. Pas besoin de carte bancaire. Et les exercices de biologie sont vraiment complets pour le concours CESSI."
+      }
+    }
+  },
+  "whyAlphaApp": {
+    "badge": "Pourquoi Alpha App ?",
+    "title": "Tout ce dont tu as besoin pour *reussir*",
+    "subtitle": "Une application pensee pour les realites du Cameroun : mode hors-ligne, paiement Mobile Money, contenu adapte.",
+    "advantages": {
+      "offline": {
+        "title": "Revise partout",
+        "description": "Mode hors-ligne complet. Telecharge tes cours une fois, revise sans internet."
+      },
+      "targeted": {
+        "title": "Contenu cible",
+        "description": "Exercices et cours adaptes specifiquement a chaque concours : ENSP, FMSB, CESSI..."
+      },
+      "progress": {
+        "title": "Suivi en temps reel",
+        "description": "Dashboard personnalise avec statistiques detaillees et prediction de score."
+      },
+      "ai": {
+        "title": "Planning intelligent",
+        "description": "L'IA genere un planning adapte a ta date de concours et tes disponibilites."
+      },
+      "payment": {
+        "title": "Paiement Mobile Money",
+        "description": "Paye facilement avec Orange Money ou MTN MoMo, sans carte bancaire."
+      },
+      "community": {
+        "title": "Communaute active",
+        "description": "2000+ etudiants qui s'entraident. Professeurs Alpha Center disponibles quotidiennement."
+      }
+    }
+  },
+  "downloadCta": {
+    "badge": "Gratuit sur iOS et Android",
+    "titleLine1": "Telecharge",
+    "titleHighlight": "Alpha",
+    "titleLine2": "et commence a reviser",
+    "description": "Rejoins les 2000+ etudiants qui preparent leurs concours avec Alpha. Disponible 24h/24, meme sans connexion internet.",
+    "installOn": "Installer sur",
+    "iPhone": "iPhone",
+    "downloadFor": "Telecharger pour",
+    "android": "Android",
+    "stats": {
+      "usersValue": "2000+",
+      "usersLabel": "Utilisateurs actifs",
+      "ratingValue": "4.8/5",
+      "ratingLabel": "Note moyenne",
+      "concoursValue": "5",
+      "concoursLabel": "Concours prepares"
+    },
+    "screenTitle": "Alpha",
+    "screenSubtitle": "Prepare ton concours",
+    "screenInstall": "Installer",
+    "floatingBadge": "iOS & Android"
+  },
+  "featureShowcase": {
+    "badge": "Fonctionnalites",
+    "title": "Une app *complete* pour ta *reussite*",
+    "subtitle": "Decouvre toutes les fonctionnalites qui font d'Alpha l'app de reference pour preparer les concours au Cameroun.",
+    "features": {
+      "library": {
+        "title": "Bibliotheque de cours",
+        "tagline": "Tout ton programme en poche",
+        "description": "Acces a tous les cours de Maths, Physique, Chimie, Biologie, Anglais et Francais. Organises par concours, chapitre et niveau de difficulte.",
+        "highlights": [
+          "Cours PDF et videos explicatives",
+          "Mode hors-ligne avec telechargement",
+          "Systeme de favoris et notes personnelles",
+          "Mise a jour reguliere du contenu"
+        ]
+      },
+      "exercises": {
+        "title": "Exercices & corrections",
+        "tagline": "1000+ exercices avec solutions detaillees",
+        "description": "Entraine-toi avec des exercices corriges etape par etape. Filtres par matiere, chapitre, difficulte et type de concours.",
+        "highlights": [
+          "Solutions detaillees pas a pas",
+          "Timer optionnel pour conditions reelles",
+          "Historique des exercices resolus",
+          "Nouveaux exercices chaque semaine"
+        ]
+      },
+      "qcm": {
+        "title": "QCM & examens blancs",
+        "tagline": "Simule les conditions du concours",
+        "description": "QCM chronometres et examens blancs bases sur les annales officielles. Analyse detaillee de tes resultats apres chaque session.",
+        "highlights": [
+          "Annales ENSP, ENSTP, ENS, FMSB, CESSI",
+          "Chronometre et conditions reelles",
+          "Analyse detaillee des erreurs",
+          "Classement avec autres utilisateurs"
+        ]
+      },
+      "tracking": {
+        "title": "Suivi de progression",
+        "tagline": "Visualise tes progres",
+        "description": "Dashboard personnel avec graphiques d'evolution par matiere. Taux de reussite, prediction de score et alertes personnalisees.",
+        "highlights": [
+          "Graphiques d'evolution par matiere",
+          "Prediction de score au concours",
+          "Alertes et recommandations",
+          "Resume hebdomadaire des progres"
+        ]
+      },
+      "planning": {
+        "title": "Planning personnalise IA",
+        "tagline": "Ton programme de revision sur mesure",
+        "description": "L'IA genere automatiquement un planning selon ta date de concours, ton niveau et tes disponibilites. Rappels push avant chaque session.",
+        "highlights": [
+          "Generation automatique du planning",
+          "Adaptation a ton niveau",
+          "Rappels push quotidiens",
+          "Reajustement selon tes progres"
+        ]
+      },
+      "forum": {
+        "title": "Forum communautaire",
+        "tagline": "Entraide et motivation",
+        "description": "Rejoins 2000+ etudiants qui s'entraident. Pose tes questions et obtiens des reponses des professeurs Alpha Center.",
+        "highlights": [
+          "Questions/reponses moderees",
+          "Professeurs actifs quotidiennement",
+          "Sections par theme et concours",
+          "Conseils et motivation"
+        ]
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "Comment ca marche",
+    "title": "*4 etapes* pour commencer",
+    "subtitle": "Telecharge l'app et commence a reviser en quelques minutes. C'est simple, rapide et gratuit.",
+    "ctaText": "Pret a commencer ? Telecharge l'app gratuitement.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "steps": {
+      "s1": {
+        "title": "Telecharge l'app",
+        "description": "Disponible gratuitement sur App Store et Google Play."
+      },
+      "s2": {
+        "title": "Choisis ton concours",
+        "description": "ENSP, ENSTP, ENS, FMSB, CESSI... Selectionne tes objectifs."
+      },
+      "s3": {
+        "title": "Accede aux contenus",
+        "description": "Cours, exercices, QCM : tout est a portee de main."
+      },
+      "s4": {
+        "title": "Revise hors-ligne",
+        "description": "Telecharge les chapitres et revise partout, meme sans internet."
+      }
+    }
+  },
+  "iosInstall": {
+    "title": "Installer Alpha sur iPhone",
+    "subtitle": "Suis ces 3 etapes pour ajouter Alpha a ton ecran d'accueil",
+    "step1Title": "Ouvre dans Safari",
+    "step1Desc": "Va sur alphacenter.cm avec Safari",
+    "step2Title": "Appuie sur Partager",
+    "step2Desc": "L'icone carre avec la fleche vers le haut, en bas de Safari",
+    "step3Title": "\"Sur l'ecran d'accueil\"",
+    "step3Desc": "Choisis cette option dans le menu qui apparait",
+    "understood": "Compris !"
+  },
+  "concoursList": {
+    "badge": "Concours prepares",
+    "title": "Tous les *concours* du Cameroun",
+    "subtitle": "L'app Alpha couvre les principaux concours d'entree aux grandes ecoles du Cameroun.",
+    "concoursCount": "{{count}} concours prepares",
+    "viewPrograms": "Voir les programmes",
+    "moreComingSoon": "D'autres concours seront ajoutes prochainement. Reste connecte !",
+    "categories": {
+      "engineering": {
+        "name": "Ecoles d'Ingenieurs"
+      },
+      "health": {
+        "name": "Medecine"
+      },
+      "nursing": {
+        "name": "Sciences Infirmieres"
+      }
+    },
+    "concoursNames": {
+      "ensp": { "name": "ENSP", "fullName": "Ecole Nationale Superieure Polytechnique" },
+      "enstp": { "name": "ENSTP", "fullName": "Ecole Nationale Superieure des Travaux Publics" },
+      "ens": { "name": "ENS", "fullName": "Ecole Normale Superieure" },
+      "fmsb": { "name": "FMSB", "fullName": "Faculte de Medecine et Sciences Biomedicales" },
+      "fms": { "name": "FMS Douala", "fullName": "Faculte de Medecine et Sciences de Douala" },
+      "cessi": { "name": "CESSI", "fullName": "Centre d'Enseignement Specialise en Soins Infirmiers" },
+      "ide": { "name": "IDE", "fullName": "Infirmier Diplome d'Etat" }
+    }
+  }
+}

@@ -4,6 +4,7 @@
 // ============================================
 
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -29,6 +30,7 @@ import { domains } from '@/data/domains';
 
 export default function MetierDetail() {
   const { slug } = useParams();
+  const { t } = useTranslation('orientation');
   const career = getCareerBySlug(slug);
 
   // Redirect if career not found
@@ -46,7 +48,7 @@ export default function MetierDetail() {
   return (
     <>
       <SEO
-        title={`${career.name} - Fiche metier`}
+        title={`${career.name} - ${t('schoolDetail.careerProfile')}`}
         description={career.description}
         image={career.ogImage}
         url={`/orientation/metiers/${career.slug}`}
@@ -67,7 +69,7 @@ export default function MetierDetail() {
             className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft size={18} />
-            <span>Retour aux metiers</span>
+            <span>{t('careerDetail.back')}</span>
           </Link>
 
           <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -113,12 +115,12 @@ export default function MetierDetail() {
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
                       <Briefcase size={18} className="text-white/70" />
-                      <span className="text-white text-sm">{career.employment.rate}% emploi</span>
+                      <span className="text-white text-sm">{career.employment.rate}% {t('careerDetail.employment')}</span>
                     </div>
                     {career.outlook?.trend === 'up' && (
                       <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-xl">
                         <TrendingUp size={18} className="text-emerald-300" />
-                        <span className="text-white text-sm">En hausse</span>
+                        <span className="text-white text-sm">{t('careerDetail.trending')}</span>
                       </div>
                     )}
                   </div>
@@ -181,7 +183,7 @@ export default function MetierDetail() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl font-bold text-navy mb-4">
-                  Le metier
+                  {t('careerDetail.theCareer')}
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   {career.description}
@@ -196,7 +198,7 @@ export default function MetierDetail() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl font-bold text-navy mb-6">
-                  Missions principales
+                  {t('careerDetail.mainMissions')}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {career.missions.map((mission, index) => (
@@ -219,7 +221,7 @@ export default function MetierDetail() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl font-bold text-navy mb-6">
-                  Competences requises
+                  {t('careerDetail.requiredSkills')}
                 </h2>
                 <div className="space-y-4">
                   {career.skills.map((skill, index) => (
@@ -250,7 +252,7 @@ export default function MetierDetail() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl font-bold text-navy mb-6">
-                  Qualites personnelles
+                  {t('careerDetail.personalQualities')}
                 </h2>
                 <div className="flex flex-wrap gap-3">
                   {career.qualities.map((quality, index) => (
@@ -274,7 +276,7 @@ export default function MetierDetail() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">
-                    Perspectives d'emploi
+                    {t('careerDetail.jobProspects')}
                   </h2>
                   <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6">
                     <div className="flex items-start gap-4">
@@ -312,19 +314,19 @@ export default function MetierDetail() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <GraduationCap size={24} className="text-navy" />
-                  <h3 className="text-lg font-bold text-navy">Formation</h3>
+                  <h3 className="text-lg font-bold text-navy">{t('careerDetail.training')}</h3>
                 </div>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Niveau</span>
+                    <span className="text-gray-500">{t('careerDetail.level')}</span>
                     <span className="font-semibold text-navy">{career.education.level}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Duree</span>
+                    <span className="text-gray-500">{t('careerDetail.duration')}</span>
                     <span className="font-semibold text-navy">{career.education.duration}</span>
                   </div>
                   <div className="pt-3 border-t border-gray-200">
-                    <span className="text-gray-500 block mb-2">Parcours</span>
+                    <span className="text-gray-500 block mb-2">{t('careerDetail.path')}</span>
                     <p className="text-gray-700">{career.education.path}</p>
                   </div>
                 </div>
@@ -340,19 +342,19 @@ export default function MetierDetail() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <DollarSign size={24} className="text-navy" />
-                  <h3 className="text-lg font-bold text-navy">Salaires</h3>
+                  <h3 className="text-lg font-bold text-navy">{t('careerDetail.salaries')}</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500 text-sm">Debutant</span>
+                    <span className="text-gray-500 text-sm">{t('careerDetail.beginner')}</span>
                     <span className="font-semibold text-navy text-sm">{career.salary.junior}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500 text-sm">Confirme</span>
+                    <span className="text-gray-500 text-sm">{t('careerDetail.confirmed')}</span>
                     <span className="font-semibold text-orange text-sm">{career.salary.mid}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500 text-sm">Senior</span>
+                    <span className="text-gray-500 text-sm">{t('careerDetail.senior')}</span>
                     <span className="font-semibold text-emerald-600 text-sm">{career.salary.senior}</span>
                   </div>
                 </div>
@@ -368,7 +370,7 @@ export default function MetierDetail() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Users size={24} className="text-navy" />
-                  <h3 className="text-lg font-bold text-navy">Employeurs</h3>
+                  <h3 className="text-lg font-bold text-navy">{t('careerDetail.employers')}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {career.employment.sectors.map((sector, index) => (
@@ -391,13 +393,13 @@ export default function MetierDetail() {
                 className="bg-navy rounded-2xl p-6 text-center"
               >
                 <h3 className="text-lg font-bold text-white mb-3">
-                  Ce metier t'interesse ?
+                  {t('careerDetail.interested')}
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Prepare-toi avec Alpha Center
+                  {t('careerDetail.prepareWith')}
                 </p>
                 <Button variant="primary" to="/programmes" size="md" className="w-full justify-center">
-                  Voir nos programmes
+                  {t('careerDetail.viewPrograms')}
                 </Button>
               </motion.div>
             </div>
@@ -417,10 +419,10 @@ export default function MetierDetail() {
               className="mb-10"
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-4">
-                Ecoles pour devenir {career.shortName}
+                {t('careerDetail.schoolsFor')} {career.shortName}
               </h2>
               <p className="text-gray-600">
-                Decouvre les etablissements qui forment a ce metier
+                {t('careerDetail.schoolsForSubtitle')}
               </p>
             </motion.div>
 
@@ -433,7 +435,7 @@ export default function MetierDetail() {
             {relatedSchools.length > 3 && (
               <div className="text-center mt-8">
                 <Button variant="outline" to="/orientation/ecoles">
-                  Voir toutes les ecoles
+                  {t('careerDetail.viewAllSchools')}
                   <ArrowRight size={18} />
                 </Button>
               </div>
@@ -454,7 +456,7 @@ export default function MetierDetail() {
               className="mb-10"
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-4">
-                Metiers similaires
+                {t('careerDetail.similarCareers')}
               </h2>
             </motion.div>
 

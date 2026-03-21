@@ -1,39 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Building2, Landmark, BookOpen } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import Card from '@components/common/Card';
 import Button from '@components/common/Button';
 import SectionTitle from '@components/common/SectionTitle';
-
-const programs = [
-  {
-    icon: Building2,
-    title: 'Prépa ENSP',
-    school: 'École Nationale Supérieure Polytechnique',
-    description: 'Préparation intensive pour intégrer la plus prestigieuse école d\'ingénieurs du Cameroun. Génie Civil, Informatique, Électrique, Mécanique.',
-    features: ['Cours intensifs', 'Concours blancs hebdomadaires', 'Suivi personnalisé'],
-    color: 'orange',
-    href: '/services#ensp'
-  },
-  {
-    icon: Landmark,
-    title: 'Prépa ENSTP',
-    school: 'École Nationale Supérieure des Travaux Publics',
-    description: 'Formation complète pour réussir le concours d\'entrée à l\'ENSTP. Spécialisation en génie civil et travaux publics.',
-    features: ['Méthodologie adaptée', 'Exercices ciblés', 'Coaching individuel'],
-    color: 'navy',
-    href: '/services#enstp'
-  },
-  {
-    icon: BookOpen,
-    title: 'Prépa ENS',
-    school: 'École Normale Supérieure',
-    description: 'Préparation rigoureuse aux concours de l\'ENS pour devenir enseignant du secondaire ou poursuivre en recherche.',
-    features: ['Renforcement académique', 'Culture générale', 'Expression écrite'],
-    color: 'apricot',
-    href: '/services#ens'
-  }
-];
 
 const colorClasses = {
   orange: {
@@ -57,13 +28,45 @@ const colorClasses = {
 };
 
 export default function Programs() {
+  const { t } = useTranslation('home');
+
+  const programs = [
+    {
+      icon: Building2,
+      title: t('programsHome.ensp.title'),
+      school: t('programsHome.ensp.school'),
+      description: t('programsHome.ensp.description'),
+      features: t('programsHome.ensp.features', { returnObjects: true }),
+      color: 'orange',
+      href: '/services#ensp'
+    },
+    {
+      icon: Landmark,
+      title: t('programsHome.enstp.title'),
+      school: t('programsHome.enstp.school'),
+      description: t('programsHome.enstp.description'),
+      features: t('programsHome.enstp.features', { returnObjects: true }),
+      color: 'navy',
+      href: '/services#enstp'
+    },
+    {
+      icon: BookOpen,
+      title: t('programsHome.ens.title'),
+      school: t('programsHome.ens.school'),
+      description: t('programsHome.ens.description'),
+      features: t('programsHome.ens.features', { returnObjects: true }),
+      color: 'apricot',
+      href: '/services#ens'
+    }
+  ];
+
   return (
     <section className="py-20 bg-off-white/0">
       <Container>
         <SectionTitle
-          badge="Nos formations"
-          title="Des programmes adaptés à chaque concours"
-          subtitle="Choisis la préparation qui correspond à tes objectifs et maximise tes chances de réussite."
+          badge={t('programsHome.badge')}
+          title={t('programsHome.title')}
+          subtitle={t('programsHome.subtitle')}
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,7 +113,7 @@ export default function Programs() {
                   to={program.href}
                   className="w-full justify-center"
                 >
-                  En savoir plus
+                  {t('programsHome.learnMore')}
                   <ArrowRight size={18} />
                 </Button>
               </Card>
@@ -127,7 +130,7 @@ export default function Programs() {
           className="mt-12 text-center"
         >
           <Button variant="primary" to="/services">
-            Voir tous les programmes
+            {t('programsHome.viewAll')}
             <ArrowRight size={20} />
           </Button>
         </motion.div>

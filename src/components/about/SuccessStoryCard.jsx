@@ -5,6 +5,7 @@
 import { motion } from 'framer-motion';
 import { Award, Quote, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Avatar component
 function Avatar({ photo, initials, name, size = 'md' }) {
@@ -105,6 +106,8 @@ export function SuccessStoryCompact({ story, index }) {
 
 // Card detaillee avec parcours
 export function SuccessStoryFull({ story, index }) {
+  const { t } = useTranslation('about');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -166,7 +169,7 @@ export function SuccessStoryFull({ story, index }) {
             <div className="mb-8">
               <h4 className="flex items-center gap-2 text-lg font-semibold text-navy mb-4">
                 <TrendingUp size={18} className="text-orange" />
-                Son parcours
+                {t('results.journey.title')}
               </h4>
 
               <div className="grid md:grid-cols-3 gap-4">
@@ -174,7 +177,7 @@ export function SuccessStoryFull({ story, index }) {
                 {story.journey.before && (
                   <div className="p-4 bg-red-50 rounded-xl border border-red-100">
                     <div className="text-sm font-medium text-red-600 mb-2">
-                      Avant ({story.journey.before.year})
+                      {t('results.journey.before')} ({story.journey.before.year})
                     </div>
                     <div className="text-lg font-bold text-red-700 mb-1">
                       {story.journey.before.score || story.journey.before.result}
@@ -189,7 +192,7 @@ export function SuccessStoryFull({ story, index }) {
                 {story.journey.during && (
                   <div className="p-4 bg-navy/5 rounded-xl border border-navy/10">
                     <div className="text-sm font-medium text-navy mb-2">
-                      Alpha Center ({story.journey.during.year})
+                      {t('results.journey.during')} ({story.journey.during.year})
                     </div>
                     <p className="text-sm text-gray-600">
                       {story.journey.during.action}
@@ -216,7 +219,7 @@ export function SuccessStoryFull({ story, index }) {
                 {story.journey.after && (
                   <div className="p-4 bg-green-50 rounded-xl border border-green-100">
                     <div className="text-sm font-medium text-green-600 mb-2">
-                      Apres ({story.journey.after.year})
+                      {t('results.journey.after')} ({story.journey.after.year})
                     </div>
                     <div className="text-lg font-bold text-green-700 mb-1">
                       {story.journey.after.score}

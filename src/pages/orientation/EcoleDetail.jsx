@@ -3,6 +3,7 @@
 // Page detail d'une ecole
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { allCareers } from '@/data/careers';
 import { domains } from '@/data/domains';
 import { getSchoolBySlug } from '@/data/schools';
@@ -31,6 +32,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 
 export default function EcoleDetail() {
   const { slug } = useParams();
+  const { t } = useTranslation('orientation');
   const school = getSchoolBySlug(slug);
 
   // Redirect if school not found
@@ -52,7 +54,7 @@ export default function EcoleDetail() {
   return (
     <>
       <SEO
-        title={`${school.shortName} - Fiche ecole`}
+        title={`${school.shortName} - ${t('schoolDetail.schoolProfile')}`}
         description={school.description}
         image={school.logo}
         url={`/orientation/ecoles/${school.slug}`}
@@ -75,7 +77,7 @@ export default function EcoleDetail() {
             className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft size={18} />
-            <span>Retour aux ecoles</span>
+            <span>{t('schoolDetail.back')}</span>
           </Link>
 
           <div className="flex flex-col lg:flex-row items-start gap-8">
@@ -109,13 +111,13 @@ export default function EcoleDetail() {
                   {!isLocal && (
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/80 backdrop-blur-sm rounded-full text-white text-sm">
                       <Globe size={14} />
-                      International
+                      {t('schoolDetail.international')}
                     </span>
                   )}
                   {school.alphaPrep?.available && (
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-orange backdrop-blur-sm rounded-full text-white text-sm font-semibold">
                       <Target size={14} />
-                      Prep Alpha
+                      {t('schoolDetail.prepAlpha')}
                     </span>
                   )}
                   {schoolDomains.map((domain) => (
@@ -148,7 +150,7 @@ export default function EcoleDetail() {
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
                       <Calendar size={18} className="text-white/70" />
                       <span className="text-white text-sm">
-                        Fondee en {school.stats.founded}
+                        {t('schoolDetail.foundedIn')} {school.stats.founded}
                       </span>
                     </div>
                   )}
@@ -156,7 +158,7 @@ export default function EcoleDetail() {
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl">
                       <Users size={18} className="text-white/70" />
                       <span className="text-white text-sm">
-                        {school.stats.students.toLocaleString()} etudiants
+                        {school.stats.students.toLocaleString()} {t('schoolDetail.students').toLowerCase()}
                       </span>
                     </div>
                   )}
@@ -189,7 +191,7 @@ export default function EcoleDetail() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl font-bold text-navy mb-4">
-                  Presentation
+                  {t('schoolDetail.presentation')}
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   {school.longDescription || school.description}
@@ -205,7 +207,7 @@ export default function EcoleDetail() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">
-                    Programmes de formation
+                    {t('schoolDetail.trainingPrograms')}
                   </h2>
                   <div className="space-y-4">
                     {school.programs.map((program, index) => (
@@ -222,13 +224,13 @@ export default function EcoleDetail() {
                               {program.name}
                             </h4>
                             <p className="text-sm text-gray-500">
-                              Duree: {program.duration}
+                              {t('schoolDetail.programDuration')} {program.duration}
                             </p>
                           </div>
                         </div>
                         {program.places && (
                           <span className="text-sm text-gray-500">
-                            {program.places} places
+                            {program.places} {t('schoolDetail.places')}
                           </span>
                         )}
                       </div>
@@ -246,13 +248,13 @@ export default function EcoleDetail() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">
-                    Admission
+                    {t('schoolDetail.admission')}
                   </h2>
 
                   {/* Requirements */}
                   <div className="mb-6">
                     <h3 className="font-semibold text-navy mb-3">
-                      Conditions requises
+                      {t('schoolDetail.requirements')}
                     </h3>
                     <div className="space-y-2">
                       {school.admission.requirements.map((req, index) => (
@@ -269,7 +271,7 @@ export default function EcoleDetail() {
 
                   {/* Process */}
                   <div className="mb-6 p-4 bg-blue-50 rounded-xl">
-                    <h3 className="font-semibold text-navy mb-2">Processus</h3>
+                    <h3 className="font-semibold text-navy mb-2">{t('schoolDetail.process')}</h3>
                     <p className="text-gray-600">{school.admission.process}</p>
                   </div>
 
@@ -282,7 +284,7 @@ export default function EcoleDetail() {
                             size={20}
                             className="text-orange mx-auto mb-2"
                           />
-                          <p className="text-sm text-gray-500">Inscriptions</p>
+                          <p className="text-sm text-gray-500">{t('schoolDetail.registration')}</p>
                           <p className="font-semibold text-navy">
                             {school.admission.dates.inscription}
                           </p>
@@ -294,7 +296,7 @@ export default function EcoleDetail() {
                             size={20}
                             className="text-orange mx-auto mb-2"
                           />
-                          <p className="text-sm text-gray-500">Concours</p>
+                          <p className="text-sm text-gray-500">{t('schoolDetail.competition')}</p>
                           <p className="font-semibold text-navy">
                             {school.admission.dates.concours}
                           </p>
@@ -306,7 +308,7 @@ export default function EcoleDetail() {
                             size={20}
                             className="text-orange mx-auto mb-2"
                           />
-                          <p className="text-sm text-gray-500">Resultats</p>
+                          <p className="text-sm text-gray-500">{t('schoolDetail.results')}</p>
                           <p className="font-semibold text-navy">
                             {school.admission.dates.resultats}
                           </p>
@@ -323,7 +325,7 @@ export default function EcoleDetail() {
                           {school.admission.places}
                         </span>
                         <span className="text-emerald-600 text-sm ml-1">
-                          places/an
+                          {t('schoolDetail.placesPerYear')}
                         </span>
                       </div>
                     )}
@@ -333,7 +335,7 @@ export default function EcoleDetail() {
                           {school.admission.acceptance}
                         </span>
                         <span className="text-orange/80 text-sm ml-1">
-                          taux d'admission
+                          {t('schoolDetail.admissionRate')}
                         </span>
                       </div>
                     )}
@@ -350,7 +352,7 @@ export default function EcoleDetail() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">
-                    Infrastructures
+                    {t('schoolDetail.infrastructure')}
                   </h2>
                   <div className="flex flex-wrap gap-3">
                     {school.facilities.map((facility, index) => (
@@ -377,12 +379,12 @@ export default function EcoleDetail() {
                 className="bg-gray-50 rounded-2xl p-6"
               >
                 <h3 className="text-lg font-bold text-navy mb-4">
-                  Chiffres cles
+                  {t('schoolDetail.keyFigures')}
                 </h3>
                 <div className="space-y-4">
                   {school.stats.successRate && (
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-500">Taux de reussite</span>
+                      <span className="text-gray-500">{t('schoolDetail.successRate')}</span>
                       <span className="font-semibold text-emerald-600">
                         {school.stats.successRate}%
                       </span>
@@ -390,7 +392,7 @@ export default function EcoleDetail() {
                   )}
                   {school.stats.employmentRate && (
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-500">Insertion pro</span>
+                      <span className="text-gray-500">{t('schoolDetail.jobPlacement')}</span>
                       <span className="font-semibold text-navy">
                         {school.stats.employmentRate}%
                       </span>
@@ -398,7 +400,7 @@ export default function EcoleDetail() {
                   )}
                   {school.stats.students && (
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-500">Etudiants</span>
+                      <span className="text-gray-500">{t('schoolDetail.students')}</span>
                       <span className="font-semibold text-navy">
                         {school.stats.students.toLocaleString()}
                       </span>
@@ -419,7 +421,7 @@ export default function EcoleDetail() {
                   <div className="flex items-center gap-3 mb-4">
                     <DollarSign size={24} className="text-navy" />
                     <h3 className="text-lg font-bold text-navy">
-                      Frais de scolarite
+                      {t('schoolDetail.tuition')}
                     </h3>
                   </div>
                   <p className="text-2xl font-bold text-orange mb-2">
@@ -442,7 +444,7 @@ export default function EcoleDetail() {
                   viewport={{ once: true }}
                   className="bg-gray-50 rounded-2xl p-6"
                 >
-                  <h3 className="text-lg font-bold text-navy mb-4">Contact</h3>
+                  <h3 className="text-lg font-bold text-navy mb-4">{t('schoolDetail.contact')}</h3>
                   <div className="space-y-3">
                     {school.contact.website && (
                       <a
@@ -452,7 +454,7 @@ export default function EcoleDetail() {
                         className="flex items-center gap-3 text-gray-600 hover:text-orange transition-colors"
                       >
                         <ExternalLink size={18} />
-                        <span className="text-sm truncate">Site web</span>
+                        <span className="text-sm truncate">{t('schoolDetail.website')}</span>
                       </a>
                     )}
                     {school.contact.email && (
@@ -488,10 +490,10 @@ export default function EcoleDetail() {
                   className="bg-orange rounded-2xl p-6 text-center"
                 >
                   <h3 className="text-lg font-bold text-white mb-2">
-                    Prepare-toi avec Alpha Center
+                    {t('schoolDetail.prepareWith')}
                   </h3>
                   <p className="text-white/80 text-sm mb-4">
-                    {school.alphaPrep.successRate}% de reussite au concours
+                    {school.alphaPrep.successRate}% {t('schoolDetail.successRateContest')}
                   </p>
                   <Button
                     variant="secondary"
@@ -499,7 +501,7 @@ export default function EcoleDetail() {
                     size="md"
                     className="w-full justify-center bg-white! text-orange! hover:bg-white/90!"
                   >
-                    Voir le programme
+                    {t('schoolDetail.viewProgram')}
                   </Button>
                 </motion.div>
               )}
@@ -520,10 +522,10 @@ export default function EcoleDetail() {
               className="mb-10"
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-4">
-                Metiers accessibles
+                {t('schoolDetail.accessibleCareers')}
               </h2>
               <p className="text-gray-600">
-                Les carrieres que tu peux viser apres cette ecole
+                {t('schoolDetail.accessibleCareersSubtitle')}
               </p>
             </motion.div>
 

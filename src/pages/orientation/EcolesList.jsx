@@ -3,6 +3,7 @@
 // Page liste de toutes les ecoles
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { domains } from '@/data/domains';
 import { allSchools, cameroonSchools, foreignSchools } from '@/data/schools';
 import Container from '@components/common/Container';
@@ -17,31 +18,33 @@ import { Building2, Globe, MapPin } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-// Filtres par type
-const typeFilters = [
-  {
-    id: 'local',
-    label: 'Cameroun',
-    icon: MapPin,
-    activeClass: 'bg-orange text-white border-transparent',
-  },
-  {
-    id: 'foreign',
-    label: 'Etranger',
-    icon: Globe,
-    activeClass: 'bg-blue-500 text-white border-transparent',
-  },
-];
-
-// Filtres par domaine
-const domainFilters = domains.map((domain) => ({
-  id: domain.id,
-  label: domain.shortName,
-  icon: domain.icon,
-  activeClass: `${domain.bgColor} ${domain.textColor} border-current`,
-}));
-
 export default function EcolesList() {
+  const { t } = useTranslation('orientation');
+
+  // Filtres par type
+  const typeFilters = [
+    {
+      id: 'local',
+      label: t('schools.cameroon'),
+      icon: MapPin,
+      activeClass: 'bg-orange text-white border-transparent',
+    },
+    {
+      id: 'foreign',
+      label: t('schools.foreign'),
+      icon: Globe,
+      activeClass: 'bg-blue-500 text-white border-transparent',
+    },
+  ];
+
+  // Filtres par domaine
+  const domainFilters = domains.map((domain) => ({
+    id: domain.id,
+    label: domain.shortName,
+    icon: domain.icon,
+    activeClass: `${domain.bgColor} ${domain.textColor} border-current`,
+  }));
+
   const [searchParams] = useSearchParams();
   const initialType = searchParams.get('type');
   const initialDomain = searchParams.get('domaine');
@@ -94,16 +97,16 @@ export default function EcolesList() {
   return (
     <>
       <SEO
-        title="Ecoles - Guide des etablissements"
-        description="Explore les ecoles et universites au Cameroun et a l'etranger. Conditions d'admission, programmes, frais et classements."
+        title={t('seo.schoolsTitle')}
+        description={t('seo.schoolsDescription')}
       />
 
       {/* Hero */}
       <OrientationHero
-        badge="Ecoles"
-        title="Trouve  "
-        highlightText="ton école"
-        subtitle="Decouvre les meilleures ecoles et universites au Cameroun et a l'etranger. Admission, programmes, frais - tout ce qu'il faut savoir."
+        badge={t('schools.badge')}
+        title={t('schools.title')}
+        highlightText={t('schools.titleHighlight')}
+        subtitle={t('schools.subtitle')}
         icon={Building2}
         gradient="from-navy via-navy/95 to-blue-900"
       >
@@ -114,14 +117,14 @@ export default function EcolesList() {
             <span className="text-white font-semibold">
               {cameroonSchools.length}
             </span>
-            <span className="text-white/70 text-sm">au Cameroun</span>
+            <span className="text-white/70 text-sm">{t('schools.inCameroon')}</span>
           </div>
           <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-xl">
             <Globe size={18} className="text-blue-400" />
             <span className="text-white font-semibold">
               {foreignSchools.length}
             </span>
-            <span className="text-white/70 text-sm">a l'etranger</span>
+            <span className="text-white/70 text-sm">{t('schools.abroad')}</span>
           </div>
         </div>
       </OrientationHero>
@@ -138,12 +141,12 @@ export default function EcolesList() {
               filters={typeFilters}
               activeFilters={typeFilter}
               onFilterChange={setTypeFilter}
-              placeholder="Rechercher une ecole, ville, pays..."
+              placeholder={t('schools.searchPlaceholder')}
             />
 
             {/* Domain filters */}
             <div className="flex flex-wrap items-center gap-2 px-4">
-              <span className="text-sm text-gray-500 mr-2">Par domaine:</span>
+              <span className="text-sm text-gray-500 mr-2">{t('schools.byDomain')}</span>
               {domainFilters.map((filter) => {
                 const isActive = domainFilter.includes(filter.id);
                 const Icon = filter.icon;
@@ -187,11 +190,11 @@ export default function EcolesList() {
               <span className="font-semibold text-navy">
                 {filteredSchools.length}
               </span>{' '}
-              ecole{filteredSchools.length > 1 ? 's' : ''} trouvee
-              {filteredSchools.length > 1 ? 's' : ''}
+              {t('schools.school')}{filteredSchools.length > 1 ? 's' : ''}{' '}
+              {filteredSchools.length > 1 ? t('schools.found_plural') : t('schools.found_singular')}
               {localCount > 0 && foreignCount > 0 && (
                 <span className="text-gray-400 ml-2">
-                  ({localCount} Cameroun, {foreignCount} etranger)
+                  ({localCount} {t('schools.cameroon')}, {foreignCount} {t('schools.foreign').toLowerCase()})
                 </span>
               )}
             </p>
@@ -214,10 +217,10 @@ export default function EcolesList() {
                 <Building2 size={40} className="text-gray-400" />
               </div>
               <h3 className="text-xl font-bold text-navy mb-2">
-                Aucune ecole trouvee
+                {t('schools.noResults')}
               </h3>
               <p className="text-gray-600 mb-6">
-                Essaie de modifier tes filtres ou ta recherche
+                {t('schools.noResultsSubtitle')}
               </p>
               <button
                 onClick={() => {
@@ -227,7 +230,7 @@ export default function EcolesList() {
                 }}
                 className="text-orange font-semibold hover:underline"
               >
-                Reinitialiser les filtres
+                {t('schools.resetFilters')}
               </button>
             </motion.div>
           )}

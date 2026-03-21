@@ -1,0 +1,62 @@
+{
+  "main": {
+    "home": "Accueil",
+    "programmes": "Programmes",
+    "application": "L'application",
+    "resources": "Ressources",
+    "orientation": "Orientation",
+    "about": "À propos"
+  },
+  "disabled": {
+    "comingSoon": "Bientôt disponible"
+  },
+  "megamenu": {
+    "metiers": {
+      "title": "Explore les métiers",
+      "civilEngineer": "Ingénieur Génie Civil",
+      "computerEngineer": "Ingénieur Informatique",
+      "telecomEngineer": "Ingénieur Télécom",
+      "doctor": "Médecin",
+      "viewAll": "Voir tous les métiers"
+    },
+    "ecoles": {
+      "title": "Découvre les écoles",
+      "viewAll": "Voir toutes les écoles"
+    },
+    "cta": {
+      "text": "Tu ne sais pas quel métier choisir ?",
+      "subtext": "Explore notre guide d'orientation complet"
+    }
+  },
+  "about": {
+    "whoWeAre": "Qui sommes-nous",
+    "whoWeAreDesc": "Notre histoire et nos valeurs",
+    "team": "Notre équipe",
+    "teamDesc": "12 enseignants passionnés",
+    "results": "Nos résultats",
+    "resultsDesc": "85% de taux de réussite"
+  },
+  "cta": {
+    "contact": "Contact",
+    "register": "S'inscrire"
+  },
+  "footerNav": {
+    "home": "Accueil",
+    "programmes": "Programmes",
+    "resources": "Ressources",
+    "whoWeAre": "Qui sommes-nous",
+    "team": "Notre équipe",
+    "results": "Nos résultats",
+    "application": "L'application"
+  },
+  "footerOrientation": {
+    "hub": "Hub Orientation",
+    "careers": "Les métiers",
+    "schools": "Les écoles"
+  },
+  "legal": {
+    "legalNotice": "Mentions légales",
+    "terms": "CGU",
+    "privacy": "Politique de confidentialité"
+  }
+}

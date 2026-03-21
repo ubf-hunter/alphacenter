@@ -8,54 +8,26 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Building2, Landmark } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const programs = [
+const programKeys = [
   {
+    key: 'ensp',
     icon: Building2,
-    title: 'Prépa ENSP',
-    school: 'Polytechnique Yaoundé',
-    description:
-      "Préparation intensive pour intégrer la plus prestigieuse école d'ingénieurs du Cameroun.",
-    features: [
-      'Cours intensifs',
-      'Concours blancs hebdo',
-      'Suivi personnalisé',
-    ],
-    cta: 'Découvrir le programme',
     href: '/services#ensp',
-    // Gradient background pour la zone illustration
     gradient: 'from-orange-400 via-orange-500 to-orange-600',
-    // Couleur accent pour les éléments
     accent: 'orange',
   },
   {
+    key: 'enstp',
     icon: Landmark,
-    title: 'Prépa ENSTP',
-    school: 'Travaux Publics',
-    description:
-      "Formation complète pour réussir le concours d'entrée à l'ENSTP. Génie civil et infrastructures.",
-    features: [
-      'Méthodologie adaptée',
-      'Exercices ciblés',
-      'Coaching individuel',
-    ],
-    cta: 'Découvrir le programme',
     href: '/services#enstp',
     gradient: 'from-navy via-navy-700 to-blue-900',
     accent: 'navy',
   },
   {
+    key: 'ens',
     icon: BookOpen,
-    title: 'Prépa ENS',
-    school: 'École Normale Sup.',
-    description:
-      "Préparation rigoureuse aux concours de l'ENS pour devenir enseignant ou chercheur.",
-    features: [
-      'Renforcement académique',
-      'Culture générale',
-      'Expression écrite',
-    ],
-    cta: 'Découvrir le programme',
     href: '/services#ens',
     gradient: 'from-apricot via-orange-300 to-apricot-dark',
     accent: 'apricot',
@@ -84,19 +56,30 @@ const accentStyles = {
 };
 
 export default function Programs() {
+  const { t } = useTranslation('home');
+
+  const programs = programKeys.map((p) => ({
+    ...p,
+    title: t(`programsAlt.v1.${p.key}.title`),
+    school: t(`programsAlt.v1.${p.key}.school`),
+    description: t(`programsAlt.v1.${p.key}.description`),
+    features: t(`programsAlt.v1.${p.key}.features`, { returnObjects: true }),
+    cta: t('programsAlt.discoverProgram'),
+  }));
+
   return (
     <section className="py-24 bg-linear-to-b from-white to-gray-50/50">
       <Container>
         <SectionTitle
-          badge="Nos formations"
-          title="Des *programmes* adaptés à chaque concours"
-          subtitle="Choisis la préparation qui correspond à tes objectifs et maximise tes chances de réussite."
+          badge={t('programsAlt.badge')}
+          title={t('programsAlt.title')}
+          subtitle={t('programsAlt.subtitle')}
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {programs.map((program, index) => (
             <motion.div
-              key={program.title}
+              key={program.key}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
@@ -204,7 +187,7 @@ export default function Programs() {
           className="mt-16 text-center"
         >
           <Button variant="primary" to="/services" size="lg">
-            Voir tous les programmes
+            {t('programsAlt.viewAll')}
             <ArrowRight size={20} />
           </Button>
         </motion.div>

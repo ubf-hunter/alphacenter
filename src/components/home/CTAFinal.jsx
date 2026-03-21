@@ -12,6 +12,7 @@ import {
   Users,
 } from 'lucide-react';
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 // Animation variants extraits pour éviter les re-renders
@@ -93,7 +94,7 @@ const StatCard = memo(({ icon: Icon, value, label, color = 'orange' }) => (
 StatCard.displayName = 'StatCard';
 
 // Composant UrgencyBadge mémorisé
-const UrgencyBadge = memo(() => (
+const UrgencyBadge = memo(({ text }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -106,7 +107,7 @@ const UrgencyBadge = memo(() => (
       className="w-2 h-2 rounded-full bg-orange"
     />
     <span className="text-sm font-semibold text-orange">
-      Inscriptions ouvertes — Places limitées
+      {text}
     </span>
   </motion.div>
 ));
@@ -143,15 +144,14 @@ ContactButton.displayName = 'ContactButton';
 
 export default function CTAFinal() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
 
   const handleOpenModal = useCallback(() => {
     openModal();
   }, [openModal]);
 
   // Message WhatsApp pré-rempli
-  const whatsappMessage = encodeURIComponent(
-    "Bonjour Alpha Center ! 👋\n\nJe suis intéressé(e) par vos programmes de préparation aux concours. Pouvez-vous me donner plus d'informations ?\n\nMerci !",
-  );
+  const whatsappMessage = encodeURIComponent(t('ctaFinal.whatsappMessage'));
   const whatsappLink = `https://wa.me/237670102293?text=${whatsappMessage}`;
 
   return (
@@ -193,7 +193,7 @@ export default function CTAFinal() {
             {/* Content */}
             <div className="relative z-10 text-center">
               {/* Urgency Badge */}
-              <UrgencyBadge />
+              <UrgencyBadge text={t('ctaFinal.urgencyBadge')} />
 
               {/* Icon */}
               <motion.div
@@ -228,10 +228,10 @@ export default function CTAFinal() {
                 variants={itemVariants}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 leading-tight"
               >
-                Prêt à réaliser ton{' '}
+                {t('ctaFinal.title')}{' '}
                 <span className="relative">
                   <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-orange to-orange-600">
-                    rêve professionnel
+                    {t('ctaFinal.titleHighlight')}
                   </span>
                   <motion.span
                     initial={{ scaleX: 0 }}
@@ -249,11 +249,10 @@ export default function CTAFinal() {
                 variants={itemVariants}
                 className="text-base sm:text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
               >
-                Rejoins les{' '}
-                <span className="font-semibold text-navy">800+ étudiants</span>{' '}
-                qui ont transformé leur avenir avec Alpha Center. La prochaine
-                success story, c'est{' '}
-                <span className="font-semibold text-orange">toi</span>.
+                {t('ctaFinal.subtitle1')}{' '}
+                <span className="font-semibold text-navy">{t('ctaFinal.subtitle2')}</span>{' '}
+                {t('ctaFinal.subtitle3')}{' '}
+                <span className="font-semibold text-orange">{t('ctaFinal.subtitle4')}</span>.
               </motion.p>
 
               {/* Stats Grid */}
@@ -263,20 +262,20 @@ export default function CTAFinal() {
               >
                 <StatCard
                   icon={Clock}
-                  value="Juin 2026"
-                  label="Prochaine session"
+                  value={t('ctaFinal.stats.nextSessionValue')}
+                  label={t('ctaFinal.stats.nextSession')}
                   color="orange"
                 />
                 <StatCard
                   icon={Users}
                   value="25"
-                  label="Places restantes"
+                  label={t('ctaFinal.stats.remaining')}
                   color="navy"
                 />
                 <StatCard
                   icon={TrendingUp}
                   value="85%"
-                  label="Taux de réussite"
+                  label={t('ctaFinal.stats.successRate')}
                   color="orange"
                 />
               </motion.div>
@@ -297,7 +296,7 @@ export default function CTAFinal() {
                     onClick={handleOpenModal}
                     className="group px-8 py-4 text-base sm:text-lg shadow-xl shadow-orange/25 hover:shadow-2xl hover:shadow-orange/30"
                   >
-                    <span>Je m'inscris maintenant</span>
+                    <span>{t('ctaFinal.ctaRegister')}</span>
                     <ArrowRight
                       size={20}
                       className="ml-2 transition-transform group-hover:translate-x-1"
@@ -311,7 +310,7 @@ export default function CTAFinal() {
                   icon={MessageCircle}
                   variant="whatsapp"
                 >
-                  Discuter sur WhatsApp
+                  {t('ctaFinal.ctaWhatsapp')}
                 </ContactButton>
               </motion.div>
 
@@ -322,7 +321,7 @@ export default function CTAFinal() {
               >
                 <div className="flex-1 h-px bg-linear-to-r from-transparent via-gray-200 to-transparent" />
                 <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">
-                  ou contacte-nous
+                  {t('ctaFinal.divider')}
                 </span>
                 <div className="flex-1 h-px bg-linear-to-r from-transparent via-gray-200 to-transparent" />
               </motion.div>
@@ -355,7 +354,7 @@ export default function CTAFinal() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Paiement sécurisé</span>
+                    <span>{t('ctaFinal.trust.payment')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
@@ -369,7 +368,7 @@ export default function CTAFinal() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Accompagnement personnalisé</span>
+                    <span>{t('ctaFinal.trust.personalized')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
@@ -383,7 +382,7 @@ export default function CTAFinal() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Satisfaction garantie</span>
+                    <span>{t('ctaFinal.trust.guarantee')}</span>
                   </div>
                 </div>
               </motion.div>

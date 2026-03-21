@@ -3,10 +3,13 @@
 // Modal expliquant comment installer l'app sur iPhone
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Share, PlusSquare, Smartphone } from 'lucide-react';
 
 export default function IOSInstallModal({ isOpen, onClose }) {
+  const { t } = useTranslation('application');
+
   if (!isOpen) return null;
 
   return (
@@ -35,6 +38,7 @@ export default function IOSInstallModal({ isOpen, onClose }) {
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label={t('iosInstall.understood')}
               >
                 <X size={20} className="text-gray-400" />
               </button>
@@ -48,10 +52,10 @@ export default function IOSInstallModal({ isOpen, onClose }) {
 
               {/* Title */}
               <h3 className="text-2xl font-bold text-center text-gray-900 mb-2">
-                Installer Alpha sur iPhone
+                {t('iosInstall.title')}
               </h3>
               <p className="text-gray-500 text-center text-sm mb-8">
-                Suis ces 3 etapes pour ajouter Alpha a ton ecran d'accueil
+                {t('iosInstall.subtitle')}
               </p>
 
               {/* Steps */}
@@ -63,10 +67,10 @@ export default function IOSInstallModal({ isOpen, onClose }) {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">
-                      Ouvre dans Safari
+                      {t('iosInstall.step1Title')}
                     </p>
                     <p className="text-sm text-gray-500 mt-0.5">
-                      Va sur <span className="font-medium text-orange-500">alphacenter.cm</span> avec Safari
+                      {t('iosInstall.step1Desc')}
                     </p>
                   </div>
                 </div>
@@ -78,11 +82,11 @@ export default function IOSInstallModal({ isOpen, onClose }) {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 flex items-center gap-2">
-                      Appuie sur Partager
+                      {t('iosInstall.step2Title')}
                       <Share size={16} className="text-blue-500" />
                     </p>
                     <p className="text-sm text-gray-500 mt-0.5">
-                      L'icone carre avec la fleche vers le haut, en bas de Safari
+                      {t('iosInstall.step2Desc')}
                     </p>
                   </div>
                 </div>
@@ -94,11 +98,11 @@ export default function IOSInstallModal({ isOpen, onClose }) {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 flex items-center gap-2">
-                      "Sur l'ecran d'accueil"
+                      {t('iosInstall.step3Title')}
                       <PlusSquare size={16} className="text-gray-600" />
                     </p>
                     <p className="text-sm text-gray-500 mt-0.5">
-                      Choisis cette option dans le menu qui apparait
+                      {t('iosInstall.step3Desc')}
                     </p>
                   </div>
                 </div>
@@ -109,7 +113,7 @@ export default function IOSInstallModal({ isOpen, onClose }) {
                 onClick={onClose}
                 className="w-full mt-8 py-3.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold rounded-xl hover:from-orange-500 hover:to-orange-600 transition-all shadow-lg shadow-orange-200"
               >
-                Compris !
+                {t('iosInstall.understood')}
               </button>
             </div>
           </motion.div>

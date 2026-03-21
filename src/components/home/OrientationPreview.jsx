@@ -20,62 +20,36 @@ import {
   Lightbulb,
   TrendingUp,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const metiers = [
-  {
-    title: 'Génie Civil',
-    tagline: 'Construis le monde de demain',
-    image: Gci,
-    href: '/orientation/metiers/genie-civil',
-    stats: { salaire: '800K+', emploi: '98%', ecoles: '5' },
-    color: 'from-cyan-600 to-teal-700',
-    badge: '🏗️ Populaire',
-  },
-  {
-    title: 'Génie Informatique',
-    tagline: 'Crée les technologies du futur',
-    image: Gi,
-    href: '/orientation/metiers/genie-informatique',
-    stats: { salaire: '1.2M+', emploi: '99%', ecoles: '8' },
-    color: 'from-violet-600 to-purple-700',
-    badge: '🔥 Tendance',
-  },
-  {
-    title: 'Génie Électrique',
-    tagline: "Maîtrise l'énergie",
-    image: Gelec,
-    href: '/orientation/metiers/genie-electrique',
-    stats: { salaire: '900K+', emploi: '95%', ecoles: '4' },
-    color: 'from-amber-500 to-orange-600',
-  },
-  {
-    title: 'Génie Mécanique',
-    tagline: 'Conçois les machines',
-    image: Gmeca,
-    href: '/orientation/metiers/genie-mecanique',
-    stats: { salaire: '850K+', emploi: '94%', ecoles: '6' },
-    color: 'from-slate-600 to-gray-700',
-  },
-  {
-    title: 'Génie Pétrolier',
-    tagline: 'Exploite les ressources',
-    image: Gpetro,
-    href: '/orientation/metiers/genie-petrolier',
-    stats: { salaire: '1.5M+', emploi: '85%', ecoles: '2' },
-    color: 'from-orange-600 to-red-700',
-    badge: '💰 Top Salaire',
-  },
-  {
-    title: 'Génie Environnement',
-    tagline: 'Protège la planète',
-    image: Genviron,
-    href: '/orientation/metiers/genie-environnement',
-    stats: { salaire: '750K+', emploi: '92%', ecoles: '3' },
-    color: 'from-emerald-500 to-green-600',
-    badge: '🌱 Avenir',
-  },
+const metierKeys = ['civilEng', 'compEng', 'elecEng', 'mechEng', 'petroEng', 'envEng'];
+const metierImages = [Gci, Gi, Gelec, Gmeca, Gpetro, Genviron];
+const metierHrefs = [
+  '/orientation/metiers/genie-civil',
+  '/orientation/metiers/genie-informatique',
+  '/orientation/metiers/genie-electrique',
+  '/orientation/metiers/genie-mecanique',
+  '/orientation/metiers/genie-petrolier',
+  '/orientation/metiers/genie-environnement',
 ];
+const metierStats = [
+  { salaire: '800K+', emploi: '98%', ecoles: '5' },
+  { salaire: '1.2M+', emploi: '99%', ecoles: '8' },
+  { salaire: '900K+', emploi: '95%', ecoles: '4' },
+  { salaire: '850K+', emploi: '94%', ecoles: '6' },
+  { salaire: '1.5M+', emploi: '85%', ecoles: '2' },
+  { salaire: '750K+', emploi: '92%', ecoles: '3' },
+];
+const metierColors = [
+  'from-cyan-600 to-teal-700',
+  'from-violet-600 to-purple-700',
+  'from-amber-500 to-orange-600',
+  'from-slate-600 to-gray-700',
+  'from-orange-600 to-red-700',
+  'from-emerald-500 to-green-600',
+];
+const metierBadgeKeys = ['popular', 'trending', null, null, 'topSalary', 'future'];
 
 // Placeholder images
 const placeholderImages = {
@@ -102,6 +76,8 @@ function MetierCard({
   color,
   badge,
   index,
+  schoolsLabel,
+  viewCareerLabel,
 }) {
   const imageUrl = image || placeholderImages[href.split('/').pop()];
 
@@ -153,7 +129,7 @@ function MetierCard({
             <div className="flex items-center gap-1.5 text-gray-600">
               <Briefcase size={14} className="text-gray-400" />
               <span className="font-semibold text-navy">{stats.salaire}</span>
-              <span className="text-gray-400">FCFA/mois</span>
+              <span className="text-gray-400">FCFA/{t('orientation.perMonth')}</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1 text-gray-500">
@@ -162,14 +138,14 @@ function MetierCard({
               </div>
               <div className="flex items-center gap-1 text-gray-500">
                 <GraduationCap size={14} />
-                <span>{stats.ecoles} écoles</span>
+                <span>{stats.ecoles} {schoolsLabel}</span>
               </div>
             </div>
           </div>
 
           {/* CTA link */}
           <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <span className="text-sm text-gray-500">Voir la fiche métier</span>
+            <span className="text-sm text-gray-500">{viewCareerLabel}</span>
             <span className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-orange flex items-center justify-center transition-colors duration-300">
               <ArrowRight
                 size={16}
@@ -184,6 +160,18 @@ function MetierCard({
 }
 
 export default function OrientationPreview() {
+  const { t } = useTranslation('home');
+
+  const metiers = metierKeys.map((key, i) => ({
+    title: t(`orientation.metiers.${key}.title`),
+    tagline: t(`orientation.metiers.${key}.tagline`),
+    image: metierImages[i],
+    href: metierHrefs[i],
+    stats: metierStats[i],
+    color: metierColors[i],
+    badge: metierBadgeKeys[i] ? t(`orientation.badges.${metierBadgeKeys[i]}`) : null,
+  }));
+
   return (
     <section className="py-24 bg-gradient-to-b from-apricot-light via-white to-white relative overflow-hidden">
       {/* Background decorations */}
@@ -192,15 +180,21 @@ export default function OrientationPreview() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="🧭 Orientation"
-          title="Tu ne sais pas quel *ingénieur* tu veux devenir ?"
-          subtitle="Explore les différents domaines de l'ingénierie et découvre celui qui te correspond le mieux."
+          badge={t('orientation.badge')}
+          title={t('orientation.title')}
+          subtitle={t('orientation.subtitle')}
         />
 
         {/* Metiers Grid */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {metiers.map((metier, index) => (
-            <MetierCard key={metier.title} {...metier} index={index} />
+            <MetierCard
+              key={metierKeys[index]}
+              {...metier}
+              index={index}
+              schoolsLabel={t('orientation.schools')}
+              viewCareerLabel={t('orientation.viewCareer')}
+            />
           ))}
         </div>
 
@@ -213,7 +207,7 @@ export default function OrientationPreview() {
           className="mt-16 text-center"
         >
           <Button variant="primary" to="/orientation" size="lg">
-            Explorer tous les métiers
+            {t('orientation.exploreAll')}
             <ArrowRight size={20} />
           </Button>
         </motion.div>
@@ -231,8 +225,8 @@ export default function OrientationPreview() {
               <Lightbulb size={24} />
             </span>
             <p className="text-left text-sm text-gray-600">
-              <span className="font-bold text-navy block">Le savais-tu ?</span>
-              Le Cameroun aura besoin de plus de 50 000 ingénieurs d'ici 2030 !
+              <span className="font-bold text-navy block">{t('orientation.funFact.title')}</span>
+              {t('orientation.funFact.text')}
             </p>
           </div>
         </motion.div>

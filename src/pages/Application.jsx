@@ -4,6 +4,7 @@
 // ============================================
 
 import SEO from '@components/common/SEO';
+import { useTranslation } from 'react-i18next';
 import {
   AppHero,
   WhyAlphaApp,
@@ -16,11 +17,13 @@ import {
 } from '@components/application';
 
 export default function Application() {
+  const { t: ts } = useTranslation('seo');
+
   return (
     <main>
       <SEO
-        title="Application Mobile Alpha"
-        description="Telecharge l'app Alpha pour reviser partout, meme hors-ligne. 1000+ exercices corriges, planning IA, communaute d'entraide. Disponible sur iOS et Android."
+        title={ts('application.title')}
+        description={ts('application.description')}
         url="/application"
       />
 

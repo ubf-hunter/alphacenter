@@ -7,6 +7,7 @@ import SectionTitle from '@components/common/SectionTitle';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Award, TrendingUp, Users } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function YearTab({ year, isActive, onClick }) {
   return (
@@ -32,7 +33,7 @@ function YearTab({ year, isActive, onClick }) {
   );
 }
 
-function YearContent({ year }) {
+function YearContent({ year, t }) {
   const schools = Object.entries(year.bySchool || {});
 
   return (
@@ -48,19 +49,19 @@ function YearContent({ year }) {
         <div className="p-6 bg-white rounded-2xl shadow-sm text-center">
           <Users className="w-8 h-8 text-navy mx-auto mb-2" />
           <div className="text-3xl font-bold text-navy">{year.trained}</div>
-          <div className="text-sm text-gray-500">Etudiants formes</div>
+          <div className="text-sm text-gray-500">{t('results.yearResults.trained')}</div>
         </div>
         <div className="p-6 bg-white rounded-2xl shadow-sm text-center">
           <Award className="w-8 h-8 text-orange mx-auto mb-2" />
           <div className="text-3xl font-bold text-orange">{year.admitted}</div>
-          <div className="text-sm text-gray-500">Admis</div>
+          <div className="text-sm text-gray-500">{t('results.yearResults.admitted')}</div>
         </div>
         <div className="p-6 bg-white rounded-2xl shadow-sm text-center">
           <TrendingUp className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
           <div className="text-3xl font-bold text-emerald-500">
             {year.successRate}%
           </div>
-          <div className="text-sm text-gray-500">Taux de reussite</div>
+          <div className="text-sm text-gray-500">{t('results.yearResults.successRate')}</div>
         </div>
       </div>
 
@@ -87,7 +88,7 @@ function YearContent({ year }) {
         <div>
           <h4 className="text-lg font-semibold text-navy mb-4 flex items-center gap-2">
             <Award size={18} className="text-orange" />
-            Mentions speciales
+            {t('results.yearResults.specialMentions')}
           </h4>
           <div className="flex flex-wrap gap-3">
             {year.mentions.map((mention, i) => (
@@ -111,6 +112,7 @@ function YearContent({ year }) {
 
 export default function YearResults({ results }) {
   const [activeYear, setActiveYear] = useState(results[0]?.year);
+  const { t } = useTranslation('about');
 
   const activeData = results.find((r) => r.year === activeYear);
 
@@ -118,9 +120,9 @@ export default function YearResults({ results }) {
     <section className="py-20 bg-off-white">
       <Container>
         <SectionTitle
-          badge="Annee par annee"
-          title="Resultats *detailles*"
-          subtitle="Explorez nos performances annee par annee"
+          badge={t('results.yearResults.badge')}
+          title={t('results.yearResults.title')}
+          subtitle={t('results.yearResults.subtitle')}
           align="center"
         />
 
@@ -138,7 +140,7 @@ export default function YearResults({ results }) {
 
         {/* Year content */}
         <AnimatePresence mode="wait">
-          {activeData && <YearContent key={activeYear} year={activeData} />}
+          {activeData && <YearContent key={activeYear} year={activeData} t={t} />}
         </AnimatePresence>
       </Container>
     </section>

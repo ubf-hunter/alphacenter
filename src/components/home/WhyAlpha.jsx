@@ -16,47 +16,12 @@ import {
   Users,
   Wallet,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
-const features = [
-  {
-    icon: Award,
-    title: "Enseignants d'excellence",
-    description:
-      'Experts issus des meilleures universités avec une pédagogie éprouvée.',
-    color: 'orange',
-  },
-  {
-    icon: Users,
-    title: 'Petits groupes',
-    description: 'Classes de 25 max pour une attention personnalisée.',
-    color: 'navy',
-  },
-  {
-    icon: UserCheck,
-    title: 'Suivi individualisé',
-    description: 'Accompagnement personnalisé avec bilans réguliers.',
-    color: 'orange',
-  },
-  {
-    icon: FileCheck,
-    title: 'Concours blancs',
-    description: 'Examens en conditions réelles chaque semaine.',
-    color: 'navy',
-  },
-  {
-    icon: Smartphone,
-    title: 'Application Alpha',
-    description: 'Révise partout, même hors connexion.',
-    color: 'orange',
-  },
-  {
-    icon: Wallet,
-    title: 'Tarifs accessibles',
-    description: 'Formation de qualité avec facilités de paiement.',
-    color: 'navy',
-  },
-];
+const featureIcons = [Award, Users, UserCheck, FileCheck, Smartphone, Wallet];
+const featureKeys = ['teachers', 'smallGroups', 'personalFollowUp', 'mockExams', 'app', 'pricing'];
+const featureColors = ['orange', 'navy', 'orange', 'navy', 'orange', 'navy'];
 
 const colorStyles = {
   orange: {
@@ -76,6 +41,14 @@ const crossPatternSvg = `url("data:image/svg+xml,%3Csvg width='20' height='20' v
 
 export default function WhyAlpha() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
+
+  const features = featureKeys.map((key, i) => ({
+    icon: featureIcons[i],
+    title: t(`whyAlpha.features.${key}.title`),
+    description: t(`whyAlpha.features.${key}.description`),
+    color: featureColors[i],
+  }));
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -110,18 +83,18 @@ export default function WhyAlpha() {
             viewport={{ once: true }}
           >
             <SectionTitle
-              badge="Pourquoi nous choisir"
-              title="Ce qui nous rend *differents*"
-              subtitle="Depuis 15 ans, Alpha Center accompagne les futurs professionnels camerounais vers la reussite avec une methode qui a fait ses preuves."
+              badge={t('whyAlpha.badge')}
+              title={t('whyAlpha.title')}
+              subtitle={t('whyAlpha.subtitle')}
               align="left"
             />
 
             {/* Stats rapides */}
             <div className="mt-10 grid grid-cols-3 gap-6">
               {[
-                { value: '15+', label: 'Annees' },
-                { value: '85%', label: 'Reussite' },
-                { value: '700+', label: 'Admis' },
+                { value: '15+', label: t('whyAlpha.stats.years') },
+                { value: '85%', label: t('whyAlpha.stats.success') },
+                { value: '700+', label: t('whyAlpha.stats.admitted') },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -167,10 +140,10 @@ export default function WhyAlpha() {
               </div>
               <p className="text-sm text-gray-600">
                 <span className="font-semibold text-navy">
-                  Étudiants satisfaits
+                  {t('whyAlpha.socialProof.satisfied')}
                 </span>
                 <br />
-                <span className="text-gray-400">qui nous recommandent</span>
+                <span className="text-gray-400">{t('whyAlpha.socialProof.recommend')}</span>
               </p>
             </motion.div>
 
@@ -183,7 +156,7 @@ export default function WhyAlpha() {
               className="mt-10"
             >
               <Button variant="primary" onClick={() => openModal()}>
-                Rejoindre Alpha Center
+                {t('whyAlpha.cta')}
                 <ArrowRight size={18} />
               </Button>
             </motion.div>

@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Button from '@components/common/Button';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
@@ -98,7 +99,7 @@ function CategoryTab({ category, isActive, onClick, colorConfig }) {
 }
 
 // Composant Carte de programme
-function ProgramCard({ program, index }) {
+function ProgramCard({ program, index, t }) {
   const gradient = programGradients[program.id] || 'from-gray-500 to-gray-600';
   const isDarkText = program.id === 'ens';
 
@@ -158,7 +159,7 @@ function ProgramCard({ program, index }) {
             </span>
             {program.successRate && (
               <span className="flex items-center gap-1">
-                <span className="font-semibold text-emerald-600">{program.successRate}%</span> reussite
+                <span className="font-semibold text-emerald-600">{program.successRate}%</span> {t('programs.success')}
               </span>
             )}
           </div>
@@ -169,7 +170,7 @@ function ProgramCard({ program, index }) {
             className="inline-flex items-center justify-between w-full group/link"
           >
             <span className="text-sm font-semibold text-orange border-b-2 border-current pb-0.5">
-              Decouvrir le programme
+              {t('programs.discoverProgram')}
             </span>
             <span className="w-9 h-9 bg-gray-100 group-hover/link:bg-navy rounded-full flex items-center justify-center transition-colors duration-300">
               <ArrowRight
@@ -186,6 +187,7 @@ function ProgramCard({ program, index }) {
 
 export default function ProgramsWithLogos() {
   const [activeCategory, setActiveCategory] = useState('engineering');
+  const { t } = useTranslation('home');
 
   // Filtrer les programmes par categorie (exclure 'preparatoire' qui est 'all')
   const filteredPrograms = programmes.filter(
@@ -199,9 +201,9 @@ export default function ProgramsWithLogos() {
     <section className="py-24 bg-gray-50/50">
       <Container>
         <SectionTitle
-          badge="Nos formations"
-          title="Des *programmes* adaptes a chaque *ambition*"
-          subtitle="Ingenierie, medecine, gestion ou enseignement - trouve la preparation qui te correspond."
+          badge={t('programs.badge')}
+          title={t('programs.title')}
+          subtitle={t('programs.subtitle')}
         />
 
         {/* Onglets de categories */}
@@ -235,7 +237,7 @@ export default function ProgramsWithLogos() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8"
             >
               {filteredPrograms.map((program, index) => (
-                <ProgramCard key={program.id} program={program} index={index} />
+                <ProgramCard key={program.id} program={program} index={index} t={t} />
               ))}
             </motion.div>
           </AnimatePresence>
@@ -250,7 +252,7 @@ export default function ProgramsWithLogos() {
           className="mt-16 text-center"
         >
           <Button variant="primary" to="/programmes" size="lg">
-            Voir tous nos programmes
+            {t('programs.viewAll')}
             <ArrowRight size={20} />
           </Button>
         </motion.div>

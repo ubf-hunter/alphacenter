@@ -4,16 +4,18 @@
 // ============================================
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useInscriptionModal } from '../../hooks/useInscriptionModal';
 
 export default function Hero4() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('home');
 
   const navLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Programmes', href: '/services' },
-    { label: 'Orientation', href: '/orientation' },
-    { label: 'À propos', href: '/resultats' },
+    { label: t('hero4.nav.home'), href: '/' },
+    { label: t('hero4.nav.programs'), href: '/services' },
+    { label: t('hero4.nav.orientation'), href: '/orientation' },
+    { label: t('hero4.nav.about'), href: '/resultats' },
   ];
 
   const avatars = [
@@ -24,34 +26,34 @@ export default function Hero4() {
   ];
 
   const features = [
-    '📚 Cours intensifs',
-    '👨‍🏫 50+ Profs experts',
-    '📱 App mobile gratuite',
+    t('hero4.features.courses'),
+    t('hero4.features.teachers'),
+    t('hero4.features.app'),
   ];
 
   const stats = [
     {
       icon: '🎓',
       number: '500+',
-      label: 'Étudiants admis',
+      label: t('hero4.stats.admitted'),
       gradient: 'from-orange-400 to-orange-600',
     },
     {
       icon: '📈',
       number: '95%',
-      label: 'Taux de réussite',
+      label: t('hero4.stats.successRate'),
       gradient: 'from-green-400 to-green-600',
     },
     {
       icon: '⏳',
       number: '15+',
-      label: "Années d'expérience",
+      label: t('hero4.stats.experience'),
       gradient: 'from-blue-400 to-blue-600',
     },
     {
       icon: '👨‍🏫',
       number: '50+',
-      label: 'Enseignants experts',
+      label: t('hero4.stats.experts'),
       gradient: 'from-purple-400 to-purple-600',
     },
   ];
@@ -95,9 +97,9 @@ export default function Hero4() {
               to="/contact"
               className="px-4 py-2 text-sm font-medium text-[#001A51] border border-gray-200 rounded-full hover:border-[#001A51] transition-all"
             >
-              Contact
+              {t('hero4.nav.contact')}
             </Link>
-            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">S'inscrire
+            <button onClick={() => openModal()} className="px-5 py-2 text-sm font-semibold text-white bg-[#FA5614] rounded-full hover:bg-[#D94400] shadow-md transition-all cursor-pointer">{t('hero4.nav.register')}
             </button>
           </div>
         </div>
@@ -112,7 +114,7 @@ export default function Hero4() {
               <img
                 key={index}
                 src={src}
-                alt={`Étudiant ${index + 1}`}
+                alt={t('hero4.avatarAlt', { index: index + 1 })}
                 className="w-10 h-10 rounded-full border-2 border-white shadow-md object-cover"
               />
             ))}
@@ -121,22 +123,20 @@ export default function Hero4() {
             </div>
           </div>
           <div className="text-sm text-gray-600 text-center sm:text-left">
-            <span className="font-semibold text-[#001A51]">500+ étudiants</span>{' '}
-            nous ont fait confiance
+            <span className="font-semibold text-[#001A51]">{t('hero4.socialProofStudents')}</span>{' '}
+            {t('hero4.socialProofText')}
           </div>
         </div>
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#001A51] text-center mb-6 max-w-4xl leading-tight">
-          Intègre l'école d'
-          <span className="italic text-[#FA5614]">ingénieurs</span> de tes
-          rêves.
+          {t('hero4.titlePart1')}
+          <span className="italic text-[#FA5614]">{t('hero4.titleHighlight')}</span> {t('hero4.titlePart2')}
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-gray-600 text-center max-w-2xl mb-8">
-          Préparation intensive aux concours ENSP, ENSTP, ENS et grandes écoles
-          d'ingénieurs au Cameroun.
+          {t('hero4.subtitle')}
         </p>
 
         {/* Feature Pills */}
@@ -153,12 +153,12 @@ export default function Hero4() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <button onClick={() => openModal()} className="group flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-[#001A51] rounded-full hover:bg-[#001A51]/90 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer">Je m'inscris maintenant <span className="group-hover:translate-x-1 transition-transform">→</span></button>
+          <button onClick={() => openModal()} className="group flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-[#001A51] rounded-full hover:bg-[#001A51]/90 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer">{t('hero4.ctaRegister')} <span className="group-hover:translate-x-1 transition-transform">&rarr;</span></button>
           <Link
             to="/services"
             className="px-8 py-4 text-lg font-semibold text-[#001A51] bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full hover:bg-white hover:border-gray-300 transition-all text-center"
           >
-            Voir les programmes
+            {t('hero4.ctaPrograms')}
           </Link>
         </div>
 
@@ -187,7 +187,7 @@ export default function Hero4() {
         {/* Trusted By - Schools */}
         <div className="mt-16 text-center">
           <p className="text-sm text-gray-400 mb-6">
-            Nos anciens intègrent les meilleures écoles
+            {t('hero4.trustedBy')}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
             {schools.map((school, index) => (

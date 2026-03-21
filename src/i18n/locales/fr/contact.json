@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbContact": "Contact",
+    "title": "Contactez-nous",
+    "subtitle": "Une question sur nos programmes ? Besoin d'informations ? Notre equipe est la pour t'accompagner vers la reussite.",
+    "responseTime": "Temps de reponse",
+    "whatsappAvailable": "WhatsApp disponible",
+    "free": "Gratuit & sans engagement"
+  },
+  "form": {
+    "title": "Ecris-nous",
+    "subtitle": "Remplis le formulaire et on te repond sur WhatsApp",
+    "name": "Nom complet",
+    "namePlaceholder": "Ton nom",
+    "email": "Email",
+    "emailPlaceholder": "ton.email@exemple.com",
+    "programme": "Programme qui t'interesse",
+    "message": "Ton message",
+    "messagePlaceholder": "Decris ta situation ou pose ta question...",
+    "sending": "Redirection...",
+    "submit": "Envoyer sur WhatsApp",
+    "or": "ou",
+    "callDirectly": "Appeler directement",
+    "privacy": "En nous contactant, tu acceptes notre politique de confidentialite. Nous ne partageons jamais tes informations.",
+    "responseGuarantee": "Reponse garantie sous 24h ouvrables",
+    "selectProgramme": "Selectionne un programme",
+    "programOptions": {
+      "engineer": "Concours Ingenieur (ENSP, ENSTP, FGI)",
+      "medicine": "Concours Medecine (FMSB)",
+      "nursing": "Concours Infirmier (CESSI, Ecoles de sante)",
+      "orientation": "Besoin d'orientation",
+      "other": "Autre question"
+    }
+  },
+  "info": {
+    "title": "Nous trouver",
+    "subtitle": "Plusieurs moyens de nous contacter selon tes preferences",
+    "phone": "Telephone",
+    "phoneAvailable": "Appels directs disponibles",
+    "emailLabel": "Email",
+    "emailResponse": "Reponse sous 24-48h",
+    "address": "Adresse",
+    "hours": "Horaires d'ouverture",
+    "social": "Suivez-nous sur les reseaux",
+    "available": "Disponible maintenant"
+  },
+  "map": {
+    "title": "Retrouve-nous a Yaounde",
+    "locationLabel": "Notre localisation",
+    "byTransport": "En transport",
+    "transportDesc": "Bus et taxis disponibles. Arret Omnisports.",
+    "byCar": "En voiture",
+    "carDesc": "Parking gratuit disponible sur place.",
+    "onFoot": "A pied",
+    "footDesc": "5 min a pied de la station Omnisports.",
+    "directions": "Itineraire"
+  },
+  "cta": {
+    "title": "Pret a reussir ton concours ?",
+    "subtitle": "Rejoins les centaines d'etudiants qui ont deja integre l'ecole de leurs reves grace a Alpha Center.",
+    "chatAdviser": "Discuter avec un conseiller",
+    "viewPrograms": "Voir les programmes",
+    "stats": {
+      "successRate": "Taux de reussite",
+      "admitted": "Etudiants admis",
+      "experience": "D'experience"
+    }
+  },
+  "data": {
+    "address": {
+      "street": "Complexe scolaire adventiste, Quartier Odza",
+      "city": "Yaounde",
+      "country": "Cameroun",
+      "fullName": "Complexe scolaire adventiste d'odza"
+    },
+    "hours": {
+      "weekdays": "Lundi - Vendredi : 08h00 - 18h00",
+      "saturday": "Samedi : 09h00 - 15h00",
+      "sunday": "Dimanche : Ferme"
+    },
+    "whatsappDefault": "Bonjour Alpha Center ! J'aimerais avoir des informations sur vos programmes de preparation aux concours.",
+    "whatsappMessages": {
+      "engineer": "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours d'ingenieur. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
+      "medicine": "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours de medecine. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
+      "nursing": "Bonjour Alpha Center ! Je suis interesse(e) par la preparation au concours infirmier/sciences de la sante. Je souhaite avoir plus d'informations sur le programme, les tarifs et les dates d'inscription. Merci !",
+      "default": "Bonjour Alpha Center ! J'aimerais avoir des informations sur vos programmes de preparation aux concours. Pouvez-vous m'aider ?"
+    }
+  },
+  "modal": {
+    "title": "Contactez-nous sur WhatsApp",
+    "subtitle": "Selectionnez votre programme pour demarrer la conversation",
+    "close": "Fermer",
+    "responseGuarantee": "Reponse garantie sous 24h ouvrables",
+    "options": {
+      "engineer": { "title": "Concours Ingenieur", "description": "Polytechnique, ENSPY, FGI..." },
+      "medicine": { "title": "Concours Medecine", "description": "FMSB, Facultes de medecine..." },
+      "nursing": { "title": "Concours Infirmier", "description": "CESSI, Ecoles de sante..." },
+      "other": { "title": "Autre / Question", "description": "J'ai une question specifique" }
+    }
+  }
+}

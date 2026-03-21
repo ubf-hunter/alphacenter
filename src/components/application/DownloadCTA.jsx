@@ -4,6 +4,7 @@
 // ============================================
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Download, Smartphone, Sparkles } from 'lucide-react';
 import Container from '@components/common/Container';
@@ -12,6 +13,7 @@ import IOSInstallModal from './IOSInstallModal';
 const APK_URL = 'https://github.com/ubf-hunter/e-alpha/releases/latest/download/alpha.apk';
 
 export default function DownloadCTA() {
+  const { t } = useTranslation('application');
   const [showIOSModal, setShowIOSModal] = useState(false);
 
   return (
@@ -43,22 +45,21 @@ export default function DownloadCTA() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <Sparkles size={16} className="text-orange" />
               <span className="text-sm font-medium text-white/90">
-                Gratuit sur iOS et Android
+                {t('downloadCta.badge')}
               </span>
             </div>
 
             {/* Titre */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-              Telecharge{' '}
-              <span className="text-orange italic font-cursive">Alpha</span>
+              {t('downloadCta.titleLine1')}{' '}
+              <span className="text-orange italic font-cursive">{t('downloadCta.titleHighlight')}</span>
               <br />
-              et commence a reviser
+              {t('downloadCta.titleLine2')}
             </h2>
 
             {/* Description */}
             <p className="text-lg text-white/70 max-w-lg mb-8">
-              Rejoins les 2000+ etudiants qui preparent leurs concours avec Alpha.
-              Disponible 24h/24, meme sans connexion internet.
+              {t('downloadCta.description')}
             </p>
 
             {/* Boutons telechargement */}
@@ -74,8 +75,8 @@ export default function DownloadCTA() {
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Installer sur</div>
-                  <div className="text-base font-semibold text-gray-900">iPhone</div>
+                  <div className="text-xs text-gray-500">{t('downloadCta.installOn')}</div>
+                  <div className="text-base font-semibold text-gray-900">{t('downloadCta.iPhone')}</div>
                 </div>
               </motion.button>
 
@@ -91,8 +92,8 @@ export default function DownloadCTA() {
                   <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Telecharger pour</div>
-                  <div className="text-base font-semibold text-gray-900">Android</div>
+                  <div className="text-xs text-gray-500">{t('downloadCta.downloadFor')}</div>
+                  <div className="text-base font-semibold text-gray-900">{t('downloadCta.android')}</div>
                 </div>
               </motion.a>
             </div>
@@ -100,16 +101,16 @@ export default function DownloadCTA() {
             {/* Stats rapides */}
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-8">
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-orange">2000+</div>
-                <div className="text-sm text-white/60">Utilisateurs actifs</div>
+                <div className="text-2xl font-bold text-orange">{t('downloadCta.stats.usersValue')}</div>
+                <div className="text-sm text-white/60">{t('downloadCta.stats.usersLabel')}</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-orange">4.8/5</div>
-                <div className="text-sm text-white/60">Note moyenne</div>
+                <div className="text-2xl font-bold text-orange">{t('downloadCta.stats.ratingValue')}</div>
+                <div className="text-sm text-white/60">{t('downloadCta.stats.ratingLabel')}</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-orange">5</div>
-                <div className="text-sm text-white/60">Concours prepares</div>
+                <div className="text-2xl font-bold text-orange">{t('downloadCta.stats.concoursValue')}</div>
+                <div className="text-sm text-white/60">{t('downloadCta.stats.concoursLabel')}</div>
               </div>
             </div>
           </motion.div>
@@ -146,15 +147,15 @@ export default function DownloadCTA() {
                       <span className="text-white font-black text-3xl">A</span>
                     </motion.div>
 
-                    <h3 className="text-navy font-bold text-xl mb-2">Alpha</h3>
+                    <h3 className="text-navy font-bold text-xl mb-2">{t('downloadCta.screenTitle')}</h3>
                     <p className="text-gray-500 text-sm text-center mb-6">
-                      Prepare ton concours
+                      {t('downloadCta.screenSubtitle')}
                     </p>
 
                     {/* Fake download button */}
                     <div className="flex items-center gap-2 px-6 py-3 bg-orange text-white rounded-full text-sm font-medium">
                       <Download size={18} />
-                      Installer
+                      {t('downloadCta.screenInstall')}
                     </div>
                   </div>
 
@@ -177,7 +178,7 @@ export default function DownloadCTA() {
                 className="absolute -top-4 -left-4 px-4 py-2 bg-white rounded-full shadow-lg flex items-center gap-2"
               >
                 <Smartphone size={18} className="text-orange" />
-                <span className="text-sm font-medium text-navy">iOS & Android</span>
+                <span className="text-sm font-medium text-navy">{t('downloadCta.floatingBadge')}</span>
               </motion.div>
             </div>
           </motion.div>

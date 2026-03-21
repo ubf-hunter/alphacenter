@@ -14,21 +14,25 @@ import Container from '@components/common/Container';
 import SEO from '@components/common/SEO';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { heroStats, history, methodology, mission } from '../../data/about';
 
 export default function QuiSommesNous() {
+  const { t } = useTranslation('about');
+  const { t: ts } = useTranslation('seo');
+
   return (
     <>
       <SEO
-        title="Qui sommes-nous | Alpha Center - Centre de Preparation aux Concours"
-        description="Decouvrez l'histoire d'Alpha Center, notre mission et nos valeurs. Depuis 2023, nous accompagnons les etudiants camerounais vers la reussite aux concours."
+        title={ts('about.title')}
+        description={ts('about.description')}
         url="/a-propos/qui-sommes-nous"
       />
 
       {/* Hero */}
       <AboutHero
-        title="Notre Histoire, Votre Reussite"
-        subtitle="Depuis 2023, nous accompagnons les etudiants camerounais vers l'excellence"
+        title={t('whoWeAre.heroTitle')}
+        subtitle={t('whoWeAre.heroSubtitle')}
         stats={heroStats}
       />
 
@@ -43,7 +47,7 @@ export default function QuiSommesNous() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center px-4 py-2 bg-orange/10 rounded-full text-orange text-sm font-medium mb-6">
-              Notre mission
+              {t('whoWeAre.mission')}
             </div>
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium text-navy leading-relaxed">
               "{mission.statement}"
@@ -55,8 +59,8 @@ export default function QuiSommesNous() {
       {/* Timeline */}
       <Timeline
         items={history.timeline}
-        title="Notre *parcours*"
-        subtitle="3 annees de croissance et d'excellence au service des etudiants camerounais"
+        title={t('whoWeAre.journey')}
+        subtitle={t('whoWeAre.journeySubtitle')}
       />
 
       {/* Vision */}
@@ -75,7 +79,7 @@ export default function QuiSommesNous() {
               viewport={{ once: true }}
             >
               <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm font-medium mb-6">
-                Notre vision
+                {t('whoWeAre.vision')}
               </div>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
                 {mission.vision}
@@ -89,9 +93,9 @@ export default function QuiSommesNous() {
       <section className="py-24 bg-off-white">
         <Container>
           <SectionTitle
-            badge="Ce qui nous definit"
-            title="Nos *valeurs*"
-            subtitle="Les principes qui guident chacune de nos actions"
+            badge={t('whoWeAre.whatDefinesUs')}
+            title={t('whoWeAre.values')}
+            subtitle={t('whoWeAre.valuesSubtitle')}
             align="center"
           />
 
@@ -107,7 +111,7 @@ export default function QuiSommesNous() {
       <section className="py-24 bg-white">
         <Container>
           <SectionTitle
-            badge="Notre approche"
+            badge={t('whoWeAre.approach')}
             title={methodology.title}
             subtitle={methodology.subtitle}
             align="center"
@@ -141,34 +145,34 @@ export default function QuiSommesNous() {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center px-4 py-2 bg-orange/20 rounded-full text-orange text-sm font-medium mb-4">
-              Chiffres cles
+              {t('whoWeAre.keyFigures')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              La preuve par les chiffres
+              {t('whoWeAre.proofByNumbers')}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter
               end="3"
-              label="Annees d'experience"
+              label={t('whoWeAre.stats.experience')}
               color="white"
             />
             <StatCounter
               end="421"
               suffix="+"
-              label="Etudiants formes"
+              label={t('whoWeAre.stats.trained')}
               color="orange"
             />
             <StatCounter
               end="85"
               suffix="%"
-              label="Taux de reussite"
+              label={t('whoWeAre.stats.successRate')}
               color="white"
             />
             <StatCounter
               end="12"
-              label="Enseignants experts"
+              label={t('whoWeAre.stats.experts')}
               color="orange"
             />
           </div>
@@ -177,10 +181,10 @@ export default function QuiSommesNous() {
 
       {/* CTA */}
       <AboutCTA
-        title="Rejoignez la famille Alpha Center"
-        subtitle="Decouvrez nos programmes et rencontrez notre equipe"
-        primaryButton={{ label: 'Decouvrir nos programmes', href: '/services' }}
-        secondaryButton={{ label: "Rencontrer l'equipe", href: '/a-propos/equipe' }}
+        title={t('whoWeAre.ctaTitle')}
+        subtitle={t('whoWeAre.ctaSubtitle')}
+        primaryButton={{ label: t('whoWeAre.ctaPrograms'), href: '/services' }}
+        secondaryButton={{ label: t('whoWeAre.ctaTeam'), href: '/a-propos/equipe' }}
         variant="gradient"
       />
     </>

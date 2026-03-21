@@ -1,0 +1,127 @@
+{
+  "whoWeAre": {
+    "heroTitle": "Our Story, Your Success",
+    "heroSubtitle": "Since 2023, we've been guiding Cameroonian students toward excellence",
+    "mission": "Our mission",
+    "journey": "Our journey",
+    "journeySubtitle": "3 years of growth and excellence serving Cameroonian students",
+    "vision": "Our vision",
+    "whatDefinesUs": "What defines us",
+    "values": "Our *values*",
+    "valuesSubtitle": "The principles that guide each of our actions",
+    "approach": "Our approach",
+    "keyFigures": "Key figures",
+    "proofByNumbers": "Proof in numbers",
+    "stats": {
+      "experience": "Years of experience",
+      "trained": "Students trained",
+      "successRate": "Success rate",
+      "experts": "Expert teachers"
+    },
+    "ctaTitle": "Join the Alpha Center family",
+    "ctaSubtitle": "Discover our programs and meet our team",
+    "ctaPrograms": "Discover our programs",
+    "ctaTeam": "Meet the team"
+  },
+  "team": {
+    "pageTitle": "Our Team",
+    "heroTitle": "A Team of Excellence",
+    "heroSubtitle": "Experts passionate about your success",
+    "teachers": "Teachers",
+    "experienceLabel": "Years of combined experience",
+    "leadership": "Leadership",
+    "leadershipTitle": "Our *leadership*",
+    "leadershipSubtitle": "Experienced leaders guiding the team toward excellence",
+    "clickForMore": "Click on a card to learn more",
+    "pedagogicalTeam": "Our *Teaching* Team",
+    "pedagogicalSubtitle": "Every teacher is an expert in their subject and a former exam winner",
+    "testimonials": "Testimonials",
+    "testimonialTitle": "What our students say",
+    "aboutTeacher": "About",
+    "adminTeam": "Our administrative team",
+    "adminSubtitle": "The people who ensure the center runs smoothly",
+    "contactUs": "Contact us",
+    "joinUs": "Want to join us?",
+    "joinSubtitle": "Meet us at our open days or contact us",
+    "viewResults": "View our results",
+    "formation": "Education",
+    "viewFullProfile": "View full profile",
+    "seeMore": "See more",
+    "profile": "Profile",
+    "see": "See",
+    "about": "About",
+    "achievements": "Achievements"
+  },
+  "results": {
+    "heroTitle": "Our Results Speak for Themselves",
+    "heroSubtitle": "85% average success rate since 2023",
+    "trainedStudents": "Students trained",
+    "admittedStudents": "Admitted to exams",
+    "averageRateLabel": "Average rate",
+    "totalAdmitted": "Total admitted",
+    "averageRate": "Average rate",
+    "top15": "In the top 15",
+    "successStories": "Success Stories",
+    "storiesTitle": "They succeeded with *Alpha Center*",
+    "storiesSubtitle": "Discover the inspiring journeys of our students",
+    "accessibleCareers": "Accessible careers",
+    "accessibleCareersSubtitle": "The careers you can aim for after this school",
+    "nextStoryTitle": "The next success story is you",
+    "nextStorySubtitle": "Join Alpha Center and write your own success story",
+    "registerNow": "Register now",
+    "talkToAdviser": "Talk to an adviser",
+    "comparison": {
+      "moreChances": "x more chances of success",
+      "vsNational": "Alpha Center vs National Average",
+      "alphaCenter": "Alpha Center",
+      "nationalAverage": "National Average",
+      "moreChancesLabel": "More chances",
+      "withAlpha": "of succeeding with Alpha Center"
+    },
+    "leaderboard": {
+      "badge": "Honor roll",
+      "title": "Our best *rankings*",
+      "subtitle": "Alpha Center students in the top exam rankings",
+      "rank": "Rank",
+      "name": "Name",
+      "school": "School",
+      "year": "Year",
+      "firsts": "firsts",
+      "inTop15": "in the top 15"
+    },
+    "distribution": {
+      "badge": "Distribution",
+      "title": "Our admitted students by *school*",
+      "subtitle": "Distribution of our admitted students by institution",
+      "totalAdmitted": "Total admitted"
+    },
+    "yearResults": {
+      "badge": "Year by year",
+      "title": "Detailed *results*",
+      "subtitle": "Explore our performance year by year",
+      "trained": "Students trained",
+      "admitted": "Admitted",
+      "successRate": "Success rate",
+      "specialMentions": "Special mentions"
+    },
+    "journey": {
+      "title": "Their journey",
+      "before": "Before",
+      "during": "Alpha Center",
+      "after": "After"
+    }
+  },
+  "cta": {
+    "readyToTransform": "Ready to transform your future?"
+  },
+  "memberProfile": {
+    "backToTeam": "Back to team",
+    "profileOf": "Profile of {{name}} at Alpha Center",
+    "biography": "Biography",
+    "studentsSay": "What students say",
+    "formation": "Education",
+    "achievements": "Achievements",
+    "experience": "Experience",
+    "viewAllTeam": "View the whole team"
+  }
+}

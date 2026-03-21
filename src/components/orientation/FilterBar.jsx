@@ -3,6 +3,7 @@
 // Barre de filtres pour les pages liste
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Search, Filter, X } from 'lucide-react';
 
@@ -12,9 +13,11 @@ export default function FilterBar({
   filters = [],
   activeFilters = [],
   onFilterChange,
-  placeholder = 'Rechercher...',
+  placeholder,
   showSearch = true,
 }) {
+  const { t } = useTranslation('orientation');
+
   const handleFilterClick = (filterId) => {
     if (activeFilters.includes(filterId)) {
       onFilterChange(activeFilters.filter(f => f !== filterId));
@@ -48,7 +51,7 @@ export default function FilterBar({
               type="text"
               value={searchValue}
               onChange={(e) => onSearchChange?.(e.target.value)}
-              placeholder={placeholder}
+              placeholder={placeholder || t('components.searchPlaceholder')}
               className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all"
             />
           </div>
@@ -93,7 +96,7 @@ export default function FilterBar({
           className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between"
         >
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span>Filtres actifs:</span>
+            <span>{t('components.activeFilters')}</span>
             <div className="flex flex-wrap gap-2">
               {searchValue && (
                 <span className="px-2 py-1 bg-gray-100 rounded-lg text-xs">
@@ -115,7 +118,7 @@ export default function FilterBar({
             className="flex items-center gap-1 text-sm text-gray-400 hover:text-red-500 transition-colors"
           >
             <X size={14} />
-            <span>Effacer</span>
+            <span>{t('components.clear')}</span>
           </button>
         </motion.div>
       )}

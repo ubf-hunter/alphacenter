@@ -5,6 +5,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Award, BookOpen, Quote, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Avatar component
 function Avatar({ photo, initials, name }) {
@@ -36,6 +37,8 @@ function Avatar({ photo, initials, name }) {
 }
 
 export default function TeamMemberModal({ member, onClose }) {
+  const { t } = useTranslation('about');
+
   // Close on escape key
   useEffect(() => {
     const handleEscape = (e) => {
@@ -118,7 +121,7 @@ export default function TeamMemberModal({ member, onClose }) {
             <div className="mb-6">
               <h3 className="flex items-center gap-2 text-lg font-semibold text-navy mb-3">
                 <BookOpen size={18} className="text-orange" />
-                A propos
+                {t('team.about')}
               </h3>
               <p className="text-gray-600 leading-relaxed">{member.fullBio}</p>
             </div>
@@ -128,7 +131,7 @@ export default function TeamMemberModal({ member, onClose }) {
               <div className="mb-6">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-navy mb-3">
                   <Award size={18} className="text-orange" />
-                  Formation
+                  {t('team.formation')}
                 </h3>
                 <ul className="space-y-2">
                   {member.education.map((edu, i) => (
@@ -148,7 +151,7 @@ export default function TeamMemberModal({ member, onClose }) {
             {member.achievements && (
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-navy mb-3">
-                  Realisations
+                  {t('team.achievements')}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {member.achievements.map((achievement, i) => (

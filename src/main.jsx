@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
+import './i18n/i18n.js'
 import './styles/app.css'
 import App from './App.jsx'
 

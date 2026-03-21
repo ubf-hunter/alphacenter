@@ -3,6 +3,7 @@
 // Layout alterne image/texte pour chaque feature
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import Container from '@components/common/Container';
@@ -27,9 +28,10 @@ const colorConfig = {
   },
 };
 
-function FeatureItem({ feature, index, isReversed }) {
+function FeatureItem({ feature, index, isReversed, t }) {
   const Icon = feature.icon;
   const colors = colorConfig[feature.color] || colorConfig.orange;
+  const highlights = t(`featureShowcase.features.${feature.id}.highlights`, { returnObjects: true });
 
   return (
     <motion.div
@@ -46,7 +48,7 @@ function FeatureItem({ feature, index, isReversed }) {
       <div className={`${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
         {/* Badge tagline */}
         <span className={`inline-block px-4 py-1.5 ${colors.badgeBg} ${colors.badgeText} rounded-full text-sm font-medium mb-4`}>
-          {feature.tagline}
+          {t(`featureShowcase.features.${feature.id}.tagline`)}
         </span>
 
         {/* Titre avec icone */}
@@ -55,18 +57,18 @@ function FeatureItem({ feature, index, isReversed }) {
             <Icon size={24} className="text-white" />
           </div>
           <h3 className="text-2xl lg:text-3xl font-bold text-navy pt-1">
-            {feature.title}
+            {t(`featureShowcase.features.${feature.id}.title`)}
           </h3>
         </div>
 
         {/* Description */}
         <p className="text-gray-600 text-lg leading-relaxed mb-6">
-          {feature.description}
+          {t(`featureShowcase.features.${feature.id}.description`)}
         </p>
 
         {/* Liste highlights */}
         <ul className="space-y-3">
-          {feature.highlights.map((highlight, i) => (
+          {highlights.map((highlight, i) => (
             <motion.li
               key={i}
               initial={{ opacity: 0, x: -20 }}
@@ -112,10 +114,10 @@ function FeatureItem({ feature, index, isReversed }) {
                   <Icon size={28} className="text-white" />
                 </div>
                 <h4 className="text-navy font-bold text-center mb-2">
-                  {feature.title}
+                  {t(`featureShowcase.features.${feature.id}.title`)}
                 </h4>
                 <p className="text-gray-500 text-xs text-center">
-                  {feature.tagline}
+                  {t(`featureShowcase.features.${feature.id}.tagline`)}
                 </p>
               </div>
 
@@ -137,13 +139,15 @@ function FeatureItem({ feature, index, isReversed }) {
 }
 
 export default function FeatureShowcase() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <Container>
         <SectionTitle
-          badge="Fonctionnalites"
-          title="Une app *complete* pour ta *reussite*"
-          subtitle="Decouvre toutes les fonctionnalites qui font d'Alpha l'app de reference pour preparer les concours au Cameroun."
+          badge={t('featureShowcase.badge')}
+          title={t('featureShowcase.title')}
+          subtitle={t('featureShowcase.subtitle')}
         />
 
         {/* Liste des features */}
@@ -154,6 +158,7 @@ export default function FeatureShowcase() {
               feature={feature}
               index={index}
               isReversed={index % 2 === 1}
+              t={t}
             />
           ))}
         </div>

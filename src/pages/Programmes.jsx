@@ -22,6 +22,7 @@ import {
   Users,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import bgimageu from '../assets/images/misc/prep1.jpg';
 import { useInscriptionModal } from '../hooks/useInscriptionModal';
@@ -29,6 +30,7 @@ import { useInscriptionModal } from '../hooks/useInscriptionModal';
 // Hero Section
 function HeroSection() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
 
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
@@ -57,7 +59,7 @@ function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-100 shadow-sm text-sm font-medium text-navy mb-6">
               <GraduationCap size={18} className="text-orange" />
-              Formations d'excellence
+              {t('page.badge')}
             </span>
           </motion.div>
 
@@ -68,10 +70,7 @@ function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-navy mb-6 leading-tight"
           >
-            Des programmes adaptés à{' '}
-            <span className="text-orange font-cursive italic">
-              chaque ambition
-            </span>
+            {t('page.title')}
           </motion.h1>
 
           {/* Subtitle */}
@@ -81,9 +80,7 @@ function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
           >
-            Préparation intensive aux concours des grandes écoles d'ingénieurs
-            du Cameroun : ENSP, ENSTP, ENS. Une méthodologie éprouvée pour
-            maximiser tes chances de réussite.
+            {t('page.subtitle')}
           </motion.p>
 
           {/* CTA buttons */}
@@ -94,11 +91,11 @@ function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button variant="primary" size="lg" onClick={() => openModal()}>
-              Je m'inscris maintenant
+              {t('page.ctaRegister')}
               <ArrowRight size={20} />
             </Button>
             <Button variant="ghost" size="lg" to="#programmes">
-              Voir les programmes
+              {t('page.ctaView')}
             </Button>
           </motion.div>
 
@@ -110,10 +107,10 @@ function HeroSection() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {[
-              { icon: Users, value: '420+', label: 'Étudiants formés' },
-              { icon: Trophy, value: '85%', label: 'Taux de réussite' },
-              { icon: BookOpen, value: '4', label: 'Programmes' },
-              { icon: Star, value: '3', label: "Années d'expertise" },
+              { icon: Users, value: '420+', label: t('page.stats.trained') },
+              { icon: Trophy, value: '85%', label: t('page.stats.successRate') },
+              { icon: BookOpen, value: '4', label: t('page.stats.programs') },
+              { icon: Star, value: '3', label: t('page.stats.experience') },
             ].map((stat, index) => (
               <div
                 key={stat.label}
@@ -203,7 +200,7 @@ function PrimaryButton({ children, onClick, className = '' }) {
       onClick={onClick}
       className={`
         group relative inline-flex items-center gap-2
-        px-8 py-4 
+        px-8 py-4
         bg-linear-to-r from-orange to-orange/90
         text-white font-semibold text-lg
         rounded-2xl
@@ -272,6 +269,7 @@ export function PreparatoireHeroSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { openModal } = useInscriptionModal();
   const navigate = useNavigate();
+  const { t } = useTranslation('programmes');
 
   // Effet parallax au scroll
   const { scrollY } = useScroll();
@@ -293,6 +291,8 @@ export function PreparatoireHeroSection() {
     successRate: '85%',
     years: '3 ans',
   };
+
+  const features = t('page.prepHero.features', { returnObjects: true });
 
   return (
     <section className="relative h-screen w-full flex items-center overflow-hidden">
@@ -327,7 +327,7 @@ export function PreparatoireHeroSection() {
           {/* Colonne gauche - Texte */}
           <div className="space-y-8">
             {/* Tag de session */}
-            <SessionTag>Rentrée 2026 - Inscriptions ouvertes</SessionTag>
+            <SessionTag>{t('page.prepHero.badge')}</SessionTag>
 
             {/* Titre principal */}
             <motion.div
@@ -337,10 +337,10 @@ export function PreparatoireHeroSection() {
               className="space-y-4"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-navy leading-tight">
-                Préparez votre{' '}
+                {t('page.prepHero.title')}{' '}
                 <span className="relative">
                   <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-orange to-orange/80">
-                    réussite
+                    {t('page.prepHero.titleHighlight')}
                   </span>
                   {/* Soulignement décoratif */}
                   <svg
@@ -357,12 +357,11 @@ export function PreparatoireHeroSection() {
                   </svg>
                 </span>
                 <br />
-                aux concours
+                {t('page.prepHero.titleSuffix')}
               </h1>
 
               <p className="text-lg md:text-xl text-navy/70 leading-relaxed max-w-xl">
-                {preparatoire.description ||
-                  "Intégrez les meilleures écoles du Cameroun grâce à notre programme de préparation intensive aux concours d'entrée."}
+                {preparatoire.description || t('page.prepHero.subtitle')}
               </p>
             </motion.div>
 
@@ -373,18 +372,11 @@ export function PreparatoireHeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="grid sm:grid-cols-2 gap-3"
             >
-              <HighlightPoint delay={0.4}>
-                Cours intensifs & encadrement personnalisé
-              </HighlightPoint>
-              <HighlightPoint delay={0.5}>
-                Épreuves blanches chaque semaine
-              </HighlightPoint>
-              <HighlightPoint delay={0.6}>
-                Professeurs expérimentés
-              </HighlightPoint>
-              <HighlightPoint delay={0.7}>
-                Suivi individuel des progrès
-              </HighlightPoint>
+              {features.map((feature, index) => (
+                <HighlightPoint key={index} delay={0.4 + index * 0.1}>
+                  {feature}
+                </HighlightPoint>
+              ))}
             </motion.ul>
 
             {/* CTA Buttons */}
@@ -395,12 +387,12 @@ export function PreparatoireHeroSection() {
               className="flex flex-wrap gap-4 pt-4"
             >
               <PrimaryButton onClick={() => openModal()}>
-                S'inscrire maintenant
+                {t('page.prepHero.cta')}
               </PrimaryButton>
               <SecondaryButton
                 onClick={() => navigate('/programmes/preparatoire')}
               >
-                Voir les programmes
+                {t('page.prepHero.ctaSecondary')}
               </SecondaryButton>
             </motion.div>
 
@@ -413,11 +405,11 @@ export function PreparatoireHeroSection() {
             >
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-orange" />
-                <span>Du lundi au samedi</span>
+                <span>{t('page.prepHero.schedule')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-orange" />
-                <span>8h - 18h</span>
+                <span>{t('page.prepHero.hours')}</span>
               </div>
             </motion.div>
           </div>
@@ -438,7 +430,7 @@ export function PreparatoireHeroSection() {
               <div className="relative aspect-4/5 rounded-3xl overflow-hidden border border-white/50 shadow-2xl">
                 <img
                   src={HERO_CONFIG.backgroundImage}
-                  alt="Étudiants en préparation"
+                  alt={t('page.prepHero.imageAlt')}
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay subtil */}
@@ -449,21 +441,21 @@ export function PreparatoireHeroSection() {
             {/* Badges flottants positionnés autour de l'image */}
             <FloatingBadge
               icon={Users}
-              label="Étudiants formés"
+              label={t('page.prepHero.studentsLabel')}
               value={stats.students}
               delay={0.6}
               className="absolute -left-8 top-1/4"
             />
             <FloatingBadge
               icon={Trophy}
-              label="Taux de réussite"
+              label={t('page.prepHero.successLabel')}
               value={stats.successRate}
               delay={0.8}
               className="absolute -right-4 top-1/2"
             />
             <FloatingBadge
               icon={GraduationCap}
-              label="D'expérience"
+              label={t('page.prepHero.experienceLabel')}
               value={stats.years}
               delay={1}
               className="absolute -left-4 bottom-20"
@@ -507,6 +499,8 @@ function TrustItem({ icon: Icon, text }) {
 
 // Programs Grid Section
 function ProgramsSection() {
+  const { t } = useTranslation('programmes');
+
   return (
     <section
       id="programmes"
@@ -524,7 +518,7 @@ function ProgramsSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-orange/10 rounded-full text-sm font-medium text-orange mb-4"
           >
-            Nos formations
+            {t('page.formations.badge')}
           </motion.span>
 
           <motion.h2
@@ -534,8 +528,7 @@ function ProgramsSection() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-navy mb-4"
           >
-            Choisis ton programme de{' '}
-            <span className="font-cursive italic text-orange">préparation</span>
+            {t('page.formations.title')}
           </motion.h2>
 
           <motion.p
@@ -545,8 +538,7 @@ function ProgramsSection() {
             viewport={{ once: true }}
             className="text-gray-600 max-w-2xl mx-auto"
           >
-            Chaque programme est conçu pour t'accompagner vers la réussite avec
-            une méthodologie adaptée aux exigences de chaque concours.
+            {t('page.formations.subtitle')}
           </motion.p>
         </div>
 
@@ -565,6 +557,8 @@ function ProgramsSection() {
 
 // Resources Section
 function ResourcesSection() {
+  const { t } = useTranslation('programmes');
+
   return (
     <section className="py-16 bg-apricot-light/30">
       <Container>
@@ -576,10 +570,10 @@ function ResourcesSection() {
           className="text-center mb-10"
         >
           <h3 className="text-2xl font-bold text-navy mb-2">
-            Inclus dans tous les programmes
+            {t('page.resources.title')}
           </h3>
           <p className="text-gray-600">
-            Des ressources complètes pour maximiser ta réussite
+            {t('page.resources.subtitle')}
           </p>
         </motion.div>
 
@@ -614,6 +608,7 @@ function ResourcesSection() {
 // Main Page Component
 export default function Programmes() {
   const location = useLocation();
+  const { t: tSeo } = useTranslation('seo');
 
   // Scroll to program anchor if hash is present in URL
   useEffect(() => {
@@ -632,8 +627,8 @@ export default function Programmes() {
   return (
     <>
       <SEO
-        title="Nos Programmes"
-        description="Decouvre nos programmes de preparation aux concours: Polytechnique ENSPY, ENSTP, Medecine FMSB, ENS. Cours intensifs, methodologie eprouvee et suivi personnalise."
+        title={tSeo('programmes.title')}
+        description={tSeo('programmes.description')}
         url="/programmes"
       />
       <HeroSection />

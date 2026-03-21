@@ -3,6 +3,7 @@
 // 6 cards avec icones et descriptions
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
@@ -24,7 +25,7 @@ const colorConfig = {
   },
 };
 
-function AdvantageCard({ advantage, index }) {
+function AdvantageCard({ advantage, index, t }) {
   const Icon = advantage.icon;
   const colors = colorConfig[advantage.color] || colorConfig.orange;
 
@@ -53,12 +54,12 @@ function AdvantageCard({ advantage, index }) {
 
       {/* Titre */}
       <h3 className="text-xl font-bold text-navy mb-3">
-        {advantage.title}
+        {t(`whyAlphaApp.advantages.${advantage.id}.title`)}
       </h3>
 
       {/* Description */}
       <p className="text-gray-600 leading-relaxed">
-        {advantage.description}
+        {t(`whyAlphaApp.advantages.${advantage.id}.description`)}
       </p>
 
       {/* Decorateur coin */}
@@ -74,6 +75,8 @@ function AdvantageCard({ advantage, index }) {
 }
 
 export default function WhyAlphaApp() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 lg:py-28 bg-off-white relative overflow-hidden">
       {/* Pattern de fond */}
@@ -86,9 +89,9 @@ export default function WhyAlphaApp() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="Pourquoi Alpha App ?"
-          title="Tout ce dont tu as besoin pour *reussir*"
-          subtitle="Une application pensee pour les realites du Cameroun : mode hors-ligne, paiement Mobile Money, contenu adapte."
+          badge={t('whyAlphaApp.badge')}
+          title={t('whyAlphaApp.title')}
+          subtitle={t('whyAlphaApp.subtitle')}
         />
 
         {/* Grille des avantages */}
@@ -98,6 +101,7 @@ export default function WhyAlphaApp() {
               key={advantage.id}
               advantage={advantage}
               index={index}
+              t={t}
             />
           ))}
         </div>

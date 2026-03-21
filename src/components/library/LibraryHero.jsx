@@ -6,14 +6,17 @@
 import Container from '@components/common/Container';
 import { motion } from 'framer-motion';
 import { BookOpen, Shield, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const stats = [
-  { icon: BookOpen, value: '6', label: 'Documents' },
-  { icon: Star, value: '4.9', label: 'Note moyenne' },
-  { icon: Shield, value: '100%', label: 'Qualite garantie' },
+const statsConfig = [
+  { icon: BookOpen, value: '6', labelKey: 'library.hero.stats.documents' },
+  { icon: Star, value: '4.9', labelKey: 'library.hero.stats.averageRating' },
+  { icon: Shield, value: '100%', labelKey: 'library.hero.stats.guaranteedQuality' },
 ];
 
 export default function LibraryHero() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="relative pt-32 pb-20 bg-linear-to-br from-navy via-navy to-blue-900 overflow-hidden">
       {/* Background decorations */}
@@ -41,7 +44,7 @@ export default function LibraryHero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
               <BookOpen size={16} className="text-orange" />
-              Bibliotheque Alpha
+              {t('library.hero.badge')}
             </span>
           </motion.div>
 
@@ -52,13 +55,13 @@ export default function LibraryHero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"
           >
-            Tous les{' '}
+            {t('library.hero.titlePart1')}{' '}
             <span className="text-orange font-cursive italic font-black">
-              outils
+              {t('library.hero.titleHighlight')}
             </span>{' '}
-            pour
+            {t('library.hero.titlePart2')}
             <br />
-            reussir tes concours
+            {t('library.hero.titlePart3')}
           </motion.h1>
 
           {/* Subtitle */}
@@ -68,8 +71,7 @@ export default function LibraryHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto"
           >
-            Fascicules, annales corrigees, bords - des ressources de qualite
-            creees par nos enseignants pour maximiser tes chances de reussite.
+            {t('library.hero.subtitle')}
           </motion.p>
 
           {/* Stats */}
@@ -79,7 +81,7 @@ export default function LibraryHero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="grid grid-cols-3 gap-4 md:gap-8"
           >
-            {stats.map((stat, index) => {
+            {statsConfig.map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div
@@ -90,7 +92,7 @@ export default function LibraryHero() {
                   <div className="text-2xl md:text-3xl font-bold text-white">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
+                  <div className="text-sm text-white/60">{t(stat.labelKey)}</div>
                 </div>
               );
             })}

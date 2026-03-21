@@ -1,0 +1,355 @@
+{
+  "hero1": {
+    "badge": "+700 admitted since 2009",
+    "titlePart1": "Get into the",
+    "titlePart2": "of your dreams.",
+    "slides": {
+      "engineers": "engineering school",
+      "medicine": "medical school",
+      "management": "business school",
+      "accounting": "accounting school",
+      "nursing": "nursing school"
+    },
+    "subtitle": "Intensive preparation for competitive exams to top schools: Engineering, Medicine, Nursing in Cameroon.",
+    "ctaRegister": "Register now →",
+    "ctaDiscover": "Discover our programs",
+    "stats": {
+      "admitted": "Students admitted",
+      "successRate": "Success rate",
+      "experience": "Years of experience",
+      "programs": "Programs"
+    }
+  },
+  "hero": {
+    "badge": "+500 admitted since 2009",
+    "titlePart1": "Get into the ",
+    "titleHighlight": "engineering",
+    "titlePart2": "school of your dreams.",
+    "subtitle": "Intensive preparation for ENSP, ENSTP, ENS and top engineering school exams in Cameroon and abroad.",
+    "ctaRegister": "Register now",
+    "ctaDiscover": "Discover our programs",
+    "examPrep": "Exam preparation:",
+    "stats": {
+      "successRate": "Success rate",
+      "admitted": "Students admitted",
+      "experience": "Years of experience",
+      "experts": "Expert teachers"
+    }
+  },
+  "hero2": {
+    "badge": "+500 admitted since 2009",
+    "titlePart1": "Get into the ",
+    "titleHighlight": "engineering",
+    "titlePart2": "school of your dreams.",
+    "subtitle": "Intensive preparation for ENSP, ENSTP, ENS and top engineering school exams in Cameroon and abroad.",
+    "ctaRegister": "Register now →",
+    "ctaPrograms": "View programs",
+    "nav": {
+      "home": "Home",
+      "programs": "Programs",
+      "orientation": "Orientation",
+      "about": "About",
+      "contact": "Contact",
+      "register": "Register"
+    },
+    "stats": {
+      "success": "Success rate",
+      "teachers": "Teachers",
+      "experience": "Years of experience"
+    },
+    "imageAlt": "Students studying",
+    "floatingAdmitted": "Admitted",
+    "floatingSuccess": "Success rate"
+  },
+  "hero3": {
+    "badge": "+500 admitted since 2009 • 95% success rate",
+    "titlePart1": "Get into the ",
+    "titleHighlight": "engineering",
+    "titlePart2": "school of your dreams.",
+    "subtitle": "Intensive preparation for ENSP, ENSTP, ENS and top engineering school exams.",
+    "ctaRegister": "Register now →",
+    "ctaPrograms": "Discover our programs",
+    "nav": {
+      "home": "Home",
+      "programs": "Programs",
+      "orientation": "Orientation",
+      "about": "About",
+      "contact": "Contact",
+      "register": "Register"
+    },
+    "imageAlt": "Students celebrating their graduation",
+    "floatingAdmitted": "Students admitted",
+    "floatingSuccess": "Success rate",
+    "floatingYears": "Years",
+    "floatingTeachers": "Teachers",
+    "floatingExams": "Exams"
+  },
+  "hero4": {
+    "socialProofStudents": "500+ students",
+    "socialProofText": "have trusted us",
+    "titlePart1": "Get into the ",
+    "titleHighlight": "engineering",
+    "titlePart2": "school of your dreams.",
+    "subtitle": "Intensive preparation for ENSP, ENSTP, ENS and top engineering school exams in Cameroon.",
+    "ctaRegister": "Register now",
+    "ctaPrograms": "View programs",
+    "nav": {
+      "home": "Home",
+      "programs": "Programs",
+      "orientation": "Orientation",
+      "about": "About",
+      "contact": "Contact",
+      "register": "Register"
+    },
+    "features": {
+      "courses": "Intensive courses",
+      "teachers": "50+ Expert teachers",
+      "app": "Free mobile app"
+    },
+    "avatarAlt": "Student {{index}}",
+    "stats": {
+      "admitted": "Students admitted",
+      "successRate": "Success rate",
+      "experience": "Years of experience",
+      "experts": "Expert teachers"
+    },
+    "trustedBy": "Our alumni join the best schools"
+  },
+  "programsHome": {
+    "badge": "Our programs",
+    "title": "Programs tailored to each exam",
+    "subtitle": "Choose the preparation that matches your goals and maximize your chances of success.",
+    "ensp": {
+      "title": "ENSP Prep",
+      "school": "National Advanced School of Engineering",
+      "description": "Intensive preparation to join Cameroon's most prestigious engineering school. Civil, Computer, Electrical, Mechanical Engineering.",
+      "features": ["Intensive courses", "Weekly mock exams", "Personalized follow-up"]
+    },
+    "enstp": {
+      "title": "ENSTP Prep",
+      "school": "National Advanced School of Public Works",
+      "description": "Complete training to pass the ENSTP entrance exam. Specialization in civil engineering and public works.",
+      "features": ["Adapted methodology", "Targeted exercises", "Individual coaching"]
+    },
+    "ens": {
+      "title": "ENS Prep",
+      "school": "Higher Teacher Training College",
+      "description": "Rigorous preparation for ENS exams to become a secondary school teacher or pursue research.",
+      "features": ["Academic reinforcement", "General knowledge", "Written expression"]
+    },
+    "learnMore": "Learn more",
+    "viewAll": "View all programs"
+  },
+  "programsAlt": {
+    "badge": "Our programs",
+    "title": "*Programs* tailored to each exam",
+    "titleV1": "Programs tailored to each exam",
+    "subtitle": "Choose the preparation that matches your goals and maximize your chances of success.",
+    "viewAll": "View all programs",
+    "viewAllV3": "View all our programs",
+    "discoverProgram": "Discover the program",
+    "v1": {
+      "ensp": {
+        "title": "ENSP Prep",
+        "school": "Polytechnic Yaounde",
+        "description": "Intensive preparation to join Cameroon's most prestigious engineering school.",
+        "features": ["Intensive courses", "Weekly mock exams", "Personalized follow-up"]
+      },
+      "enstp": {
+        "title": "ENSTP Prep",
+        "school": "Public Works",
+        "description": "Complete training to pass the ENSTP entrance exam. Civil engineering and infrastructure.",
+        "features": ["Adapted methodology", "Targeted exercises", "Individual coaching"]
+      },
+      "ens": {
+        "title": "ENS Prep",
+        "school": "Higher Teacher Training",
+        "description": "Rigorous preparation for ENS exams to become a teacher or researcher.",
+        "features": ["Academic reinforcement", "General knowledge", "Written expression"]
+      }
+    },
+    "v2": {
+      "ensp": {
+        "title": "ENSP Prep",
+        "subtitle": "Polytechnic",
+        "description": "Join Cameroon's most prestigious engineering school with our intensive preparation."
+      },
+      "enstp": {
+        "title": "ENSTP Prep",
+        "subtitle": "Public Works",
+        "description": "Master civil engineering and infrastructure techniques with our domain experts."
+      },
+      "ens": {
+        "title": "ENS Prep",
+        "subtitle": "Teacher Training",
+        "description": "Become a teacher or researcher with a rigorous and comprehensive academic preparation."
+      }
+    },
+    "v3": {
+      "ensp": {
+        "title": "ENSP Prep",
+        "subtitle": "Polytechnic School",
+        "description": "Our flagship program intensively prepares you for Cameroon's most selective exam.",
+        "cta": "Polytechnic Program"
+      },
+      "enstp": {
+        "title": "ENSTP Prep",
+        "subtitle": "Public Works",
+        "description": "Specialize in civil engineering and infrastructure with Cameroonian construction experts.",
+        "cta": "ENSTP Program"
+      },
+      "ens": {
+        "title": "ENS Prep",
+        "subtitle": "Teacher Training",
+        "description": "Build a career as a teacher or researcher with solid academic preparation.",
+        "cta": "ENS Program"
+      }
+    }
+  },
+  "whyAlpha": {
+    "badge": "Why choose us",
+    "title": "What makes us *different*",
+    "subtitle": "For 15 years, Alpha Center has been guiding future Cameroonian professionals toward success with a proven method.",
+    "stats": {
+      "years": "Years",
+      "success": "Success",
+      "admitted": "Admitted"
+    },
+    "socialProof": {
+      "satisfied": "Satisfied students",
+      "recommend": "who recommend us"
+    },
+    "cta": "Join Alpha Center",
+    "features": {
+      "teachers": {
+        "title": "Excellent teachers",
+        "description": "Experts from top universities with proven teaching methods."
+      },
+      "smallGroups": {
+        "title": "Small groups",
+        "description": "Classes of 25 max for personalized attention."
+      },
+      "personalFollowUp": {
+        "title": "Individual follow-up",
+        "description": "Personalized support with regular assessments."
+      },
+      "mockExams": {
+        "title": "Mock exams",
+        "description": "Real-condition exams every week."
+      },
+      "app": {
+        "title": "Alpha App",
+        "description": "Study anywhere, even offline."
+      },
+      "pricing": {
+        "title": "Affordable pricing",
+        "description": "Quality education with flexible payment options."
+      }
+    }
+  },
+  "ctaFinal": {
+    "urgencyBadge": "Registration open — Limited spots",
+    "title": "Ready to achieve your",
+    "titleHighlight": "dream career",
+    "subtitle1": "Join the",
+    "subtitle2": "800+ students",
+    "subtitle3": "who transformed their future with Alpha Center. The next success story is",
+    "subtitle4": "you",
+    "stats": {
+      "nextSessionValue": "June 2026",
+      "nextSession": "Next session",
+      "remaining": "Spots remaining",
+      "successRate": "Success rate"
+    },
+    "ctaRegister": "Register now",
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "divider": "or contact us",
+    "whatsappMessage": "Hello Alpha Center! 👋\n\nI'm interested in your exam preparation programs. Could you give me more information?\n\nThank you!",
+    "trust": {
+      "payment": "Secure payment",
+      "personalized": "Personalized support",
+      "guarantee": "Satisfaction guaranteed"
+    }
+  },
+  "appPromo": {
+    "badge": "Mobile app",
+    "title": "Study anywhere with",
+    "titleHighlight": "the Alpha app",
+    "subtitle": "Our mobile app lets you study efficiently wherever you are. MCQs, courses, past exam papers... everything is accessible even without internet.",
+    "downloadOn": "Download on",
+    "availableOn": "Available on",
+    "phone": {
+      "tagline": "Study & Succeed",
+      "progression": "Progress",
+      "qcm": "answered this week",
+      "topUsers": "of users"
+    },
+    "features": {
+      "qcm": {
+        "title": "Interactive MCQs",
+        "description": "2000+ questions per subject with detailed corrections"
+      },
+      "offline": {
+        "title": "Offline mode",
+        "description": "Study even without internet connection"
+      },
+      "corrections": {
+        "title": "Detailed corrections",
+        "description": "Understand every mistake with clear explanations"
+      },
+      "progress": {
+        "title": "Progress tracking",
+        "description": "Visualize your progress and identify weak points"
+      }
+    }
+  },
+  "orientation": {
+    "badge": "🧭 Orientation",
+    "title": "Not sure which *engineering* path to choose?",
+    "subtitle": "Explore different fields of engineering and find the one that suits you best.",
+    "metiers": {
+      "civilEng": { "title": "Civil Engineering", "tagline": "Build tomorrow's world" },
+      "compEng": { "title": "Computer Engineering", "tagline": "Create the technologies of the future" },
+      "elecEng": { "title": "Electrical Engineering", "tagline": "Master energy" },
+      "mechEng": { "title": "Mechanical Engineering", "tagline": "Design the machines" },
+      "petroEng": { "title": "Petroleum Engineering", "tagline": "Harness resources" },
+      "envEng": { "title": "Environmental Engineering", "tagline": "Protect the planet" }
+    },
+    "badges": {
+      "popular": "🏗️ Popular",
+      "trending": "🔥 Trending",
+      "topSalary": "💰 Top Salary",
+      "future": "🌱 Future"
+    },
+    "perMonth": "mo",
+    "schools": "schools",
+    "viewCareer": "View career profile",
+    "exploreAll": "Explore all careers",
+    "funFact": {
+      "title": "Did you know?",
+      "text": "Cameroon will need more than 50,000 engineers by 2030!"
+    }
+  },
+  "testimonials": {
+    "badge": "Success stories",
+    "title": "What our *alumni* say",
+    "subtitle": "Discover testimonials from those who got into their dream school thanks to Alpha Center.",
+    "prevLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "goTo": "Go to testimonial"
+  },
+  "stats": {
+    "admitted": { "label": "Students admitted", "sublabel": "since 2023" },
+    "success": { "label": "Success rate", "sublabel": "in exams" },
+    "experience": { "label": "Years of experience", "sublabel": "of excellence" },
+    "experts": { "label": "Expert teachers", "sublabel": "and passionate" }
+  },
+  "programs": {
+    "badge": "Our programs",
+    "title": "*Programs* tailored to every *ambition*",
+    "subtitle": "Engineering, medicine, business or education - find the preparation that fits you.",
+    "discoverProgram": "Discover the program",
+    "success": "success rate",
+    "viewAll": "View all programs"
+  }
+}

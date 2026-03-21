@@ -6,10 +6,12 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function SchoolDistribution({ distribution }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useTranslation('about');
 
   // Calculate total for percentage verification
   const total = distribution.reduce((sum, s) => sum + s.count, 0);
@@ -18,9 +20,9 @@ export default function SchoolDistribution({ distribution }) {
     <section ref={ref} className="py-20 bg-white">
       <Container>
         <SectionTitle
-          badge="Repartition"
-          title="Nos admis par *ecole*"
-          subtitle="Repartition de nos etudiants admis par etablissement"
+          badge={t('results.distribution.badge')}
+          title={t('results.distribution.title')}
+          subtitle={t('results.distribution.subtitle')}
           align="center"
         />
 
@@ -69,7 +71,7 @@ export default function SchoolDistribution({ distribution }) {
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   <div className="text-4xl font-bold text-navy">{total}</div>
-                  <div className="text-sm text-gray-500">Total admis</div>
+                  <div className="text-sm text-gray-500">{t('results.distribution.totalAdmitted')}</div>
                 </motion.div>
               </div>
             </div>

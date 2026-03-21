@@ -16,6 +16,7 @@ import SectionTitle from '@components/common/SectionTitle';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { leadership, staff, teachers, teamStats } from '../../data/team';
 import { generateTeamPageSchema } from '../../utils/seo';
 
@@ -29,6 +30,8 @@ const teacherTestimonials = teachers
 
 export default function Equipe() {
   const [selectedTeacher, setSelectedTeacher] = useState(null);
+  const { t } = useTranslation('about');
+  const { t: ts } = useTranslation('seo');
 
   // Generer le schema JSON-LD pour le SEO Google
   const allMembers = [...leadership, ...teachers];
@@ -37,21 +40,21 @@ export default function Equipe() {
   return (
     <>
       <SEO
-        title="Notre Equipe | Alpha Center"
-        description="Rencontrez l'equipe pedagogique d'Alpha Center : des experts passionnes, anciens laureats des grandes ecoles, dedies a votre reussite."
+        title={ts('team.title')}
+        description={ts('team.description')}
         url="/a-propos/equipe"
         jsonLd={teamJsonLd}
       />
 
       {/* Hero */}
       <AboutHero
-        title="Une Equipe d'Excellence"
-        subtitle="Des experts passionnes par votre reussite"
+        title={t('team.heroTitle')}
+        subtitle={t('team.heroSubtitle')}
         stats={[
-          { number: teamStats.totalTeachers, label: 'Enseignants', suffix: '' },
+          { number: teamStats.totalTeachers, label: t('team.teachers'), suffix: '' },
           {
             number: teamStats.totalExperience,
-            label: "Annees d'experience cumulees",
+            label: t('team.experienceLabel'),
             suffix: '',
           },
         ]}
@@ -61,15 +64,15 @@ export default function Equipe() {
       <section className="py-24 bg-off-white">
         <Container>
           <SectionTitle
-            badge="Direction"
-            title="Notre *direction*"
-            subtitle="Des leaders experimentés qui guident l'equipe vers l'excellence"
+            badge={t('team.leadership')}
+            title={t('team.leadershipTitle')}
+            subtitle={t('team.leadershipSubtitle')}
             align="center"
           />
 
           {/* Hint to flip */}
           <p className="text-center text-sm text-gray-500 mt-4 mb-8">
-            Cliquez sur une carte pour en savoir plus
+            {t('team.clickForMore')}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -84,9 +87,9 @@ export default function Equipe() {
       <section className="py-24 bg-white">
         <Container>
           <SectionTitle
-            badge="Enseignants"
-            title="Notre Equipe *Pedagogique*"
-            subtitle="Chaque professeur est un expert de sa matiere et un ancien laureat des concours"
+            badge={t('team.teachers')}
+            title={t('team.pedagogicalTeam')}
+            subtitle={t('team.pedagogicalSubtitle')}
             align="center"
           />
 
@@ -128,10 +131,10 @@ export default function Equipe() {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm font-medium mb-4">
-              Temoignages
+              {t('team.testimonials')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Ce que disent nos etudiants
+              {t('team.testimonialTitle')}
             </h2>
           </motion.div>
 
@@ -159,7 +162,7 @@ export default function Equipe() {
                     </div>
                   </div>
                   <div className="text-xs text-orange">
-                    A propos de {testimonial.teacher}
+                    {t('team.aboutTeacher')} {testimonial.teacher}
                   </div>
                 </div>
               </motion.div>
@@ -173,10 +176,10 @@ export default function Equipe() {
         <Container>
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-2xl font-bold text-navy mb-2">
-              Notre equipe administrative
+              {t('team.adminTeam')}
             </h2>
             <p className="text-gray-600">
-              Les personnes qui assurent le bon fonctionnement du centre
+              {t('team.adminSubtitle')}
             </p>
           </div>
 
@@ -190,10 +193,10 @@ export default function Equipe() {
 
       {/* CTA */}
       <AboutCTA
-        title="Envie de nous rejoindre ?"
-        subtitle="Rencontrez-nous lors de nos portes ouvertes ou contactez-nous"
-        primaryButton={{ label: 'Nous contacter', href: '/contact' }}
-        secondaryButton={{ label: 'Voir nos resultats', href: '/a-propos/resultats' }}
+        title={t('team.joinUs')}
+        subtitle={t('team.joinSubtitle')}
+        primaryButton={{ label: t('team.contactUs'), href: '/contact' }}
+        secondaryButton={{ label: t('team.viewResults'), href: '/a-propos/resultats' }}
         variant="navy"
       />
     </>

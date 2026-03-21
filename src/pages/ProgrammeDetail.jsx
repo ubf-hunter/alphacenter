@@ -17,6 +17,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Button from '@components/common/Button';
 import Container from '@components/common/Container';
@@ -98,17 +99,6 @@ const colorStyles = {
   },
 };
 
-// Session type colors and labels
-const sessionTypes = {
-  cours: { label: 'Cours', bg: 'bg-navy/10', text: 'text-navy' },
-  td: { label: 'TD', bg: 'bg-orange/10', text: 'text-orange' },
-  tp: { label: 'TP', bg: 'bg-emerald-500/10', text: 'text-emerald-600' },
-  revision: { label: 'Revision', bg: 'bg-purple-500/10', text: 'text-purple-600' },
-  examen: { label: 'Examen', bg: 'bg-rose-500/10', text: 'text-rose-600' },
-  tutorat: { label: 'Tutorat', bg: 'bg-amber-500/10', text: 'text-amber-600' },
-  atelier: { label: 'Atelier', bg: 'bg-cyan-500/10', text: 'text-cyan-600' },
-};
-
 // Format price in FCFA
 function formatPrice(amount) {
   return new Intl.NumberFormat('fr-FR').format(amount) + ' FCFA';
@@ -120,6 +110,7 @@ function formatPrice(amount) {
 function HeroSection({ program }) {
   const { openModal } = useInscriptionModal();
   const navigate = useNavigate();
+  const { t } = useTranslation('programmes');
   const Icon = program.icon || GraduationCap;
   const styles = colorStyles[program.color] || colorStyles.orange;
 
@@ -140,7 +131,7 @@ function HeroSection({ program }) {
           className="flex items-center gap-2 text-white/80 hover:text-white mb-6 sm:mb-8 transition-colors"
         >
           <ArrowLeft size={20} />
-          <span className="text-sm font-medium">Retour aux programmes</span>
+          <span className="text-sm font-medium">{t('detail.back')}</span>
         </motion.button>
 
         <div className="flex flex-col sm:flex-row sm:items-start gap-6">
@@ -185,12 +176,12 @@ function HeroSection({ program }) {
               </div>
               <div className="flex items-center gap-2">
                 <Users size={18} className="text-white/70" />
-                <span className="text-sm">{program.studentsPerClass} max/classe</span>
+                <span className="text-sm">{program.studentsPerClass} {t('detail.maxPerClass')}</span>
               </div>
               {program.successRate && (
                 <div className="flex items-center gap-2">
                   <TrendingUp size={18} className="text-white/70" />
-                  <span className="text-sm font-semibold">{program.successRate}% reussite</span>
+                  <span className="text-sm font-semibold">{program.successRate}% {t('detail.success')}</span>
                 </div>
               )}
               <div className="flex items-center gap-2">
@@ -211,7 +202,7 @@ function HeroSection({ program }) {
                 onClick={() => openModal(program.id)}
                 className={styles.button}
               >
-                S'inscrire maintenant
+                {t('detail.registerNow')}
                 <ArrowRight size={18} />
               </Button>
             </motion.div>
@@ -226,6 +217,7 @@ function HeroSection({ program }) {
 // ADVANTAGES SECTION
 // ============================================
 function AdvantagesSection({ advantages }) {
+  const { t } = useTranslation('programmes');
   if (!advantages || advantages.length === 0) return null;
 
   return (
@@ -239,10 +231,10 @@ function AdvantagesSection({ advantages }) {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-orange/10 rounded-full text-sm font-medium text-orange mb-4">
             <Star size={16} />
-            Nos atouts
+            {t('detail.strengths')}
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-navy">
-            Pourquoi choisir ce programme?
+            {t('detail.whyChoose')}
           </h2>
         </motion.div>
 
@@ -273,7 +265,18 @@ function AdvantagesSection({ advantages }) {
 // SCHEDULE SECTION - Cards mobile / Table desktop
 // ============================================
 function ScheduleSection({ schedule }) {
+  const { t } = useTranslation('programmes');
   if (!schedule || schedule.length === 0) return null;
+
+  const sessionTypes = {
+    cours: { label: t('detail.sessionTypes.cours'), bg: 'bg-navy/10', text: 'text-navy' },
+    td: { label: t('detail.sessionTypes.td'), bg: 'bg-orange/10', text: 'text-orange' },
+    tp: { label: t('detail.sessionTypes.tp'), bg: 'bg-emerald-500/10', text: 'text-emerald-600' },
+    revision: { label: t('detail.sessionTypes.revision'), bg: 'bg-purple-500/10', text: 'text-purple-600' },
+    examen: { label: t('detail.sessionTypes.examen'), bg: 'bg-rose-500/10', text: 'text-rose-600' },
+    tutorat: { label: t('detail.sessionTypes.tutorat'), bg: 'bg-amber-500/10', text: 'text-amber-600' },
+    atelier: { label: t('detail.sessionTypes.atelier'), bg: 'bg-cyan-500/10', text: 'text-cyan-600' },
+  };
 
   return (
     <section className="py-12 sm:py-16 bg-apricot-light/30">
@@ -286,10 +289,10 @@ function ScheduleSection({ schedule }) {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-navy/10 rounded-full text-sm font-medium text-navy mb-4">
             <Calendar size={16} />
-            Organisation
+            {t('detail.schedule')}
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-navy">
-            Emploi du temps hebdomadaire
+            {t('detail.weeklySchedule')}
           </h2>
         </motion.div>
 
@@ -339,9 +342,9 @@ function ScheduleSection({ schedule }) {
         >
           {/* Header */}
           <div className="grid grid-cols-3 bg-navy text-white font-semibold">
-            <div className="p-4 border-r border-navy-700">Jour</div>
-            <div className="p-4 border-r border-navy-700">Matin</div>
-            <div className="p-4">Apres-midi</div>
+            <div className="p-4 border-r border-navy-700">{t('detail.day')}</div>
+            <div className="p-4 border-r border-navy-700">{t('detail.morning')}</div>
+            <div className="p-4">{t('detail.afternoon')}</div>
           </div>
 
           {/* Body */}
@@ -411,6 +414,7 @@ function ScheduleSection({ schedule }) {
 // SUBJECTS SECTION
 // ============================================
 function SubjectsSection({ subjects }) {
+  const { t } = useTranslation('programmes');
   if (!subjects || subjects.length === 0) return null;
 
   const totalHours = subjects.reduce((acc, s) => acc + (s.hours || 0), 0);
@@ -426,10 +430,10 @@ function SubjectsSection({ subjects }) {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-orange/10 rounded-full text-sm font-medium text-orange mb-4">
             <BookOpen size={16} />
-            Programme
+            {t('detail.program')}
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-navy">
-            Matieres enseignees
+            {t('detail.subjects')}
           </h2>
         </motion.div>
 
@@ -442,7 +446,7 @@ function SubjectsSection({ subjects }) {
             className="p-4 sm:p-6 bg-gradient-to-br from-navy to-navy-800 rounded-2xl text-white text-center"
           >
             <div className="text-3xl sm:text-4xl font-bold">{subjects.length}</div>
-            <div className="text-white/70 text-sm">Matieres</div>
+            <div className="text-white/70 text-sm">{t('detail.subjectsLabel')}</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -452,7 +456,7 @@ function SubjectsSection({ subjects }) {
             className="p-4 sm:p-6 bg-gradient-to-br from-orange to-orange-600 rounded-2xl text-white text-center"
           >
             <div className="text-3xl sm:text-4xl font-bold">{totalHours}h</div>
-            <div className="text-white/70 text-sm">Volume total</div>
+            <div className="text-white/70 text-sm">{t('detail.totalVolume')}</div>
           </motion.div>
         </div>
 
@@ -504,6 +508,7 @@ function SubjectsSection({ subjects }) {
 // PAYMENT SECTION
 // ============================================
 function PaymentSection({ paymentPlans, priceLabel }) {
+  const { t } = useTranslation('programmes');
   if (!paymentPlans || paymentPlans.length === 0) return null;
 
   return (
@@ -517,12 +522,12 @@ function PaymentSection({ paymentPlans, priceLabel }) {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-navy/10 rounded-full text-sm font-medium text-navy mb-4">
             <CreditCard size={16} />
-            Tarifs
+            {t('detail.pricing')}
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-navy">
-            Options de paiement
+            {t('detail.pricingOptions')}
           </h2>
-          <p className="text-gray-600 mt-2">A partir de {priceLabel}</p>
+          <p className="text-gray-600 mt-2">{t('detail.startingFrom')} {priceLabel}</p>
         </motion.div>
 
         <div className="grid gap-4 max-w-xl mx-auto">
@@ -542,7 +547,7 @@ function PaymentSection({ paymentPlans, priceLabel }) {
               {/* Recommended Badge */}
               {plan.recommended && (
                 <div className="absolute -top-3 left-4 px-3 py-1 bg-orange text-white text-xs font-bold rounded-full">
-                  Recommande
+                  {t('detail.recommended')}
                 </div>
               )}
 
@@ -573,24 +578,24 @@ function PaymentSection({ paymentPlans, priceLabel }) {
         >
           <h4 className="font-semibold text-navy mb-3 flex items-center gap-2">
             <CreditCard size={18} />
-            Modes de paiement acceptes
+            {t('detail.paymentMethods')}
           </h4>
           <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-success" />
-              Especes
+              {t('detail.cash')}
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-success" />
-              Mobile Money
+              {t('detail.mobileMoney')}
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-success" />
-              Virement bancaire
+              {t('detail.bankTransfer')}
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-success" />
-              Cheque
+              {t('detail.check')}
             </div>
           </div>
         </motion.div>
@@ -604,6 +609,7 @@ function PaymentSection({ paymentPlans, priceLabel }) {
 // ============================================
 function CTASection({ program }) {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('programmes');
   const styles = colorStyles[program.color] || colorStyles.orange;
 
   return (
@@ -616,11 +622,10 @@ function CTASection({ program }) {
           className="text-center max-w-2xl mx-auto"
         >
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            Pret a rejoindre le {program.shortName || program.name}?
+            {t('detail.ctaTitle')} {program.shortName || program.name}?
           </h2>
           <p className="text-white/80 mb-8">
-            Inscris-toi maintenant et commence ta preparation vers la reussite.
-            Places limitees a {program.placesAvailable} par session.
+            {t('detail.ctaSubtitle1')} {program.placesAvailable} {t('detail.ctaSubtitle2')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -629,14 +634,14 @@ function CTASection({ program }) {
               onClick={() => openModal(program.id)}
               className={styles.button}
             >
-              S'inscrire maintenant
+              {t('detail.registerNow')}
               <ArrowRight size={18} />
             </Button>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 transition-colors font-medium"
             >
-              Nous contacter
+              {t('detail.contactUs')}
             </Link>
           </div>
         </motion.div>
@@ -651,6 +656,8 @@ function CTASection({ program }) {
 export default function ProgrammeDetail() {
   const { programId } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation('programmes');
+  const { t: tSeo } = useTranslation('seo');
 
   // Find the program
   const program = programmes.find((p) => p.id === programId);
@@ -660,10 +667,10 @@ export default function ProgrammeDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center p-8">
-          <h1 className="text-2xl font-bold text-navy mb-4">Programme non trouve</h1>
-          <p className="text-gray-600 mb-6">Le programme demande n'existe pas.</p>
+          <h1 className="text-2xl font-bold text-navy mb-4">{t('detail.notFound')}</h1>
+          <p className="text-gray-600 mb-6">{t('detail.notFoundDesc')}</p>
           <Button variant="primary" onClick={() => navigate('/programmes')}>
-            Voir tous les programmes
+            {t('detail.viewAll')}
           </Button>
         </div>
       </div>

@@ -5,26 +5,29 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, Phone, Send } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
-import { contactInfo, getWhatsAppUrl, programmeOptions } from '../../data/contact';
+import { contactInfo, getWhatsAppUrl } from '../../data/contact';
 
-// Schema de validation
-const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, 'Le nom doit contenir au moins 2 caracteres')
-    .max(100, 'Le nom ne peut pas depasser 100 caracteres'),
-  email: z
-    .string()
-    .email('Adresse email invalide')
-    .max(254, 'Email trop long')
-    .or(z.literal('')),
-  programme: z.string(),
-  message: z
-    .string()
-    .max(2000, 'Le message ne peut pas depasser 2000 caracteres'),
-});
+// Schema factory with translated messages
+function getContactSchema(t) {
+  return z.object({
+    name: z
+      .string()
+      .trim()
+      .min(2, t('name_min'))
+      .max(100, t('name_max')),
+    email: z
+      .string()
+      .email(t('email_invalid'))
+      .max(254, t('email_max'))
+      .or(z.literal('')),
+    programme: z.string(),
+    message: z
+      .string()
+      .max(2000, t('message_max')),
+  });
+}
 
 // Animation variants
 const formVariants = {
@@ -134,6 +137,8 @@ function Textarea({ label, required, error, ...props }) {
 const SUBMIT_COOLDOWN_MS = 5000;
 
 export default function ContactForm() {
+  const { t } = useTranslation('contact');
+  const { t: tv } = useTranslation('validation');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -144,6 +149,15 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const lastSubmitRef = useRef(0);
 
+  const programmeOptions = [
+    { value: '', label: t('form.selectProgramme') },
+    { value: 'ingenieur', label: t('form.programOptions.engineer') },
+    { value: 'medecine', label: t('form.programOptions.medicine') },
+    { value: 'infirmier', label: t('form.programOptions.nursing') },
+    { value: 'orientation', label: t('form.programOptions.orientation') },
+    { value: 'autre', label: t('form.programOptions.other') },
+  ];
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -153,6 +167,7 @@ export default function ContactForm() {
   };
 
   const validateForm = () => {
+    const contactSchema = getContactSchema(tv);
     const result = contactSchema.safeParse(formData);
     if (result.success) return {};
 
@@ -211,10 +226,10 @@ export default function ContactForm() {
           {/* Titre */}
           <div className="text-center mb-6">
             <h2 className="text-xl md:text-2xl font-bold text-navy mb-2">
-              Ecris-nous
+              {t('form.title')}
             </h2>
             <p className="text-sm text-gray-500">
-              Remplis le formulaire et on te repond sur WhatsApp
+              {t('form.subtitle')}
             </p>
           </div>
 
@@ -223,22 +238,22 @@ export default function ContactForm() {
             {/* Nom et Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
-                label="Nom complet"
+                label={t('form.name')}
                 name="name"
                 id="contact-name"
                 type="text"
-                placeholder="Ton nom"
+                placeholder={t('form.namePlaceholder')}
                 value={formData.name}
                 onChange={handleChange}
                 error={errors.name}
                 required
               />
               <Input
-                label="Email"
+                label={t('form.email')}
                 name="email"
                 id="contact-email"
                 type="email"
-                placeholder="ton.email@exemple.com"
+                placeholder={t('form.emailPlaceholder')}
                 value={formData.email}
                 onChange={handleChange}
                 error={errors.email}
@@ -248,7 +263,7 @@ export default function ContactForm() {
 
             {/* Programme */}
             <Select
-              label="Programme qui t'interesse"
+              label={t('form.programme')}
               name="programme"
               id="contact-programme"
               options={programmeOptions}
@@ -258,10 +273,10 @@ export default function ContactForm() {
 
             {/* Message */}
             <Textarea
-              label="Ton message"
+              label={t('form.message')}
               name="message"
               id="contact-message"
-              placeholder="Decris ta situation ou pose ta question..."
+              placeholder={t('form.messagePlaceholder')}
               rows={4}
               value={formData.message}
               onChange={handleChange}
@@ -279,12 +294,12 @@ export default function ContactForm() {
               {isSubmitting ? (
                 <>
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Redirection...
+                  {t('form.sending')}
                 </>
               ) : (
                 <>
                   <MessageCircle size={22} />
-                  Envoyer sur WhatsApp
+                  {t('form.submit')}
                 </>
               )}
             </motion.button>
@@ -292,7 +307,7 @@ export default function ContactForm() {
             {/* Separateur */}
             <div className="flex items-center gap-4">
               <div className="flex-1 h-px bg-gray-200" />
-              <span className="text-sm text-gray-400">ou</span>
+              <span className="text-sm text-gray-400">{t('form.or')}</span>
               <div className="flex-1 h-px bg-gray-200" />
             </div>
 
@@ -303,15 +318,13 @@ export default function ContactForm() {
               className="w-full py-3 px-6 border-2 border-navy/20 text-navy font-semibold rounded-xl flex items-center justify-center gap-3 hover:border-navy hover:bg-navy/5 transition-all duration-300"
             >
               <Phone size={20} />
-              Appeler directement
+              {t('form.callDirectly')}
             </button>
           </form>
 
           {/* Note */}
           <p className="text-center text-xs text-gray-400 mt-6">
-            En nous contactant, tu acceptes notre politique de confidentialite.
-            <br />
-            Nous ne partageons jamais tes informations.
+            {t('form.privacy')}
           </p>
         </div>
       </div>
@@ -324,7 +337,7 @@ export default function ContactForm() {
         className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500"
       >
         <Send size={14} className="text-green-500" />
-        <span>Reponse garantie sous 24h ouvrables</span>
+        <span>{t('form.responseGuarantee')}</span>
       </motion.div>
     </motion.div>
   );

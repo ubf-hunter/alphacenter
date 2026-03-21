@@ -12,19 +12,21 @@ import {
 } from '@components/contact';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import { contactSEO, getWhatsAppUrl } from '../data/contact';
+import { useTranslation } from 'react-i18next';
+import { getWhatsAppUrl } from '../data/contact';
 import { useInscriptionModal } from '../hooks/useInscriptionModal';
 
 export default function Contact() {
   const { openModal } = useInscriptionModal();
+  const { t } = useTranslation('contact');
+  const { t: ts } = useTranslation('seo');
 
   return (
     <>
       {/* SEO */}
       <SEO
-        title={contactSEO.title}
-        description={contactSEO.description}
-        keywords={contactSEO.keywords}
+        title={ts('contact.title')}
+        description={ts('contact.description')}
       />
 
       {/* Hero Section */}
@@ -43,10 +45,10 @@ export default function Contact() {
                 className="mb-6"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">
-                  Nous trouver
+                  {t('info.title')}
                 </h2>
                 <p className="text-gray-500">
-                  Plusieurs moyens de nous contacter selon tes preferences
+                  {t('info.subtitle')}
                 </p>
               </motion.div>
 
@@ -79,11 +81,10 @@ export default function Contact() {
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Pret a reussir ton concours ?
+              {t('cta.title')}
             </h2>
             <p className="text-white/70 mb-8">
-              Rejoins les centaines d'etudiants qui ont deja integre l'ecole de
-              leurs reves grace a Alpha Center.
+              {t('cta.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -94,7 +95,7 @@ export default function Contact() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-500/25 hover:shadow-xl transition-all"
               >
                 <MessageCircle size={22} />
-                Discuter avec un conseiller
+                {t('cta.chatAdviser')}
               </motion.button>
 
               <motion.button
@@ -103,7 +104,7 @@ export default function Contact() {
                 onClick={() => openModal()}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
               >
-                Voir les programmes
+                {t('cta.viewPrograms')}
                 <ArrowRight size={20} />
               </motion.button>
             </div>
@@ -117,9 +118,9 @@ export default function Contact() {
               className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 pt-8 border-t border-white/10"
             >
               {[
-                { value: '85%', label: 'Taux de reussite' },
-                { value: '700+', label: 'Etudiants admis' },
-                { value: '7 ans', label: "D'experience" },
+                { value: '85%', label: t('cta.stats.successRate') },
+                { value: '700+', label: t('cta.stats.admitted') },
+                { value: '7 ans', label: t('cta.stats.experience') },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-orange">

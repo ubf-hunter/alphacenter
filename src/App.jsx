@@ -22,6 +22,7 @@ import AboutIndex, {
   MemberProfile,
   Resultats,
 } from '@pages/about';
+import { MentionsLegales, CGU, Confidentialite } from '@pages/legal';
 import { InscriptionModalProvider } from './hooks/useInscriptionModal';
 import { initGA, logPageView } from '@utils/analytics';
 
@@ -70,6 +71,10 @@ export default function App() {
             <Route path="a-propos/equipe" element={<Equipe />} />
             <Route path="a-propos/equipe/:memberId" element={<MemberProfile />} />
             <Route path="a-propos/resultats" element={<Resultats />} />
+            {/* Legal */}
+            <Route path="mentions-legales" element={<MentionsLegales />} />
+            <Route path="cgu" element={<CGU />} />
+            <Route path="confidentialite" element={<Confidentialite />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

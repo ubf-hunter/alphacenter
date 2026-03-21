@@ -3,6 +3,7 @@
 // Page principale du hub d'orientation
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Compass, ArrowRight, BookOpen, Building2, Lightbulb, Target } from 'lucide-react';
@@ -14,51 +15,53 @@ import { domains } from '@/data/domains';
 import { allCareers } from '@/data/careers';
 import { allSchools, cameroonSchools } from '@/data/schools';
 
-// Stats globales
-const globalStats = [
-  { value: domains.length, label: 'Domaines', icon: Target },
-  { value: allCareers.length, label: 'Metiers', icon: Lightbulb },
-  { value: cameroonSchools.length, label: 'Ecoles au Cameroun', icon: Building2 },
-  { value: allSchools.length, label: 'Ecoles au total', icon: BookOpen },
-];
-
-// Sections du hub
-const hubSections = [
-  {
-    id: 'metiers',
-    title: 'Explorer les metiers',
-    description: 'Decouvre les differents metiers accessibles apres tes etudes : missions, competences, salaires, perspectives.',
-    icon: Lightbulb,
-    color: 'orange',
-    gradient: 'from-orange to-amber-500',
-    link: '/orientation/metiers',
-    cta: 'Voir les metiers',
-  },
-  {
-    id: 'ecoles',
-    title: 'Trouver ton ecole',
-    description: 'Explore les ecoles et universites au Cameroun et a l\'etranger. Conditions d\'admission, programmes, frais.',
-    icon: Building2,
-    color: 'navy',
-    gradient: 'from-navy to-blue-700',
-    link: '/orientation/ecoles',
-    cta: 'Voir les ecoles',
-  },
-];
-
 export default function OrientationHub() {
+  const { t } = useTranslation('orientation');
+
+  // Stats globales
+  const globalStats = [
+    { value: domains.length, label: t('hub.statDomains'), icon: Target },
+    { value: allCareers.length, label: t('hub.statCareers'), icon: Lightbulb },
+    { value: cameroonSchools.length, label: t('hub.statSchoolsCameroon'), icon: Building2 },
+    { value: allSchools.length, label: t('hub.statSchoolsTotal'), icon: BookOpen },
+  ];
+
+  // Sections du hub
+  const hubSections = [
+    {
+      id: 'metiers',
+      title: t('hub.exploreCareers'),
+      description: t('hub.exploreCareersDesc'),
+      icon: Lightbulb,
+      color: 'orange',
+      gradient: 'from-orange to-amber-500',
+      link: '/orientation/metiers',
+      cta: t('hub.viewCareers'),
+    },
+    {
+      id: 'ecoles',
+      title: t('hub.findSchool'),
+      description: t('hub.findSchoolDesc'),
+      icon: Building2,
+      color: 'navy',
+      gradient: 'from-navy to-blue-700',
+      link: '/orientation/ecoles',
+      cta: t('hub.viewSchools'),
+    },
+  ];
+
   return (
     <>
       <SEO
-        title="Orientation - Guide des metiers et ecoles"
-        description="Explore les metiers d'avenir et trouve l'ecole qui te correspond. Guide complet d'orientation pour les etudes superieures au Cameroun."
+        title={t('seo.hubTitle')}
+        description={t('seo.hubDescription')}
       />
 
       {/* Hero */}
       <OrientationHero
-        badge="Orientation"
-        title="Trouve ta voie, construis ton avenir"
-        subtitle="Explore les metiers, decouvre les ecoles et fais les bons choix pour ta carriere. Notre guide complet t'accompagne dans ton orientation."
+        badge={t('hub.badge')}
+        title={t('hub.title')}
+        subtitle={t('hub.subtitle')}
         icon={Compass}
       >
         {/* Stats */}
@@ -95,13 +98,13 @@ export default function OrientationHub() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 bg-orange/10 text-orange text-sm font-semibold rounded-full mb-4">
-              Par domaine
+              {t('hub.byDomain')}
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
-              Choisis ton <span className="text-orange">domaine</span>
+              {t('hub.chooseDomain')} <span className="text-orange">{t('hub.chooseDomainHighlight')}</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Ingenierie, medecine ou sciences infirmieres - chaque domaine offre des opportunites uniques.
+              {t('hub.domainSubtitle')}
             </p>
           </motion.div>
 
@@ -179,20 +182,19 @@ export default function OrientationHub() {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  Pret a te preparer pour <span className="text-orange">reussir</span> ?
+                  {t('hub.ctaTitle')} <span className="text-orange">{t('hub.ctaHighlight')}</span> ?
                 </h2>
                 <p className="text-white/70 max-w-xl">
-                  Alpha Center t'accompagne dans la preparation aux concours des grandes ecoles.
-                  Rejoins des centaines d'etudiants qui ont atteint leurs objectifs.
+                  {t('hub.ctaSubtitle')}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="primary" to="/programmes" size="lg">
-                  Nos programmes
+                  {t('hub.ourPrograms')}
                   <ArrowRight size={18} />
                 </Button>
                 <Button variant="secondary" to="/application" size="lg" className="!text-white !border-white/30 hover:!bg-white/10">
-                  Candidater
+                  {t('hub.apply')}
                 </Button>
               </div>
             </div>

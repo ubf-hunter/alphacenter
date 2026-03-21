@@ -5,6 +5,7 @@ import SectionTitle from '@components/common/SectionTitle';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, GraduationCap, Quote } from 'lucide-react';
 import { memo, useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Mémoïser les variants pour éviter leur recréation
 const slideVariants = {
@@ -47,13 +48,13 @@ const NavigationButton = memo(({ direction, onClick, label }) => (
 NavigationButton.displayName = 'NavigationButton';
 
 // Composant pour les dots de pagination mémoïsé
-const PaginationDot = memo(({ index, currentIndex, onClick }) => (
+const PaginationDot = memo(({ index, currentIndex, onClick, goToLabel }) => (
   <button
     onClick={onClick}
     className={`w-2 h-2 rounded-full transition-all ${
       index === currentIndex ? 'w-8 bg-orange' : 'bg-gray-300 hover:bg-gray-400'
     }`}
-    aria-label={`Aller au témoignage ${index + 1}`}
+    aria-label={`${goToLabel} ${index + 1}`}
   />
 ));
 
@@ -112,6 +113,7 @@ TestimonialCard.displayName = 'TestimonialCard';
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const { t } = useTranslation('home');
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -148,9 +150,9 @@ export default function Testimonials() {
 
       <Container className="relative z-10">
         <SectionTitle
-          badge="Ils ont réussi"
-          title="Ce que disent nos *anciens étudiants*"
-          subtitle="Découvre les témoignages de ceux qui ont intégré leur école de rêve grâce à Alpha Center."
+          badge={t('testimonials.badge')}
+          title={t('testimonials.title')}
+          subtitle={t('testimonials.subtitle')}
         />
 
         {/* Slider */}
@@ -172,7 +174,7 @@ export default function Testimonials() {
               <NavigationButton
                 direction="prev"
                 onClick={prevSlide}
-                label="Témoignage précédent"
+                label={t('testimonials.prevLabel')}
               />
 
               {/* Dots */}
@@ -183,6 +185,7 @@ export default function Testimonials() {
                     index={index}
                     currentIndex={currentIndex}
                     onClick={() => goToSlide(index)}
+                    goToLabel={t('testimonials.goTo')}
                   />
                 ))}
               </div>
@@ -190,7 +193,7 @@ export default function Testimonials() {
               <NavigationButton
                 direction="next"
                 onClick={nextSlide}
-                label="Témoignage suivant"
+                label={t('testimonials.nextLabel')}
               />
             </div>
           </div>

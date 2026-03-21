@@ -5,40 +5,19 @@
 
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Kevin M.',
-    role: 'Admis ENSP 2024',
-    content:
-      "Les fascicules Alpha Center m'ont vraiment aide a structurer mes revisions. Les exercices corriges sont tres bien expliques.",
-    rating: 5,
-    product: 'Fascicule Mathematiques ENSP',
-  },
-  {
-    id: 2,
-    name: 'Diane T.',
-    role: 'Admise Medecine 2024',
-    content:
-      "J'ai utilise les annales corrigees pendant 3 mois. La qualite des corrections m'a permis de comprendre mes erreurs.",
-    rating: 5,
-    product: 'Pack Annales Medecine',
-  },
-  {
-    id: 3,
-    name: 'Paul E.',
-    role: 'Admis ENSTP 2024',
-    content:
-      "Le pack complet ingenierie est vraiment complet. J'ai pu reviser toutes les matieres avec des supports de qualite.",
-    rating: 5,
-    product: 'Pack Complet Ingenierie',
-  },
+const testimonialsConfig = [
+  { id: 1, rating: 5 },
+  { id: 2, rating: 5 },
+  { id: 3, rating: 5 },
 ];
 
-function TestimonialCard({ testimonial, index }) {
+function TestimonialCard({ index, rating, t }) {
+  const name = t(`library.testimonials.items.${index}.name`);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -59,7 +38,7 @@ function TestimonialCard({ testimonial, index }) {
             key={i}
             size={16}
             className={
-              i < testimonial.rating
+              i < rating
                 ? 'text-amber-400 fill-amber-400'
                 : 'text-gray-300'
             }
@@ -68,21 +47,25 @@ function TestimonialCard({ testimonial, index }) {
       </div>
 
       {/* Content */}
-      <p className="text-gray-600 mb-4 leading-relaxed">"{testimonial.content}"</p>
+      <p className="text-gray-600 mb-4 leading-relaxed">
+        "{t(`library.testimonials.items.${index}.content`)}"
+      </p>
 
       {/* Product */}
       <div className="text-xs text-orange font-medium mb-4 px-3 py-1.5 bg-orange/10 rounded-full inline-block">
-        {testimonial.product}
+        {t(`library.testimonials.items.${index}.product`)}
       </div>
 
       {/* Author */}
       <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
         <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-semibold">
-          {testimonial.name.charAt(0)}
+          {name.charAt(0)}
         </div>
         <div>
-          <div className="font-semibold text-navy">{testimonial.name}</div>
-          <div className="text-sm text-gray-500">{testimonial.role}</div>
+          <div className="font-semibold text-navy">{name}</div>
+          <div className="text-sm text-gray-500">
+            {t(`library.testimonials.items.${index}.role`)}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -90,22 +73,25 @@ function TestimonialCard({ testimonial, index }) {
 }
 
 export default function ProductTestimonials() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 bg-gray-50">
       <Container>
         <SectionTitle
-          badge="Temoignages"
-          title="Ils ont *reussi* avec nos documents"
-          subtitle="Decouvrez les retours de nos etudiants qui ont utilise nos ressources"
+          badge={t('library.testimonials.badge')}
+          title={t('library.testimonials.title')}
+          subtitle={t('library.testimonials.subtitle')}
           centered
         />
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonialsConfig.map((testimonial, index) => (
             <TestimonialCard
               key={testimonial.id}
-              testimonial={testimonial}
               index={index}
+              rating={testimonial.rating}
+              t={t}
             />
           ))}
         </div>

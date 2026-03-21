@@ -3,11 +3,13 @@
 // Carte pour afficher un domaine d'orientation
 // ============================================
 
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 export default function DomainCard({ domain, index = 0 }) {
+  const { t } = useTranslation('orientation');
   const Icon = domain.icon;
 
   return (
@@ -46,17 +48,17 @@ export default function DomainCard({ domain, index = 0 }) {
             {/* Stats */}
             <div className="flex items-center gap-4 mb-4 text-xs text-gray-500">
               <span>
-                <span className={`font-semibold ${domain.textColor}`}>{domain.stats.careers}</span> metiers
+                <span className={`font-semibold ${domain.textColor}`}>{domain.stats.careers}</span> {t('components.careers')}
               </span>
               <span>
-                <span className={`font-semibold ${domain.textColor}`}>{domain.stats.schools}</span> ecoles
+                <span className={`font-semibold ${domain.textColor}`}>{domain.stats.schools}</span> {t('components.schools')}
               </span>
             </div>
 
             {/* CTA */}
             <div className="flex items-center justify-between">
               <span className={`text-sm font-semibold ${domain.textColor}`}>
-                Explorer
+                {t('components.explore')}
               </span>
               <span className="w-8 h-8 bg-gray-100 group-hover:bg-navy rounded-full flex items-center justify-center transition-colors duration-300">
                 <ArrowRight size={14} className="text-gray-600 group-hover:text-white transition-colors" />

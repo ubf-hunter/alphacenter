@@ -7,14 +7,17 @@ import Container from '@components/common/Container';
 import SectionTitle from '@components/common/SectionTitle';
 import GuaranteeCard from './GuaranteeCard';
 import { guarantees } from '@/data/purchaseInfo';
+import { useTranslation } from 'react-i18next';
 
 export default function GuaranteesSection() {
+  const { t } = useTranslation('application');
+
   return (
     <section className="py-20 bg-white">
       <Container>
         <SectionTitle
-          badge="Nos engagements"
-          title="Des *garanties* pour votre tranquillite"
+          badge={t('library.guarantees.badge')}
+          title={t('library.guarantees.title')}
           centered
         />
 

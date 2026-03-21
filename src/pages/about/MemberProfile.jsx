@@ -14,6 +14,7 @@ import {
   Mail,
   Quote,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { leadership, teachers } from '../../data/team';
 import { generatePersonSchema } from '../../utils/seo';
@@ -24,6 +25,7 @@ const allMembers = [...leadership, ...teachers];
 export default function MemberProfile() {
   const { memberId } = useParams();
   const member = allMembers.find((m) => m.slug === memberId);
+  const { t } = useTranslation('about');
 
   // Rediriger si membre non trouve
   if (!member) {
@@ -43,7 +45,7 @@ export default function MemberProfile() {
           member.bio ||
           member.fullBio ||
           member.shortBio ||
-          `Profil de ${member.name} chez Alpha Center`
+          t('memberProfile.profileOf', { name: member.name })
         }
         url={`/a-propos/equipe/${member.slug}`}
         jsonLd={jsonLd}
@@ -67,7 +69,7 @@ export default function MemberProfile() {
               className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
             >
               <ArrowLeft size={18} />
-              <span>Retour a l'equipe</span>
+              <span>{t('memberProfile.backToTeam')}</span>
             </Link>
           </motion.div>
 
@@ -159,7 +161,7 @@ export default function MemberProfile() {
                 >
                   <h2 className="text-xl font-bold text-navy mb-4 flex items-center gap-2">
                     <Briefcase size={20} className="text-orange" />
-                    Biographie
+                    {t('memberProfile.biography')}
                   </h2>
                   <p className="text-gray-700 leading-relaxed">
                     {member.bio || member.fullBio}
@@ -191,7 +193,7 @@ export default function MemberProfile() {
                   className="bg-navy rounded-2xl p-6 text-white"
                 >
                   <h3 className="font-semibold mb-3 text-orange">
-                    Ce que disent les etudiants
+                    {t('memberProfile.studentsSay')}
                   </h3>
                   <p className="italic text-white/90 mb-4">
                     "{member.testimonial.quote}"
@@ -215,7 +217,7 @@ export default function MemberProfile() {
                 >
                   <h3 className="text-lg font-bold text-navy mb-4 flex items-center gap-2">
                     <GraduationCap size={18} className="text-orange" />
-                    Formation
+                    {t('memberProfile.formation')}
                   </h3>
                   <ul className="space-y-2">
                     {member.education.map((edu, i) => (
@@ -239,7 +241,7 @@ export default function MemberProfile() {
                   className="bg-white rounded-2xl p-6 shadow-sm"
                 >
                   <h3 className="text-lg font-bold text-navy mb-4">
-                    Realisations
+                    {t('memberProfile.achievements')}
                   </h3>
                   <ul className="space-y-2">
                     {member.achievements.map((achievement, i) => (
@@ -264,7 +266,7 @@ export default function MemberProfile() {
                   className="bg-orange/10 rounded-2xl p-6"
                 >
                   <h3 className="text-lg font-bold text-navy mb-2">
-                    Experience
+                    {t('memberProfile.experience')}
                   </h3>
                   <p className="text-gray-700">{member.experience}</p>
                 </motion.div>
@@ -284,7 +286,7 @@ export default function MemberProfile() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-xl hover:bg-navy/90 transition-colors"
             >
               <ArrowLeft size={18} />
-              Voir toute l'equipe
+              {t('memberProfile.viewAllTeam')}
             </Link>
           </motion.div>
         </Container>

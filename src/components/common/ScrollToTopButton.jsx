@@ -4,6 +4,7 @@
 // ============================================
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
@@ -11,6 +12,7 @@ export default function ScrollToTopButton({
   threshold = 400, // Hauteur de scroll avant apparition
   className = '',
 }) {
+  const { t } = useTranslation('common');
   const [isVisible, setIsVisible] = useState(false);
 
   // Detecter le scroll
@@ -57,7 +59,7 @@ export default function ScrollToTopButton({
             cursor-pointer
             ${className}
           `}
-          aria-label="Retour en haut de page"
+          aria-label={t('scrollToTop')}
         >
           <ArrowUp size={22} strokeWidth={2.5} />
         </motion.button>
