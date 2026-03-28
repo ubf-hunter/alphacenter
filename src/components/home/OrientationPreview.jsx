@@ -78,6 +78,7 @@ function MetierCard({
   index,
   schoolsLabel,
   viewCareerLabel,
+  perMonthLabel,
 }) {
   const imageUrl = image || placeholderImages[href.split('/').pop()];
 
@@ -129,7 +130,7 @@ function MetierCard({
             <div className="flex items-center gap-1.5 text-gray-600">
               <Briefcase size={14} className="text-gray-400" />
               <span className="font-semibold text-navy">{stats.salaire}</span>
-              <span className="text-gray-400">FCFA/{t('orientation.perMonth')}</span>
+              <span className="text-gray-400">FCFA/{perMonthLabel}</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1 text-gray-500">
@@ -194,6 +195,7 @@ export default function OrientationPreview() {
               index={index}
               schoolsLabel={t('orientation.schools')}
               viewCareerLabel={t('orientation.viewCareer')}
+              perMonthLabel={t('orientation.perMonth')}
             />
           ))}
         </div>
